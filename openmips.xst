@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/yangzehai/Desktop/computer_organization/openmips/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/yangzehai/Desktop/computer_organization/openmips/xst"
+elaborate
+-ifn openmips.prj
+-ifmt mixed
