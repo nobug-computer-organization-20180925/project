@@ -24,8 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  id
 // File:    id.v
-// Author:  Lei Silei
-// E-mail:  leishangwen@163.com
 // Description: 译码阶段
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
@@ -34,12 +32,12 @@
 
 module id(
 
-	input wire										rst,
-	input wire[`InstAddrBus]			pc_i,
-	input wire[`InstBus]          inst_i,
+	input wire rst,
+	input wire[`InstAddrBus] pc_i,
+	input wire[`InstBus] inst_i,
 
-	input wire[`RegBus]           reg1_data_i,
-	input wire[`RegBus]           reg2_data_i,
+	input wire[`RegBus] reg1_data_i,
+	input wire[`RegBus] reg2_data_i,
 
 	//送到regfile的信息
 	output reg                    reg1_read_o,
@@ -56,10 +54,10 @@ module id(
 	output reg                    wreg_o
 );
 
-  wire[5:0] op = inst_i[31:26];
-  wire[4:0] op2 = inst_i[10:6];
-  wire[5:0] op3 = inst_i[5:0];
-  wire[4:0] op4 = inst_i[20:16];
+  wire[4:0] op = inst_i[15:11];
+  wire[2:0] op2 = inst_i[10:8];
+  wire[2:0] op3 = inst_i[7:5];
+  wire[4:0] op4 = inst_i[4:0];
   reg[`RegBus]	imm;
   reg instvalid;
   
@@ -79,19 +77,20 @@ module id(
 	  end else begin
 			aluop_o <= `EXE_NOP_OP;
 			alusel_o <= `EXE_RES_NOP;
-			wd_o <= inst_i[15:11];
+			wd_o <= inst_i[10:8];
 			wreg_o <= `WriteDisable;
 			instvalid <= `InstInvalid;	   
 			reg1_read_o <= 1'b0;
 			reg2_read_o <= 1'b0;
-			reg1_addr_o <= inst_i[25:21];
-			reg2_addr_o <= inst_i[20:16];		
+			reg1_addr_o <= inst_i[10:8];
+			reg2_addr_o <= inst_i[7:5];		
 			imm <= `ZeroWord;			
 		  case (op)
-		  	`EXE_ORI:			begin                        //ORI指令
+		  	`EXE_OR:			begin                        //OR指令
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
-		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
-					imm <= {16'h0, inst_i[15:0]};		wd_o <= inst_i[20:16];
+		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;	  	
+					//imm <= {16'h0, inst_i[15:0]};		
+					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 							 
 		    default:			begin

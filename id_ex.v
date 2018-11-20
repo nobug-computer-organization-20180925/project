@@ -24,8 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  id_ex
 // File:    id_ex.v
-// Author:  Lei Silei
-// E-mail:  leishangwen@163.com
 // Description: ID/EX阶段的寄存器
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
@@ -34,8 +32,8 @@
 
 module id_ex(
 
-	input	wire										clk,
-	input wire										rst,
+	input	wire clk,
+	input wire rst,
 
 	
 	//从译码阶段传递的信息

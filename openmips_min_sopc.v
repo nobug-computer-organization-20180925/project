@@ -24,8 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  openmips_min_sopc
 // File:    openmips_min_sopc.v
-// Author:  Lei Silei
-// E-mail:  leishangwen@163.com
 // Description: 基于OpenMIPS处理器的一个简单SOPC，用于验证具备了
 //              wishbone总线接口的openmips，该SOPC包含openmips、
 //              wb_conmax、GPIO controller、flash controller，uart 
@@ -39,8 +37,8 @@
 
 module openmips_min_sopc(
 
-	input	wire										clk,
-	input wire										rst
+	input	wire clk,
+	input wire rst
 	
 );
 

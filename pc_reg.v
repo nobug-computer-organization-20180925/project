@@ -24,8 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  pc_reg
 // File:    pc_reg.v
-// Author:  Lei Silei
-// E-mail:  leishangwen@163.com
 // Description: Ö¸ÁîÖ¸Õë¼Ä´æÆ÷PC
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
@@ -44,9 +42,9 @@ module pc_reg(
 
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
-			pc <= 32'h00000000;
+			pc <= 16'h0000;
 		end else begin
-	 		pc <= pc + 4'h4;
+	 		pc <= pc + 16'h0001;
 		end
 	end
 	

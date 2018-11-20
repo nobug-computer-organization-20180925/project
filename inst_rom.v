@@ -24,8 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  inst_rom
 // File:    inst_rom.v
-// Author:  Lei Silei
-// E-mail:  leishangwen@163.com
 // Description: Ö¸Áî´æ´¢Æ÷
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
@@ -34,10 +32,10 @@
 
 module inst_rom(
 
-//	input	wire										clk,
-	input wire                    ce,
-	input wire[`InstAddrBus]			addr,
-	output reg[`InstBus]					inst
+//	input	wire	clk,
+	input wire  ce,
+	input wire[`InstAddrBus]	addr,
+	output reg[`InstBus]			inst
 	
 );
 
@@ -46,7 +44,7 @@ module inst_rom(
 
 	initial $readmemh ( "inst_rom.data", inst_mem );
 	
-	assign instDataTemp = inst_mem[addr[`InstMemNumLog2+1:2]];
+	assign instDataTemp = inst_mem[addr[`InstMemNumLog2-1:0]];
 
 	always @ (*) begin
 		if (ce == `ChipDisable) begin
