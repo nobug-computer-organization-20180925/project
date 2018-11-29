@@ -5,30 +5,41 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">id.v</arg>&quot; line <arg fmt="%d" index="2">103</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;imm&gt;</arg>
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">inst_rom.v</arg>&quot; line <arg fmt="%d" index="2">45</arg> <arg fmt="%s" index="3">unexpected token: &apos;[&apos;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">id.v</arg>&quot; line <arg fmt="%d" index="2">115</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;imm&gt;</arg>
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">inst_rom.v</arg>&quot; line <arg fmt="%d" index="2">45</arg> <arg fmt="%s" index="3">expecting &apos;endmodule&apos;, found &apos;0&apos;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1433" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">regs</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">inst_rom.v</arg>&quot; line <arg fmt="%d" index="2">51</arg> <arg fmt="%s" index="3">unexpected token: &apos;)&apos;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1433" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">regs</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">41</arg> <arg fmt="%s" index="3">unexpected token: &apos;input&apos;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1433" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">regs</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">53</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="2546" delta="old" >&quot;<arg fmt="%s" index="1">inst_rom.v</arg>&quot; line <arg fmt="%d" index="2">45</arg>: reading initialization file &quot;<arg fmt="%s" index="3">inst_rom.data</arg>&quot;.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">55</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2319" delta="old" >&quot;<arg fmt="%s" index="1">inst_rom.v</arg>&quot; line <arg fmt="%d" index="2">45</arg>: Signal <arg fmt="%s" index="3">inst_mem</arg> in initial block is partially initialized. The initialization will be ignored.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">56</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">inst_mem</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000000000000000</arg>.
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">57</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
+</msg>
+
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">63</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
+</msg>
+
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">64</arg> <arg fmt="%s" index="3">unexpected token: &apos;.&apos;</arg>
+</msg>
+
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">68</arg> <arg fmt="%s" index="3">expecting &apos;*)&apos;, found &apos;EOF&apos;</arg>
+</msg>
+
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">openmips_min_sopc.v</arg>&quot; line <arg fmt="%d" index="2">68</arg> <arg fmt="%s" index="3">unexpected token: &apos;EOF&apos;</arg>
 </msg>
 
 </messages>
+

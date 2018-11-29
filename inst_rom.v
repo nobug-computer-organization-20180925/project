@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  inst_rom
 // File:    inst_rom.v
-// Description: Ö¸Áî´æ´¢Æ÷
+// Description: Ö¸ï¿½ï¿½æ´¢ï¿½ï¿½
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -42,7 +42,9 @@ module inst_rom(
 	reg[`InstBus]  inst_mem[0:`InstMemNum-1];
 	wire[`InstBus] instDataTemp;
 
-	initial $readmemh ( "inst_rom.data", inst_mem );
+	inst_mem[0]<=16'b11101_001_010_01101;
+
+	inst_mem[1]<=16'b11111_001_010_01101;
 	
 	assign instDataTemp = inst_mem[addr[`InstMemNumLog2-1:0]];
 

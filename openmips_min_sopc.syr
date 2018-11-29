@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -136,97 +136,27 @@ Module <ex> compiled
 Compiling verilog file "inst_rom.v" in library work
 Compiling verilog include file "defines.v"
 Module <openmips> compiled
+ERROR:HDLCompilers:26 - "inst_rom.v" line 45 unexpected token: '['
+Module <inst_rom> compiled
+ERROR:HDLCompilers:26 - "inst_rom.v" line 45 expecting 'endmodule', found '0'
+ERROR:HDLCompilers:26 - "inst_rom.v" line 51 unexpected token: ')'
 Compiling verilog file "openmips_min_sopc.v" in library work
 Compiling verilog include file "defines.v"
-Module <inst_rom> compiled
-Module <openmips_min_sopc> compiled
-No errors in compilation
-Analysis of file <"openmips_min_sopc.prj"> succeeded.
- 
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 41 unexpected token: 'input'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 53 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 55 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 56 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 57 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 63 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 64 unexpected token: '.'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 68 expecting '*)', found 'EOF'
+ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 68 unexpected token: 'EOF'
+Analysis of file <"openmips_min_sopc.prj"> failed.
+--> 
 
-=========================================================================
-*                     Design Hierarchy Analysis                         *
-=========================================================================
-Analyzing hierarchy for module <openmips_min_sopc> in library <work>.
+Total memory usage is 246000 kilobytes
 
-Analyzing hierarchy for module <openmips> in library <work>.
+Number of errors   :   12 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 
-Analyzing hierarchy for module <inst_rom> in library <work>.
-
-Analyzing hierarchy for module <pc_reg> in library <work>.
-
-Analyzing hierarchy for module <if_id> in library <work>.
-
-Analyzing hierarchy for module <id> in library <work>.
-
-Analyzing hierarchy for module <regfile> in library <work>.
-
-Analyzing hierarchy for module <id_ex> in library <work>.
-
-Analyzing hierarchy for module <ex> in library <work>.
-
-Analyzing hierarchy for module <ex_mem> in library <work>.
-
-Analyzing hierarchy for module <mem> in library <work>.
-
-Analyzing hierarchy for module <mem_wb> in library <work>.
-
-
-=========================================================================
-*                            HDL Analysis                               *
-=========================================================================
-Analyzing top module <openmips_min_sopc>.
-Module <openmips_min_sopc> is correct for synthesis.
- 
-Analyzing module <openmips> in library <work>.
-Module <openmips> is correct for synthesis.
- 
-Analyzing module <pc_reg> in library <work>.
-Module <pc_reg> is correct for synthesis.
- 
-Analyzing module <if_id> in library <work>.
-Module <if_id> is correct for synthesis.
- 
-Analyzing module <id> in library <work>.
-WARNING:Xst:905 - "id.v" line 103: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <imm>
-WARNING:Xst:905 - "id.v" line 115: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <imm>
-Module <id> is correct for synthesis.
- 
-Analyzing module <regfile> in library <work>.
-INFO:Xst:1433 - Contents of array <regs> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
-INFO:Xst:1433 - Contents of array <regs> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
-INFO:Xst:1433 - Contents of array <regs> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
-Module <regfile> is correct for synthesis.
- 
-Analyzing module <id_ex> in library <work>.
-Module <id_ex> is correct for synthesis.
- 
-Analyzing module <ex> in library <work>.
-Module <ex> is correct for synthesis.
- 
-Analyzing module <ex_mem> in library <work>.
-Module <ex_mem> is correct for synthesis.
- 
-Analyzing module <mem> in library <work>.
-Module <mem> is correct for synthesis.
- 
-Analyzing module <mem_wb> in library <work>.
-Module <mem_wb> is correct for synthesis.
- 
-Analyzing module <inst_rom> in library <work>.
-INFO:Xst:2546 - "inst_rom.v" line 45: reading initialization file "inst_rom.data".
-WARNING:Xst:2319 - "inst_rom.v" line 45: Signal inst_mem in initial block is partially initialized. The initialization will be ignored.
-Module <inst_rom> is correct for synthesis.
- 
-
-=========================================================================
-*                           HDL Synthesis                               *
-=========================================================================
-
-Performing bidirectional port resolution...
-
-Synthesizing Unit <inst_rom>.
-    Related source file is "inst_rom.v".
-WARNING:Xst:653 - Signal <inst_mem> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
