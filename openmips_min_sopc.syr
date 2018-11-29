@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -136,27 +136,627 @@ Module <ex> compiled
 Compiling verilog file "inst_rom.v" in library work
 Compiling verilog include file "defines.v"
 Module <openmips> compiled
-ERROR:HDLCompilers:26 - "inst_rom.v" line 45 unexpected token: '['
-Module <inst_rom> compiled
-ERROR:HDLCompilers:26 - "inst_rom.v" line 45 expecting 'endmodule', found '0'
-ERROR:HDLCompilers:26 - "inst_rom.v" line 51 unexpected token: ')'
 Compiling verilog file "openmips_min_sopc.v" in library work
 Compiling verilog include file "defines.v"
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 41 unexpected token: 'input'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 53 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 55 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 56 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 57 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 63 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 64 unexpected token: '.'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 68 expecting '*)', found 'EOF'
-ERROR:HDLCompilers:26 - "openmips_min_sopc.v" line 68 unexpected token: 'EOF'
-Analysis of file <"openmips_min_sopc.prj"> failed.
+Module <inst_rom> compiled
+Module <openmips_min_sopc> compiled
+No errors in compilation
+Analysis of file <"openmips_min_sopc.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <openmips_min_sopc> in library <work>.
+
+Analyzing hierarchy for module <openmips> in library <work>.
+
+Analyzing hierarchy for module <inst_rom> in library <work>.
+
+Analyzing hierarchy for module <pc_reg> in library <work>.
+
+Analyzing hierarchy for module <if_id> in library <work>.
+
+Analyzing hierarchy for module <id> in library <work>.
+
+Analyzing hierarchy for module <regfile> in library <work>.
+
+Analyzing hierarchy for module <id_ex> in library <work>.
+
+Analyzing hierarchy for module <ex> in library <work>.
+
+Analyzing hierarchy for module <ex_mem> in library <work>.
+
+Analyzing hierarchy for module <mem> in library <work>.
+
+Analyzing hierarchy for module <mem_wb> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <openmips_min_sopc>.
+Module <openmips_min_sopc> is correct for synthesis.
+ 
+Analyzing module <openmips> in library <work>.
+Module <openmips> is correct for synthesis.
+ 
+Analyzing module <pc_reg> in library <work>.
+Module <pc_reg> is correct for synthesis.
+ 
+Analyzing module <if_id> in library <work>.
+Module <if_id> is correct for synthesis.
+ 
+Analyzing module <id> in library <work>.
+Module <id> is correct for synthesis.
+ 
+Analyzing module <regfile> in library <work>.
+INFO:Xst:1433 - Contents of array <regs> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <regs> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <regfile> is correct for synthesis.
+ 
+Analyzing module <id_ex> in library <work>.
+Module <id_ex> is correct for synthesis.
+ 
+Analyzing module <ex> in library <work>.
+Module <ex> is correct for synthesis.
+ 
+Analyzing module <ex_mem> in library <work>.
+Module <ex_mem> is correct for synthesis.
+ 
+Analyzing module <mem> in library <work>.
+Module <mem> is correct for synthesis.
+ 
+Analyzing module <mem_wb> in library <work>.
+Module <mem_wb> is correct for synthesis.
+ 
+Analyzing module <inst_rom> in library <work>.
+WARNING:Xst:2319 - "inst_rom.v" line 46: Signal inst_mem in initial block is partially initialized. The initialization will be ignored.
+Module <inst_rom> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <inst_rom>.
+    Related source file is "inst_rom.v".
+WARNING:Xst:647 - Input <addr<15:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <inst_mem<0:1>> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+WARNING:Xst:1780 - Signal <inst_mem<2:65534>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <inst_rom> synthesized.
+
+
+Synthesizing Unit <pc_reg>.
+    Related source file is "pc_reg.v".
+    Found 1-bit register for signal <ce>.
+    Found 16-bit up counter for signal <pc>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <pc_reg> synthesized.
+
+
+Synthesizing Unit <if_id>.
+    Related source file is "if_id.v".
+    Found 16-bit register for signal <id_pc>.
+    Found 16-bit register for signal <id_inst>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <if_id> synthesized.
+
+
+Synthesizing Unit <id>.
+    Related source file is "id.v".
+WARNING:Xst:647 - Input <pc_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <op4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <op3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 121.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 124.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 139.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 142.
+    Summary:
+	inferred   4 Comparator(s).
+Unit <id> synthesized.
+
+
+Synthesizing Unit <regfile>.
+    Related source file is "regfile.v".
+    Found 4-bit comparator equal for signal <rdata1$cmp_eq0001> created at line 85.
+    Found 4-bit comparator equal for signal <rdata2$cmp_eq0001> created at line 100.
+    Found 16-bit 8-to-1 multiplexer for signal <readDataTemp1>.
+    Found 16-bit 8-to-1 multiplexer for signal <readDataTemp2>.
+    Found 128-bit register for signal <regs>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <regfile> synthesized.
+
+
+Synthesizing Unit <id_ex>.
+    Related source file is "id_ex.v".
+    Found 4-bit register for signal <ex_wd>.
+    Found 8-bit register for signal <ex_aluop>.
+    Found 1-bit register for signal <ex_wreg>.
+    Found 16-bit register for signal <ex_reg1>.
+    Found 16-bit register for signal <ex_reg2>.
+    Found 3-bit register for signal <ex_alusel>.
+    Summary:
+	inferred  48 D-type flip-flop(s).
+Unit <id_ex> synthesized.
+
+
+Synthesizing Unit <ex>.
+    Related source file is "ex.v".
+Unit <ex> synthesized.
+
+
+Synthesizing Unit <ex_mem>.
+    Related source file is "ex_mem.v".
+    Found 16-bit register for signal <mem_wdata>.
+    Found 1-bit register for signal <mem_wreg>.
+    Found 4-bit register for signal <mem_wd>.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+Unit <ex_mem> synthesized.
+
+
+Synthesizing Unit <mem>.
+    Related source file is "mem.v".
+Unit <mem> synthesized.
+
+
+Synthesizing Unit <mem_wb>.
+    Related source file is "mem_wb.v".
+    Found 16-bit register for signal <wb_wdata>.
+    Found 4-bit register for signal <wb_wd>.
+    Found 1-bit register for signal <wb_wreg>.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+Unit <mem_wb> synthesized.
+
+
+Synthesizing Unit <openmips>.
+    Related source file is "openmips.v".
+Unit <openmips> synthesized.
+
+
+Synthesizing Unit <openmips_min_sopc>.
+    Related source file is "openmips_min_sopc.v".
+Unit <openmips_min_sopc> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 23
+ 1-bit register                                        : 4
+ 16-bit register                                       : 14
+ 3-bit register                                        : 1
+ 4-bit register                                        : 3
+ 8-bit register                                        : 1
+# Comparators                                          : 6
+ 4-bit comparator equal                                : 6
+# Multiplexers                                         : 2
+ 16-bit 8-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <openmips0> is unconnected in block <openmips_min_sopc>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <inst_rom0> is unconnected in block <openmips_min_sopc>.
+   It will be removed from the design.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 251
+ Flip-Flops                                            : 251
+# Comparators                                          : 6
+ 4-bit comparator equal                                : 6
+# Multiplexers                                         : 32
+ 1-bit 8-to-1 multiplexer                              : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <openmips_min_sopc> ...
+
+Optimizing unit <if_id> ...
+
+Optimizing unit <id> ...
+
+Optimizing unit <regfile> ...
+
+Optimizing unit <id_ex> ...
+
+Optimizing unit <ex_mem> ...
+
+Optimizing unit <mem_wb> ...
+
+Optimizing unit <openmips> ...
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wdata_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wd_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wd_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wd_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wd_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/mem_wb0/wb_wreg> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wdata_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wd_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wd_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wd_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wd_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/ex_mem0/mem_wreg> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg1_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_aluop_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_alusel_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_alusel_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_alusel_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_wreg> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_reg2_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_wd_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_wd_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_wd_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_wd_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_2_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_0_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_1_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_5_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_3_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_4_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_6_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/regfile1/regs_7_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/if_id0/id_inst_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_15> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_14> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_13> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_12> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_11> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_10> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_9> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_8> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_7> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_6> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_5> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips0/pc_reg0/ce> of sequential type is unconnected in block <openmips_min_sopc>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : openmips_min_sopc.ngr
+Top Level Output File Name         : openmips_min_sopc
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 2
+
+Cell Usage :
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                        0  out of   8672     0%  
+ Number of IOs:                           2
+ Number of bonded IOBs:                   0  out of    250     0%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 148.00 secs
+Total CPU time to Xst completion: 148.47 secs
+ 
 --> 
 
-Total memory usage is 246000 kilobytes
+Total memory usage is 290068 kilobytes
 
-Number of errors   :   12 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  278 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

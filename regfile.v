@@ -66,14 +66,14 @@ module regfile(
 			end
 		end
 		else begin
-			regs[0]=16'h0;
-			regs[1]=16'h0101;
-			regs[2]=16'h0202;
-			regs[3]=16'h0404;
-			regs[4]=16'h0808;
-			regs[5]=16'h1010;
-			regs[6]=16'h2020;
-			regs[7]=16'h4040;
+			regs[0]<=16'h0;
+			regs[1]<=16'h0101;
+			regs[2]<=16'h0202;
+			regs[3]<=16'h0404;
+			regs[4]<=16'h0808;
+			regs[5]<=16'h1010;
+			regs[6]<=16'h2020;
+			regs[7]<=16'h4040;
 		end
 	end
 	

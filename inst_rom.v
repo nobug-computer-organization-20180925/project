@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  inst_rom
 // File:    inst_rom.v
-// Description: ָ��洢��
+// Description: ָ��洢��
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -42,11 +42,13 @@ module inst_rom(
 	reg[`InstBus]  inst_mem[0:`InstMemNum-1];
 	wire[`InstBus] instDataTemp;
 
+	initial begin
 	inst_mem[0]<=16'b11101_001_010_01101;
-
 	inst_mem[1]<=16'b11111_001_010_01101;
+	end
 	
-	assign instDataTemp = inst_mem[addr[`InstMemNumLog2-1:0]];
+	assign temp = addr[`InstMemNumLog2-1:0];
+	assign instDataTemp = inst_mem[temp];
 
 	always @ (*) begin
 		if (ce == `ChipDisable) begin

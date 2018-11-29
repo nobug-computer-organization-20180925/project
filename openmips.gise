@@ -39,6 +39,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="openmips_min_sopc.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="openmips_min_sopc.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="openmips_min_sopc.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_envsettings.html"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="openmips_min_sopc_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="openmips_min_sopc_tb_beh.prj"/>
@@ -168,8 +169,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1543508000" xil_pn:in_ck="-4965137198362906441" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7418736377878581602" xil_pn:start_ts="1543507992">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1543508909" xil_pn:in_ck="-4965137198362906441" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7418736377878581602" xil_pn:start_ts="1543508758">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -177,6 +179,7 @@
       <outfile xil_pn:name="openmips_min_sopc.ngc"/>
       <outfile xil_pn:name="openmips_min_sopc.ngr"/>
       <outfile xil_pn:name="openmips_min_sopc.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc.stx"/>
       <outfile xil_pn:name="openmips_min_sopc.syr"/>
       <outfile xil_pn:name="openmips_min_sopc.xst"/>
       <outfile xil_pn:name="openmips_min_sopc_tb_beh.prj"/>
