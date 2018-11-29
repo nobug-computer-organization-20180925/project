@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips.v";
+static const char *ng0 = "C:/Users/d/Desktop/project/openmips.v";
 
 
 
@@ -34,7 +34,15 @@ static void Cont_102_0(char *t0)
     char *t5;
     char *t6;
     char *t7;
-    char *t8;
+    unsigned int t8;
+    unsigned int t9;
+    char *t10;
+    unsigned int t11;
+    unsigned int t12;
+    char *t13;
+    unsigned int t14;
+    unsigned int t15;
+    char *t16;
 
 LAB0:    t1 = (t0 + 8128U);
     t2 = *((char **)t1);
@@ -51,18 +59,30 @@ LAB2:    xsi_set_current_line(102, ng0);
     t5 = *((char **)t4);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
-    memcpy(t7, t3, 8);
-    xsi_driver_vfirst_trans(t2, 0, 31);
-    t8 = (t0 + 8448);
-    *((int *)t8) = 1;
+    memset(t7, 0, 8);
+    t8 = 65535U;
+    t9 = t8;
+    t10 = (t3 + 4);
+    t11 = *((unsigned int *)t3);
+    t8 = (t8 & t11);
+    t12 = *((unsigned int *)t10);
+    t9 = (t9 & t12);
+    t13 = (t7 + 4);
+    t14 = *((unsigned int *)t7);
+    *((unsigned int *)t7) = (t14 | t8);
+    t15 = *((unsigned int *)t13);
+    *((unsigned int *)t13) = (t15 | t9);
+    xsi_driver_vfirst_trans(t2, 0, 15);
+    t16 = (t0 + 8448);
+    *((int *)t16) = 1;
 
 LAB1:    return;
 }
 
 
-extern void work_m_00000000002184301937_0537176141_init()
+extern void work_m_00000000000196922039_0537176141_init()
 {
 	static char *pe[] = {(void *)Cont_102_0};
-	xsi_register_didat("work_m_00000000002184301937_0537176141", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000002184301937_0537176141.didat");
+	xsi_register_didat("work_m_00000000000196922039_0537176141", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000000196922039_0537176141.didat");
 	xsi_register_executes(pe);
 }

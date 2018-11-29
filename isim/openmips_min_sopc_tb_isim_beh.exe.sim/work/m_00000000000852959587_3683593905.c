@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/yangzehai/Desktop/computer_organization/openmips/if_id.v";
+static const char *ng0 = "C:/Users/d/Desktop/project/if_id.v";
 static unsigned int ng1[] = {1U, 0U};
 static unsigned int ng2[] = {0U, 0U};
 
@@ -118,12 +118,12 @@ LAB14:    xsi_set_current_line(51, ng0);
     t2 = (t0 + 1368U);
     t3 = *((char **)t2);
     t2 = (t0 + 1928);
-    xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 16, 0LL);
     xsi_set_current_line(52, ng0);
     t2 = (t0 + 1528U);
     t3 = *((char **)t2);
     t2 = (t0 + 2088);
-    xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 16, 0LL);
 
 LAB12:    goto LAB2;
 
@@ -137,11 +137,11 @@ LAB10:    xsi_set_current_line(47, ng0);
 LAB13:    xsi_set_current_line(48, ng0);
     t28 = ((char*)((ng2)));
     t29 = (t0 + 1928);
-    xsi_vlogvar_wait_assign_value(t29, t28, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t29, t28, 0, 0, 16, 0LL);
     xsi_set_current_line(49, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 2088);
-    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 16, 0LL);
     goto LAB12;
 
 }
