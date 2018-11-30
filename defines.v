@@ -52,7 +52,7 @@
 //ָ��洢��inst_rom
 `define InstAddrBus 15:0
 `define InstBus 15:0
-`define InstMemNum 65535
+`define InstMemNum 127 // todo: change to 65535
 `define InstMemNumLog2 16
 
 
