@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  id
 // File:    id.v
-// Description: ����׶�
+// Description: ����׶�
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -116,8 +116,8 @@ module id(
 					wreg_o <= `WriteEnable;
 				end else begin
 					wreg_o <= `WriteDisable;
-				end		  							
-
+				end
+			end
 		    default:			begin
 		    end
 		  endcase		  //case op			

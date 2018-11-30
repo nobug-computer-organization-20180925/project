@@ -29,7 +29,7 @@
 //ָ��
 `define EXE_OR  5'b11101
 `define EXE_ORI 5'b11111
-
+`define EXE_MOVE 5'b01111
 
 `define EXE_NOP 5'b00001
 
