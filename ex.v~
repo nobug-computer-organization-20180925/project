@@ -22,69 +22,82 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// Module:  id_ex
-// File:    id_ex.v
-// Description: ID/EX阶段的寄存器
+// Module:  ex
+// File:    ex.v
+// Description: 执行阶段
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
 `include "defines.v"
 
-module id_ex(
+module ex(
 
-	input	wire clk,
 	input wire rst,
+	
+	//送到执行阶段的信息
+	input wire[`AluOpBus]         aluop_i,
+	input wire[`AluSelBus]        alusel_i,
+	input wire[`RegBus]           reg1_i,
+	input wire[`RegBus]           reg2_i,
+	input wire[`RegAddrBus]       wd_i,
+	input wire                    wreg_i,
 
 	
-	//从译码阶段传递的信息
-	input wire[`AluOpBus]         id_aluop,
-	input wire[`AluSelBus]        id_alusel,
-	input wire[`RegBus]           id_reg1,
-	input wire[`RegBus]           id_reg2,
-	input wire[`RegAddrBus]       id_wd,
-	input wire                    id_wreg,	
-	input wire[`RegBus]           id_link_address,
-	input wire                    id_is_in_delayslot,
-	input wire                    next_inst_in_delayslot_i,		
-	
-	
-	//传递到执行阶段的信息
-	output reg[`AluOpBus]         ex_aluop,
-	output reg[`AluSelBus]        ex_alusel,
-	output reg[`RegBus]           ex_reg1,
-	output reg[`RegBus]           ex_reg2,
-	output reg[`RegAddrBus]       ex_wd,
-	output reg                    ex_wreg
-	output reg[`RegBus]           ex_link_address,
-  output reg                    ex_is_in_delayslot,
-	output reg                    is_in_delayslot_o	
+	output reg[`RegAddrBus]       wd_o,
+	output reg                    wreg_o,
+	output reg[`RegBus]						wdata_o
 	
 );
 
-	always @ (posedge clk) begin
-		if (rst == `RstEnable) begin
-			ex_aluop <= `EXE_NOP_OP;
-			ex_alusel <= `EXE_RES_NOP;
-			ex_reg1 <= `ZeroWord;
-			ex_reg2 <= `ZeroWord;
-			ex_wd <= `NOPRegAddr;
-			ex_wreg <= `WriteDisable;
-			ex_link_address <= `ZeroWord;
-			ex_is_in_delayslot <= `NotInDelaySlot;
-	    is_in_delayslot_o <= `NotInDelaySlot;			
-			
-		end else begin		
-			ex_aluop <= id_aluop;
-			ex_alusel <= id_alusel;
-			ex_reg1 <= id_reg1;
-			ex_reg2 <= id_reg2;
-			ex_wd <= id_wd;
-			ex_wreg <= id_wreg;	
-			ex_link_address <= id_link_address;
-			ex_is_in_delayslot <= id_is_in_delayslot;
-	    is_in_delayslot_o <= next_inst_in_delayslot_i;				
-			
+	reg[`RegBus] logicout;
+	reg[`RegBus] shiftres;//?
+	reg[`RegBus] moveres;
+
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			logicout <= `ZeroWord;
+		end else begin
+			case (aluop_i)
+				`EXE_OR_OP:			begin
+					logicout <= reg1_i | reg2_i;
+				end
+				default:				begin
+					logicout <= `ZeroWord;
+				end
+			endcase
+		end    //if
+	end      //always
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			moveres <= `ZeroWord;
+		end else begin
+			moveres <= `ZeroWord;
+			case (aluop_i)
+				`EXE_MOVE_OP:		begin
+					moveres <= reg2_i;
+				end
+				default : begin
+				end
+			endcase
 		end
 	end
+
+
+
+ always @ (*) begin
+	 wd_o <= wd_i;	 	 	
+	 wreg_o <= wreg_i;
+	 case ( alusel_i ) 
+	 	`EXE_RES_LOGIC:		begin
+	 		wdata_o <= logicout;
+	 	end
+	 	`EXE_RES_MOVE:		begin
+	 		wdata_o <= moveres;
+	 	end	 	
+	 	default:					begin
+	 		wdata_o <= `ZeroWord;
+	 	end
+	 endcase
+ end	
 	
 endmodule
