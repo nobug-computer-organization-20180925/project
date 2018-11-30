@@ -9,6 +9,16 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run all
+Stopped at time : 1195 ns :  in File "C:/Users/d/Desktop/project/openmips_min_sopc_tb.v" Line 48 
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
 # run all
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
@@ -17,3 +27,9 @@ Stopped at time : 1195 ns :  in File "C:/Users/d/Desktop/project/openmips_min_so
 # run 1.00us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run all
+Stopped at time : 1195 ns :  in File "C:/Users/d/Desktop/project/openmips_min_sopc_tb.v" Line 48 
