@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -223,9 +223,10 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <inst_rom>.
     Related source file is "inst_rom.v".
-WARNING:Xst:647 - Input <addr<15:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <inst_mem<0:1>> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
-WARNING:Xst:1780 - Signal <inst_mem<2:65534>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <inst_mem> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+    Found 65535x16-bit ROM for signal <$COND_1>.
+    Summary:
+	inferred   1 ROM(s).
 Unit <inst_rom> synthesized.
 
 
@@ -335,6 +336,8 @@ Unit <openmips_min_sopc> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 65535x16-bit ROM                                      : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 23
@@ -363,6 +366,8 @@ WARNING:Xst:1290 - Hierarchical block <inst_rom0> is unconnected in block <openm
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 65535x16-bit ROM                                      : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 251
@@ -749,14 +754,14 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 
 
-Total REAL time to Xst completion: 148.00 secs
-Total CPU time to Xst completion: 148.47 secs
+Total REAL time to Xst completion: 994.00 secs
+Total CPU time to Xst completion: 993.34 secs
  
 --> 
 
-Total memory usage is 290068 kilobytes
+Total memory usage is 950420 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  278 (   0 filtered)
+Number of warnings :  276 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

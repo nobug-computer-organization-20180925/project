@@ -36,5 +36,5 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Compiled 14 Verilog Units
 Built simulation executable C:/Users/d/Desktop/project/openmips_min_sopc_tb_isim_beh.exe
-Fuse Memory Usage: 27712 KB
-Fuse CPU Usage: 452 ms
+Fuse Memory Usage: 27732 KB
+Fuse CPU Usage: 468 ms
