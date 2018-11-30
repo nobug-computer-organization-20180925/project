@@ -51,7 +51,7 @@ module id(
 	//�͵�regfile����Ϣ
 	output reg                    reg1_read_o,
 	output reg                    reg2_read_o,     
-	output reg[`RegAddrBus]       reg1_addr_o,
+	output reg[`RegAddrBus]       reg1_addr_o, // 寄存器地址。会通到regfile，regfile将该寄存器内容通过reg1_data_i输入。
 	output reg[`RegAddrBus]       reg2_addr_o, 	      
 	
 	//�͵�ִ�н׶ε���Ϣ
@@ -59,7 +59,7 @@ module id(
 	output reg[`AluSelBus]        alusel_o,
 	output reg[`RegBus]           reg1_o,
 	output reg[`RegBus]           reg2_o,
-	output reg[`RegAddrBus]       wd_o,
+	output reg[`RegAddrBus]       wd_o,	//写回寄存器名 默认第一个寄存器 inst 10：8
 	output reg                    wreg_o
 );
 
@@ -108,6 +108,16 @@ module id(
 					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 	
+			`EXE_MOVE: begin
+				aluop_o <= `EXE_MOVE_OP;
+				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;
+				instvalid <= `InstValid;
+				if(reg2_o == `ZeroWord) begin
+					wreg_o <= `WriteEnable;
+				end else begin
+					wreg_o <= `WriteDisable;
+				end		  							
+
 		    default:			begin
 		    end
 		  endcase		  //case op			
