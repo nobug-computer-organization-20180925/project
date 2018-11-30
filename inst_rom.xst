@@ -1,5 +1,5 @@
 set -tmpdir "C:/Users/d/Desktop/project/xst/projnav.tmp"
 set -xsthdpdir "C:/Users/d/Desktop/project/xst"
 elaborate
--ifn openmips_min_sopc.prj
+-ifn inst_rom.prj
 -ifmt mixed

@@ -1,0 +1,10 @@
+Command line:
+   openmips_min_sopc_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49249
+
+Fri Nov 30 13:35:32 2018
+
+
+ Elaboration Time: 0.078125 sec

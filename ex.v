@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  ex
 // File:    ex.v
-// Description: ִ�н׶�
+// Description: ִ�н׶�
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -34,7 +34,7 @@ module ex(
 
 	input wire rst,
 	
-	//�͵�ִ�н׶ε���Ϣ
+	//�͵�ִ�н׶ε���Ϣ
 	input wire[`AluOpBus]         aluop_i,
 	input wire[`AluSelBus]        alusel_i,
 	input wire[`RegBus]           reg1_i,
@@ -50,10 +50,6 @@ module ex(
 );
 
 	reg[`RegBus] logicout;
-	reg[`RegBus] shiftres; //?
-
-	reg[`RegBus] moveres;
-
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			logicout <= `ZeroWord;
@@ -69,22 +65,6 @@ module ex(
 		end    //if
 	end      //always
 
-	always @ (*) begin
-		if(rst == `RstEnable) begin
-	  	moveres <= `ZeroWord;
-	  end else begin
-	   moveres <= `ZeroWord;
-	   case (aluop_i)
-	   	`EXE_MOVE_OP:		begin
-	   		moveres <= reg1_i;
-	   	end
-	   	default : begin
-	   	end
-	   endcase
-	  end
-	end	 
-
-
 
  always @ (*) begin
 	 wd_o <= wd_i;	 	 	
@@ -92,10 +72,6 @@ module ex(
 	 case ( alusel_i ) 
 	 	`EXE_RES_LOGIC:		begin
 	 		wdata_o <= logicout;
-		`EXE_RES_MOVE:		begin
-	 		wdata_o <= moveres;
-	 	end	 	
-
 	 	end
 	 	default:					begin
 	 		wdata_o <= `ZeroWord;
