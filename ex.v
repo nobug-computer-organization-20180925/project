@@ -24,7 +24,6 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  ex
 // File:    ex.v
-// Description: ִ�н׶�
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -34,7 +33,6 @@ module ex(
 
 	input wire rst,
 	
-	//�͵�ִ�н׶ε���Ϣ
 	input wire[`AluOpBus]         aluop_i,
 	input wire[`AluSelBus]        alusel_i,
 	input wire[`RegBus]           reg1_i,
