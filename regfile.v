@@ -48,7 +48,9 @@ module regfile(
 	//¶Á¶Ë¿Ú2
 	input wire re2,
 	input wire[`RegAddrBus] raddr2,
-	output reg[`RegBus] rdata2
+	output reg[`RegBus] rdata2,
+	
+	output wire[`RegBus] register1
 	
 );
 
@@ -56,8 +58,10 @@ module regfile(
 	wire[`RegBus] readDataTemp1;
 	wire[`RegBus] readDataTemp2;
 	
+	
 	assign readDataTemp1 = regs[raddr1];
 	assign readDataTemp2 = regs[raddr2];
+	assign register1 = regs[1];
 
 	always @ (posedge clk) begin
 		if (rst == `RstDisable) begin

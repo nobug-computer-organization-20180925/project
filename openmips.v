@@ -38,7 +38,8 @@ module openmips(
  
 	input wire[`RegBus] rom_data_i,
 	output wire[`RegBus] rom_addr_o,
-	output wire rom_ce_o
+	output wire rom_ce_o,
+	output wire[`RegBus] register1
 	
 );
 
@@ -46,7 +47,7 @@ module openmips(
 	wire[`InstAddrBus] id_pc_i;
 	wire[`InstBus] id_inst_i;
 	
-	//��������׶�IDģ��������ID/EXģ�������
+	//��������׶�IDģ��������ID/EXģ�������
 	wire[`AluOpBus] id_aluop_o;
 	wire[`AluSelBus] id_alusel_o;
 	wire[`RegBus] id_reg1_o;
@@ -56,7 +57,7 @@ module openmips(
 	wire id_is_in_delayslot_o;
   wire[`RegBus] id_link_address_o;	
 	
-	//����ID/EXģ��������ִ�н׶�EXģ�������
+	//����ID/EXģ��������ִ�н׶�EXģ�������
 	wire[`AluOpBus] ex_aluop_i;
 	wire[`AluSelBus] ex_alusel_i;
 	wire[`RegBus] ex_reg1_i;
@@ -66,22 +67,22 @@ module openmips(
 	wire ex_is_in_delayslot_i;	
   wire[`RegBus] ex_link_address_i;	
 	
-	//����ִ�н׶�EXģ��������EX/MEMģ�������
+	//����ִ�н׶�EXģ��������EX/MEMģ�������
 	wire ex_wreg_o;
 	wire[`RegAddrBus] ex_wd_o;
 	wire[`RegBus] ex_wdata_o;
 
-	//����EX/MEMģ��������ô�׶�MEMģ�������
+	//����EX/MEMģ��������ô�׶�MEMģ�������
 	wire mem_wreg_i;
 	wire[`RegAddrBus] mem_wd_i;
 	wire[`RegBus] mem_wdata_i;
 
-	//���ӷô�׶�MEMģ��������MEM/WBģ�������
+	//���ӷô�׶�MEMģ��������MEM/WBģ�������
 	wire mem_wreg_o;
 	wire[`RegAddrBus] mem_wd_o;
 	wire[`RegBus] mem_wdata_o;
 	
-	//����MEM/WBģ���������д�׶ε�����	
+	//����MEM/WBģ���������д�׶ε�����
 	wire wb_wreg_i;
 	wire[`RegAddrBus] wb_wd_i;
 	wire[`RegBus] wb_wdata_i;
@@ -149,19 +150,19 @@ module openmips(
 		.reg1_addr_o(reg1_addr),
 		.reg2_addr_o(reg2_addr), 
 	  
-		//�͵�ID/EXģ�����Ϣ
+		//�͵�ID/EXģ������
 		.aluop_o(id_aluop_o),
 		.alusel_o(id_alusel_o),
 		.reg1_o(id_reg1_o),
 		.reg2_o(id_reg2_o),
 		.wd_o(id_wd_o),
-		.wreg_o(id_wreg_o)
+		.wreg_o(id_wreg_o),
 	 	.next_inst_in_delayslot_o(next_inst_in_delayslot_o),	
 		.branch_flag_o(id_branch_flag_o),
 		.branch_target_address_o(branch_target_address),       
 		.link_addr_o(id_link_address_o),
 		
-		.is_in_delayslot_o(id_is_in_delayslot_o),
+		.is_in_delayslot_o(id_is_in_delayslot_o)
 	);
 
   //ͨ�üĴ���Regfile����
@@ -176,7 +177,9 @@ module openmips(
 		.rdata1 (reg1_data),
 		.re2 (reg2_read),
 		.raddr2 (reg2_addr),
-		.rdata2 (reg2_data)
+		.rdata2 (reg2_data),
+		
+		.register1(register1)
 	);
 
 	//ID/EXģ��
@@ -195,13 +198,13 @@ module openmips(
 		.id_is_in_delayslot(id_is_in_delayslot_o),
 		.next_inst_in_delayslot_i(next_inst_in_delayslot_o),		
 	
-		//���ݵ�ִ�н׶�EXģ�����Ϣ
+		//���ݵ�ִ�н׶�EXģ������
 		.ex_aluop(ex_aluop_i),
 		.ex_alusel(ex_alusel_i),
 		.ex_reg1(ex_reg1_i),
 		.ex_reg2(ex_reg2_i),
 		.ex_wd(ex_wd_i),
-		.ex_wreg(ex_wreg_i)
+		.ex_wreg(ex_wreg_i),
 		.ex_link_address(ex_link_address_i),
   	.ex_is_in_delayslot(ex_is_in_delayslot_i),
 		.is_in_delayslot_o(is_in_delayslot_i)			
@@ -211,7 +214,7 @@ module openmips(
 	ex ex0(
 		.rst(rst),
 	
-		//�͵�ִ�н׶�EXģ�����Ϣ
+		//�͵�ִ�н׶�EXģ������
 		.aluop_i(ex_aluop_i),
 		.alusel_i(ex_alusel_i),
 		.reg1_i(ex_reg1_i),
@@ -233,13 +236,13 @@ module openmips(
 		.clk(clk),
 		.rst(rst),
 	  
-		//����ִ�н׶�EXģ�����Ϣ	
+		//����ִ�н׶�EXģ������
 		.ex_wd(ex_wd_o),
 		.ex_wreg(ex_wreg_o),
 		.ex_wdata(ex_wdata_o),
 	
 
-		//�͵��ô�׶�MEMģ�����Ϣ
+		//�͵��ô�׶�MEMģ������
 		.mem_wd(mem_wd_i),
 		.mem_wreg(mem_wreg_i),
 		.mem_wdata(mem_wdata_i)
@@ -251,12 +254,12 @@ module openmips(
 	mem mem0(
 		.rst(rst),
 	
-		//����EX/MEMģ�����Ϣ	
+		//����EX/MEMģ������
 		.wd_i(mem_wd_i),
 		.wreg_i(mem_wreg_i),
 		.wdata_i(mem_wdata_i),
 	  
-		//�͵�MEM/WBģ�����Ϣ
+		//�͵�MEM/WBģ������
 		.wd_o(mem_wd_o),
 		.wreg_o(mem_wreg_o),
 		.wdata_o(mem_wdata_o)
@@ -267,7 +270,7 @@ module openmips(
 		.clk(clk),
 		.rst(rst),
 
-		//���Էô�׶�MEMģ�����Ϣ	
+		//���Էô�׶�MEMģ������
 		.mem_wd(mem_wd_o),
 		.mem_wreg(mem_wreg_o),
 		.mem_wdata(mem_wdata_o),

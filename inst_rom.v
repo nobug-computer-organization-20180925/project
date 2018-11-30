@@ -45,9 +45,9 @@ module inst_rom(
 	initial begin
 	inst_mem[0]<=16'b11101_001_010_01101;
 	inst_mem[1]<=16'b11111_001_010_01101;
-	inst_mem[2]<=16'b01111_011_001_00000;
-	inst_mem[3]<=16'b0;
-	inst_mem[4]<=16'b0;
+	inst_mem[2]<=16'b01111_001_011_00000;
+	inst_mem[3]<=16'b00010_111_111_11110;
+	inst_mem[4]<=16'b01111_001_100_00000;
 	inst_mem[5]<=16'b0;
 	inst_mem[6]<=16'b0;
 	inst_mem[7]<=16'b0;
