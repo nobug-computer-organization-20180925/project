@@ -108,6 +108,16 @@ module id(
 					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 	
+			  	`EXE_MOVE: begin
+				aluop_o <= `EXE_MOVE_OP;
+				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;
+				instvalid <= `InstValid;
+				if(reg2_o == `ZeroWord) begin
+					wreg_o <= `WriteEnable;
+				end else begin
+					wreg_o <= `WriteDisable;
+				end		  							
+
 		    default:			begin
 		    end
 		  endcase		  //case op			

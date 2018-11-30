@@ -50,6 +50,9 @@ module ex(
 );
 
 	reg[`RegBus] logicout;
+	reg[`RegBus] shiftres;//?
+	reg[`RegBus] moveres;
+
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			logicout <= `ZeroWord;
@@ -64,6 +67,21 @@ module ex(
 			endcase
 		end    //if
 	end      //always
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			moveres <= `ZeroWord;
+		end else begin
+			moveres <= `ZeroWord;
+			case (aluop_i)
+				`EXE_MOVE_OP:		begin
+					moveres <= reg1_i;
+				end
+				default : begin
+				end
+			endcase
+		end
+	end
+
 
 
  always @ (*) begin
@@ -73,10 +91,13 @@ module ex(
 	 	`EXE_RES_LOGIC:		begin
 	 		wdata_o <= logicout;
 	 	end
+	 	`EXE_RES_MOVE:		begin
+	 		wdata_o <= moveres;
+	 	end	 	
 	 	default:					begin
 	 		wdata_o <= `ZeroWord;
 	 	end
 	 endcase
  end	
-
+	
 endmodule
