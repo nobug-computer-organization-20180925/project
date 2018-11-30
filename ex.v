@@ -74,7 +74,7 @@ module ex(
 			moveres <= `ZeroWord;
 			case (aluop_i)
 				`EXE_MOVE_OP:		begin
-					moveres <= reg1_i;
+					moveres <= reg2_i;
 				end
 				default : begin
 				end

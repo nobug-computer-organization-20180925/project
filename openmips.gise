@@ -25,7 +25,13 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="id.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="id.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="id.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="id_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="inst_rom.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="inst_rom.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="inst_rom.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="inst_rom_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -59,7 +65,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1543544201" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1543544201">
+    <transform xil_pn:end_ts="1543582799" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1543582799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -93,7 +99,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1543544201" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1543544201">
+    <transform xil_pn:end_ts="1543582799" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1543582799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -116,7 +122,7 @@
       <outfile xil_pn:name="pc_reg.v"/>
       <outfile xil_pn:name="regfile.v"/>
     </transform>
-    <transform xil_pn:end_ts="1543544228" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7747186324557256957" xil_pn:start_ts="1543544225">
+    <transform xil_pn:end_ts="1543582802" xil_pn:in_ck="1088402983700406098" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7747186324557256957" xil_pn:start_ts="1543582799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -131,7 +137,7 @@
       <outfile xil_pn:name="openmips_min_sopc_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1543556131" xil_pn:in_ck="-1978683915555648307" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1711686362016797664" xil_pn:start_ts="1543556131">
+    <transform xil_pn:end_ts="1543582802" xil_pn:in_ck="-1978683915555648307" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1711686362016797664" xil_pn:start_ts="1543582802">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -169,19 +175,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1543571757" xil_pn:in_ck="-4965137198362906441" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7418736377878581602" xil_pn:start_ts="1543571754">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1543589950" xil_pn:in_ck="-4965137198362906441" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7418736377878581602" xil_pn:start_ts="1543587636">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="openmips_min_sopc.lso"/>
       <outfile xil_pn:name="openmips_min_sopc.ngc"/>
       <outfile xil_pn:name="openmips_min_sopc.ngr"/>
       <outfile xil_pn:name="openmips_min_sopc.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc.stx"/>
       <outfile xil_pn:name="openmips_min_sopc.syr"/>
       <outfile xil_pn:name="openmips_min_sopc.xst"/>
       <outfile xil_pn:name="openmips_min_sopc_tb_beh.prj"/>

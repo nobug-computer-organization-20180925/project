@@ -112,12 +112,9 @@ module id(
 				aluop_o <= `EXE_MOVE_OP;
 				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;
 				instvalid <= `InstValid;
-				if(reg2_o == `ZeroWord) begin
-					wreg_o <= `WriteEnable;
-				end else begin
-					wreg_o <= `WriteDisable;
+				wreg_o <= `WriteEnable;
 				end
-			end
+		
 		    default:			begin
 		    end
 		  endcase		  //case op			
