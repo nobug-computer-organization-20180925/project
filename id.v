@@ -153,7 +153,6 @@ module id(
 			    next_inst_in_delayslot_o <= `InDelaySlot;		  	
 			    instvalid <= `InstValid;	
 				end
-				
 		
 		    default:			begin
 		    end

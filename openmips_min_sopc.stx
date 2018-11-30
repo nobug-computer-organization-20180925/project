@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/d/Desktop/project/xst/projnav.tmp
@@ -69,3 +70,5 @@ Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
+=======
+>>>>>>> 25ef6a2601fcabf798263a80619ae508ac40dc96
