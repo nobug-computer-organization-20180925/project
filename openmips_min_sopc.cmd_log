@@ -42,3 +42,8 @@ xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -
 xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -ofn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 openmips_min_sopc.ngc openmips_min_sopc.ngd  
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc openmips_min_sopc.ucf -p xc3s1200e-fg320-4 openmips_min_sopc.ngc openmips_min_sopc.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc openmips_min_sopc.ucf -p xc3s1200e-fg320-4 openmips_min_sopc.ngc openmips_min_sopc.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o openmips_min_sopc_map.ncd openmips_min_sopc.ngd openmips_min_sopc.pcf 
+par -w -intstyle ise -ol high -t 1 openmips_min_sopc_map.ncd openmips_min_sopc.ncd openmips_min_sopc.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o openmips_min_sopc.twr openmips_min_sopc.pcf -ucf openmips_min_sopc.ucf 
+bitgen -intstyle ise -f openmips_min_sopc.ut openmips_min_sopc.ncd 
