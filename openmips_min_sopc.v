@@ -65,7 +65,8 @@ module openmips_min_sopc(
 	inst_rom inst_rom0(
 		.addr(inst_addr),
 		.inst(inst),
-		.ce(rom_ce)	
+		.ce(rom_ce),
+		.rst(rst)
 	);
 
 

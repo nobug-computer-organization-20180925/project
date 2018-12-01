@@ -35,6 +35,7 @@ module inst_rom(
 //	input	wire	clk,
 	input wire  ce,
 	input wire[`InstAddrBus]	addr,
+	input wire rst,
 	output reg[`InstBus]			inst
 	
 );
@@ -42,7 +43,7 @@ module inst_rom(
 	reg[`InstBus]  inst_mem[0:`InstMemNum-1];
 	wire[`InstBus] instDataTemp;
 
-	initial begin
+	always @(negedge rst) begin
 	inst_mem[0]<=16'b11101_001_010_01101;
 	inst_mem[1]<=16'b11111_001_010_01101;
 	inst_mem[2]<=16'b01111_001_011_00000;

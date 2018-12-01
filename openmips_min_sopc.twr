@@ -38,18 +38,56 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Sat Dec 01 19:15:18 2018 
+Setup/Hold to clock clk
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+rst         |    8.434(R)|   -0.314(R)|clk_BUFGP         |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+-------------+------------+------------------+--------+
+             | clk (edge) |                  | Clock  |
+Destination  |   to PAD   |Internal Clock(s) | Phase  |
+-------------+------------+------------------+--------+
+register1<0> |    8.700(R)|clk_BUFGP         |   0.000|
+register1<1> |    9.077(R)|clk_BUFGP         |   0.000|
+register1<2> |    8.920(R)|clk_BUFGP         |   0.000|
+register1<3> |    9.010(R)|clk_BUFGP         |   0.000|
+register1<4> |    8.779(R)|clk_BUFGP         |   0.000|
+register1<5> |    8.802(R)|clk_BUFGP         |   0.000|
+register1<6> |    8.880(R)|clk_BUFGP         |   0.000|
+register1<7> |    8.584(R)|clk_BUFGP         |   0.000|
+register1<8> |    9.212(R)|clk_BUFGP         |   0.000|
+register1<9> |    8.705(R)|clk_BUFGP         |   0.000|
+register1<10>|    8.893(R)|clk_BUFGP         |   0.000|
+register1<11>|    9.181(R)|clk_BUFGP         |   0.000|
+register1<12>|    8.893(R)|clk_BUFGP         |   0.000|
+register1<13>|    8.867(R)|clk_BUFGP         |   0.000|
+register1<14>|   10.096(R)|clk_BUFGP         |   0.000|
+register1<15>|    8.842(R)|clk_BUFGP         |   0.000|
+-------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.448|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Sat Dec 01 19:59:58 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 178 MB
+Peak Memory Usage: 195 MB
 
 
 
