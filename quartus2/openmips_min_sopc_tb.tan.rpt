@@ -1,0 +1,720 @@
+Classic Timing Analyzer report for openmips_min_sopc_tb
+Sat Dec 01 01:44:06 2018
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                           ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------+------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                            ; To                                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------+------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 7.152 ns                         ; rst                                             ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]     ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 5.614 ns                         ; openmips:openmips0|regfile:regfile1|regs[1][15] ; register1[15]                                  ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.754 ns                        ; rst                                             ; openmips:openmips0|regfile:regfile1|regs[7][6] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 116.04 MHz ( period = 8.618 ns ) ; openmips:openmips0|if_id:if_id0|id_inst[11]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]     ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                 ;                                                ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------+------------------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM570T100C3       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                           ; To                                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 116.04 MHz ( period = 8.618 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]  ; clk        ; clk      ; None                        ; None                      ; 8.175 ns                ;
+; N/A                                     ; 121.65 MHz ( period = 8.220 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]  ; clk        ; clk      ; None                        ; None                      ; 7.777 ns                ;
+; N/A                                     ; 122.80 MHz ( period = 8.143 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.700 ns                ;
+; N/A                                     ; 123.69 MHz ( period = 8.085 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]  ; clk        ; clk      ; None                        ; None                      ; 7.642 ns                ;
+; N/A                                     ; 123.75 MHz ( period = 8.081 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[6]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.638 ns                ;
+; N/A                                     ; 124.12 MHz ( period = 8.057 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.614 ns                ;
+; N/A                                     ; 124.88 MHz ( period = 8.008 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.565 ns                ;
+; N/A                                     ; 125.72 MHz ( period = 7.954 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.511 ns                ;
+; N/A                                     ; 126.01 MHz ( period = 7.936 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.493 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.467 ns                ;
+; N/A                                     ; 126.58 MHz ( period = 7.900 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.457 ns                ;
+; N/A                                     ; 127.16 MHz ( period = 7.864 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.421 ns                ;
+; N/A                                     ; 127.39 MHz ( period = 7.850 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.407 ns                ;
+; N/A                                     ; 127.45 MHz ( period = 7.846 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.403 ns                ;
+; N/A                                     ; 127.60 MHz ( period = 7.837 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.394 ns                ;
+; N/A                                     ; 127.65 MHz ( period = 7.834 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.391 ns                ;
+; N/A                                     ; 127.68 MHz ( period = 7.832 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]  ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 127.81 MHz ( period = 7.824 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.381 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.357 ns                ;
+; N/A                                     ; 128.30 MHz ( period = 7.794 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 7.351 ns                ;
+; N/A                                     ; 128.47 MHz ( period = 7.784 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.341 ns                ;
+; N/A                                     ; 128.50 MHz ( period = 7.782 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 7.339 ns                ;
+; N/A                                     ; 128.50 MHz ( period = 7.782 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 7.339 ns                ;
+; N/A                                     ; 128.92 MHz ( period = 7.757 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.314 ns                ;
+; N/A                                     ; 129.08 MHz ( period = 7.747 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.304 ns                ;
+; N/A                                     ; 129.23 MHz ( period = 7.738 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.295 ns                ;
+; N/A                                     ; 129.38 MHz ( period = 7.729 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 7.286 ns                ;
+; N/A                                     ; 129.38 MHz ( period = 7.729 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.286 ns                ;
+; N/A                                     ; 129.43 MHz ( period = 7.726 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.283 ns                ;
+; N/A                                     ; 129.52 MHz ( period = 7.721 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.278 ns                ;
+; N/A                                     ; 129.53 MHz ( period = 7.720 ns )                    ; openmips:openmips0|regfile:regfile1|regs[1][0] ; openmips:openmips0|id_ex:id_ex0|ex_reg2[0]  ; clk        ; clk      ; None                        ; None                      ; 7.277 ns                ;
+; N/A                                     ; 129.65 MHz ( period = 7.713 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 7.270 ns                ;
+; N/A                                     ; 129.65 MHz ( period = 7.713 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 7.270 ns                ;
+; N/A                                     ; 129.70 MHz ( period = 7.710 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.267 ns                ;
+; N/A                                     ; 129.84 MHz ( period = 7.702 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.259 ns                ;
+; N/A                                     ; 129.84 MHz ( period = 7.702 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.259 ns                ;
+; N/A                                     ; 129.89 MHz ( period = 7.699 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 130.28 MHz ( period = 7.676 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.233 ns                ;
+; N/A                                     ; 130.29 MHz ( period = 7.675 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.232 ns                ;
+; N/A                                     ; 130.34 MHz ( period = 7.672 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.229 ns                ;
+; N/A                                     ; 130.36 MHz ( period = 7.671 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 7.228 ns                ;
+; N/A                                     ; 130.36 MHz ( period = 7.671 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.228 ns                ;
+; N/A                                     ; 130.46 MHz ( period = 7.665 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.222 ns                ;
+; N/A                                     ; 130.63 MHz ( period = 7.655 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.212 ns                ;
+; N/A                                     ; 130.65 MHz ( period = 7.654 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 7.211 ns                ;
+; N/A                                     ; 130.89 MHz ( period = 7.640 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.197 ns                ;
+; N/A                                     ; 130.92 MHz ( period = 7.638 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.195 ns                ;
+; N/A                                     ; 131.22 MHz ( period = 7.621 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.178 ns                ;
+; N/A                                     ; 131.35 MHz ( period = 7.613 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.170 ns                ;
+; N/A                                     ; 131.35 MHz ( period = 7.613 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.170 ns                ;
+; N/A                                     ; 131.41 MHz ( period = 7.610 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10] ; clk        ; clk      ; None                        ; None                      ; 7.167 ns                ;
+; N/A                                     ; 131.41 MHz ( period = 7.610 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.167 ns                ;
+; N/A                                     ; 131.42 MHz ( period = 7.609 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 7.166 ns                ;
+; N/A                                     ; 131.54 MHz ( period = 7.602 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.159 ns                ;
+; N/A                                     ; 131.75 MHz ( period = 7.590 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 7.147 ns                ;
+; N/A                                     ; 131.80 MHz ( period = 7.587 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 7.144 ns                ;
+; N/A                                     ; 131.84 MHz ( period = 7.585 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.142 ns                ;
+; N/A                                     ; 132.00 MHz ( period = 7.576 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 132.01 MHz ( period = 7.575 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 7.132 ns                ;
+; N/A                                     ; 132.01 MHz ( period = 7.575 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 7.132 ns                ;
+; N/A                                     ; 132.05 MHz ( period = 7.573 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 7.130 ns                ;
+; N/A                                     ; 132.14 MHz ( period = 7.568 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.125 ns                ;
+; N/A                                     ; 132.17 MHz ( period = 7.566 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.123 ns                ;
+; N/A                                     ; 132.21 MHz ( period = 7.564 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.121 ns                ;
+; N/A                                     ; 132.31 MHz ( period = 7.558 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.115 ns                ;
+; N/A                                     ; 132.33 MHz ( period = 7.557 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.114 ns                ;
+; N/A                                     ; 132.36 MHz ( period = 7.555 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 7.112 ns                ;
+; N/A                                     ; 132.36 MHz ( period = 7.555 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.112 ns                ;
+; N/A                                     ; 132.50 MHz ( period = 7.547 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.104 ns                ;
+; N/A                                     ; 132.64 MHz ( period = 7.539 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.096 ns                ;
+; N/A                                     ; 132.70 MHz ( period = 7.536 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.093 ns                ;
+; N/A                                     ; 132.78 MHz ( period = 7.531 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 7.088 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 7.084 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 7.084 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 7.084 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 7.084 ns                ;
+; N/A                                     ; 132.94 MHz ( period = 7.522 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 7.079 ns                ;
+; N/A                                     ; 132.96 MHz ( period = 7.521 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.078 ns                ;
+; N/A                                     ; 132.96 MHz ( period = 7.521 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.078 ns                ;
+; N/A                                     ; 133.10 MHz ( period = 7.513 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.070 ns                ;
+; N/A                                     ; 133.14 MHz ( period = 7.511 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.068 ns                ;
+; N/A                                     ; 133.16 MHz ( period = 7.510 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 7.067 ns                ;
+; N/A                                     ; 133.17 MHz ( period = 7.509 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 7.066 ns                ;
+; N/A                                     ; 133.23 MHz ( period = 7.506 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 7.063 ns                ;
+; N/A                                     ; 133.23 MHz ( period = 7.506 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 7.063 ns                ;
+; N/A                                     ; 133.30 MHz ( period = 7.502 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.059 ns                ;
+; N/A                                     ; 133.30 MHz ( period = 7.502 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 7.059 ns                ;
+; N/A                                     ; 133.44 MHz ( period = 7.494 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.051 ns                ;
+; N/A                                     ; 133.49 MHz ( period = 7.491 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.048 ns                ;
+; N/A                                     ; 133.62 MHz ( period = 7.484 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.041 ns                ;
+; N/A                                     ; 133.67 MHz ( period = 7.481 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.038 ns                ;
+; N/A                                     ; 133.96 MHz ( period = 7.465 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 7.022 ns                ;
+; N/A                                     ; 134.10 MHz ( period = 7.457 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 7.014 ns                ;
+; N/A                                     ; 134.26 MHz ( period = 7.448 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12] ; clk        ; clk      ; None                        ; None                      ; 7.005 ns                ;
+; N/A                                     ; 134.28 MHz ( period = 7.447 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 134.28 MHz ( period = 7.447 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 134.28 MHz ( period = 7.447 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 134.28 MHz ( period = 7.447 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 134.63 MHz ( period = 7.428 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 6.985 ns                ;
+; N/A                                     ; 134.63 MHz ( period = 7.428 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 6.985 ns                ;
+; N/A                                     ; 134.75 MHz ( period = 7.421 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 6.978 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.976 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.976 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.976 ns                ;
+; N/A                                     ; 134.84 MHz ( period = 7.416 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 6.973 ns                ;
+; N/A                                     ; 134.84 MHz ( period = 7.416 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 6.973 ns                ;
+; N/A                                     ; 134.95 MHz ( period = 7.410 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.967 ns                ;
+; N/A                                     ; 135.15 MHz ( period = 7.399 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.956 ns                ;
+; N/A                                     ; 135.15 MHz ( period = 7.399 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.956 ns                ;
+; N/A                                     ; 135.15 MHz ( period = 7.399 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12] ; clk        ; clk      ; None                        ; None                      ; 6.956 ns                ;
+; N/A                                     ; 135.28 MHz ( period = 7.392 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 6.949 ns                ;
+; N/A                                     ; 135.30 MHz ( period = 7.391 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[6]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 6.948 ns                ;
+; N/A                                     ; 135.45 MHz ( period = 7.383 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 6.940 ns                ;
+; N/A                                     ; 135.45 MHz ( period = 7.383 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 6.940 ns                ;
+; N/A                                     ; 135.63 MHz ( period = 7.373 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 6.930 ns                ;
+; N/A                                     ; 135.63 MHz ( period = 7.373 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15] ; clk        ; clk      ; None                        ; None                      ; 6.930 ns                ;
+; N/A                                     ; 135.70 MHz ( period = 7.369 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 6.926 ns                ;
+; N/A                                     ; 135.78 MHz ( period = 7.365 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 6.922 ns                ;
+; N/A                                     ; 135.81 MHz ( period = 7.363 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 6.920 ns                ;
+; N/A                                     ; 135.92 MHz ( period = 7.357 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 6.914 ns                ;
+; N/A                                     ; 135.92 MHz ( period = 7.357 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 6.914 ns                ;
+; N/A                                     ; 135.92 MHz ( period = 7.357 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 6.914 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.913 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.913 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.913 ns                ;
+; N/A                                     ; 135.96 MHz ( period = 7.355 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]  ; clk        ; clk      ; None                        ; None                      ; 6.912 ns                ;
+; N/A                                     ; 136.00 MHz ( period = 7.353 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.910 ns                ;
+; N/A                                     ; 136.00 MHz ( period = 7.353 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.910 ns                ;
+; N/A                                     ; 136.00 MHz ( period = 7.353 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.910 ns                ;
+; N/A                                     ; 136.05 MHz ( period = 7.350 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 6.907 ns                ;
+; N/A                                     ; 136.11 MHz ( period = 7.347 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 6.904 ns                ;
+; N/A                                     ; 136.11 MHz ( period = 7.347 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 6.904 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 6.895 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 6.895 ns                ;
+; N/A                                     ; 136.46 MHz ( period = 7.328 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]  ; clk        ; clk      ; None                        ; None                      ; 6.885 ns                ;
+; N/A                                     ; 136.48 MHz ( period = 7.327 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[6]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.884 ns                ;
+; N/A                                     ; 136.54 MHz ( period = 7.324 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.881 ns                ;
+; N/A                                     ; 136.61 MHz ( period = 7.320 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 6.877 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.876 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.876 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.876 ns                ;
+; N/A                                     ; 136.65 MHz ( period = 7.318 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11] ; clk        ; clk      ; None                        ; None                      ; 6.875 ns                ;
+; N/A                                     ; 136.84 MHz ( period = 7.308 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wd[0]       ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.865 ns                ;
+; N/A                                     ; 136.84 MHz ( period = 7.308 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wd[0]       ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.865 ns                ;
+; N/A                                     ; 136.84 MHz ( period = 7.308 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wd[0]       ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.865 ns                ;
+; N/A                                     ; 136.91 MHz ( period = 7.304 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 6.861 ns                ;
+; N/A                                     ; 136.95 MHz ( period = 7.302 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.859 ns                ;
+; N/A                                     ; 137.02 MHz ( period = 7.298 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.855 ns                ;
+; N/A                                     ; 137.10 MHz ( period = 7.294 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 6.851 ns                ;
+; N/A                                     ; 137.17 MHz ( period = 7.290 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 6.847 ns                ;
+; N/A                                     ; 137.21 MHz ( period = 7.288 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 6.845 ns                ;
+; N/A                                     ; 137.21 MHz ( period = 7.288 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 6.845 ns                ;
+; N/A                                     ; 137.27 MHz ( period = 7.285 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 6.842 ns                ;
+; N/A                                     ; 137.57 MHz ( period = 7.269 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 6.826 ns                ;
+; N/A                                     ; 137.57 MHz ( period = 7.269 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 6.826 ns                ;
+; N/A                                     ; 137.59 MHz ( period = 7.268 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 6.825 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.823 ns                ;
+; N/A                                     ; 137.84 MHz ( period = 7.255 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 6.812 ns                ;
+; N/A                                     ; 138.03 MHz ( period = 7.245 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.802 ns                ;
+; N/A                                     ; 138.03 MHz ( period = 7.245 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.802 ns                ;
+; N/A                                     ; 138.03 MHz ( period = 7.245 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.802 ns                ;
+; N/A                                     ; 138.10 MHz ( period = 7.241 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12] ; clk        ; clk      ; None                        ; None                      ; 6.798 ns                ;
+; N/A                                     ; 138.14 MHz ( period = 7.239 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.796 ns                ;
+; N/A                                     ; 138.20 MHz ( period = 7.236 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.793 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]  ; clk        ; clk      ; None                        ; None                      ; 6.773 ns                ;
+; N/A                                     ; 138.60 MHz ( period = 7.215 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[5]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12] ; clk        ; clk      ; None                        ; None                      ; 6.772 ns                ;
+; N/A                                     ; 138.64 MHz ( period = 7.213 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 6.770 ns                ;
+; N/A                                     ; 138.70 MHz ( period = 7.210 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13] ; clk        ; clk      ; None                        ; None                      ; 6.767 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13] ; clk        ; clk      ; None                        ; None                      ; 6.763 ns                ;
+; N/A                                     ; 138.81 MHz ( period = 7.204 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]  ; clk        ; clk      ; None                        ; None                      ; 6.761 ns                ;
+; N/A                                     ; 138.81 MHz ( period = 7.204 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]  ; clk        ; clk      ; None                        ; None                      ; 6.761 ns                ;
+; N/A                                     ; 138.81 MHz ( period = 7.204 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 6.761 ns                ;
+; N/A                                     ; 138.85 MHz ( period = 7.202 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[11]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.759 ns                ;
+; N/A                                     ; 138.85 MHz ( period = 7.202 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[6]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11] ; clk        ; clk      ; None                        ; None                      ; 6.759 ns                ;
+; N/A                                     ; 138.87 MHz ( period = 7.201 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.758 ns                ;
+; N/A                                     ; 139.08 MHz ( period = 7.190 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.747 ns                ;
+; N/A                                     ; 139.08 MHz ( period = 7.190 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.747 ns                ;
+; N/A                                     ; 139.08 MHz ( period = 7.190 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.747 ns                ;
+; N/A                                     ; 139.41 MHz ( period = 7.173 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[9]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[1]  ; clk        ; clk      ; None                        ; None                      ; 6.730 ns                ;
+; N/A                                     ; 139.65 MHz ( period = 7.161 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.718 ns                ;
+; N/A                                     ; 139.84 MHz ( period = 7.151 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]  ; clk        ; clk      ; None                        ; None                      ; 6.708 ns                ;
+; N/A                                     ; 139.88 MHz ( period = 7.149 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[7]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 6.706 ns                ;
+; N/A                                     ; 139.94 MHz ( period = 7.146 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14] ; clk        ; clk      ; None                        ; None                      ; 6.703 ns                ;
+; N/A                                     ; 139.96 MHz ( period = 7.145 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.702 ns                ;
+; N/A                                     ; 139.98 MHz ( period = 7.144 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14] ; clk        ; clk      ; None                        ; None                      ; 6.701 ns                ;
+; N/A                                     ; 140.04 MHz ( period = 7.141 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 6.698 ns                ;
+; N/A                                     ; 140.11 MHz ( period = 7.137 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[1]  ; clk        ; clk      ; None                        ; None                      ; 6.694 ns                ;
+; N/A                                     ; 140.15 MHz ( period = 7.135 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]  ; clk        ; clk      ; None                        ; None                      ; 6.692 ns                ;
+; N/A                                     ; 140.15 MHz ( period = 7.135 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg      ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]  ; clk        ; clk      ; None                        ; None                      ; 6.692 ns                ;
+; N/A                                     ; 140.29 MHz ( period = 7.128 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]  ; clk        ; clk      ; None                        ; None                      ; 6.685 ns                ;
+; N/A                                     ; 140.29 MHz ( period = 7.128 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[8]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10] ; clk        ; clk      ; None                        ; None                      ; 6.685 ns                ;
+; N/A                                     ; 140.47 MHz ( period = 7.119 ns )                    ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15] ; clk        ; clk      ; None                        ; None                      ; 6.676 ns                ;
+; N/A                                     ; 140.49 MHz ( period = 7.118 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[6]     ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12] ; clk        ; clk      ; None                        ; None                      ; 6.675 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[12]    ; openmips:openmips0|id_ex:id_ex0|ex_reg1[5]  ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 141.06 MHz ( period = 7.089 ns )                    ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]     ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12] ; clk        ; clk      ; None                        ; None                      ; 6.646 ns                ;
+; N/A                                     ; 141.10 MHz ( period = 7.087 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]  ; clk        ; clk      ; None                        ; None                      ; 6.644 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; openmips:openmips0|if_id:if_id0|id_inst[15]    ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]  ; clk        ; clk      ; None                        ; None                      ; 6.640 ns                ;
+; N/A                                     ; 141.24 MHz ( period = 7.080 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wreg        ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]  ; clk        ; clk      ; None                        ; None                      ; 6.637 ns                ;
+; N/A                                     ; 141.24 MHz ( period = 7.080 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wreg        ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]  ; clk        ; clk      ; None                        ; None                      ; 6.637 ns                ;
+; N/A                                     ; 141.24 MHz ( period = 7.080 ns )                    ; openmips:openmips0|id_ex:id_ex0|ex_wreg        ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]  ; clk        ; clk      ; None                        ; None                      ; 6.637 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                ;                                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                   ;
++-------+--------------+------------+------+-------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                                              ; To Clock ;
++-------+--------------+------------+------+-------------------------------------------------+----------+
+; N/A   ; None         ; 7.152 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]      ; clk      ;
+; N/A   ; None         ; 7.146 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15]     ; clk      ;
+; N/A   ; None         ; 7.060 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10]     ; clk      ;
+; N/A   ; None         ; 6.957 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11]     ; clk      ;
+; N/A   ; None         ; 6.702 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[0]      ; clk      ;
+; N/A   ; None         ; 6.668 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]      ; clk      ;
+; N/A   ; None         ; 6.657 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13]     ; clk      ;
+; N/A   ; None         ; 6.605 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]      ; clk      ;
+; N/A   ; None         ; 6.593 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]      ; clk      ;
+; N/A   ; None         ; 6.593 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]      ; clk      ;
+; N/A   ; None         ; 6.593 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14]     ; clk      ;
+; N/A   ; None         ; 6.540 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]      ; clk      ;
+; N/A   ; None         ; 6.534 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]      ; clk      ;
+; N/A   ; None         ; 6.530 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]      ; clk      ;
+; N/A   ; None         ; 6.524 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]      ; clk      ;
+; N/A   ; None         ; 6.524 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]      ; clk      ;
+; N/A   ; None         ; 6.506 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13]     ; clk      ;
+; N/A   ; None         ; 6.451 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12]     ; clk      ;
+; N/A   ; None         ; 6.444 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14]     ; clk      ;
+; N/A   ; None         ; 6.405 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]      ; clk      ;
+; N/A   ; None         ; 6.389 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12]     ; clk      ;
+; N/A   ; None         ; 6.370 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15]     ; clk      ;
+; N/A   ; None         ; 6.351 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]      ; clk      ;
+; N/A   ; None         ; 6.325 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]      ; clk      ;
+; N/A   ; None         ; 6.315 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11]     ; clk      ;
+; N/A   ; None         ; 6.195 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]      ; clk      ;
+; N/A   ; None         ; 6.195 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]      ; clk      ;
+; N/A   ; None         ; 6.070 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10]     ; clk      ;
+; N/A   ; None         ; 6.030 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[10] ; clk      ;
+; N/A   ; None         ; 5.969 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[1]      ; clk      ;
+; N/A   ; None         ; 5.863 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[7]      ; clk      ;
+; N/A   ; None         ; 5.808 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[5]      ; clk      ;
+; N/A   ; None         ; 5.508 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[0]      ; clk      ;
+; N/A   ; None         ; 5.183 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[11] ; clk      ;
+; N/A   ; None         ; 5.076 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[13] ; clk      ;
+; N/A   ; None         ; 5.001 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][0]  ; clk      ;
+; N/A   ; None         ; 5.000 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][0]  ; clk      ;
+; N/A   ; None         ; 5.000 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][9]  ; clk      ;
+; N/A   ; None         ; 4.710 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[15]     ; clk      ;
+; N/A   ; None         ; 4.619 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][5]  ; clk      ;
+; N/A   ; None         ; 4.585 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[15] ; clk      ;
+; N/A   ; None         ; 4.542 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][4]  ; clk      ;
+; N/A   ; None         ; 4.542 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][6]  ; clk      ;
+; N/A   ; None         ; 4.542 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][7]  ; clk      ;
+; N/A   ; None         ; 4.542 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][10] ; clk      ;
+; N/A   ; None         ; 4.542 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][13] ; clk      ;
+; N/A   ; None         ; 4.306 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[5]      ; clk      ;
+; N/A   ; None         ; 4.257 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[2]  ; clk      ;
+; N/A   ; None         ; 4.194 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][1]  ; clk      ;
+; N/A   ; None         ; 4.194 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][2]  ; clk      ;
+; N/A   ; None         ; 4.194 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][8]  ; clk      ;
+; N/A   ; None         ; 4.194 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][11] ; clk      ;
+; N/A   ; None         ; 4.182 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][15] ; clk      ;
+; N/A   ; None         ; 4.140 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[6]      ; clk      ;
+; N/A   ; None         ; 4.117 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[9]  ; clk      ;
+; N/A   ; None         ; 4.084 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][8]  ; clk      ;
+; N/A   ; None         ; 4.056 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[4]  ; clk      ;
+; N/A   ; None         ; 4.050 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[5]  ; clk      ;
+; N/A   ; None         ; 4.041 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[3]  ; clk      ;
+; N/A   ; None         ; 4.004 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[8]  ; clk      ;
+; N/A   ; None         ; 3.972 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[12] ; clk      ;
+; N/A   ; None         ; 3.953 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][12] ; clk      ;
+; N/A   ; None         ; 3.950 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][12] ; clk      ;
+; N/A   ; None         ; 3.919 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[7]  ; clk      ;
+; N/A   ; None         ; 3.884 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[6]  ; clk      ;
+; N/A   ; None         ; 3.851 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[14] ; clk      ;
+; N/A   ; None         ; 3.819 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[0]         ; clk      ;
+; N/A   ; None         ; 3.809 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[9]   ; clk      ;
+; N/A   ; None         ; 3.798 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][11] ; clk      ;
+; N/A   ; None         ; 3.798 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][13] ; clk      ;
+; N/A   ; None         ; 3.798 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][6]  ; clk      ;
+; N/A   ; None         ; 3.798 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][7]  ; clk      ;
+; N/A   ; None         ; 3.797 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[1]  ; clk      ;
+; N/A   ; None         ; 3.771 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][4]  ; clk      ;
+; N/A   ; None         ; 3.771 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][6]  ; clk      ;
+; N/A   ; None         ; 3.771 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][7]  ; clk      ;
+; N/A   ; None         ; 3.771 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][11] ; clk      ;
+; N/A   ; None         ; 3.771 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][13] ; clk      ;
+; N/A   ; None         ; 3.765 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[6]         ; clk      ;
+; N/A   ; None         ; 3.764 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[4]         ; clk      ;
+; N/A   ; None         ; 3.755 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][2]  ; clk      ;
+; N/A   ; None         ; 3.755 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][12] ; clk      ;
+; N/A   ; None         ; 3.755 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][14] ; clk      ;
+; N/A   ; None         ; 3.723 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][8]  ; clk      ;
+; N/A   ; None         ; 3.699 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][0]  ; clk      ;
+; N/A   ; None         ; 3.699 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][9]  ; clk      ;
+; N/A   ; None         ; 3.691 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[5]         ; clk      ;
+; N/A   ; None         ; 3.689 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[1]         ; clk      ;
+; N/A   ; None         ; 3.687 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_alusel[2]    ; clk      ;
+; N/A   ; None         ; 3.605 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[2]         ; clk      ;
+; N/A   ; None         ; 3.603 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[3]         ; clk      ;
+; N/A   ; None         ; 3.572 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][15] ; clk      ;
+; N/A   ; None         ; 3.563 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[8]   ; clk      ;
+; N/A   ; None         ; 3.469 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[0]  ; clk      ;
+; N/A   ; None         ; 3.463 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][2]  ; clk      ;
+; N/A   ; None         ; 3.325 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][14] ; clk      ;
+; N/A   ; None         ; 3.300 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[9]      ; clk      ;
+; N/A   ; None         ; 3.284 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[12]     ; clk      ;
+; N/A   ; None         ; 3.279 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[11]     ; clk      ;
+; N/A   ; None         ; 3.208 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][15] ; clk      ;
+; N/A   ; None         ; 3.153 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][9]  ; clk      ;
+; N/A   ; None         ; 3.143 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[13]  ; clk      ;
+; N/A   ; None         ; 3.059 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[8]      ; clk      ;
+; N/A   ; None         ; 3.050 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][3]  ; clk      ;
+; N/A   ; None         ; 3.050 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][14] ; clk      ;
+; N/A   ; None         ; 3.022 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][4]  ; clk      ;
+; N/A   ; None         ; 2.950 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][1]  ; clk      ;
+; N/A   ; None         ; 2.950 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][3]  ; clk      ;
+; N/A   ; None         ; 2.950 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][5]  ; clk      ;
+; N/A   ; None         ; 2.923 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[7]      ; clk      ;
+; N/A   ; None         ; 2.784 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][1]  ; clk      ;
+; N/A   ; None         ; 2.784 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][3]  ; clk      ;
+; N/A   ; None         ; 2.784 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][5]  ; clk      ;
+; N/A   ; None         ; 2.729 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wreg         ; clk      ;
+; N/A   ; None         ; 2.691 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[2]      ; clk      ;
+; N/A   ; None         ; 2.589 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[10]  ; clk      ;
+; N/A   ; None         ; 2.472 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_aluop[0]     ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[11]  ; clk      ;
+; N/A   ; None         ; 2.293 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][10] ; clk      ;
+; N/A   ; None         ; 2.220 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_alusel[1]    ; clk      ;
+; N/A   ; None         ; 2.220 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_aluop[5]     ; clk      ;
+; N/A   ; None         ; 2.175 ns   ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][10] ; clk      ;
+; N/A   ; None         ; 2.081 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[15]  ; clk      ;
+; N/A   ; None         ; 2.054 ns   ; rst  ; openmips:openmips0|if_id:if_id0|id_pc[0]        ; clk      ;
+; N/A   ; None         ; 2.044 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[6]   ; clk      ;
+; N/A   ; None         ; 2.012 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[12]  ; clk      ;
+; N/A   ; None         ; 1.963 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[5]   ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wd[0]        ; clk      ;
+; N/A   ; None         ; 1.828 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[4]   ; clk      ;
+; N/A   ; None         ; 1.694 ns   ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wd[2]        ; clk      ;
+; N/A   ; None         ; 1.693 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[2]      ; clk      ;
+; N/A   ; None         ; 1.659 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[14]  ; clk      ;
+; N/A   ; None         ; 1.641 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]     ; clk      ;
+; N/A   ; None         ; 1.638 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]     ; clk      ;
+; N/A   ; None         ; 1.638 ns   ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg      ; clk      ;
+; N/A   ; None         ; 1.615 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[2]   ; clk      ;
+; N/A   ; None         ; 1.607 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg       ; clk      ;
+; N/A   ; None         ; 1.497 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]      ; clk      ;
+; N/A   ; None         ; 1.327 ns   ; rst  ; openmips:openmips0|pc_reg:pc_reg0|ce            ; clk      ;
+; N/A   ; None         ; 1.315 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[3]   ; clk      ;
+; N/A   ; None         ; 1.262 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[0]   ; clk      ;
+; N/A   ; None         ; 1.261 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[1]   ; clk      ;
+; N/A   ; None         ; 1.211 ns   ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[7]   ; clk      ;
++-------+--------------+------------+------+-------------------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                              ;
++-------+--------------+------------+-------------------------------------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                            ; To            ; From Clock ;
++-------+--------------+------------+-------------------------------------------------+---------------+------------+
+; N/A   ; None         ; 5.614 ns   ; openmips:openmips0|regfile:regfile1|regs[1][15] ; register1[15] ; clk        ;
+; N/A   ; None         ; 5.611 ns   ; openmips:openmips0|regfile:regfile1|regs[1][3]  ; register1[3]  ; clk        ;
+; N/A   ; None         ; 5.573 ns   ; openmips:openmips0|regfile:regfile1|regs[1][13] ; register1[13] ; clk        ;
+; N/A   ; None         ; 5.548 ns   ; openmips:openmips0|regfile:regfile1|regs[1][7]  ; register1[7]  ; clk        ;
+; N/A   ; None         ; 5.342 ns   ; openmips:openmips0|regfile:regfile1|regs[1][12] ; register1[12] ; clk        ;
+; N/A   ; None         ; 5.333 ns   ; openmips:openmips0|regfile:regfile1|regs[1][1]  ; register1[1]  ; clk        ;
+; N/A   ; None         ; 5.306 ns   ; openmips:openmips0|regfile:regfile1|regs[1][6]  ; register1[6]  ; clk        ;
+; N/A   ; None         ; 5.294 ns   ; openmips:openmips0|regfile:regfile1|regs[1][2]  ; register1[2]  ; clk        ;
+; N/A   ; None         ; 5.224 ns   ; openmips:openmips0|regfile:regfile1|regs[1][11] ; register1[11] ; clk        ;
+; N/A   ; None         ; 5.220 ns   ; openmips:openmips0|regfile:regfile1|regs[1][4]  ; register1[4]  ; clk        ;
+; N/A   ; None         ; 5.197 ns   ; openmips:openmips0|regfile:regfile1|regs[1][5]  ; register1[5]  ; clk        ;
+; N/A   ; None         ; 4.492 ns   ; openmips:openmips0|regfile:regfile1|regs[1][9]  ; register1[9]  ; clk        ;
+; N/A   ; None         ; 4.491 ns   ; openmips:openmips0|regfile:regfile1|regs[1][8]  ; register1[8]  ; clk        ;
+; N/A   ; None         ; 4.474 ns   ; openmips:openmips0|regfile:regfile1|regs[1][14] ; register1[14] ; clk        ;
+; N/A   ; None         ; 4.471 ns   ; openmips:openmips0|regfile:regfile1|regs[1][10] ; register1[10] ; clk        ;
+; N/A   ; None         ; 4.471 ns   ; openmips:openmips0|regfile:regfile1|regs[1][0]  ; register1[0]  ; clk        ;
++-------+--------------+------------+-------------------------------------------------+---------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; th                                                                                                          ;
++---------------+-------------+-----------+------+-------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                                              ; To Clock ;
++---------------+-------------+-----------+------+-------------------------------------------------+----------+
+; N/A           ; None        ; -0.754 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][6]  ; clk      ;
+; N/A           ; None        ; -0.821 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][10] ; clk      ;
+; N/A           ; None        ; -0.858 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][13] ; clk      ;
+; N/A           ; None        ; -0.865 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[7]   ; clk      ;
+; N/A           ; None        ; -0.888 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][11] ; clk      ;
+; N/A           ; None        ; -0.888 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][13] ; clk      ;
+; N/A           ; None        ; -0.910 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][14] ; clk      ;
+; N/A           ; None        ; -0.915 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[1]   ; clk      ;
+; N/A           ; None        ; -0.916 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[0]   ; clk      ;
+; N/A           ; None        ; -0.950 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][15] ; clk      ;
+; N/A           ; None        ; -0.969 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[3]   ; clk      ;
+; N/A           ; None        ; -0.981 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|ce            ; clk      ;
+; N/A           ; None        ; -1.024 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][8]  ; clk      ;
+; N/A           ; None        ; -1.094 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][12] ; clk      ;
+; N/A           ; None        ; -1.151 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]      ; clk      ;
+; N/A           ; None        ; -1.162 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][4]  ; clk      ;
+; N/A           ; None        ; -1.222 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][2]  ; clk      ;
+; N/A           ; None        ; -1.226 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][14] ; clk      ;
+; N/A           ; None        ; -1.261 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wreg       ; clk      ;
+; N/A           ; None        ; -1.269 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[2]   ; clk      ;
+; N/A           ; None        ; -1.280 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][0]  ; clk      ;
+; N/A           ; None        ; -1.281 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][9]  ; clk      ;
+; N/A           ; None        ; -1.291 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][10] ; clk      ;
+; N/A           ; None        ; -1.292 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2]     ; clk      ;
+; N/A           ; None        ; -1.292 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wreg      ; clk      ;
+; N/A           ; None        ; -1.295 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[0]     ; clk      ;
+; N/A           ; None        ; -1.301 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][3]  ; clk      ;
+; N/A           ; None        ; -1.304 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][3]  ; clk      ;
+; N/A           ; None        ; -1.313 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[14]  ; clk      ;
+; N/A           ; None        ; -1.347 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[2]      ; clk      ;
+; N/A           ; None        ; -1.347 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][13] ; clk      ;
+; N/A           ; None        ; -1.348 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wd[2]        ; clk      ;
+; N/A           ; None        ; -1.359 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][14] ; clk      ;
+; N/A           ; None        ; -1.417 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][5]  ; clk      ;
+; N/A           ; None        ; -1.418 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][5]  ; clk      ;
+; N/A           ; None        ; -1.482 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[4]   ; clk      ;
+; N/A           ; None        ; -1.497 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wd[0]        ; clk      ;
+; N/A           ; None        ; -1.561 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][5]  ; clk      ;
+; N/A           ; None        ; -1.617 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[5]   ; clk      ;
+; N/A           ; None        ; -1.666 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[12]  ; clk      ;
+; N/A           ; None        ; -1.679 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][7]  ; clk      ;
+; N/A           ; None        ; -1.698 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[6]   ; clk      ;
+; N/A           ; None        ; -1.708 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_pc[0]        ; clk      ;
+; N/A           ; None        ; -1.735 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[15]  ; clk      ;
+; N/A           ; None        ; -1.836 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[7]      ; clk      ;
+; N/A           ; None        ; -1.873 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[1]      ; clk      ;
+; N/A           ; None        ; -1.874 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_alusel[1]    ; clk      ;
+; N/A           ; None        ; -1.874 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_aluop[5]     ; clk      ;
+; N/A           ; None        ; -1.897 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]      ; clk      ;
+; N/A           ; None        ; -1.946 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][4]  ; clk      ;
+; N/A           ; None        ; -2.016 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[14]     ; clk      ;
+; N/A           ; None        ; -2.030 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][3]  ; clk      ;
+; N/A           ; None        ; -2.054 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[11]  ; clk      ;
+; N/A           ; None        ; -2.102 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[13]     ; clk      ;
+; N/A           ; None        ; -2.126 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_aluop[0]     ; clk      ;
+; N/A           ; None        ; -2.197 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[3]      ; clk      ;
+; N/A           ; None        ; -2.223 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[14]     ; clk      ;
+; N/A           ; None        ; -2.243 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[10]  ; clk      ;
+; N/A           ; None        ; -2.256 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[0]      ; clk      ;
+; N/A           ; None        ; -2.301 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][4]  ; clk      ;
+; N/A           ; None        ; -2.314 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[12]     ; clk      ;
+; N/A           ; None        ; -2.345 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[2]      ; clk      ;
+; N/A           ; None        ; -2.371 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[12]     ; clk      ;
+; N/A           ; None        ; -2.383 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_wreg         ; clk      ;
+; N/A           ; None        ; -2.386 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][1]  ; clk      ;
+; N/A           ; None        ; -2.386 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][1]  ; clk      ;
+; N/A           ; None        ; -2.406 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[8]      ; clk      ;
+; N/A           ; None        ; -2.410 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[4]      ; clk      ;
+; N/A           ; None        ; -2.438 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][15] ; clk      ;
+; N/A           ; None        ; -2.450 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][1]  ; clk      ;
+; N/A           ; None        ; -2.485 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]      ; clk      ;
+; N/A           ; None        ; -2.531 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[10]     ; clk      ;
+; N/A           ; None        ; -2.564 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[0]      ; clk      ;
+; N/A           ; None        ; -2.577 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[7]      ; clk      ;
+; N/A           ; None        ; -2.635 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]      ; clk      ;
+; N/A           ; None        ; -2.636 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[3]      ; clk      ;
+; N/A           ; None        ; -2.684 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][8]  ; clk      ;
+; N/A           ; None        ; -2.704 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][9]  ; clk      ;
+; N/A           ; None        ; -2.704 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][12] ; clk      ;
+; N/A           ; None        ; -2.704 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][15] ; clk      ;
+; N/A           ; None        ; -2.709 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[11]     ; clk      ;
+; N/A           ; None        ; -2.713 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[8]      ; clk      ;
+; N/A           ; None        ; -2.759 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][7]  ; clk      ;
+; N/A           ; None        ; -2.761 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][6]  ; clk      ;
+; N/A           ; None        ; -2.761 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][7]  ; clk      ;
+; N/A           ; None        ; -2.763 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]      ; clk      ;
+; N/A           ; None        ; -2.764 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][6]  ; clk      ;
+; N/A           ; None        ; -2.797 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[13]  ; clk      ;
+; N/A           ; None        ; -2.797 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[5]      ; clk      ;
+; N/A           ; None        ; -2.814 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[5]      ; clk      ;
+; N/A           ; None        ; -2.895 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[13]     ; clk      ;
+; N/A           ; None        ; -2.933 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[11]     ; clk      ;
+; N/A           ; None        ; -2.938 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[12]     ; clk      ;
+; N/A           ; None        ; -2.954 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[9]      ; clk      ;
+; N/A           ; None        ; -2.979 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][12] ; clk      ;
+; N/A           ; None        ; -2.986 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[2]      ; clk      ;
+; N/A           ; None        ; -3.012 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[15]     ; clk      ;
+; N/A           ; None        ; -3.095 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][11] ; clk      ;
+; N/A           ; None        ; -3.103 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][2]  ; clk      ;
+; N/A           ; None        ; -3.106 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[1][2]  ; clk      ;
+; N/A           ; None        ; -3.123 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[0]  ; clk      ;
+; N/A           ; None        ; -3.165 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][11] ; clk      ;
+; N/A           ; None        ; -3.217 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[8]   ; clk      ;
+; N/A           ; None        ; -3.251 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[2]      ; clk      ;
+; N/A           ; None        ; -3.251 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[4]      ; clk      ;
+; N/A           ; None        ; -3.251 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg1[6]      ; clk      ;
+; N/A           ; None        ; -3.254 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[15]     ; clk      ;
+; N/A           ; None        ; -3.255 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][0]  ; clk      ;
+; N/A           ; None        ; -3.257 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[3]         ; clk      ;
+; N/A           ; None        ; -3.259 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[2]         ; clk      ;
+; N/A           ; None        ; -3.310 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[11]     ; clk      ;
+; N/A           ; None        ; -3.330 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][8]  ; clk      ;
+; N/A           ; None        ; -3.341 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_alusel[2]    ; clk      ;
+; N/A           ; None        ; -3.343 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[1]         ; clk      ;
+; N/A           ; None        ; -3.345 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[5]         ; clk      ;
+; N/A           ; None        ; -3.386 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[10]     ; clk      ;
+; N/A           ; None        ; -3.417 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[9]      ; clk      ;
+; N/A           ; None        ; -3.418 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[4]         ; clk      ;
+; N/A           ; None        ; -3.419 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[6]         ; clk      ;
+; N/A           ; None        ; -3.421 ns ; rst  ; openmips:openmips0|id_ex:id_ex0|ex_reg2[8]      ; clk      ;
+; N/A           ; None        ; -3.451 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[1]  ; clk      ;
+; N/A           ; None        ; -3.463 ns ; rst  ; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[9]   ; clk      ;
+; N/A           ; None        ; -3.473 ns ; rst  ; openmips:openmips0|pc_reg:pc_reg0|pc[0]         ; clk      ;
+; N/A           ; None        ; -3.505 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[14] ; clk      ;
+; N/A           ; None        ; -3.538 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[6]  ; clk      ;
+; N/A           ; None        ; -3.573 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[7]  ; clk      ;
+; N/A           ; None        ; -3.626 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[12] ; clk      ;
+; N/A           ; None        ; -3.658 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[8]  ; clk      ;
+; N/A           ; None        ; -3.695 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[3]  ; clk      ;
+; N/A           ; None        ; -3.704 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[5]  ; clk      ;
+; N/A           ; None        ; -3.710 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[4]  ; clk      ;
+; N/A           ; None        ; -3.771 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[9]  ; clk      ;
+; N/A           ; None        ; -3.794 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[6]      ; clk      ;
+; N/A           ; None        ; -3.839 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][10] ; clk      ;
+; N/A           ; None        ; -3.884 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[7][9]  ; clk      ;
+; N/A           ; None        ; -3.911 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[2]  ; clk      ;
+; N/A           ; None        ; -3.960 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[5]      ; clk      ;
+; N/A           ; None        ; -4.196 ns ; rst  ; openmips:openmips0|regfile:regfile1|regs[6][0]  ; clk      ;
+; N/A           ; None        ; -4.239 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[15] ; clk      ;
+; N/A           ; None        ; -4.364 ns ; rst  ; openmips:openmips0|if_id:if_id0|id_inst[15]     ; clk      ;
+; N/A           ; None        ; -4.730 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[13] ; clk      ;
+; N/A           ; None        ; -4.837 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[11] ; clk      ;
+; N/A           ; None        ; -5.684 ns ; rst  ; openmips:openmips0|ex_mem:ex_mem0|mem_wdata[10] ; clk      ;
++---------------+-------------+-----------+------+-------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sat Dec 01 01:44:06 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off openmips_min_sopc_tb -c openmips_min_sopc_tb
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 116.04 MHz between source register "openmips:openmips0|if_id:if_id0|id_inst[11]" and destination register "openmips:openmips0|id_ex:id_ex0|ex_reg1[7]" (period= 8.618 ns)
+    Info: + Longest register to register delay is 8.175 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y7_N0; Fanout = 9; REG Node = 'openmips:openmips0|if_id:if_id0|id_inst[11]'
+        Info: 2: + IC(1.754 ns) + CELL(0.319 ns) = 2.073 ns; Loc. = LC_X4_Y7_N9; Fanout = 5; COMB Node = 'openmips:openmips0|id:id0|imm[7]~9'
+        Info: 3: + IC(0.491 ns) + CELL(0.125 ns) = 2.689 ns; Loc. = LC_X4_Y7_N2; Fanout = 2; COMB Node = 'openmips:openmips0|id:id0|imm[7]~14'
+        Info: 4: + IC(4.039 ns) + CELL(0.319 ns) = 7.047 ns; Loc. = LC_X9_Y5_N8; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1~54'
+        Info: 5: + IC(0.191 ns) + CELL(0.125 ns) = 7.363 ns; Loc. = LC_X9_Y5_N9; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1~56'
+        Info: 6: + IC(0.443 ns) + CELL(0.369 ns) = 8.175 ns; Loc. = LC_X9_Y5_N7; Fanout = 2; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1[7]'
+        Info: Total cell delay = 1.257 ns ( 15.38 % )
+        Info: Total interconnect delay = 6.918 ns ( 84.62 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.302 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_12; Fanout = 143; CLK Node = 'clk'
+            Info: 2: + IC(1.001 ns) + CELL(0.574 ns) = 2.302 ns; Loc. = LC_X9_Y5_N7; Fanout = 2; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1[7]'
+            Info: Total cell delay = 1.301 ns ( 56.52 % )
+            Info: Total interconnect delay = 1.001 ns ( 43.48 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.302 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_12; Fanout = 143; CLK Node = 'clk'
+            Info: 2: + IC(1.001 ns) + CELL(0.574 ns) = 2.302 ns; Loc. = LC_X9_Y7_N0; Fanout = 9; REG Node = 'openmips:openmips0|if_id:if_id0|id_inst[11]'
+            Info: Total cell delay = 1.301 ns ( 56.52 % )
+            Info: Total interconnect delay = 1.001 ns ( 43.48 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: tsu for register "openmips:openmips0|id_ex:id_ex0|ex_reg1[7]" (data pin = "rst", clock pin = "clk") is 7.152 ns
+    Info: + Longest pin to register delay is 9.246 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_44; Fanout = 156; PIN Node = 'rst'
+        Info: 2: + IC(1.974 ns) + CELL(0.462 ns) = 3.144 ns; Loc. = LC_X4_Y7_N9; Fanout = 5; COMB Node = 'openmips:openmips0|id:id0|imm[7]~9'
+        Info: 3: + IC(0.491 ns) + CELL(0.125 ns) = 3.760 ns; Loc. = LC_X4_Y7_N2; Fanout = 2; COMB Node = 'openmips:openmips0|id:id0|imm[7]~14'
+        Info: 4: + IC(4.039 ns) + CELL(0.319 ns) = 8.118 ns; Loc. = LC_X9_Y5_N8; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1~54'
+        Info: 5: + IC(0.191 ns) + CELL(0.125 ns) = 8.434 ns; Loc. = LC_X9_Y5_N9; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1~56'
+        Info: 6: + IC(0.443 ns) + CELL(0.369 ns) = 9.246 ns; Loc. = LC_X9_Y5_N7; Fanout = 2; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1[7]'
+        Info: Total cell delay = 2.108 ns ( 22.80 % )
+        Info: Total interconnect delay = 7.138 ns ( 77.20 % )
+    Info: + Micro setup delay of destination is 0.208 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.302 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_12; Fanout = 143; CLK Node = 'clk'
+        Info: 2: + IC(1.001 ns) + CELL(0.574 ns) = 2.302 ns; Loc. = LC_X9_Y5_N7; Fanout = 2; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg1[7]'
+        Info: Total cell delay = 1.301 ns ( 56.52 % )
+        Info: Total interconnect delay = 1.001 ns ( 43.48 % )
+Info: tco from clock "clk" to destination pin "register1[15]" through register "openmips:openmips0|regfile:regfile1|regs[1][15]" is 5.614 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.302 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_12; Fanout = 143; CLK Node = 'clk'
+        Info: 2: + IC(1.001 ns) + CELL(0.574 ns) = 2.302 ns; Loc. = LC_X8_Y5_N4; Fanout = 3; REG Node = 'openmips:openmips0|regfile:regfile1|regs[1][15]'
+        Info: Total cell delay = 1.301 ns ( 56.52 % )
+        Info: Total interconnect delay = 1.001 ns ( 43.48 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Longest register to pin delay is 3.077 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X8_Y5_N4; Fanout = 3; REG Node = 'openmips:openmips0|regfile:regfile1|regs[1][15]'
+        Info: 2: + IC(1.623 ns) + CELL(1.454 ns) = 3.077 ns; Loc. = PIN_15; Fanout = 0; PIN Node = 'register1[15]'
+        Info: Total cell delay = 1.454 ns ( 47.25 % )
+        Info: Total interconnect delay = 1.623 ns ( 52.75 % )
+Info: th for register "openmips:openmips0|regfile:regfile1|regs[7][6]" (data pin = "rst", clock pin = "clk") is -0.754 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.302 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_12; Fanout = 143; CLK Node = 'clk'
+        Info: 2: + IC(1.001 ns) + CELL(0.574 ns) = 2.302 ns; Loc. = LC_X6_Y5_N9; Fanout = 2; REG Node = 'openmips:openmips0|regfile:regfile1|regs[7][6]'
+        Info: Total cell delay = 1.301 ns ( 56.52 % )
+        Info: Total interconnect delay = 1.001 ns ( 43.48 % )
+    Info: + Micro hold delay of destination is 0.138 ns
+    Info: - Shortest pin to register delay is 3.194 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_44; Fanout = 156; PIN Node = 'rst'
+        Info: 2: + IC(1.984 ns) + CELL(0.502 ns) = 3.194 ns; Loc. = LC_X6_Y5_N9; Fanout = 2; REG Node = 'openmips:openmips0|regfile:regfile1|regs[7][6]'
+        Info: Total cell delay = 1.210 ns ( 37.88 % )
+        Info: Total interconnect delay = 1.984 ns ( 62.12 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 213 megabytes
+    Info: Processing ended: Sat Dec 01 01:44:06 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

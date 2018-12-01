@@ -29,12 +29,13 @@
 //////////////////////////////////////////////////////////////////////
 
 `include "defines.v"
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 
 module openmips_min_sopc_tb();
 
   reg     CLOCK_50;
   reg     rst;
+  wire[`RegBus] register1;
   
        
   initial begin
@@ -50,7 +51,8 @@ module openmips_min_sopc_tb();
        
   openmips_min_sopc openmips_min_sopc0(
 		.clk(CLOCK_50),
-		.rst(rst)	
+		.rst(rst),
+		.register1(register1)
 	);
 
 endmodule
