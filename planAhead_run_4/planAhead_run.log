@@ -1,0 +1,120 @@
+
+****** PlanAhead v14.6 (64-bit)
+  **** Build 269223 by xbuild on Wed Jun  5 11:14:03 MDT 2013
+    ** Copyright 1986-1999, 2001-2012 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/xilinx146/14.6/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/xilinx146/14.6/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/xilinx146/14.6/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/lenovo/Desktop/project/pa.fromNetlist.tcl
+# create_project -name openmips -dir "C:/Users/lenovo/Desktop/project/planAhead_run_4" -part xc3s1200efg320-4
+create_project: Time (s): elapsed = 00:00:11 . Memory (MB): peak = 405.910 ; gain = 59.004
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/lenovo/Desktop/project/openmips_min_sopc.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/lenovo/Desktop/project} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "openmips_min_sopc.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/lenovo/Desktop/project/openmips_min_sopc.ucf' to fileset 'constrs_1'
+# add_files [list {openmips_min_sopc.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc3s1200efg320-4
+Release 14.6 - ngc2edif P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design openmips_min_sopc.ngc ...
+WARNING:NetListWriters:298 - No output is written to openmips_min_sopc.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file openmips_min_sopc.edif ...
+ngc2edif: Total memory usage is 80188 kilobytes
+
+Parsing EDIF File [./planAhead_run_4/openmips.data/cache/openmips_min_sopc_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_4/openmips.data/cache/openmips_min_sopc_ngc_zx.edif]
+INFO: [Designutils 20-910] Reading macro library D:/xilinx146/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [D:/xilinx146/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [D:/xilinx146/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockRegion.xml
+Loading clock buffers from D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockBuffers.xml
+Loading package from D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/Package.xml
+Loading io standards from D:/xilinx146/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/SSORules.xml
+Loading list of drcs for the architecture : D:/xilinx146/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing 38-77] Reading timing library D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing 38-34] Done reading timing library D:/xilinx146/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [C:/Users/lenovo/Desktop/project/openmips_min_sopc.ucf]
+Finished Parsing UCF File [C:/Users/lenovo/Desktop/project/openmips_min_sopc.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 0b0e6703
+link_design: Time (s): elapsed = 00:00:11 . Memory (MB): peak = 522.559 ; gain = 115.137
+startgroup
+set_property package_pin A14 [get_ports {register1[15]}]
+endgroup
+startgroup
+set_property package_pin E13 [get_ports {register1[14]}]
+endgroup
+startgroup
+set_property package_pin D13 [get_ports {register1[13]}]
+endgroup
+startgroup
+set_property package_pin B13 [get_ports {register1[12]}]
+endgroup
+startgroup
+set_property package_pin A13 [get_ports {register1[11]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {register1[10]}]
+endgroup
+startgroup
+set_property package_pin E2 [get_ports {register1[9]}]
+endgroup
+set_property package_pin "" [get_ports [list  {register1[8]}]]
+startgroup
+set_property package_pin E12 [get_ports {register1[9]}]
+endgroup
+startgroup
+set_property package_pin A12 [get_ports {register1[8]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {register1[7]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {register1[6]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {register1[5]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {register1[4]}]
+endgroup
+startgroup
+set_property package_pin B11 [get_ports {register1[3]}]
+endgroup
+startgroup
+set_property package_pin A11 [get_ports {register1[2]}]
+endgroup
+startgroup
+set_property package_pin E10 [get_ports {register1[1]}]
+endgroup
+startgroup
+set_property package_pin D10 [get_ports {register1[0]}]
+endgroup
+startgroup
+set_property package_pin U9 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin U10 [get_ports rst]
+endgroup
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Sat Dec 01 19:12:39 2018...
+INFO: [Common 17-83] Releasing license: PlanAhead

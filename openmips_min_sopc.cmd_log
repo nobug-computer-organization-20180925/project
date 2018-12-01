@@ -40,3 +40,5 @@ xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -
 xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -ofn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.syr" 
 xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -ofn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.syr" 
 xst -intstyle ise -ifn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.xst" -ofn "C:/Users/lenovo/Desktop/project/openmips_min_sopc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-4 openmips_min_sopc.ngc openmips_min_sopc.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc openmips_min_sopc.ucf -p xc3s1200e-fg320-4 openmips_min_sopc.ngc openmips_min_sopc.ngd  
