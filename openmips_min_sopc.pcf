@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.68d on Sat Dec 01 19:59:31 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "U9" LEVEL 1;
+COMP "rst" LOCATE = SITE "U10" LEVEL 1;
+COMP "register1<0>" LOCATE = SITE "D10" LEVEL 1;
+COMP "register1<1>" LOCATE = SITE "E10" LEVEL 1;
+COMP "register1<2>" LOCATE = SITE "A11" LEVEL 1;
+COMP "register1<3>" LOCATE = SITE "B11" LEVEL 1;
+COMP "register1<4>" LOCATE = SITE "C11" LEVEL 1;
+COMP "register1<5>" LOCATE = SITE "D11" LEVEL 1;
+COMP "register1<6>" LOCATE = SITE "E11" LEVEL 1;
+COMP "register1<7>" LOCATE = SITE "F11" LEVEL 1;
+COMP "register1<8>" LOCATE = SITE "A12" LEVEL 1;
+COMP "register1<9>" LOCATE = SITE "E12" LEVEL 1;
+COMP "register1<10>" LOCATE = SITE "F12" LEVEL 1;
+COMP "register1<11>" LOCATE = SITE "A13" LEVEL 1;
+COMP "register1<12>" LOCATE = SITE "B13" LEVEL 1;
+COMP "register1<13>" LOCATE = SITE "D13" LEVEL 1;
+COMP "register1<14>" LOCATE = SITE "E13" LEVEL 1;
+COMP "register1<15>" LOCATE = SITE "A14" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+
