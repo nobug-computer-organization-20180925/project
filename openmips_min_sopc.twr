@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Release 14.6 Trace  (nt64)
+Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\xilinx146\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s
-4 -n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o
 openmips_min_sopc.twr openmips_min_sopc.pcf -ucf openmips_min_sopc.ucf
 
 Design file:              openmips_min_sopc.ncd
 Physical constraint file: openmips_min_sopc.pcf
-Device,package,speed:     xc3s1200e,fg320,-4 (PRODUCTION 1.27 2013-06-08)
+Device,package,speed:     xc3s1200e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -45,7 +45,7 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-rst         |    8.946(R)|   -0.137(R)|clk_BUFGP         |   0.000|
+rst         |    9.779(R)|   -0.082(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -53,22 +53,22 @@ Clock clk to Pad
              | clk (edge) |                  | Clock  |
 Destination  |   to PAD   |Internal Clock(s) | Phase  |
 -------------+------------+------------------+--------+
-register1<0> |    9.082(R)|clk_BUFGP         |   0.000|
-register1<1> |    8.460(R)|clk_BUFGP         |   0.000|
-register1<2> |    9.778(R)|clk_BUFGP         |   0.000|
-register1<3> |    9.262(R)|clk_BUFGP         |   0.000|
-register1<4> |    9.089(R)|clk_BUFGP         |   0.000|
-register1<5> |    8.946(R)|clk_BUFGP         |   0.000|
-register1<6> |    9.435(R)|clk_BUFGP         |   0.000|
-register1<7> |    8.478(R)|clk_BUFGP         |   0.000|
-register1<8> |    9.106(R)|clk_BUFGP         |   0.000|
-register1<9> |   10.325(R)|clk_BUFGP         |   0.000|
-register1<10>|    9.175(R)|clk_BUFGP         |   0.000|
-register1<11>|    9.051(R)|clk_BUFGP         |   0.000|
-register1<12>|    8.521(R)|clk_BUFGP         |   0.000|
-register1<13>|    9.359(R)|clk_BUFGP         |   0.000|
-register1<14>|   10.030(R)|clk_BUFGP         |   0.000|
-register1<15>|    8.909(R)|clk_BUFGP         |   0.000|
+register1<0> |   10.336(R)|clk_BUFGP         |   0.000|
+register1<1> |    9.449(R)|clk_BUFGP         |   0.000|
+register1<2> |    8.624(R)|clk_BUFGP         |   0.000|
+register1<3> |    9.976(R)|clk_BUFGP         |   0.000|
+register1<4> |    9.126(R)|clk_BUFGP         |   0.000|
+register1<5> |    8.554(R)|clk_BUFGP         |   0.000|
+register1<6> |    9.178(R)|clk_BUFGP         |   0.000|
+register1<7> |    8.608(R)|clk_BUFGP         |   0.000|
+register1<8> |    9.206(R)|clk_BUFGP         |   0.000|
+register1<9> |    9.475(R)|clk_BUFGP         |   0.000|
+register1<10>|    9.285(R)|clk_BUFGP         |   0.000|
+register1<11>|    9.246(R)|clk_BUFGP         |   0.000|
+register1<12>|    9.682(R)|clk_BUFGP         |   0.000|
+register1<13>|   11.096(R)|clk_BUFGP         |   0.000|
+register1<14>|    9.893(R)|clk_BUFGP         |   0.000|
+register1<15>|    9.746(R)|clk_BUFGP         |   0.000|
 -------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -76,18 +76,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.027|         |         |         |
+clk            |    8.892|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Dec 04 01:11:52 2018 
+Analysis completed Tue Dec 04 05:05:12 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 195 MB
+Peak Memory Usage: 183 MB
 
 
 

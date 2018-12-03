@@ -21,13 +21,13 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/lenovo/Desktop/project/netgen/par/openmips_min_sopc_timesim.v";
+static const char *ng0 = "C:/Users/yangzehai/Desktop/computer_organization/openmips/netgen/par/openmips_min_sopc_timesim.v";
 static unsigned int ng1[] = {1U, 0U};
 static unsigned int ng2[] = {0U, 0U};
 
 
 
-static void NetDecl_13621_0(char *t0)
+static void NetDecl_19527_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -53,7 +53,7 @@ LAB0:    t1 = (t0 + 6960U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13621, ng0);
+LAB2:    xsi_set_current_line(19527, ng0);
     t2 = (t0 + 1960U);
     t3 = *((char **)t2);
     t2 = (t0 + 8648);
@@ -81,7 +81,7 @@ LAB2:    xsi_set_current_line(13621, ng0);
 LAB1:    return;
 }
 
-static void Cont_13653_1(char *t0)
+static void Cont_19559_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -109,7 +109,7 @@ LAB0:    t1 = (t0 + 7208U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13653, ng0);
+LAB2:    xsi_set_current_line(19559, ng0);
     t2 = (t0 + 3640);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -138,7 +138,7 @@ LAB2:    xsi_set_current_line(13653, ng0);
 LAB1:    return;
 }
 
-static void Cont_13654_2(char *t0)
+static void Cont_19560_2(char *t0)
 {
     char *t1;
     char *t2;
@@ -166,7 +166,7 @@ LAB0:    t1 = (t0 + 7456U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13654, ng0);
+LAB2:    xsi_set_current_line(19560, ng0);
     t2 = (t0 + 3800);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -195,7 +195,7 @@ LAB2:    xsi_set_current_line(13654, ng0);
 LAB1:    return;
 }
 
-static void Cont_13655_3(char *t0)
+static void Cont_19561_3(char *t0)
 {
     char *t1;
     char *t2;
@@ -223,7 +223,7 @@ LAB0:    t1 = (t0 + 7704U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13655, ng0);
+LAB2:    xsi_set_current_line(19561, ng0);
     t2 = (t0 + 3960);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -252,7 +252,7 @@ LAB2:    xsi_set_current_line(13655, ng0);
 LAB1:    return;
 }
 
-static void Initial_13657_4(char *t0)
+static void Initial_19563_4(char *t0)
 {
     char *t1;
     char *t2;
@@ -266,27 +266,27 @@ LAB0:    t1 = (t0 + 7952U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13657, ng0);
+LAB2:    xsi_set_current_line(19563, ng0);
 
-LAB4:    xsi_set_current_line(13658, ng0);
+LAB4:    xsi_set_current_line(19564, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3640);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(13659, ng0);
+    xsi_set_current_line(19565, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3960);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(13660, ng0);
+    xsi_set_current_line(19566, ng0);
     t2 = (t0 + 7760);
     xsi_process_wait(t2, 100000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(13661, ng0);
+LAB5:    xsi_set_current_line(19567, ng0);
     t3 = ((char*)((ng2)));
     t4 = (t0 + 3640);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
-    xsi_set_current_line(13662, ng0);
+    xsi_set_current_line(19568, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 3960);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
@@ -294,7 +294,7 @@ LAB5:    xsi_set_current_line(13661, ng0);
 
 }
 
-static void Initial_13665_5(char *t0)
+static void Initial_19571_5(char *t0)
 {
     char *t1;
     char *t2;
@@ -308,19 +308,19 @@ LAB0:    t1 = (t0 + 8200U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(13665, ng0);
+LAB2:    xsi_set_current_line(19571, ng0);
 
-LAB4:    xsi_set_current_line(13666, ng0);
+LAB4:    xsi_set_current_line(19572, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3800);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(13667, ng0);
+    xsi_set_current_line(19573, ng0);
     t2 = (t0 + 8008);
     xsi_process_wait(t2, 0LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(13668, ng0);
+LAB5:    xsi_set_current_line(19574, ng0);
     t3 = ((char*)((ng2)));
     t4 = (t0 + 3800);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
@@ -331,7 +331,7 @@ LAB5:    xsi_set_current_line(13668, ng0);
 
 extern void work_m_00000000004134447467_2073120511_init()
 {
-	static char *pe[] = {(void *)NetDecl_13621_0,(void *)Cont_13653_1,(void *)Cont_13654_2,(void *)Cont_13655_3,(void *)Initial_13657_4,(void *)Initial_13665_5};
+	static char *pe[] = {(void *)NetDecl_19527_0,(void *)Cont_19559_1,(void *)Cont_19560_2,(void *)Cont_19561_3,(void *)Initial_19563_4,(void *)Initial_19571_5};
 	xsi_register_didat("work_m_00000000004134447467_2073120511", "isim/openmips_min_sopc_tb_isim_par.exe.sim/work/m_00000000004134447467_2073120511.didat");
 	xsi_register_executes(pe);
 }

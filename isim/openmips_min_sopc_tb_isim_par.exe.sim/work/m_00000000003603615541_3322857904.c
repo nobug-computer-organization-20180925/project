@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb.v";
+static const char *ng0 = "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb.v";
 static unsigned int ng1[] = {0U, 0U};
 static unsigned int ng2[] = {1U, 0U};
 
@@ -145,7 +145,7 @@ LAB3:    goto *t2;
 LAB2:    xsi_set_current_line(46, ng0);
 
 LAB4:    xsi_set_current_line(47, ng0);
-    t2 = ((char*)((ng2)));
+    t2 = ((char*)((ng1)));
     t3 = (t0 + 1608);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     xsi_set_current_line(48, ng0);
@@ -155,7 +155,7 @@ LAB4:    xsi_set_current_line(47, ng0);
 
 LAB1:    return;
 LAB5:    xsi_set_current_line(48, ng0);
-    t3 = ((char*)((ng1)));
+    t3 = ((char*)((ng2)));
     t4 = (t0 + 1608);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
     xsi_set_current_line(49, ng0);

@@ -135,7 +135,7 @@ module ex(
 	 		wdata_o <= link_address_i;
 	 	end
 		`EXE_RES_ARITHMETIC:	begin
-	 		wdata_o <= link_address_i;
+	 		wdata_o <= arithmeticres;
 	 	end
 	 	default:					begin
 	 		wdata_o <= `ZeroWord;
