@@ -32,7 +32,7 @@ module memory(
     reg[5:0] count, nextcount;
 
 
-    assign ram1_WE_L = WE_E | clk | (~count[0]);
+    assign ram1_WE_L = WE_E | clk;
 
     assign ram2_OE_L = ram1_OE_L;
     assign ram2_WE_L = ram1_WE_L;
@@ -130,7 +130,7 @@ module memory(
     wire[15:0] dataadd, addradd, dataadd1;
     assign dataadd = data + (count);
     assign dataadd1 = data + (count) - 1;
-    assign addradd = addr + (count>>1);
+    assign addradd = addr + (count);
 
     always @(posedge clk or negedge rst)
     begin
