@@ -11,16 +11,13 @@
 <msg type="info" file="Xst" num="1433" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">regs</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 </msg>
 
-<msg type="info" file="Xst" num="1433" delta="new" >Contents of array &lt;<arg fmt="%s" index="1">inst_mem</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+<msg type="info" file="Xst" num="1433" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">inst_mem</arg>&gt; may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">addr&lt;15:7&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">inst_mem&lt;10:126&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000000000000000</arg>.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">pc_plus_2</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -113,52 +110,7 @@
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ex_aluop_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">id_ex0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">id_pc_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">if_id0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_link_address_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">openmips_min_sopc</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_link_address_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">openmips_min_sopc</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_link_address_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">openmips_min_sopc</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -275,24 +227,6 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/id_ex0/is_in_delayslot_o</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_pc_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
 </msg>
 
@@ -347,85 +281,85 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips0/pc_reg0/pc_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_alusel_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_4&gt; &lt;openmips0/if_id0/id_inst_9&gt; &lt;openmips0/if_id0/id_inst_10&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_15&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_alusel_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_wreg&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_4&gt; &lt;openmips0/if_id0/id_inst_9&gt; &lt;openmips0/if_id0/id_inst_10&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_aluop_3&gt; &lt;openmips0/id_ex0/ex_alusel_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_alusel_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_wreg&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_alusel_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_13&gt; &lt;openmips0/if_id0/id_inst_14&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_15&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_3&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_aluop_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_aluop_3&gt; &lt;openmips0/id_ex0/ex_alusel_1&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_13&gt; &lt;openmips0/if_id0/id_inst_14&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_aluop_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_aluop_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/if_id0/id_inst_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/if_id0/id_inst_3&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_wd_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/id_ex0/ex_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/id_ex0/ex_wd_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/ex_mem0/mem_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/ex_mem0/mem_wd_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/ex_mem0/mem_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/ex_mem0/mem_wd_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/mem_wb0/wb_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/mem_wb0/wb_wd_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/mem_wb0/wb_wd_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/mem_wb0/wb_wd_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_5_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_9&gt; &lt;openmips0/regfile1/regs_4_9&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_5_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_1&gt; &lt;openmips0/regfile1/regs_4_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_3&gt; &lt;openmips0/regfile1/regs_3_3&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_5&gt; &lt;openmips0/regfile1/regs_3_5&gt; &lt;openmips0/regfile1/regs_4_5&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_12&gt; &lt;openmips0/regfile1/regs_4_12&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_5_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_9&gt; &lt;openmips0/regfile1/regs_4_9&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_8&gt; &lt;openmips0/regfile1/regs_3_8&gt; &lt;openmips0/regfile1/regs_4_8&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_11&gt; &lt;openmips0/regfile1/regs_3_11&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_2&gt; &lt;openmips0/regfile1/regs_4_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_15&gt; &lt;openmips0/regfile1/regs_3_15&gt; &lt;openmips0/regfile1/regs_4_15&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_11&gt; &lt;openmips0/regfile1/regs_3_11&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_12&gt; &lt;openmips0/regfile1/regs_4_12&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_7&gt; &lt;openmips0/regfile1/regs_3_7&gt; &lt;openmips0/regfile1/regs_4_7&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_7&gt; &lt;openmips0/regfile1/regs_3_7&gt; &lt;openmips0/regfile1/regs_4_7&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_5_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_1&gt; &lt;openmips0/regfile1/regs_4_1&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_0&gt; &lt;openmips0/regfile1/regs_3_0&gt; &lt;openmips0/regfile1/regs_4_0&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_10&gt; &lt;openmips0/regfile1/regs_4_10&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_4&gt; &lt;openmips0/regfile1/regs_4_4&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_6&gt; &lt;openmips0/regfile1/regs_3_6&gt; &lt;openmips0/regfile1/regs_4_6&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_8&gt; &lt;openmips0/regfile1/regs_3_8&gt; &lt;openmips0/regfile1/regs_4_8&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_15&gt; &lt;openmips0/regfile1/regs_3_15&gt; &lt;openmips0/regfile1/regs_4_15&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_10&gt; &lt;openmips0/regfile1/regs_4_10&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_0&gt; &lt;openmips0/regfile1/regs_3_0&gt; &lt;openmips0/regfile1/regs_4_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_14&gt; &lt;openmips0/regfile1/regs_3_14&gt; &lt;openmips0/regfile1/regs_4_14&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_5&gt; &lt;openmips0/regfile1/regs_3_5&gt; &lt;openmips0/regfile1/regs_4_5&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_2&gt; &lt;openmips0/regfile1/regs_4_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_14&gt; &lt;openmips0/regfile1/regs_3_14&gt; &lt;openmips0/regfile1/regs_4_14&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_6&gt; &lt;openmips0/regfile1/regs_3_6&gt; &lt;openmips0/regfile1/regs_4_6&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_3_4&gt; &lt;openmips0/regfile1/regs_4_4&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_3&gt; &lt;openmips0/regfile1/regs_3_3&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_13&gt; &lt;openmips0/regfile1/regs_3_13&gt; &lt;openmips0/regfile1/regs_4_13&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">openmips0/regfile1/regs_2_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;openmips0/regfile1/regs_5_13&gt; &lt;openmips0/regfile1/regs_3_13&gt; &lt;openmips0/regfile1/regs_4_13&gt; </arg>
 </msg>
 
 </messages>

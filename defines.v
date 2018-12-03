@@ -1,6 +1,6 @@
 //ȫ��
-`define RstEnable 1'b1
-`define RstDisable 1'b0
+`define RstEnable 1'b0
+`define RstDisable 1'b1
 `define ZeroWord 16'h0000
 `define WriteEnable 1'b1
 `define WriteDisable 1'b0

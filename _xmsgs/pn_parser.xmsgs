@@ -8,10 +8,10 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/lenovo/Desktop/project/pc_reg.v&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/lenovo/Desktop/project/inst_rom.v&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/Users/lenovo/Desktop/project/pc_reg.v</arg>&quot; Line <arg fmt="%d" index="2">31</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/Users/lenovo/Desktop/project/defines.v&apos; in file &quot;C:/Users/lenovo/Desktop/project/pc_reg.v&quot; line 31
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/Users/lenovo/Desktop/project/inst_rom.v</arg>&quot; Line <arg fmt="%d" index="2">31</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/Users/lenovo/Desktop/project/defines.v&apos; in file &quot;C:/Users/lenovo/Desktop/project/inst_rom.v&quot; line 31
 </arg>
 </msg>
 

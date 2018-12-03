@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -225,7 +225,6 @@ Synthesizing Unit <inst_rom>.
     Related source file is "inst_rom.v".
 WARNING:Xst:647 - Input <addr<15:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <inst_mem<10:126>> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
     Found 127x16-bit ROM for signal <instDataTemp>.
     Summary:
 	inferred   1 ROM(s).
@@ -259,11 +258,11 @@ WARNING:Xst:646 - Signal <op4> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <op3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 1-bit adder for signal <inst_b_address>.
-    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 167.
-    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 170.
-    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 185.
-    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 188.
+    Found 16-bit adder for signal <inst_b_address>.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 168.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 171.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 186.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 189.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
@@ -350,7 +349,7 @@ Macro Statistics
 # ROMs                                                 : 1
  127x16-bit ROM                                        : 1
 # Adders/Subtractors                                   : 1
- 1-bit adder                                           : 1
+ 16-bit adder                                          : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 26
@@ -391,21 +390,6 @@ WARNING:Xst:1710 - FF/Latch <ex_link_address_1> (without init value) has a const
 WARNING:Xst:1710 - FF/Latch <ex_link_address_0> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ex_aluop_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ex_aluop_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <id_pc_1> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_2> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_3> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_4> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_5> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_6> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_7> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_8> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_9> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_10> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_11> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_12> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_13> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_14> of sequential type is unconnected in block <if_id0>.
-WARNING:Xst:2677 - Node <id_pc_15> of sequential type is unconnected in block <if_id0>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -414,7 +398,7 @@ Macro Statistics
 # ROMs                                                 : 1
  127x16-bit ROM                                        : 1
 # Adders/Subtractors                                   : 1
- 1-bit adder                                           : 1
+ 16-bit adder                                          : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 269
@@ -486,12 +470,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/ex_mem0/mem_wd_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_is_in_delayslot> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/is_in_delayslot_o> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_1> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_2> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_3> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_4> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_5> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_6> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_7> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_8> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_9> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -513,32 +491,32 @@ WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_7> of sequential type is unconnect
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_6> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_alusel_2> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_15> 
 INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_1> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_4> <openmips0/if_id0/id_inst_9> <openmips0/if_id0/id_inst_10> 
 INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_alusel_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_wreg> 
+INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_1> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/id_ex0/ex_aluop_3> <openmips0/id_ex0/ex_alusel_1> 
+INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_6> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_alusel_2> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_15> 
+INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_aluop_2> 
 INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_11> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_13> <openmips0/if_id0/id_inst_14> 
 INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_2> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_3> 
-INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_1> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/id_ex0/ex_aluop_3> <openmips0/id_ex0/ex_alusel_1> 
-INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_aluop_2> 
 INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_wd_1> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_wd_2> 
 INFO:Xst:2261 - The FF/Latch <openmips0/ex_mem0/mem_wd_1> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/ex_mem0/mem_wd_2> 
 INFO:Xst:2261 - The FF/Latch <openmips0/mem_wb0/wb_wd_1> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/mem_wb0/wb_wd_2> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_5_9> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_9> <openmips0/regfile1/regs_4_9> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_3> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_3> <openmips0/regfile1/regs_3_3> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_12> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_12> <openmips0/regfile1/regs_4_12> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_8> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_8> <openmips0/regfile1/regs_3_8> <openmips0/regfile1/regs_4_8> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_2> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_2> <openmips0/regfile1/regs_4_2> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_11> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_11> <openmips0/regfile1/regs_3_11> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_7> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_7> <openmips0/regfile1/regs_3_7> <openmips0/regfile1/regs_4_7> 
 INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_5_1> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_1> <openmips0/regfile1/regs_4_1> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_10> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_10> <openmips0/regfile1/regs_4_10> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_6> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_6> <openmips0/regfile1/regs_3_6> <openmips0/regfile1/regs_4_6> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_15> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_15> <openmips0/regfile1/regs_3_15> <openmips0/regfile1/regs_4_15> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_0> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_0> <openmips0/regfile1/regs_3_0> <openmips0/regfile1/regs_4_0> 
 INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_5> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_5> <openmips0/regfile1/regs_3_5> <openmips0/regfile1/regs_4_5> 
-INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_14> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_14> <openmips0/regfile1/regs_3_14> <openmips0/regfile1/regs_4_14> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_5_9> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_9> <openmips0/regfile1/regs_4_9> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_11> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_11> <openmips0/regfile1/regs_3_11> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_15> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_15> <openmips0/regfile1/regs_3_15> <openmips0/regfile1/regs_4_15> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_12> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_12> <openmips0/regfile1/regs_4_12> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_7> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_7> <openmips0/regfile1/regs_3_7> <openmips0/regfile1/regs_4_7> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_0> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_0> <openmips0/regfile1/regs_3_0> <openmips0/regfile1/regs_4_0> 
 INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_4> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_3_4> <openmips0/regfile1/regs_4_4> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_8> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_8> <openmips0/regfile1/regs_3_8> <openmips0/regfile1/regs_4_8> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_10> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_10> <openmips0/regfile1/regs_4_10> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_14> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_14> <openmips0/regfile1/regs_3_14> <openmips0/regfile1/regs_4_14> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_2> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_2> <openmips0/regfile1/regs_4_2> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_6> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_6> <openmips0/regfile1/regs_3_6> <openmips0/regfile1/regs_4_6> 
+INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_3> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_3> <openmips0/regfile1/regs_3_3> 
 INFO:Xst:2261 - The FF/Latch <openmips0/regfile1/regs_2_13> in Unit <openmips_min_sopc> is equivalent to the following 3 FFs/Latches, which will be removed : <openmips0/regfile1/regs_5_13> <openmips0/regfile1/regs_3_13> <openmips0/regfile1/regs_4_13> 
 Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 2.
 
@@ -548,8 +526,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 143
- Flip-Flops                                            : 143
+# Registers                                            : 149
+ Flip-Flops                                            : 149
 
 =========================================================================
 
@@ -578,26 +556,25 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 539
+# BELS                             : 560
 #      GND                         : 1
-#      INV                         : 1
+#      INV                         : 2
 #      LUT1                        : 48
-#      LUT2                        : 66
-#      LUT2_D                      : 2
+#      LUT2                        : 67
 #      LUT2_L                      : 1
-#      LUT3                        : 79
-#      LUT3_D                      : 2
-#      LUT3_L                      : 3
-#      LUT4                        : 152
-#      LUT4_D                      : 3
+#      LUT3                        : 81
+#      LUT3_D                      : 3
+#      LUT3_L                      : 1
+#      LUT4                        : 156
+#      LUT4_D                      : 14
 #      LUT4_L                      : 39
-#      MUXCY                       : 6
-#      MUXF5                       : 96
+#      MUXCY                       : 12
+#      MUXF5                       : 88
 #      MUXF6                       : 32
 #      VCC                         : 1
-#      XORCY                       : 7
-# FlipFlops/Latches                : 143
-#      FDR                         : 69
+#      XORCY                       : 14
+# FlipFlops/Latches                : 149
+#      FDR                         : 75
 #      FDRE                        : 42
 #      FDRS                        : 26
 #      FDSE                        : 6
@@ -613,9 +590,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      218  out of   8672     2%  
- Number of Slice Flip Flops:            143  out of  17344     0%  
- Number of 4 input LUTs:                396  out of  17344     2%  
+ Number of Slices:                      225  out of   8672     2%  
+ Number of Slice Flip Flops:            149  out of  17344     0%  
+ Number of 4 input LUTs:                412  out of  17344     2%  
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    250     7%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -641,7 +618,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 143   |
+clk                                | BUFGP                  | 149   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -652,8 +629,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 9.092ns (Maximum Frequency: 109.987MHz)
-   Minimum input arrival time before clock: 10.545ns
+   Minimum period: 8.952ns (Maximum Frequency: 111.707MHz)
+   Minimum input arrival time before clock: 10.362ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
 
@@ -663,36 +640,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 9.092ns (frequency: 109.987MHz)
-  Total number of paths / destination ports: 3617 / 223
+  Clock period: 8.952ns (frequency: 111.707MHz)
+  Total number of paths / destination ports: 3907 / 229
 -------------------------------------------------------------------------
-Delay:               9.092ns (Levels of Logic = 6)
+Delay:               8.952ns (Levels of Logic = 6)
   Source:            openmips0/if_id0/id_inst_7 (FF)
-  Destination:       openmips0/id_ex0/ex_reg2_8 (FF)
+  Destination:       openmips0/id_ex0/ex_reg2_9 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: openmips0/if_id0/id_inst_7 to openmips0/id_ex0/ex_reg2_8
+  Data Path: openmips0/if_id0/id_inst_7 to openmips0/id_ex0/ex_reg2_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              5   0.591   0.712  openmips0/if_id0/id_inst_7 (openmips0/if_id0/id_inst_7)
      LUT2:I1->O           17   0.704   1.086  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
-     LUT4:I2->O            2   0.704   0.622  openmips0/regfile1/rdata2_and000047_SW0 (N44)
-     LUT4_D:I0->O         15   0.704   1.021  openmips0/regfile1/rdata2<0>11 (openmips0/regfile1/N11)
-     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<8>6 (openmips0/id0/reg2_o<8>6)
-     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<8>17 (openmips0/id0/reg2_o<8>17)
-     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<8>51 (openmips0/id_reg2_o<8>)
-     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_8
+     LUT4:I2->O            2   0.704   0.451  openmips0/regfile1/rdata2_and000047_SW0 (N44)
+     LUT4_D:I3->O         15   0.704   1.052  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
+     LUT4:I2->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
+     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<9>17 (openmips0/id0/reg2_o<9>17)
+     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<9>49 (openmips0/id_reg2_o<9>)
+     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_9
     ----------------------------------------
-    Total                      9.092ns (5.123ns logic, 3.969ns route)
-                                       (56.3% logic, 43.7% route)
+    Total                      8.952ns (5.123ns logic, 3.829ns route)
+                                       (57.2% logic, 42.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1087 / 243
+  Total number of paths / destination ports: 1157 / 249
 -------------------------------------------------------------------------
-Offset:              10.545ns (Levels of Logic = 7)
+Offset:              10.362ns (Levels of Logic = 7)
   Source:            rst (PAD)
   Destination:       openmips0/id_ex0/ex_reg2_8 (FF)
   Destination Clock: clk rising
@@ -701,17 +678,17 @@ Offset:              10.545ns (Levels of Logic = 7)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           351   1.218   1.538  rst_IBUF (rst_IBUF)
+     IBUF:I->O           214   1.218   1.495  rst_IBUF (rst_IBUF)
      LUT2:I0->O           17   0.704   1.086  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
-     LUT4:I2->O            2   0.704   0.622  openmips0/regfile1/rdata2_and000047_SW0 (N44)
-     LUT4_D:I0->O         15   0.704   1.021  openmips0/regfile1/rdata2<0>11 (openmips0/regfile1/N11)
-     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<8>6 (openmips0/id0/reg2_o<8>6)
-     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<8>17 (openmips0/id0/reg2_o<8>17)
-     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<8>51 (openmips0/id_reg2_o<8>)
-     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_8
+     LUT4:I2->O            2   0.704   0.451  openmips0/regfile1/rdata2_and000047_SW0 (N44)
+     LUT4_D:I3->O         15   0.704   1.052  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
+     LUT4:I2->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
+     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<9>17 (openmips0/id0/reg2_o<9>17)
+     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<9>49 (openmips0/id_reg2_o<9>)
+     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_9
     ----------------------------------------
-    Total                     10.545ns (5.750ns logic, 4.795ns route)
-                                       (54.5% logic, 45.5% route)
+    Total                     10.362ns (5.750ns logic, 4.612ns route)
+                                       (55.5% logic, 44.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -735,14 +712,14 @@ Offset:              4.394ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.16 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 19.47 secs
  
 --> 
 
-Total memory usage is 250908 kilobytes
+Total memory usage is 250964 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  111 (   0 filtered)
+Number of warnings :   89 (   0 filtered)
 Number of infos    :   30 (   0 filtered)
 
