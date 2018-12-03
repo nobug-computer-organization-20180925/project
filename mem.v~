@@ -22,70 +22,57 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// Module:  id_ex
-// File:    id_ex.v
-// Description: ID/EXï¿½×¶ÎµÄ¼Ä´ï¿½ï¿½ï¿½
+// Module:  mem
+// File:    mem.v
+// Description: ·Ã´æ½×¶Î
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
 `include "defines.v"
 
-module id_ex(
+module mem(
 
-	input	wire clk,
-	input wire rst,
+	input wire	rst,
+	
+	//À´×ÔÖ´ÐÐ½×¶ÎµÄÐÅÏ¢	
+	input wire[`RegAddrBus]       wd_i,
+	input wire                    wreg_i,
+	input wire[`RegBus]				wdata_i,
 
 	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶Î´ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ï¢
-	input wire[`AluOpBus]         id_aluop,
-	input wire[`AluSelBus]        id_alusel,
-	input wire[`RegBus]           id_reg1,
-	input wire[`RegBus]           id_reg2,
-	input wire[`RegAddrBus]       id_wd,
-	input wire                    id_wreg,	
-	input wire[`RegBus]           id_link_address,
-	input wire                    id_is_in_delayslot,
-	input wire                    next_inst_in_delayslot_i,		
-	input wire[`RegBus]           id_inst,		
+  input wire[`AluOpBus]        aluop_i,
+	input wire[`RegBus]          mem_addr_i,
+	input wire[`RegBus]          reg2_i,
 	
-	//ï¿½ï¿½ï¿½Ýµï¿½Ö´ï¿½Ð½×¶Îµï¿½ï¿½ï¿½Ï¢
-	output reg[`AluOpBus]         ex_aluop,
-	output reg[`AluSelBus]        ex_alusel,
-	output reg[`RegBus]           ex_reg1,
-	output reg[`RegBus]           ex_reg2,
-	output reg[`RegAddrBus]       ex_wd,
-	output reg                    ex_wreg,
-	output reg[`RegBus]           ex_link_address,
-  output reg                    ex_is_in_delayslot,
-	output reg                    is_in_delayslot_o	,
-	output reg[`RegBus]           ex_inst	
+	//À´×ÔmemoryµÄÐÅÏ¢
+	input wire[`RegBus]          mem_data_i,
+	
+	
+	//ËÍµ½»ØÐ´½×¶ÎµÄÐÅÏ¢
+	output reg[`RegAddrBus]      wd_o,
+	output reg                   wreg_o,
+	output reg[`RegBus]			  wdata_o,
+
+		output reg[`RegBus]          mem_addr_o,
+	output wire	 mem_we_o,
+	output reg[3:0]              mem_sel_o,
+	output reg[`RegBus]          mem_data_o,
+	output reg                   mem_ce_o	
 	
 );
 
-	always @ (posedge clk) begin
-		if (rst == `RstEnable) begin
-			ex_aluop <= `EXE_NOP_OP;
-			ex_alusel <= `EXE_RES_NOP;
-			ex_reg1 <= `ZeroWord;
-			ex_reg2 <= `ZeroWord;
-			ex_wd <= `NOPRegAddr;
-			ex_wreg <= `WriteDisable;
-			ex_link_address <= `ZeroWord;
-			ex_is_in_delayslot <= `NotInDelaySlot;
-	    is_in_delayslot_o <= `NotInDelaySlot;			
-	 ex_inst <= `ZeroWord;			
-		end else begin		
-			ex_aluop <= id_aluop;
-			ex_alusel <= id_alusel;
-			ex_reg1 <= id_reg1;
-			ex_reg2 <= id_reg2;
-			ex_wd <= id_wd;
-			ex_wreg <= id_wreg;	
-			ex_link_address <= id_link_address;
-			ex_is_in_delayslot <= id_is_in_delayslot;
-	    is_in_delayslot_o <= next_inst_in_delayslot_i;				
-	 ex_inst <= id_inst;			
-		end
-	end
 	
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			wd_o <= `NOPRegAddr;
+			wreg_o <= `WriteDisable;
+		  wdata_o <= `ZeroWord;
+		end else begin
+		  wd_o <= wd_i;
+			wreg_o <= wreg_i;
+			wdata_o <= wdata_i;
+		end    //if
+	end      //always
+			
+
 endmodule

@@ -41,7 +41,8 @@ module ex(
 	input wire[`RegBus]           reg2_i,
 	input wire[`RegAddrBus]       wd_i,
 	input wire                    wreg_i,
-
+	input wire[`RegBus]           inst_i,
+	
 
 	input wire[`RegBus]           link_address_i,
 	input wire                    is_in_delayslot_i,	
@@ -49,8 +50,11 @@ module ex(
 	
 	output reg[`RegAddrBus]       wd_o,
 	output reg                    wreg_o,
-	output reg[`RegBus]						wdata_o
+	output reg[`RegBus]		wdata_o,
 	
+		output wire[`AluOpBus]        aluop_o,
+	output wire[`RegBus]          mem_addr_o,
+	output wire[`RegBus]          reg2_o
 );
 
 	reg[`RegBus] logicout;
@@ -86,7 +90,14 @@ module ex(
 		end
 	end
 
+ //aluop_o send straight to mem for loading instructions
+  assign aluop_o = aluop_i;
+  
+  //mem_addr: load/save memory's address.
+  assign mem_addr_o = reg1_i + {{11{inst_i[4]}},inst_i[4:0]};
 
+  //send reg2 to mem(seemingly useless)
+  assign reg2_o = reg2_i;
 
  always @ (*) begin
 	 wd_o <= wd_i;	 	 	

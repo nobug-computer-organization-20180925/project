@@ -32,6 +32,7 @@
 `define EXE_MOVE 5'b01111
 `define EXE_NOP 5'b00001
 `define EXE_J 5'b00010
+`define EXE_LW 5'b10011
 
 
 //AluOp
@@ -40,14 +41,14 @@
 `define EXE_MOVE_OP  8'b00001010
 `define EXE_NOP_OP    8'b00000000
 `define EXE_J_OP  8'b01001111
-
+`define EXE_LW_OP  8'b11100011
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001
 `define EXE_RES_MOVE 3'b011	
 `define EXE_RES_NOP 3'b000
 `define EXE_RES_JUMP_BRANCH 3'b110
-
+`define EXE_RES_LOAD_STORE 3'b111
 
 //ָ��洢��inst_rom
 `define InstAddrBus 15:0
@@ -55,6 +56,9 @@
 `define InstMemNum 127 // todo: change to 65535
 `define InstMemNumLog2 16
 
+`define DataAddrBus 15:0
+`define DataBus 15:0
+`define DataMemNum 65536
 
 //ͨ�üĴ���regfile
 `define RegAddrBus 3:0

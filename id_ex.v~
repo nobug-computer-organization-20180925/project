@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  id_ex
 // File:    id_ex.v
-// Description: ID/EX½×¶ÎµÄ¼Ä´æÆ÷
+// Description: ID/EXï¿½×¶ÎµÄ¼Ä´ï¿½ï¿½ï¿½
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -34,10 +34,9 @@ module id_ex(
 
 	input	wire clk,
 	input wire rst,
-	input wire[5:0]							 stall,
 
 	
-	//´ÓÒëÂë½×¶Î´«µÝµÄÐÅÏ¢
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶Î´ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ï¢
 	input wire[`AluOpBus]         id_aluop,
 	input wire[`AluSelBus]        id_alusel,
 	input wire[`RegBus]           id_reg1,
@@ -47,18 +46,19 @@ module id_ex(
 	input wire[`RegBus]           id_link_address,
 	input wire                    id_is_in_delayslot,
 	input wire                    next_inst_in_delayslot_i,		
+	input wire[`RegBus]           id_inst,		
 	
-	
-	//´«µÝµ½Ö´ÐÐ½×¶ÎµÄÐÅÏ¢
+	//ï¿½ï¿½ï¿½Ýµï¿½Ö´ï¿½Ð½×¶Îµï¿½ï¿½ï¿½Ï¢
 	output reg[`AluOpBus]         ex_aluop,
 	output reg[`AluSelBus]        ex_alusel,
 	output reg[`RegBus]           ex_reg1,
 	output reg[`RegBus]           ex_reg2,
 	output reg[`RegAddrBus]       ex_wd,
-	output reg                    ex_wreg
+	output reg                    ex_wreg,
 	output reg[`RegBus]           ex_link_address,
   output reg                    ex_is_in_delayslot,
-	output reg                    is_in_delayslot_o	
+	output reg                    is_in_delayslot_o	,
+	output reg[`RegBus]           ex_inst	
 	
 );
 
@@ -70,13 +70,21 @@ module id_ex(
 			ex_reg2 <= `ZeroWord;
 			ex_wd <= `NOPRegAddr;
 			ex_wreg <= `WriteDisable;
+			ex_link_address <= `ZeroWord;
+			ex_is_in_delayslot <= `NotInDelaySlot;
+	    is_in_delayslot_o <= `NotInDelaySlot;			
+	 ex_inst <= `ZeroWord;			
 		end else begin		
 			ex_aluop <= id_aluop;
 			ex_alusel <= id_alusel;
 			ex_reg1 <= id_reg1;
 			ex_reg2 <= id_reg2;
 			ex_wd <= id_wd;
-			ex_wreg <= id_wreg;		
+			ex_wreg <= id_wreg;	
+			ex_link_address <= id_link_address;
+			ex_is_in_delayslot <= id_is_in_delayslot;
+	    is_in_delayslot_o <= next_inst_in_delayslot_i;				
+	 ex_inst <= id_inst;			
 		end
 	end
 	

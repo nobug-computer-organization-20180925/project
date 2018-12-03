@@ -22,70 +22,46 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// Module:  id_ex
-// File:    id_ex.v
-// Description: ID/EXï¿½×¶ÎµÄ¼Ä´ï¿½ï¿½ï¿½
+// Module:  data_ram
+// File:    data_ram.v
+// Author:  Lei Silei
+// E-mail:  leishangwen@163.com
+// Description: ¨ºy?Y¡ä?¡ä¡é?¡Â
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
 `include "defines.v"
 
-module id_ex(
+module data_ram(
 
-	input	wire clk,
-	input wire rst,
-
-	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶Î´ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ï¢
-	input wire[`AluOpBus]         id_aluop,
-	input wire[`AluSelBus]        id_alusel,
-	input wire[`RegBus]           id_reg1,
-	input wire[`RegBus]           id_reg2,
-	input wire[`RegAddrBus]       id_wd,
-	input wire                    id_wreg,	
-	input wire[`RegBus]           id_link_address,
-	input wire                    id_is_in_delayslot,
-	input wire                    next_inst_in_delayslot_i,		
-	input wire[`RegBus]           id_inst,		
-	
-	//ï¿½ï¿½ï¿½Ýµï¿½Ö´ï¿½Ð½×¶Îµï¿½ï¿½ï¿½Ï¢
-	output reg[`AluOpBus]         ex_aluop,
-	output reg[`AluSelBus]        ex_alusel,
-	output reg[`RegBus]           ex_reg1,
-	output reg[`RegBus]           ex_reg2,
-	output reg[`RegAddrBus]       ex_wd,
-	output reg                    ex_wreg,
-	output reg[`RegBus]           ex_link_address,
-  output reg                    ex_is_in_delayslot,
-	output reg                    is_in_delayslot_o	,
-	output reg[`RegBus]           ex_inst	
+	input	wire	clk,
+	input wire	ce,
+	input wire we,
+	input wire[`DataAddrBus]	addr,
+	input wire[`DataBus]		data_i,
+	output reg[`DataBus]		data_o
 	
 );
 
+	reg[`ByteWidth]  data_mem[0:`DataMemNum-1];
+
 	always @ (posedge clk) begin
-		if (rst == `RstEnable) begin
-			ex_aluop <= `EXE_NOP_OP;
-			ex_alusel <= `EXE_RES_NOP;
-			ex_reg1 <= `ZeroWord;
-			ex_reg2 <= `ZeroWord;
-			ex_wd <= `NOPRegAddr;
-			ex_wreg <= `WriteDisable;
-			ex_link_address <= `ZeroWord;
-			ex_is_in_delayslot <= `NotInDelaySlot;
-	    is_in_delayslot_o <= `NotInDelaySlot;			
-	 ex_inst <= `ZeroWord;			
-		end else begin		
-			ex_aluop <= id_aluop;
-			ex_alusel <= id_alusel;
-			ex_reg1 <= id_reg1;
-			ex_reg2 <= id_reg2;
-			ex_wd <= id_wd;
-			ex_wreg <= id_wreg;	
-			ex_link_address <= id_link_address;
-			ex_is_in_delayslot <= id_is_in_delayslot;
-	    is_in_delayslot_o <= next_inst_in_delayslot_i;				
-	 ex_inst <= id_inst;			
+		if (ce == `ChipDisable) begin
+			//data_o <= ZeroWord;
+		end else if(we == `WriteEnable) begin
+		      data_mem[addr] <= data_i;
+		    end
 		end
 	end
 	
+	always @ (*) begin
+		if (ce == `ChipDisable) begin
+			data_o <= `ZeroWord;
+	  end else if(we == `WriteDisable) begin
+		    data_o <= data_mem[addr];
+		end else begin
+				data_o <= `ZeroWord;
+		end
+	end		
+
 endmodule
