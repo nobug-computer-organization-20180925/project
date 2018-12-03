@@ -26,9 +26,6 @@ module memory(
     reg WE_E;
 	 assign ram1datainout = (WE_E ? 16'bz : ram1data);
 	 assign ram2datainout = (WE_E ? 16'bz : ram2data);
-	 wire ram1datain, ram2datain;
-	 assign ram1datain = ram1datainout;
-	 assign ram2datain = ram2datainout;
 	 
     reg[15:0] addr, data;
     reg[2:0] currentstate, nextstate;
@@ -41,7 +38,7 @@ module memory(
     assign ram2_WE_L = ram1_WE_L;
 
     Seven_Seg_Display s1(
-        .LED_out(LED_out),
+        .LED_outn(LED_out),
         .LED_BCD(currentstate)
     );
 
@@ -131,9 +128,9 @@ module memory(
     end
 
     wire[15:0] dataadd, addradd, dataadd1;
-    assign dataadd = data + (count >> 1);
-    assign dataadd1 = data + (count >> 1) - 1;
-    assign addradd = addr + (count >> 1);
+    assign dataadd = data + (count);
+    assign dataadd1 = data + (count) - 1;
+    assign addradd = addr + (count>>1);
 
     always @(posedge clk or negedge rst)
     begin
@@ -169,7 +166,7 @@ module memory(
                 S2://write data
                 begin
 						  
-                    ram1_CE<=1;
+                  //  ram1_CE<=1;
                     ram1data<=dataadd;
                     ram1addr<=addradd;
                     result<={addradd[7:0], dataadd[7:0]};
@@ -180,7 +177,7 @@ module memory(
                 begin//read data
 						  if(count==0) result<=0;
 						  else result<=ram1datainout;
-                    ram1_CE<=1;
+                  //  ram1_CE<=1;
                     ram1addr<=addradd;
                    
                     WE_E<=1;
@@ -188,7 +185,7 @@ module memory(
                 end
                 S4:
                 begin//write ram2
-                    ram2_CE<=1;
+                //    ram2_CE<=1;
                     ram2data<=dataadd1;
                     ram2addr<=addradd;
                     result<={addradd[7:0], dataadd1[7:0]};
@@ -197,7 +194,7 @@ module memory(
                 end
                 S5:
                 begin//read ram2
-                    ram2_CE<=1;
+                //    ram2_CE<=1;
                     ram2addr<=addradd;
                     result<=ram2datainout;
                     WE_E<=1;

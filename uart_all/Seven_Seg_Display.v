@@ -1,9 +1,10 @@
 module Seven_Seg_Display(
     input[2:0] LED_BCD,
-    output[6:0] LED_out
+    output[6:0] LED_outn
 );
 
     reg[6:0] LED_out;
+	 assign LED_outn = ~LED_out;
     // Cathode patterns of the 7-segment LED display 
     always @(*)
     begin
