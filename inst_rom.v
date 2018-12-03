@@ -42,18 +42,15 @@ module inst_rom(
 
 	reg[`InstBus]  inst_mem[0:`InstMemNum-1];
 	wire[`InstBus] instDataTemp;
-
+	integer i;
 	always @(negedge rst) begin
 	inst_mem[0]<=16'b11101_001_010_01101;
 	inst_mem[1]<=16'b11111_001_010_01101;
 	inst_mem[2]<=16'b01111_001_011_00000;
 	inst_mem[3]<=16'b00010_111_111_11110;
 	inst_mem[4]<=16'b01111_001_100_00000;
-	inst_mem[5]<=16'b0;
-	inst_mem[6]<=16'b0;
-	inst_mem[7]<=16'b0;
-	inst_mem[8]<=16'b0;
-	inst_mem[9]<=16'b0;
+	
+	for(i=5;i<`InstMemNum;i=i+1) inst_mem[i]<=0;
 
 	end
 	

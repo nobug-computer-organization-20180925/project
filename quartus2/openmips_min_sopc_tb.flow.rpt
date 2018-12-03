@@ -1,5 +1,5 @@
 Flow report for openmips_min_sopc_tb
-Sun Dec 02 23:15:15 2018
+Mon Dec 03 23:49:29 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,13 +38,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Sun Dec 02 23:15:15 2018        ;
+; Flow Status             ; Successful - Mon Dec 03 23:49:29 2018        ;
 ; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name           ; openmips_min_sopc_tb                         ;
 ; Top-level Entity Name   ; openmips_min_sopc                            ;
 ; Family                  ; MAX II                                       ;
 ; Met timing requirements ; N/A                                          ;
-; Total logic elements    ; 401                                          ;
+; Total logic elements    ; 415                                          ;
 ; Total pins              ; 18                                           ;
 ; Total virtual pins      ; 0                                            ;
 ; UFM blocks              ; 0 / 1 ( 0 % )                                ;
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 12/02/2018 23:15:13  ;
+; Start date & time ; 12/03/2018 23:49:26  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; openmips_min_sopc_tb ;
 +-------------------+----------------------+
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +--------------------------------------+--------------------------------+----------------------+-------------+----------------+
 ; Assignment Name                      ; Value                          ; Default Value        ; Entity Name ; Section Id     ;
 +--------------------------------------+--------------------------------+----------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 93328253497077.154376371308920 ; --                   ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 93328253497077.154385216606372 ; --                   ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; openmips_min_sopc0             ; --                   ; --          ; --             ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; openmips_min_sopc_tb           ; --                   ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                    ; --                   ; --          ; eda_simulation ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 254 MB              ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 257 MB              ; 00:00:02                           ;
 ; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 

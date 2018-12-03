@@ -49,18 +49,14 @@ module ex(
 	
 	output reg[`RegAddrBus]       wd_o,
 	output reg                    wreg_o,
-	output reg[`RegBus] wdata_o,
-	output wire stallreq       			
-	
+	output reg[`RegBus]						wdata_o
 	
 );
 
 	reg[`RegBus] logicout;
 	reg[`RegBus] shiftres;//?
 	reg[`RegBus] moveres;
-	
-	assign stallreq = 0;
-	
+
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			logicout <= `ZeroWord;
