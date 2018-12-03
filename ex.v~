@@ -54,12 +54,16 @@ module ex(
 	
 		output wire[`AluOpBus]        aluop_o,
 	output wire[`RegBus]          mem_addr_o,
-	output wire[`RegBus]          reg2_o
+	output wire[`RegBus]          reg2_o,
+
+		output wire stallreq       
 );
 
 	reg[`RegBus] logicout;
 	reg[`RegBus] shiftres;//?
 	reg[`RegBus] moveres;
+
+	assign stallreq = 0;
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin

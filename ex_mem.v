@@ -34,7 +34,7 @@ module ex_mem(
 
 	input	wire	clk,
 	input wire	rst,
-	
+input wire[5:0]	stall,		
 	
 	//来自执行阶段的信息	
 	input wire[`RegAddrBus]       ex_wd,
@@ -62,16 +62,23 @@ module ex_mem(
 			mem_wd <= `NOPRegAddr;
 			mem_wreg <= `WriteDisable;
 			mem_wdata <= `ZeroWord;	
-			mem_aluop <= `EXE_NOP_OP; //added after "stall added" 
-			mem_mem_addr <= `ZeroWord;//added after "stall added" 
-			mem_reg2 <= `ZeroWord;//added after "stall added" 
-		end else begin
+			mem_aluop <= `EXE_NOP_OP; 
+			mem_mem_addr <= `ZeroWord;
+			mem_reg2 <= `ZeroWord;
+		end else if(stall[3] == `Stop && stall[4] == `NoStop) begin
+			mem_wd <= `NOPRegAddr;
+			mem_wreg <= `WriteDisable;
+			mem_wdata <= `ZeroWord;
+		  	mem_aluop <= `EXE_NOP_OP;
+			mem_mem_addr <= `ZeroWord;
+			mem_reg2 <= `ZeroWord;	
+		end else if(stall[3] == `NoStop) begin
 			mem_wd <= ex_wd;
 			mem_wreg <= ex_wreg;
 			mem_wdata <= ex_wdata;			
-			mem_aluop <= ex_aluop;//added after "stall added" 
-			mem_mem_addr <= ex_mem_addr;//added after "stall added" 
-			mem_reg2 <= ex_reg2;	//added after "stall added" 
+			mem_aluop <= ex_aluop;
+			mem_mem_addr <= ex_mem_addr;
+			mem_reg2 <= ex_reg2;
 		end    //if
 	end      //always
 			
