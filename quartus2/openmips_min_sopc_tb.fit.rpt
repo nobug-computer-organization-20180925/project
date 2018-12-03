@@ -1,5 +1,5 @@
 Fitter report for openmips_min_sopc_tb
-Sat Dec 01 01:44:03 2018
+Mon Dec 03 23:46:00 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -60,14 +60,14 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Sat Dec 01 01:44:03 2018        ;
+; Fitter Status         ; Successful - Mon Dec 03 23:46:00 2018        ;
 ; Quartus II Version    ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name         ; openmips_min_sopc_tb                         ;
 ; Top-level Entity Name ; openmips_min_sopc                            ;
 ; Family                ; MAX II                                       ;
 ; Device                ; EPM570T100C3                                 ;
 ; Timing Models         ; Final                                        ;
-; Total logic elements  ; 312 / 570 ( 55 % )                           ;
+; Total logic elements  ; 325 / 570 ( 57 % )                           ;
 ; Total pins            ; 18 / 76 ( 24 % )                             ;
 ; Total virtual pins    ; 0                                            ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                                ;
@@ -142,45 +142,45 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Total logic elements                        ; 312 / 570 ( 55 % ) ;
-;     -- Combinational with no register       ; 169                ;
+; Total logic elements                        ; 325 / 570 ( 57 % ) ;
+;     -- Combinational with no register       ; 182                ;
 ;     -- Register only                        ; 0                  ;
 ;     -- Combinational with a register        ; 143                ;
 ;                                             ;                    ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 195                ;
-;     -- 3 input functions                    ; 49                 ;
-;     -- 2 input functions                    ; 64                 ;
+;     -- 4 input functions                    ; 220                ;
+;     -- 3 input functions                    ; 15                 ;
+;     -- 2 input functions                    ; 86                 ;
 ;     -- 1 input functions                    ; 4                  ;
 ;     -- 0 input functions                    ; 0                  ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 306                ;
+;     -- normal mode                          ; 319                ;
 ;     -- arithmetic mode                      ; 6                  ;
-;     -- qfbk mode                            ; 53                 ;
+;     -- qfbk mode                            ; 77                 ;
 ;     -- register cascade mode                ; 0                  ;
-;     -- synchronous clear/load mode          ; 71                 ;
+;     -- synchronous clear/load mode          ; 88                 ;
 ;     -- asynchronous clear/load mode         ; 0                  ;
 ;                                             ;                    ;
 ; Total registers                             ; 143 / 570 ( 25 % ) ;
-; Total LABs                                  ; 36 / 57 ( 63 % )   ;
+; Total LABs                                  ; 39 / 57 ( 68 % )   ;
 ; Logic elements in carry chains              ; 7                  ;
 ; User inserted logic elements                ; 0                  ;
 ; Virtual pins                                ; 0                  ;
 ; I/O pins                                    ; 18 / 76 ( 24 % )   ;
-;     -- Clock pins                           ; 2 / 4 ( 50 % )     ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
 ; Global signals                              ; 1                  ;
 ; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
 ; Global clocks                               ; 1 / 4 ( 25 % )     ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )      ;
-; Average interconnect usage (total/H/V)      ; 33% / 41% / 24%    ;
-; Peak interconnect usage (total/H/V)         ; 33% / 41% / 24%    ;
+; Average interconnect usage (total/H/V)      ; 37% / 44% / 29%    ;
+; Peak interconnect usage (total/H/V)         ; 37% / 44% / 29%    ;
 ; Maximum fan-out node                        ; clk                ;
 ; Maximum fan-out                             ; 143                ;
 ; Highest non-global fan-out signal           ; rst                ;
-; Highest non-global fan-out                  ; 139                ;
-; Total fan-out                               ; 1311               ;
-; Average fan-out                             ; 3.97               ;
+; Highest non-global fan-out                  ; 108                ;
+; Total fan-out                               ; 1319               ;
+; Average fan-out                             ; 3.85               ;
 +---------------------------------------------+--------------------+
 
 
@@ -190,7 +190,7 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; clk  ; 12    ; 1        ; 0            ; 5            ; 0           ; 143                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; rst  ; 44    ; 1        ; 8            ; 3            ; 2           ; 139                   ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; rst  ; 43    ; 1        ; 8            ; 3            ; 3           ; 108                   ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -199,22 +199,22 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+
-; register1[0]  ; 40    ; 1        ; 7            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
-; register1[10] ; 29    ; 1        ; 4            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
-; register1[11] ; 34    ; 1        ; 6            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[12] ; 92    ; 2        ; 6            ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[13] ; 18    ; 1        ; 0            ; 5            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[14] ; 36    ; 1        ; 6            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
-; register1[15] ; 15    ; 1        ; 0            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[1]  ; 1     ; 2        ; 3            ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[2]  ; 3     ; 1        ; 1            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[3]  ; 14    ; 1        ; 0            ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[0]  ; 26    ; 1        ; 3            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[10] ; 34    ; 1        ; 6            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[11] ; 40    ; 1        ; 7            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[12] ; 38    ; 1        ; 7            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[13] ; 87    ; 2        ; 7            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[14] ; 18    ; 1        ; 0            ; 5            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[15] ; 35    ; 1        ; 6            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[1]  ; 91    ; 2        ; 6            ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[2]  ; 19    ; 1        ; 0            ; 4            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[3]  ; 95    ; 2        ; 5            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
 ; register1[4]  ; 28    ; 1        ; 4            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[5]  ; 19    ; 1        ; 0            ; 4            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[6]  ; 33    ; 1        ; 6            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[7]  ; 16    ; 1        ; 0            ; 5            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
-; register1[8]  ; 43    ; 1        ; 8            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
-; register1[9]  ; 38    ; 1        ; 7            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
+; register1[5]  ; 42    ; 1        ; 7            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[6]  ; 17    ; 1        ; 0            ; 5            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[7]  ; 72    ; 2        ; 13           ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
+; register1[8]  ; 44    ; 1        ; 8            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ;
+; register1[9]  ; 30    ; 1        ; 4            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+
 
 
@@ -223,8 +223,8 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 16 / 36 ( 44 % ) ; 3.3V          ; --           ;
-; 2        ; 2 / 40 ( 5 % )   ; 3.3V          ; --           ;
+; 1        ; 14 / 36 ( 39 % ) ; 3.3V          ; --           ;
+; 2        ; 4 / 40 ( 10 % )  ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -233,9 +233,9 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 +----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
 ; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
 +----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
-; 1        ; 161        ; 2        ; register1[1]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 1        ; 161        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 2        ; 2          ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 3        ; 4          ; 1        ; register1[2]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 3        ; 4          ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 4        ; 6          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 5        ; 8          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 6        ; 9          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -246,37 +246,37 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 ; 11       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 12       ; 20         ; 1        ; clk            ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 13       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
-; 14       ; 21         ; 1        ; register1[3]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
-; 15       ; 22         ; 1        ; register1[15]  ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
-; 16       ; 23         ; 1        ; register1[7]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
-; 17       ; 24         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 18       ; 25         ; 1        ; register1[13]  ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
-; 19       ; 32         ; 1        ; register1[5]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 14       ; 21         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 15       ; 22         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 16       ; 23         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 17       ; 24         ; 1        ; register1[6]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 18       ; 25         ; 1        ; register1[14]  ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 19       ; 32         ; 1        ; register1[2]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 20       ; 34         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 21       ; 36         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 22       ; 38         ; 1        ; #TMS           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
 ; 23       ; 39         ; 1        ; #TDI           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
 ; 24       ; 40         ; 1        ; #TCK           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
 ; 25       ; 41         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
-; 26       ; 47         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 26       ; 47         ; 1        ; register1[0]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 27       ; 48         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 28       ; 50         ; 1        ; register1[4]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 29       ; 51         ; 1        ; register1[10]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 30       ; 52         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 29       ; 51         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 30       ; 52         ; 1        ; register1[9]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 31       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
 ; 32       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
-; 33       ; 58         ; 1        ; register1[6]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 34       ; 59         ; 1        ; register1[11]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 35       ; 60         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 36       ; 61         ; 1        ; register1[14]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 33       ; 58         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 34       ; 59         ; 1        ; register1[10]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 35       ; 60         ; 1        ; register1[15]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 36       ; 61         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 37       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
-; 38       ; 62         ; 1        ; register1[9]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 38       ; 62         ; 1        ; register1[12]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 39       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
-; 40       ; 63         ; 1        ; register1[0]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 40       ; 63         ; 1        ; register1[11]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 41       ; 64         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 42       ; 65         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 43       ; 66         ; 1        ; register1[8]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 44       ; 67         ; 1        ; rst            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 42       ; 65         ; 1        ; register1[5]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 43       ; 66         ; 1        ; rst            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 44       ; 67         ; 1        ; register1[8]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 45       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
 ; 46       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 47       ; 71         ; 1        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -304,7 +304,7 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 ; 69       ; 111        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 70       ; 112        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 71       ; 115        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 72       ; 116        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 72       ; 116        ; 2        ; register1[7]   ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 73       ; 118        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 74       ; 120        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 75       ; 122        ; 2        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -319,15 +319,15 @@ The pin-out file can be found in D:/prog10/Desktop/project/quartus2/openmips_min
 ; 84       ; 140        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 85       ; 141        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 86       ; 142        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 87       ; 143        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 87       ; 143        ; 2        ; register1[13]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 88       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
 ; 89       ; 144        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 90       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
-; 91       ; 149        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 92       ; 150        ; 2        ; register1[12]  ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 91       ; 149        ; 2        ; register1[1]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 92       ; 150        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 93       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 94       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
-; 95       ; 151        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 95       ; 151        ; 2        ; register1[3]   ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 96       ; 152        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 97       ; 153        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 98       ; 155        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -358,17 +358,17 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                    ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------+--------------+
-; |openmips_min_sopc         ; 312 (0)     ; 143          ; 0          ; 18   ; 0            ; 169 (0)      ; 0 (0)             ; 143 (0)          ; 7 (0)           ; 53 (0)     ; |openmips_min_sopc                                     ; work         ;
-;    |inst_rom:inst_rom0|    ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |openmips_min_sopc|inst_rom:inst_rom0                  ; work         ;
-;    |openmips:openmips0|    ; 307 (0)     ; 143          ; 0          ; 0    ; 0            ; 164 (0)      ; 0 (0)             ; 143 (0)          ; 7 (0)           ; 53 (0)     ; |openmips_min_sopc|openmips:openmips0                  ; work         ;
-;       |ex:ex0|             ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (1)      ; |openmips_min_sopc|openmips:openmips0|ex:ex0           ; work         ;
+; |openmips_min_sopc         ; 325 (0)     ; 143          ; 0          ; 18   ; 0            ; 182 (0)      ; 0 (0)             ; 143 (0)          ; 7 (0)           ; 77 (0)     ; |openmips_min_sopc                                     ; work         ;
+;    |inst_rom:inst_rom0|    ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |openmips_min_sopc|inst_rom:inst_rom0                  ; work         ;
+;    |openmips:openmips0|    ; 310 (0)     ; 143          ; 0          ; 0    ; 0            ; 167 (0)      ; 0 (0)             ; 143 (0)          ; 7 (0)           ; 77 (0)     ; |openmips_min_sopc|openmips:openmips0                  ; work         ;
+;       |ex:ex0|             ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 1 (1)      ; |openmips_min_sopc|openmips:openmips0|ex:ex0           ; work         ;
 ;       |ex_mem:ex_mem0|     ; 19 (19)     ; 19           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 19 (19)          ; 0 (0)           ; 0 (0)      ; |openmips_min_sopc|openmips:openmips0|ex_mem:ex_mem0   ; work         ;
-;       |id:id0|             ; 21 (21)     ; 0            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 2 (2)      ; |openmips_min_sopc|openmips:openmips0|id:id0           ; work         ;
-;       |id_ex:id_ex0|       ; 149 (149)   ; 39           ; 0          ; 0    ; 0            ; 110 (110)    ; 0 (0)             ; 39 (39)          ; 0 (0)           ; 41 (41)    ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0     ; work         ;
-;       |if_id:if_id0|       ; 12 (12)     ; 10           ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0     ; work         ;
-;       |mem_wb:mem_wb0|     ; 20 (20)     ; 19           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 19 (19)          ; 0 (0)           ; 8 (8)      ; |openmips_min_sopc|openmips:openmips0|mem_wb:mem_wb0   ; work         ;
+;       |id:id0|             ; 20 (20)     ; 0            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 2 (2)      ; |openmips_min_sopc|openmips:openmips0|id:id0           ; work         ;
+;       |id_ex:id_ex0|       ; 156 (156)   ; 39           ; 0          ; 0    ; 0            ; 117 (117)    ; 0 (0)             ; 39 (39)          ; 0 (0)           ; 45 (45)    ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0     ; work         ;
+;       |if_id:if_id0|       ; 10 (10)     ; 10           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0     ; work         ;
+;       |mem_wb:mem_wb0|     ; 22 (22)     ; 19           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 19 (19)          ; 0 (0)           ; 16 (16)    ; |openmips_min_sopc|openmips:openmips0|mem_wb:mem_wb0   ; work         ;
 ;       |pc_reg:pc_reg0|     ; 15 (15)     ; 8            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 8 (8)            ; 7 (7)           ; 0 (0)      ; |openmips_min_sopc|openmips:openmips0|pc_reg:pc_reg0   ; work         ;
-;       |regfile:regfile1|   ; 62 (62)     ; 48           ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 48 (48)          ; 0 (0)           ; 1 (1)      ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1 ; work         ;
+;       |regfile:regfile1|   ; 51 (51)     ; 48           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 48 (48)          ; 0 (0)           ; 13 (13)    ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1 ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -399,21 +399,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------+----------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                              ;
-+----------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
-; Name                                               ; Location    ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+----------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
-; clk                                                ; PIN_12      ; 143     ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
-; openmips:openmips0|id:id0|always1~7                ; LC_X8_Y7_N7 ; 18      ; Sync. load   ; no     ; --                   ; --               ;
-; openmips:openmips0|id:id0|always2~9                ; LC_X9_Y7_N8 ; 18      ; Sync. load   ; no     ; --                   ; --               ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]~28      ; LC_X8_Y6_N7 ; 8       ; Sync. clear  ; no     ; --                   ; --               ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~25      ; LC_X5_Y5_N1 ; 8       ; Sync. clear  ; no     ; --                   ; --               ;
-; openmips:openmips0|regfile:regfile1|regs[1][9]~385 ; LC_X4_Y4_N6 ; 16      ; Clock enable ; no     ; --                   ; --               ;
-; openmips:openmips0|regfile:regfile1|regs[6][4]~402 ; LC_X4_Y4_N9 ; 16      ; Clock enable ; no     ; --                   ; --               ;
-; openmips:openmips0|regfile:regfile1|regs[7][0]~403 ; LC_X4_Y4_N2 ; 16      ; Clock enable ; no     ; --                   ; --               ;
-; rst                                                ; PIN_44      ; 139     ; Sync. clear  ; no     ; --                   ; --               ;
-+----------------------------------------------------+-------------+---------+--------------+--------+----------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                ;
++-----------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name                                                ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++-----------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; clk                                                 ; PIN_12       ; 143     ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
+; openmips:openmips0|regfile:regfile1|regs[1][8]~385  ; LC_X11_Y4_N8 ; 16      ; Clock enable ; no     ; --                   ; --               ;
+; openmips:openmips0|regfile:regfile1|regs[6][2]~402  ; LC_X11_Y4_N2 ; 16      ; Clock enable ; no     ; --                   ; --               ;
+; openmips:openmips0|regfile:regfile1|regs[7][10]~403 ; LC_X11_Y4_N3 ; 16      ; Clock enable ; no     ; --                   ; --               ;
+; rst                                                 ; PIN_43       ; 108     ; Sync. clear  ; no     ; --                   ; --               ;
++-----------------------------------------------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
 +---------------------------------------------------------------------+
@@ -425,62 +421,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+
 
 
-+--------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                              ;
-+----------------------------------------------------+---------+
-; Name                                               ; Fan-Out ;
-+----------------------------------------------------+---------+
-; rst                                                ; 139     ;
-; openmips:openmips0|if_id:if_id0|id_inst[9]         ; 39      ;
-; openmips:openmips0|if_id:if_id0|id_inst[7]         ; 29      ;
-; openmips:openmips0|if_id:if_id0|id_inst[6]         ; 24      ;
-; openmips:openmips0|id:id0|always1~7                ; 18      ;
-; openmips:openmips0|id:id0|always2~9                ; 18      ;
-; openmips:openmips0|id_ex:id_ex0|ex_alusel[1]       ; 17      ;
-; openmips:openmips0|regfile:regfile1|regs[7][0]~403 ; 16      ;
-; openmips:openmips0|regfile:regfile1|regs[6][4]~402 ; 16      ;
-; openmips:openmips0|ex:ex0|Mux15~1                  ; 16      ;
-; openmips:openmips0|regfile:regfile1|regs[1][9]~385 ; 16      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]~23      ; 15      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~18      ; 15      ;
-; openmips:openmips0|if_id:if_id0|id_inst[15]        ; 15      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]~102     ; 13      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]~100     ; 13      ;
-; openmips:openmips0|pc_reg:pc_reg0|ce               ; 13      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[9]~58      ; 13      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[11]~58     ; 13      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[11]~56     ; 13      ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~19      ; 13      ;
-; openmips:openmips0|id:id0|reg2_addr_o[1]~4         ; 13      ;
-; openmips:openmips0|id:id0|reg2_addr_o[2]~3         ; 13      ;
-; openmips:openmips0|if_id:if_id0|id_inst[12]        ; 13      ;
-; openmips:openmips0|id:id0|always1~5                ; 11      ;
-; openmips:openmips0|id:id0|always2~6                ; 11      ;
-; openmips:openmips0|pc_reg:pc_reg0|pc[1]            ; 9       ;
-; openmips:openmips0|if_id:if_id0|id_inst[11]        ; 9       ;
-; openmips:openmips0|pc_reg:pc_reg0|pc[0]            ; 8       ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1~63         ; 8       ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2~62         ; 8       ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg1[7]~28      ; 8       ;
-; openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~25      ; 8       ;
-; openmips:openmips0|id_ex:id_ex0|ex_alusel~3        ; 8       ;
-; openmips:openmips0|pc_reg:pc_reg0|pc[3]            ; 7       ;
-; openmips:openmips0|pc_reg:pc_reg0|pc[2]            ; 7       ;
-; openmips:openmips0|if_id:if_id0|id_inst[5]         ; 7       ;
-; openmips:openmips0|if_id:if_id0|id_inst~16         ; 6       ;
-; openmips:openmips0|if_id:if_id0|id_inst[8]         ; 6       ;
-; openmips:openmips0|id:id0|imm[7]~9                 ; 5       ;
-; openmips:openmips0|id_ex:id_ex0|ex_wreg~1          ; 5       ;
-; openmips:openmips0|mem_wb:mem_wb0|wb_wreg          ; 5       ;
-; openmips:openmips0|mem_wb:mem_wb0|wb_wd[2]         ; 5       ;
-; openmips:openmips0|if_id:if_id0|id_inst~17         ; 4       ;
-; openmips:openmips0|id:id0|imm[2]~11                ; 4       ;
-; openmips:openmips0|id:id0|imm[1]~10                ; 4       ;
-; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]         ; 4       ;
-; openmips:openmips0|id:id0|reg2_read_o~2            ; 4       ;
-; openmips:openmips0|id_ex:id_ex0|ex_wreg            ; 4       ;
-; openmips:openmips0|mem_wb:mem_wb0|wb_wdata[6]      ; 4       ;
-+----------------------------------------------------+---------+
++---------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                               ;
++-----------------------------------------------------+---------+
+; Name                                                ; Fan-Out ;
++-----------------------------------------------------+---------+
+; rst                                                 ; 108     ;
+; openmips:openmips0|id:id0|reg2_addr_o[0]~3          ; 34      ;
+; openmips:openmips0|id:id0|reg2_addr_o[1]~5          ; 22      ;
+; openmips:openmips0|id:id0|reg1_addr_o[0]~3          ; 21      ;
+; openmips:openmips0|if_id:if_id0|id_inst[8]          ; 18      ;
+; openmips:openmips0|id:id0|reg2_addr_o[2]~4          ; 18      ;
+; openmips:openmips0|id:id0|reg1_addr_o[2]~4          ; 17      ;
+; openmips:openmips0|if_id:if_id0|id_inst[7]          ; 17      ;
+; openmips:openmips0|id_ex:id_ex0|ex_alusel[1]        ; 17      ;
+; openmips:openmips0|regfile:regfile1|regs[7][10]~403 ; 16      ;
+; openmips:openmips0|regfile:regfile1|regs[6][2]~402  ; 16      ;
+; openmips:openmips0|pc_reg:pc_reg0|ce                ; 16      ;
+; openmips:openmips0|ex:ex0|Mux15~1                   ; 16      ;
+; openmips:openmips0|regfile:regfile1|regs[1][8]~385  ; 16      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[12]~24      ; 14      ;
+; openmips:openmips0|id:id0|reg2_read_o~2             ; 14      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]~36       ; 13      ;
+; openmips:openmips0|id:id0|always2~5                 ; 13      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[12]~63      ; 12      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[15]~87      ; 12      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[15]~86      ; 12      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[0]~21       ; 12      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[0]~18       ; 12      ;
+; openmips:openmips0|id:id0|always2~7                 ; 11      ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]~37       ; 11      ;
+; openmips:openmips0|id:id0|always1~7                 ; 10      ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[3]             ; 9       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[2]             ; 9       ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[15]~43      ; 9       ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg2[1]~135      ; 8       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[1]             ; 8       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[0]             ; 8       ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[12]~68      ; 8       ;
+; openmips:openmips0|id_ex:id_ex0|ex_reg1[0]~26       ; 8       ;
+; openmips:openmips0|id_ex:id_ex0|ex_alusel~3         ; 8       ;
+; openmips:openmips0|if_id:if_id0|id_inst[0]          ; 8       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[4]             ; 7       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[5]             ; 7       ;
+; openmips:openmips0|pc_reg:pc_reg0|pc[6]             ; 7       ;
+; openmips:openmips0|id:id0|imm[7]~8                  ; 7       ;
+; openmips:openmips0|if_id:if_id0|id_inst[11]         ; 7       ;
+; openmips:openmips0|if_id:if_id0|id_inst[12]         ; 7       ;
+; openmips:openmips0|if_id:if_id0|id_inst[1]          ; 6       ;
+; openmips:openmips0|id_ex:id_ex0|ex_wreg~1           ; 6       ;
+; openmips:openmips0|id:id0|imm[2]~10                 ; 4       ;
+; openmips:openmips0|id:id0|imm[1]~9                  ; 4       ;
+; openmips:openmips0|mem_wb:mem_wb0|wb_wreg           ; 4       ;
+; openmips:openmips0|mem_wb:mem_wb0|wb_wd[1]          ; 4       ;
+; openmips:openmips0|mem_wb:mem_wb0|wb_wd[0]          ; 4       ;
+; openmips:openmips0|id_ex:id_ex0|ex_wreg             ; 4       ;
++-----------------------------------------------------+---------+
 
 
 +---------------------------------------------------+
@@ -488,121 +484,120 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------------+
 ; Interconnect Resource Type ; Usage                ;
 +----------------------------+----------------------+
-; C4s                        ; 311 / 1,624 ( 19 % ) ;
+; C4s                        ; 364 / 1,624 ( 22 % ) ;
 ; Direct links               ; 44 / 1,930 ( 2 % )   ;
 ; Global clocks              ; 1 / 4 ( 25 % )       ;
 ; LAB clocks                 ; 11 / 56 ( 20 % )     ;
-; LUT chains                 ; 45 / 513 ( 9 % )     ;
-; Local interconnects        ; 581 / 1,930 ( 30 % ) ;
-; R4s                        ; 484 / 1,472 ( 33 % ) ;
+; LUT chains                 ; 62 / 513 ( 12 % )    ;
+; Local interconnects        ; 633 / 1,930 ( 33 % ) ;
+; R4s                        ; 544 / 1,472 ( 37 % ) ;
 +----------------------------+----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 8.67) ; Number of LABs  (Total = 36) ;
+; Number of Logic Elements  (Average = 8.33) ; Number of LABs  (Total = 39) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 0                            ;
-; 2                                          ; 1                            ;
-; 3                                          ; 2                            ;
+; 1                                          ; 3                            ;
+; 2                                          ; 2                            ;
+; 3                                          ; 1                            ;
 ; 4                                          ; 0                            ;
 ; 5                                          ; 0                            ;
-; 6                                          ; 2                            ;
+; 6                                          ; 0                            ;
 ; 7                                          ; 2                            ;
 ; 8                                          ; 2                            ;
-; 9                                          ; 8                            ;
-; 10                                         ; 19                           ;
+; 9                                          ; 5                            ;
+; 10                                         ; 24                           ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.81) ; Number of LABs  (Total = 36) ;
+; LAB-wide Signals  (Average = 1.69) ; Number of LABs  (Total = 39) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 35                           ;
-; 1 Clock enable                     ; 8                            ;
-; 1 Sync. clear                      ; 8                            ;
-; 1 Sync. load                       ; 9                            ;
-; 2 Clock enables                    ; 5                            ;
+; 1 Clock                            ; 39                           ;
+; 1 Clock enable                     ; 15                           ;
+; 1 Sync. clear                      ; 5                            ;
+; 2 Clock enables                    ; 7                            ;
 +------------------------------------+------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 10.58) ; Number of LABs  (Total = 36) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 5                            ;
-; 10                                           ; 6                            ;
-; 11                                           ; 6                            ;
-; 12                                           ; 4                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 3                            ;
-+----------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 9.95) ; Number of LABs  (Total = 39) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 4                            ;
+; 10                                          ; 8                            ;
+; 11                                          ; 8                            ;
+; 12                                          ; 8                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 1                            ;
+; 17                                          ; 1                            ;
++---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.36) ; Number of LABs  (Total = 36) ;
+; Number of Signals Sourced Out  (Average = 5.62) ; Number of LABs  (Total = 39) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 1                            ;
+; 1                                               ; 3                            ;
+; 2                                               ; 4                            ;
 ; 3                                               ; 3                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 9                            ;
+; 4                                               ; 4                            ;
+; 5                                               ; 6                            ;
 ; 6                                               ; 5                            ;
-; 7                                               ; 5                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 2                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 2                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 2                            ;
+; 7                                               ; 3                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 4                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.00) ; Number of LABs  (Total = 36) ;
+; Number of Distinct Inputs  (Average = 13.87) ; Number of LABs  (Total = 39) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 2                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 6                            ;
-; 13                                           ; 3                            ;
-; 14                                           ; 1                            ;
+; 3                                            ; 2                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 3                            ;
+; 8                                            ; 4                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 3                            ;
 ; 15                                           ; 3                            ;
-; 16                                           ; 1                            ;
+; 16                                           ; 2                            ;
 ; 17                                           ; 2                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 5                            ;
-; 20                                           ; 1                            ;
+; 18                                           ; 6                            ;
+; 19                                           ; 3                            ;
+; 20                                           ; 4                            ;
 ; 21                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
@@ -640,44 +635,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Advanced Data - Placement Preparation                                                                 ;
-+--------------------------------------------------------------------------------+----------------------+
-; Name                                                                           ; Value                ;
-+--------------------------------------------------------------------------------+----------------------+
-; Mid Wire Use - Fit Attempt 1                                                   ; 42                   ;
-; Mid Slack - Fit Attempt 1                                                      ; -10165               ;
-; Internal Atom Count - Fit Attempt 1                                            ; 312                  ;
-; LE/ALM Count - Fit Attempt 1                                                   ; 312                  ;
-; LAB Count - Fit Attempt 1                                                      ; 36                   ;
-; Outputs per Lab - Fit Attempt 1                                                ; 6.361                ;
-; Inputs per LAB - Fit Attempt 1                                                 ; 13.722               ;
-; Global Inputs per LAB - Fit Attempt 1                                          ; 0.972                ;
-; LAB Constraint 'non-global clock / CE pair + async load' - Fit Attempt 1       ; 0:36                 ;
-; LAB Constraint 'ce + sync load' - Fit Attempt 1                                ; 0:14;1:15;2:7        ;
-; LAB Constraint 'non-global controls' - Fit Attempt 1                           ; 0:12;1:9;2:14;3:1    ;
-; LAB Constraint 'un-route combination' - Fit Attempt 1                          ; 0:12;1:9;2:14;3:1    ;
-; LAB Constraint 'non-global with asyn_clear' - Fit Attempt 1                    ; 0:12;1:9;2:14;3:1    ;
-; LAB Constraint 'un-route with async_clear' - Fit Attempt 1                     ; 0:12;1:9;2:14;3:1    ;
-; LAB Constraint 'non-global async clear + sync clear' - Fit Attempt 1           ; 0:25;1:11            ;
-; LAB Constraint 'global non-clock/non-asynch_clear' - Fit Attempt 1             ; 0:36                 ;
-; LAB Constraint 'ygr_cl_ngclk_gclkce_sload_aload_constraint' - Fit Attempt 1    ; 0:14;1:21;2:1        ;
-; LAB Constraint 'global control signals' - Fit Attempt 1                        ; 0:1;1:35             ;
-; LAB Constraint 'clock / ce pair constraint' - Fit Attempt 1                    ; 0:1;1:24;2:11        ;
-; LAB Constraint 'aload_aclr pair with aload used' - Fit Attempt 1               ; 0:36                 ;
-; LAB Constraint 'aload_aclr pair' - Fit Attempt 1                               ; 0:1;1:35             ;
-; LAB Constraint 'sload_sclear pair' - Fit Attempt 1                             ; 0:7;1:29             ;
-; LAB Constraint 'invert_a constraint' - Fit Attempt 1                           ; 0:3;1:33             ;
-; LAB Constraint 'has placement constraint' - Fit Attempt 1                      ; 0:36                 ;
-; LAB Constraint 'use of ADATA or SDATA by registers constraint' - Fit Attempt 1 ; 0:36                 ;
-; LAB Constraint 'group hierarchy constraint' - Fit Attempt 1                    ; 1:4;2:12;3:9;4:9;5:2 ;
-; LEs in Chains - Fit Attempt 1                                                  ; 7                    ;
-; LEs in Long Chains - Fit Attempt 1                                             ; 0                    ;
-; LABs with Chains - Fit Attempt 1                                               ; 1                    ;
-; LABs with Multiple Chains - Fit Attempt 1                                      ; 0                    ;
-; Time - Fit Attempt 1                                                           ; 1                    ;
-; Time in tsm_tan.dll - Fit Attempt 1                                            ; 0.016                ;
-+--------------------------------------------------------------------------------+----------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Advanced Data - Placement Preparation                                                                     ;
++--------------------------------------------------------------------------------+--------------------------+
+; Name                                                                           ; Value                    ;
++--------------------------------------------------------------------------------+--------------------------+
+; Mid Wire Use - Fit Attempt 1                                                   ; 43                       ;
+; Mid Slack - Fit Attempt 1                                                      ; -10214                   ;
+; Internal Atom Count - Fit Attempt 1                                            ; 325                      ;
+; LE/ALM Count - Fit Attempt 1                                                   ; 325                      ;
+; LAB Count - Fit Attempt 1                                                      ; 39                       ;
+; Outputs per Lab - Fit Attempt 1                                                ; 5.718                    ;
+; Inputs per LAB - Fit Attempt 1                                                 ; 13.333                   ;
+; Global Inputs per LAB - Fit Attempt 1                                          ; 1.000                    ;
+; LAB Constraint 'non-global clock / CE pair + async load' - Fit Attempt 1       ; 0:39                     ;
+; LAB Constraint 'ce + sync load' - Fit Attempt 1                                ; 0:17;1:15;2:7            ;
+; LAB Constraint 'non-global controls' - Fit Attempt 1                           ; 0:11;1:21;2:7            ;
+; LAB Constraint 'un-route combination' - Fit Attempt 1                          ; 0:11;1:21;2:7            ;
+; LAB Constraint 'non-global with asyn_clear' - Fit Attempt 1                    ; 0:11;1:21;2:7            ;
+; LAB Constraint 'un-route with async_clear' - Fit Attempt 1                     ; 0:11;1:21;2:7            ;
+; LAB Constraint 'non-global async clear + sync clear' - Fit Attempt 1           ; 0:33;1:6                 ;
+; LAB Constraint 'global non-clock/non-asynch_clear' - Fit Attempt 1             ; 0:39                     ;
+; LAB Constraint 'ygr_cl_ngclk_gclkce_sload_aload_constraint' - Fit Attempt 1    ; 0:17;1:22                ;
+; LAB Constraint 'global control signals' - Fit Attempt 1                        ; 1:39                     ;
+; LAB Constraint 'clock / ce pair constraint' - Fit Attempt 1                    ; 1:19;2:20                ;
+; LAB Constraint 'aload_aclr pair with aload used' - Fit Attempt 1               ; 0:39                     ;
+; LAB Constraint 'aload_aclr pair' - Fit Attempt 1                               ; 1:39                     ;
+; LAB Constraint 'sload_sclear pair' - Fit Attempt 1                             ; 0:4;1:35                 ;
+; LAB Constraint 'invert_a constraint' - Fit Attempt 1                           ; 0:6;1:33                 ;
+; LAB Constraint 'has placement constraint' - Fit Attempt 1                      ; 0:39                     ;
+; LAB Constraint 'use of ADATA or SDATA by registers constraint' - Fit Attempt 1 ; 0:39                     ;
+; LAB Constraint 'group hierarchy constraint' - Fit Attempt 1                    ; 1:5;2:9;3:10;4:9;5:5;8:1 ;
+; LEs in Chains - Fit Attempt 1                                                  ; 7                        ;
+; LEs in Long Chains - Fit Attempt 1                                             ; 0                        ;
+; LABs with Chains - Fit Attempt 1                                               ; 1                        ;
+; LABs with Multiple Chains - Fit Attempt 1                                      ; 0                        ;
+; Time - Fit Attempt 1                                                           ; 0                        ;
+; Time in tsm_tan.dll - Fit Attempt 1                                            ; 0.016                    ;
++--------------------------------------------------------------------------------+--------------------------+
 
 
 +----------------------------------------------+
@@ -687,25 +682,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------+--------+
 ; Auto Fit Point 2 - Fit Attempt 1    ; ff     ;
 ; Early Wire Use - Fit Attempt 1      ; 13     ;
-; Early Slack - Fit Attempt 1         ; -10360 ;
+; Early Slack - Fit Attempt 1         ; -10094 ;
 ; Auto Fit Point 5 - Fit Attempt 1    ; ff     ;
-; Mid Wire Use - Fit Attempt 1        ; 23     ;
-; Mid Slack - Fit Attempt 1           ; -8583  ;
+; Mid Wire Use - Fit Attempt 1        ; 25     ;
+; Mid Slack - Fit Attempt 1           ; -9457  ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
 ; Auto Fit Point 5 - Fit Attempt 1    ; ff     ;
-; Mid Wire Use - Fit Attempt 1        ; 23     ;
-; Mid Slack - Fit Attempt 1           ; -8583  ;
+; Mid Wire Use - Fit Attempt 1        ; 25     ;
+; Mid Slack - Fit Attempt 1           ; -9457  ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
 ; Auto Fit Point 6 - Fit Attempt 1    ; ff     ;
-; Late Wire Use - Fit Attempt 1       ; 26     ;
-; Late Slack - Fit Attempt 1          ; -8583  ;
+; Late Wire Use - Fit Attempt 1       ; 27     ;
+; Late Slack - Fit Attempt 1          ; -9457  ;
 ; Peak Regional Wire - Fit Attempt 1  ; 0.000  ;
 ; Auto Fit Point 7 - Fit Attempt 1    ; ff     ;
 ; Time - Fit Attempt 1                ; 0      ;
-; Time in tsm_tan.dll - Fit Attempt 1 ; 0.016  ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.047  ;
 +-------------------------------------+--------+
 
 
@@ -714,14 +709,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------+-------------+
 ; Name                                ; Value       ;
 +-------------------------------------+-------------+
-; Early Slack - Fit Attempt 1         ; -6507       ;
+; Early Slack - Fit Attempt 1         ; -6878       ;
 ; Early Wire Use - Fit Attempt 1      ; 27          ;
-; Peak Regional Wire - Fit Attempt 1  ; 24          ;
-; Mid Slack - Fit Attempt 1           ; -8163       ;
+; Peak Regional Wire - Fit Attempt 1  ; 25          ;
+; Mid Slack - Fit Attempt 1           ; -11396      ;
 ; Late Slack - Fit Attempt 1          ; -2147483648 ;
-; Late Wire Use - Fit Attempt 1       ; 32          ;
+; Late Wire Use - Fit Attempt 1       ; 36          ;
 ; Time - Fit Attempt 1                ; 0           ;
-; Time in tsm_tan.dll - Fit Attempt 1 ; 0.063       ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.031       ;
 +-------------------------------------+-------------+
 
 
@@ -731,7 +726,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Dec 01 01:44:02 2018
+    Info: Processing started: Mon Dec 03 23:45:58 2018
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off openmips_min_sopc_tb -c openmips_min_sopc_tb
 Info: Automatically selected device EPM570T100C3 for design openmips_min_sopc_tb
 Info: Fitting design with smaller device may be possible, but smaller device must be specified
@@ -785,20 +780,21 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  40 pins available
 Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
-Info: Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to register delay of 7.891 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X8_Y6; Fanout = 5; REG Node = 'openmips:openmips0|mem_wb:mem_wb0|wb_wreg'
-    Info: 2: + IC(1.461 ns) + CELL(0.125 ns) = 1.586 ns; Loc. = LAB_X7_Y7; Fanout = 1; COMB Node = 'openmips:openmips0|regfile:regfile1|always2~2'
-    Info: 3: + IC(0.168 ns) + CELL(0.571 ns) = 2.325 ns; Loc. = LAB_X7_Y7; Fanout = 1; COMB Node = 'openmips:openmips0|regfile:regfile1|always2~1'
-    Info: 4: + IC(0.168 ns) + CELL(0.571 ns) = 3.064 ns; Loc. = LAB_X7_Y7; Fanout = 15; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~18'
-    Info: 5: + IC(0.614 ns) + CELL(0.125 ns) = 3.803 ns; Loc. = LAB_X7_Y7; Fanout = 13; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~19'
-    Info: 6: + IC(1.492 ns) + CELL(0.319 ns) = 5.614 ns; Loc. = LAB_X5_Y5; Fanout = 8; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[6]~25'
-    Info: 7: + IC(1.177 ns) + CELL(1.100 ns) = 7.891 ns; Loc. = LAB_X5_Y4; Fanout = 2; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[1]'
-    Info: Total cell delay = 2.811 ns ( 35.62 % )
-    Info: Total interconnect delay = 5.080 ns ( 64.38 % )
+Info: Estimated most critical path is register to register delay of 8.765 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X11_Y1; Fanout = 8; REG Node = 'openmips:openmips0|if_id:if_id0|id_inst[0]'
+    Info: 2: + IC(0.531 ns) + CELL(0.319 ns) = 0.850 ns; Loc. = LAB_X11_Y1; Fanout = 14; COMB Node = 'openmips:openmips0|id:id0|reg2_read_o~2'
+    Info: 3: + IC(1.409 ns) + CELL(0.462 ns) = 2.721 ns; Loc. = LAB_X9_Y4; Fanout = 1; COMB Node = 'openmips:openmips0|id:id0|always2~6'
+    Info: 4: + IC(0.168 ns) + CELL(0.571 ns) = 3.460 ns; Loc. = LAB_X9_Y4; Fanout = 11; COMB Node = 'openmips:openmips0|id:id0|always2~7'
+    Info: 5: + IC(0.845 ns) + CELL(0.571 ns) = 4.876 ns; Loc. = LAB_X11_Y4; Fanout = 12; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[15]~86'
+    Info: 6: + IC(1.843 ns) + CELL(0.319 ns) = 7.038 ns; Loc. = LAB_X5_Y5; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2~94'
+    Info: 7: + IC(0.325 ns) + CELL(0.462 ns) = 7.825 ns; Loc. = LAB_X5_Y5; Fanout = 1; COMB Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2~98'
+    Info: 8: + IC(0.277 ns) + CELL(0.663 ns) = 8.765 ns; Loc. = LAB_X5_Y5; Fanout = 1; REG Node = 'openmips:openmips0|id_ex:id_ex0|ex_reg2[9]'
+    Info: Total cell delay = 3.367 ns ( 38.41 % )
+    Info: Total interconnect delay = 5.398 ns ( 61.59 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 24% of the available device resources
     Info: Peak interconnect usage is 24% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
@@ -808,9 +804,9 @@ Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped 
     Info: Optimizations that may affect the design's timing were skipped
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 288 megabytes
-    Info: Processing ended: Sat Dec 01 01:44:03 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 289 megabytes
+    Info: Processing ended: Mon Dec 03 23:46:00 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

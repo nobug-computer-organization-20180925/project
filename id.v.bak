@@ -85,7 +85,7 @@ module id(
   wire[`RegBus] pc_plus_1;
 //  wire[`RegBus] imm_sll2_signedext;  
   
-  assign pc_plus_2 = pc_i +16'b10;
+  assign pc_plus_2 = pc_i +16'b2;
   assign pc_plus_1 = pc_i +16'b1;
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};
   wire[`RegBus] inst_b_address;
