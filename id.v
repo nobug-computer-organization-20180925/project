@@ -70,7 +70,9 @@ module id(
 	output reg                    branch_flag_o,
 	output reg[`RegBus]           branch_target_address_o,       
 	output reg[`RegBus]           link_addr_o,
-	output reg                    is_in_delayslot_o
+	output reg                    is_in_delayslot_o,
+	output wire                   stallreq	
+	
 	
 );
 
@@ -80,15 +82,18 @@ module id(
   wire[4:0] op4 = inst_i[4:0];
   reg[`RegBus]	imm;
   reg instvalid;
+  assign stallreq = `NoStop;
+
 
   wire[`RegBus] pc_plus_2;
   wire[`RegBus] pc_plus_1;
-//  wire[`RegBus] imm_sll2_signedext;  
+  //wire[`RegBus] imm_sll2_signedext;
+  wire[`RegBus] inst_b_address;
   
-  assign pc_plus_2 = pc_i +2;
-  assign pc_plus_1 = pc_i +1;
+  assign pc_plus_2 = pc_i +16'b10;
+  assign pc_plus_1 = pc_i +16'b1;
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};  
-  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]};
+  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]}; //assert RegBus == InstAddrBus
   
  
 	always @ (*) begin	

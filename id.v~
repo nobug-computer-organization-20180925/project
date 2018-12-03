@@ -48,7 +48,6 @@ module id(
 	input wire[`RegBus] reg1_data_i,
 	input wire[`RegBus] reg2_data_i,
 
-	//如果上一条指令是转移指令，那么下一条指令在译码的时候is_in_delayslot为true
 	input wire                    is_in_delayslot_i,
 	
 
@@ -72,6 +71,8 @@ module id(
 	output reg[`RegBus]           branch_target_address_o,       
 	output reg[`RegBus]           link_addr_o,
 	output reg                    is_in_delayslot_o
+	output wire                   stallreq	
+	
 	
 );
 
@@ -154,7 +155,6 @@ module id(
 			    next_inst_in_delayslot_o <= `InDelaySlot;		  	
 			    instvalid <= `InstValid;	
 				end
-				
 		
 		    default:			begin
 		    end
