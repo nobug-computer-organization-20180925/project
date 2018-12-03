@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.820 ns
+Actual Time    : 7.152 ns
 From           : rst
-To             : openmips:openmips0|id_ex:id_ex0|ex_reg2[3]
+To             : openmips:openmips0|id_ex:id_ex0|ex_reg1[7]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.690 ns
-From           : openmips:openmips0|regfile:regfile1|regs[1][3]
-To             : register1[3]
+Actual Time    : 5.614 ns
+From           : openmips:openmips0|regfile:regfile1|regs[1][15]
+To             : register1[15]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -0.883 ns
+Actual Time    : -0.754 ns
 From           : rst
-To             : openmips:openmips0|mem_wb:mem_wb0|wb_wreg
+To             : openmips:openmips0|regfile:regfile1|regs[7][6]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 119.95 MHz ( period = 8.337 ns )
-From           : openmips:openmips0|if_id:if_id0|id_inst[9]
-To             : openmips:openmips0|id_ex:id_ex0|ex_reg1[9]
+Actual Time    : 116.04 MHz ( period = 8.618 ns )
+From           : openmips:openmips0|if_id:if_id0|id_inst[11]
+To             : openmips:openmips0|id_ex:id_ex0|ex_reg1[7]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0

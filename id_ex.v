@@ -34,7 +34,6 @@ module id_ex(
 
 	input	wire clk,
 	input wire rst,
-	input wire[5:0]							 stall,
 
 	
 	//从译码阶段传递的信息
