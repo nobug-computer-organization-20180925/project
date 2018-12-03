@@ -258,13 +258,14 @@ WARNING:Xst:646 - Signal <op4> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <op3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 16-bit adder for signal <inst_b_address>.
+    Found 16-bit subtractor for signal <inst_b_address>.
+    Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 92.
     Found 4-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 168.
     Found 4-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 171.
     Found 4-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 186.
     Found 4-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 189.
     Summary:
-	inferred   1 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
 Unit <id> synthesized.
 
@@ -348,8 +349,9 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  127x16-bit ROM                                        : 1
-# Adders/Subtractors                                   : 1
- 16-bit adder                                          : 1
+# Adders/Subtractors                                   : 2
+ 16-bit adder carry out                                : 1
+ 16-bit subtractor                                     : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 26
@@ -397,8 +399,9 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  127x16-bit ROM                                        : 1
-# Adders/Subtractors                                   : 1
- 16-bit adder                                          : 1
+# Adders/Subtractors                                   : 2
+ 16-bit adder carry out                                : 1
+ 16-bit subtractor                                     : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
 # Registers                                            : 269
@@ -556,23 +559,23 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 560
+# BELS                             : 524
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 48
-#      LUT2                        : 67
+#      INV                         : 8
+#      LUT1                        : 49
+#      LUT2                        : 62
+#      LUT2_D                      : 2
 #      LUT2_L                      : 1
-#      LUT3                        : 81
-#      LUT3_D                      : 3
-#      LUT3_L                      : 1
-#      LUT4                        : 156
-#      LUT4_D                      : 14
-#      LUT4_L                      : 39
-#      MUXCY                       : 12
-#      MUXF5                       : 88
+#      LUT3                        : 55
+#      LUT3_D                      : 4
+#      LUT4                        : 138
+#      LUT4_D                      : 4
+#      LUT4_L                      : 55
+#      MUXCY                       : 18
+#      MUXF5                       : 73
 #      MUXF6                       : 32
 #      VCC                         : 1
-#      XORCY                       : 14
+#      XORCY                       : 21
 # FlipFlops/Latches                : 149
 #      FDR                         : 75
 #      FDRE                        : 42
@@ -590,9 +593,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      225  out of   8672     2%  
+ Number of Slices:                      212  out of   8672     2%  
  Number of Slice Flip Flops:            149  out of  17344     0%  
- Number of 4 input LUTs:                412  out of  17344     2%  
+ Number of 4 input LUTs:                378  out of  17344     2%  
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    250     7%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -629,8 +632,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 8.952ns (Maximum Frequency: 111.707MHz)
-   Minimum input arrival time before clock: 10.362ns
+   Minimum period: 10.049ns (Maximum Frequency: 99.512MHz)
+   Minimum input arrival time before clock: 11.454ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
 
@@ -640,36 +643,37 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 8.952ns (frequency: 111.707MHz)
-  Total number of paths / destination ports: 3907 / 229
+  Clock period: 10.049ns (frequency: 99.512MHz)
+  Total number of paths / destination ports: 3804 / 229
 -------------------------------------------------------------------------
-Delay:               8.952ns (Levels of Logic = 6)
+Delay:               10.049ns (Levels of Logic = 7)
   Source:            openmips0/if_id0/id_inst_7 (FF)
-  Destination:       openmips0/id_ex0/ex_reg2_9 (FF)
+  Destination:       openmips0/id_ex0/ex_reg2_8 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: openmips0/if_id0/id_inst_7 to openmips0/id_ex0/ex_reg2_9
+  Data Path: openmips0/if_id0/id_inst_7 to openmips0/id_ex0/ex_reg2_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              5   0.591   0.712  openmips0/if_id0/id_inst_7 (openmips0/if_id0/id_inst_7)
-     LUT2:I1->O           17   0.704   1.086  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
-     LUT4:I2->O            2   0.704   0.451  openmips0/regfile1/rdata2_and000047_SW0 (N44)
-     LUT4_D:I3->O         15   0.704   1.052  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
-     LUT4:I2->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
+     LUT2:I1->O           17   0.704   1.055  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
+     LUT4:I3->O            1   0.704   0.424  openmips0/regfile1/rdata2_and000047_SW0 (N44)
+     LUT4:I3->O            2   0.704   0.482  openmips0/regfile1/rdata2_and000047 (openmips0/regfile1/rdata2_and0000)
+     LUT3_D:I2->O         15   0.704   1.021  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
+     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
      LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<9>17 (openmips0/id0/reg2_o<9>17)
      LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<9>49 (openmips0/id_reg2_o<9>)
      FDR:D                     0.308          openmips0/id_ex0/ex_reg2_9
     ----------------------------------------
-    Total                      8.952ns (5.123ns logic, 3.829ns route)
-                                       (57.2% logic, 42.8% route)
+    Total                     10.049ns (5.827ns logic, 4.222ns route)
+                                       (58.0% logic, 42.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1157 / 249
+  Total number of paths / destination ports: 1165 / 249
 -------------------------------------------------------------------------
-Offset:              10.362ns (Levels of Logic = 7)
+Offset:              11.454ns (Levels of Logic = 8)
   Source:            rst (PAD)
   Destination:       openmips0/id_ex0/ex_reg2_8 (FF)
   Destination Clock: clk rising
@@ -678,17 +682,18 @@ Offset:              10.362ns (Levels of Logic = 7)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           214   1.218   1.495  rst_IBUF (rst_IBUF)
-     LUT2:I0->O           17   0.704   1.086  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
-     LUT4:I2->O            2   0.704   0.451  openmips0/regfile1/rdata2_and000047_SW0 (N44)
-     LUT4_D:I3->O         15   0.704   1.052  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
-     LUT4:I2->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
+     IBUF:I->O           200   1.218   1.490  rst_IBUF (rst_IBUF)
+     LUT2:I0->O           17   0.704   1.055  openmips0/id0/reg2_addr_o<2>1 (openmips0/reg2_addr<2>)
+     LUT4:I3->O            1   0.704   0.424  openmips0/regfile1/rdata2_and000047_SW0 (N44)
+     LUT4:I3->O            2   0.704   0.482  openmips0/regfile1/rdata2_and000047 (openmips0/regfile1/rdata2_and0000)
+     LUT3_D:I2->O         15   0.704   1.021  openmips0/regfile1/rdata2<0>21 (openmips0/regfile1/N3)
+     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<9>6 (openmips0/id0/reg2_o<9>6)
      LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<9>17 (openmips0/id0/reg2_o<9>17)
      LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<9>49 (openmips0/id_reg2_o<9>)
      FDR:D                     0.308          openmips0/id_ex0/ex_reg2_9
     ----------------------------------------
-    Total                     10.362ns (5.750ns logic, 4.612ns route)
-                                       (55.5% logic, 44.5% route)
+    Total                     11.454ns (6.454ns logic, 5.000ns route)
+                                       (56.3% logic, 43.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -713,11 +718,11 @@ Offset:              4.394ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 19.47 secs
+Total CPU time to Xst completion: 19.31 secs
  
 --> 
 
-Total memory usage is 250964 kilobytes
+Total memory usage is 250892 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   89 (   0 filtered)

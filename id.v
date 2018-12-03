@@ -89,7 +89,7 @@ module id(
   assign pc_plus_1 = pc_i +16'b1;
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};
   wire[`RegBus] inst_b_address;
-  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]};
+  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 1;
   
  
 	always @ (*) begin	
