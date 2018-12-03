@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="unnamed">
+ <parameter name="bonusData">bonusData 
+{
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element tri_state_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+   element uart_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+   element sram_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+}
+</parameter>
+ <parameter name="deviceFamily" value="MAXII" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="hardcopyCompatible" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="projectName">openmips_min_sopc_tb.quartus</parameter>
+ <parameter name="systemHash" value="-4751726689" />
+ <parameter name="timeStamp" value="1543803869526" />
+ <module name="clk_0" kind="clock_source" version="9.0" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" /></module>
+ <module
+   name="sram_0"
+   kind="altera_nios_dev_kit_stratix_edition_sram2"
+   version="9.0"
+   enabled="1">
+  <parameter name="sharedPorts" value="" />
+  <parameter name="simMakeModel" value="true" />
+  <parameter name="size" value="1048576" /></module>
+ <module name="uart_0" kind="altera_avalon_uart" version="9.0" enabled="1">
+  <parameter name="baud" value="9600" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="simCharStream" value="39" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="useEopRegister" value="false" /></module>
+ <module
+   name="tri_state_bridge_0"
+   kind="altera_avalon_tri_state_bridge"
+   version="9.0"
+   enabled="1">
+  <parameter name="registerIncomingSignals" value="true" /></module>
+ <connection kind="clock" version="9.0" start="clk_0.clk" end="sram_0.clk" />
+ <connection kind="clock" version="9.0" start="clk_0.clk" end="uart_0.clk" />
+ <connection
+   kind="clock"
+   version="9.0"
+   start="clk_0.clk"
+   end="tri_state_bridge_0.clk" /></system>

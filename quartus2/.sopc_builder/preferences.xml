@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <systemtable filter="Default">
+  <columns>
+   <connections preferredWidth="31" />
+   <irq preferredWidth="34" /></columns></systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="257" />
+   <clocksource preferredWidth="256" />
+   <frequency preferredWidth="237" /></columns></clocktable>
+ <window width="1382" height="744" x="-8" y="-8" />
+ <library
+   expandedCategories="Bridges and Adapters/Memory Mapped,Bridges and Adapters/Streaming,Bridges and Adapters,Memories and Memory Controllers/SRAM,Interface Protocols,Memories and Memory Controllers,Interface Protocols/Serial" /></preferences>
