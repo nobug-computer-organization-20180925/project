@@ -16,6 +16,9 @@ module memory(
     output reg ram2_CE,
 
     output[6:0] LED_out,
+	 
+	 output wire rdn,
+    output wire wrn,
 
     inout[15:0] ram1datainout,
     inout[15:0] ram2datainout
@@ -26,7 +29,8 @@ module memory(
     reg WE_E;
 	 assign ram1datainout = (WE_E ? 16'bz : ram1data);
 	 assign ram2datainout = (WE_E ? 16'bz : ram2data);
-	 
+	 assign wrn=1;
+	 assign rdn=1;
     reg[15:0] addr, data;
     reg[2:0] currentstate, nextstate;
     reg[5:0] count, nextcount;
