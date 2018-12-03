@@ -26,12 +26,17 @@
 `define ChipDisable 1'b0
 
 
-//ָ��
+//op
 `define EXE_OR  5'b11101
 `define EXE_ORI 5'b11111
 `define EXE_MOVE 5'b01111
 `define EXE_NOP 5'b00001
 `define EXE_J 5'b00010
+`define EXE_ADDU 5'b11100
+
+//op4
+`define INST_OR	5'b01101
+`define INST_AND	5'b01100
 
 
 //AluOp
@@ -41,12 +46,18 @@
 `define EXE_NOP_OP    8'b00000000
 `define EXE_J_OP  8'b01001111
 
+`define EXE_AND_OP	8'b00100100
+`define EXE_ADDU_OP	8'b00100001
+`define EXE_SUBU_OP	8'b00100011
+
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001
 `define EXE_RES_MOVE 3'b011	
 `define EXE_RES_NOP 3'b000
 `define EXE_RES_JUMP_BRANCH 3'b110
+
+`define EXE_RES_ARITHMETIC	3'b100
 
 
 //ָ��洢��inst_rom
@@ -57,7 +68,7 @@
 
 
 //ͨ�üĴ���regfile
-`define RegAddrBus 3:0
+`define RegAddrBus 2:0
 `define RegBus 15:0
 `define RegWidth 16
 `define DoubleRegWidth 32

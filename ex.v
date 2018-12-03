@@ -56,6 +56,7 @@ module ex(
 	reg[`RegBus] logicout;
 	reg[`RegBus] shiftres;//?
 	reg[`RegBus] moveres;
+	reg[`RegBus] arithmeticres;
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin
@@ -64,6 +65,9 @@ module ex(
 			case (aluop_i)
 				`EXE_OR_OP:			begin
 					logicout <= reg1_i | reg2_i;
+				end
+				`EXE_AND_OP:			begin
+					logicout <= reg1_i & reg2_i;
 				end
 				default:				begin
 					logicout <= `ZeroWord;
@@ -83,8 +87,25 @@ module ex(
 				default : begin
 				end
 			endcase
-		end
-	end
+		end	//if
+	end	//always
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			arithmeticres <= `ZeroWord;
+		end else begin
+			arithmeticres <= `ZeroWord;
+			case (aluop_i)
+				`EXE_ADDU_OP:		begin
+					arithmeticres <= reg1_i + reg2_i;
+				end
+				`EXE_SUBU_OP:		begin
+					arithmeticres <= reg1_i - reg2_i;
+				end
+				default : begin
+				end
+			endcase
+		end	//if
+	end	//always
 
 
 
@@ -100,7 +121,10 @@ module ex(
 	 	end	 	
 	 	`EXE_RES_JUMP_BRANCH:	begin
 	 		wdata_o <= link_address_i;
-	 	end	 		
+	 	end
+		`EXE_RES_ARITHMETIC:	begin
+	 		wdata_o <= link_address_i;
+	 	end
 	 	default:					begin
 	 		wdata_o <= `ZeroWord;
 	 	end
