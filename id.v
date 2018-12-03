@@ -196,6 +196,24 @@ module id(
 					end
 				endcase //case(op4[1])
 			end
+			`EXE_ADDIU:	begin
+				wreg_o <= `WriteEnable;		
+				aluop_o <= `EXE_ADDIU_OP;
+				alusel_o <= `EXE_RES_ARITHMETIC; 
+				reg1_read_o <= 1'b1;	
+				reg2_read_o <= 1'b0;	  	
+				wd_o <= inst_i[10:8];
+				instvalid <= `InstValid;
+			end
+			`EXE_ADDIU3:	begin
+				wreg_o <= `WriteEnable;		
+				aluop_o <= `EXE_ADDIU3_OP;
+				alusel_o <= `EXE_RES_ARITHMETIC; 
+				reg1_read_o <= 1'b1;	
+				reg2_read_o <= 1'b0;	  	
+				wd_o <= inst_i[7:5];
+				instvalid <= `InstValid;
+			end
 		
 		   default:			begin
 		   end

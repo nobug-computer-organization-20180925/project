@@ -95,3 +95,4 @@ bitgen -intstyle ise -f openmips_min_sopc.ut openmips_min_sopc.ncd
 xst -intstyle ise -ifn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.xst" -ofn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.syr" 
 xst -intstyle ise -ifn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.xst" -ofn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.syr" 
 xst -intstyle ise -ifn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.xst" -ofn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.syr" 
+xst -intstyle ise -ifn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.xst" -ofn "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc.syr" 

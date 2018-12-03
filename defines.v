@@ -33,6 +33,8 @@
 `define EXE_NOP 5'b00001
 `define EXE_J 5'b00010
 `define EXE_ADDU 5'b11100
+`define EXE_ADDIU 5'b01001
+`define EXE_ADDIU3 5'b01000
 
 //op4
 `define INST_OR	5'b01101
@@ -49,6 +51,8 @@
 `define EXE_AND_OP	8'b00100100
 `define EXE_ADDU_OP	8'b00100001
 `define EXE_SUBU_OP	8'b00100011
+`define EXE_ADDIU_OP 8'b00001001
+`define EXE_ADDIU3_OP	8'b01001001
 
 
 //AluSel

@@ -57,6 +57,12 @@ module ex(
 	reg[`RegBus] shiftres;//?
 	reg[`RegBus] moveres;
 	reg[`RegBus] arithmeticres;
+	
+	wire[`RegBus] reg2_i_mux;
+	wire[`RegBus] result_sum;
+	
+	assign reg2_i_mux = (aluop_i == `EXE_SUBU_OP) ? (~reg2_i)+1 : reg2_i;
+	assign result_sum = reg1_i + reg2_i_mux;
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin
@@ -96,10 +102,16 @@ module ex(
 			arithmeticres <= `ZeroWord;
 			case (aluop_i)
 				`EXE_ADDU_OP:		begin
-					arithmeticres <= reg1_i + reg2_i;
+					arithmeticres <= result_sum;
 				end
 				`EXE_SUBU_OP:		begin
-					arithmeticres <= reg1_i - reg2_i;
+					arithmeticres <= result_sum;
+				end
+				`EXE_ADDIU_OP:		begin
+					arithmeticres <= result_sum;
+				end
+				`EXE_ADDIU3_OP:		begin
+					arithmeticres <= result_sum;
 				end
 				default : begin
 				end
