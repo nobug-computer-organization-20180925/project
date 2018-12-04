@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -257,10 +257,10 @@ WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 16-bit subtractor for signal <inst_b_address>.
     Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 92.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 228.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 231.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 246.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 249.
+    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 230.
+    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 233.
+    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 248.
+    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 251.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
@@ -508,11 +508,13 @@ WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_7> of sequential type is unconnect
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_13> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_14> 
 INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_4> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_10> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_2> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_11> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_13> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_2> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_3> 
 Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 3.
-FlipFlop openmips0/if_id0/id_inst_12 has been replicated 1 time(s)
+FlipFlop openmips0/if_id0/id_inst_11 has been replicated 1 time(s)
+FlipFlop openmips0/if_id0/id_inst_14 has been replicated 1 time(s)
+FlipFlop openmips0/if_id0/id_inst_8 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -520,8 +522,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 226
- Flip-Flops                                            : 226
+# Registers                                            : 228
+ Flip-Flops                                            : 228
 
 =========================================================================
 
@@ -550,28 +552,28 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 681
+# BELS                             : 718
 #      GND                         : 1
 #      INV                         : 23
 #      LUT1                        : 2
-#      LUT2                        : 48
+#      LUT2                        : 36
 #      LUT2_D                      : 1
-#      LUT2_L                      : 3
-#      LUT3                        : 70
-#      LUT3_D                      : 1
-#      LUT3_L                      : 5
-#      LUT4                        : 262
+#      LUT2_L                      : 2
+#      LUT3                        : 92
+#      LUT3_D                      : 11
+#      LUT3_L                      : 8
+#      LUT4                        : 274
 #      LUT4_D                      : 13
-#      LUT4_L                      : 47
+#      LUT4_L                      : 48
 #      MUXCY                       : 48
-#      MUXF5                       : 72
-#      MUXF6                       : 31
+#      MUXF5                       : 73
+#      MUXF6                       : 32
 #      VCC                         : 1
 #      XORCY                       : 53
-# FlipFlops/Latches                : 226
-#      FDR                         : 91
+# FlipFlops/Latches                : 228
+#      FDR                         : 74
 #      FDRE                        : 98
-#      FDRS                        : 23
+#      FDRS                        : 42
 #      FDSE                        : 14
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -585,9 +587,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      288  out of   8672     3%  
- Number of Slice Flip Flops:            226  out of  17344     1%  
- Number of 4 input LUTs:                475  out of  17344     2%  
+ Number of Slices:                      300  out of   8672     3%  
+ Number of Slice Flip Flops:            228  out of  17344     1%  
+ Number of 4 input LUTs:                510  out of  17344     2%  
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    250     7%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -613,7 +615,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 226   |
+clk                                | BUFGP                  | 228   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -624,8 +626,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 10.952ns (Maximum Frequency: 91.308MHz)
-   Minimum input arrival time before clock: 11.957ns
+   Minimum period: 10.311ns (Maximum Frequency: 96.984MHz)
+   Minimum input arrival time before clock: 11.312ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
 
@@ -635,57 +637,57 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.952ns (frequency: 91.308MHz)
-  Total number of paths / destination ports: 13464 / 365
+  Clock period: 10.311ns (frequency: 96.984MHz)
+  Total number of paths / destination ports: 14565 / 383
 -------------------------------------------------------------------------
-Delay:               10.952ns (Levels of Logic = 7)
-  Source:            openmips0/if_id0/id_inst_11 (FF)
-  Destination:       openmips0/id_ex0/ex_reg1_14 (FF)
+Delay:               10.311ns (Levels of Logic = 7)
+  Source:            openmips0/if_id0/id_inst_15 (FF)
+  Destination:       openmips0/id_ex0/ex_reg1_13 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: openmips0/if_id0/id_inst_11 to openmips0/id_ex0/ex_reg1_14
+  Data Path: openmips0/if_id0/id_inst_15 to openmips0/id_ex0/ex_reg1_13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             19   0.591   1.120  openmips0/if_id0/id_inst_11 (openmips0/if_id0/id_inst_11)
-     LUT4:I2->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW1 (N59)
-     LUT4:I2->O           22   0.704   1.168  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
-     LUT4_D:I3->O         15   0.704   1.021  openmips0/regfile1/rdata1<0>11 (openmips0/regfile1/N0)
-     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg1_o<14>6 (openmips0/id0/reg1_o<14>6)
-     LUT4:I3->O            2   0.704   0.482  openmips0/id0/reg1_o<14>17 (openmips0/id0/reg1_o<14>17)
-     LUT3:I2->O            1   0.704   0.455  openmips0/ex0/wdata_o<14>32_SW1 (N74)
-     LUT4:I2->O            1   0.704   0.000  openmips0/id0/reg1_o<14>51 (openmips0/id_reg1_o<14>)
-     FDR:D                     0.308          openmips0/id_ex0/ex_reg1_14
+     FDR:C->Q             17   0.591   1.130  openmips0/if_id0/id_inst_15 (openmips0/if_id0/id_inst_15)
+     LUT4:I1->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW0 (N158)
+     LUT4:I2->O           17   0.704   1.055  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
+     LUT4:I3->O           17   0.704   1.130  openmips0/id0/reg1_o_and0000147 (openmips0/id0/reg1_o_and0000)
+     LUT2:I1->O            6   0.704   0.673  openmips0/id0/reg1_o<7>61 (openmips0/id0/N47)
+     LUT4:I3->O            1   0.704   0.000  openmips0/ex0/wdata_o<13>32_SW0_G (N182)
+     MUXF5:I1->O           1   0.321   0.424  openmips0/ex0/wdata_o<13>32_SW0 (N144)
+     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg1_o<13>221 (openmips0/id0/reg1_o<13>22)
+     FDRS:D                    0.308          openmips0/id_ex0/ex_reg1_13
     ----------------------------------------
-    Total                     10.952ns (5.827ns logic, 5.125ns route)
-                                       (53.2% logic, 46.8% route)
+    Total                     10.311ns (5.444ns logic, 4.867ns route)
+                                       (52.8% logic, 47.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1550 / 328
+  Total number of paths / destination ports: 1948 / 346
 -------------------------------------------------------------------------
-Offset:              11.957ns (Levels of Logic = 8)
+Offset:              11.312ns (Levels of Logic = 8)
   Source:            rst (PAD)
-  Destination:       openmips0/id_ex0/ex_reg1_14 (FF)
+  Destination:       openmips0/id_ex0/ex_reg1_13 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to openmips0/id_ex0/ex_reg1_14
+  Data Path: rst to openmips0/id_ex0/ex_reg1_13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           226   1.218   1.498  rst_IBUF (rst_IBUF)
-     LUT4:I0->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW1 (N59)
-     LUT4:I2->O           22   0.704   1.168  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
-     LUT4_D:I3->O         15   0.704   1.021  openmips0/regfile1/rdata1<0>11 (openmips0/regfile1/N0)
-     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg1_o<14>6 (openmips0/id0/reg1_o<14>6)
-     LUT4:I3->O            2   0.704   0.482  openmips0/id0/reg1_o<14>17 (openmips0/id0/reg1_o<14>17)
-     LUT3:I2->O            1   0.704   0.455  openmips0/ex0/wdata_o<14>32_SW1 (N74)
-     LUT4:I2->O            1   0.704   0.000  openmips0/id0/reg1_o<14>51 (openmips0/id_reg1_o<14>)
-     FDR:D                     0.308          openmips0/id_ex0/ex_reg1_14
+     IBUF:I->O           245   1.218   1.504  rst_IBUF (rst_IBUF)
+     LUT4:I0->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW0 (N158)
+     LUT4:I2->O           17   0.704   1.055  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
+     LUT4:I3->O           17   0.704   1.130  openmips0/id0/reg1_o_and0000147 (openmips0/id0/reg1_o_and0000)
+     LUT2:I1->O            6   0.704   0.673  openmips0/id0/reg1_o<7>61 (openmips0/id0/N47)
+     LUT4:I3->O            1   0.704   0.000  openmips0/ex0/wdata_o<13>32_SW0_G (N182)
+     MUXF5:I1->O           1   0.321   0.424  openmips0/ex0/wdata_o<13>32_SW0 (N144)
+     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg1_o<13>221 (openmips0/id0/reg1_o<13>22)
+     FDRS:D                    0.308          openmips0/id_ex0/ex_reg1_13
     ----------------------------------------
-    Total                     11.957ns (6.454ns logic, 5.503ns route)
-                                       (54.0% logic, 46.0% route)
+    Total                     11.312ns (6.071ns logic, 5.241ns route)
+                                       (53.7% logic, 46.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -710,11 +712,11 @@ Offset:              4.394ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.21 secs
+Total CPU time to Xst completion: 7.91 secs
  
 --> 
 
-Total memory usage is 273616 kilobytes
+Total memory usage is 273104 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   98 (   0 filtered)

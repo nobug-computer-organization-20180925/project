@@ -46,8 +46,8 @@ module inst_rom(
 	always @(negedge rst) begin
 	inst_mem[0]<=16'b11101_001_010_01101;//11101 or tail 01101: reg1=reg1 or reg2=0202 ans=0303
 	inst_mem[1]<=16'b11111_001_010_01101;//11111 ori: reg1 = reg1 or imm 01001101 ans=0000_0011_0100_1111=034f
-	inst_mem[2]<=16'b01111_001_011_00000;//01111 move: reg1 = reg3 tail 00000 ans=0404
-	inst_mem[3]<=16'b11100_010_011_00111;//11100 subu: reg1 = reg2-reg3 ans=fdfe
+	inst_mem[2]<=16'b01000_011_001_01110;//01001 addiu3: reg1 = reg3 + fffe ans=0402
+	inst_mem[3]<=16'b01111_001_011_00000;//01111 move: reg1 = reg3 tail 00000 ans=0404	
 	inst_mem[4]<=16'b00010_111_111_11101;//00010 branch: branch immediate 10:0 jump to pc=1
 	inst_mem[5]<=16'b01111_001_100_00000;//01111 move reg4 = reg1 
 	

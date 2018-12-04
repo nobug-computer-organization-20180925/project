@@ -201,7 +201,8 @@ module id(
 				aluop_o <= `EXE_ADDIU_OP;
 				alusel_o <= `EXE_RES_ARITHMETIC; 
 				reg1_read_o <= 1'b1;	
-				reg2_read_o <= 1'b0;	  	
+				reg2_read_o <= 1'b0;	
+				imm <= {{8{inst_i[7]}},inst_i[7:0]};
 				wd_o <= inst_i[10:8];
 				instvalid <= `InstValid;
 			end
@@ -210,7 +211,8 @@ module id(
 				aluop_o <= `EXE_ADDIU3_OP;
 				alusel_o <= `EXE_RES_ARITHMETIC; 
 				reg1_read_o <= 1'b1;	
-				reg2_read_o <= 1'b0;	  	
+				reg2_read_o <= 1'b0;
+				imm <= {{12{inst_i[3]}},inst_i[3:0]};				
 				wd_o <= inst_i[7:5];
 				instvalid <= `InstValid;
 			end
