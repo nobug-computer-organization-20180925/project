@@ -35,10 +35,13 @@
 `define EXE_ADDU 5'b11100
 `define EXE_ADDIU 5'b01001
 `define EXE_ADDIU3 5'b01000
+`define EXE_IH		5'b11110
 
 //op4
 `define INST_OR	5'b01101
 `define INST_AND	5'b01100
+`define INST_MFIH	5'b00000
+`define INST_MTIH	5'b00001
 
 
 //AluOp
@@ -53,7 +56,8 @@
 `define EXE_SUBU_OP	8'b00100011
 `define EXE_ADDIU_OP 8'b00001001
 `define EXE_ADDIU3_OP	8'b01001001
-
+`define EXE_MFIH_OP	8'b01001010
+`define EXE_MTIH_OP	8'b10001010
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001

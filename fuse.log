@@ -7,15 +7,15 @@ Analyzing Verilog file "C:/Users/yangzehai/Desktop/computer_organization/openmip
 Analyzing Verilog file "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb.v" into library work
 Starting static elaboration
 Completed static elaboration
+Compiling module X_ZERO
 Compiling module X_BUF
 Compiling module X_XOR2
 Compiling module mux
 Compiling module X_MUX2
 Compiling module X_AND2
-Compiling module X_LUT4(INIT=16'b0110011001100110...
-Compiling module X_ZERO
+Compiling module X_LUT4(INIT=16'b011001111001100)
 Compiling module X_ONE
-Compiling module X_INV(LOC="SLICE_X65Y32")
+Compiling module X_INV(LOC="SLICE_X49Y16")
 Compiling module X_IPAD
 Compiling module X_OPAD
 Compiling module X_OBUF
@@ -27,7 +27,7 @@ Compiling module openmips_min_sopc
 Compiling module openmips_min_sopc_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 1339 Verilog Units
+Compiled 1355 Verilog Units
 Built simulation executable C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_isim_par.exe
-Fuse Memory Usage: 40588 KB
-Fuse CPU Usage: 2261 ms
+Fuse Memory Usage: 41764 KB
+Fuse CPU Usage: 2589 ms

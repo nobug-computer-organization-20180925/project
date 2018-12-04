@@ -218,6 +218,7 @@ Module <inst_rom> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <IH> in unit <regfile> has a constant value of 0001000000010000 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <inst_rom>.
     Related source file is "inst_rom.v".
@@ -256,11 +257,11 @@ WARNING:Xst:646 - Signal <op3> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 16-bit subtractor for signal <inst_b_address>.
-    Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 92.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 230.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 233.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 248.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 251.
+    Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 94.
+    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 258.
+    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 261.
+    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 276.
+    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 281.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
@@ -269,8 +270,11 @@ Unit <id> synthesized.
 
 Synthesizing Unit <regfile>.
     Related source file is "regfile.v".
-    Found 3-bit comparator equal for signal <rdata1$cmp_eq0001> created at line 89.
-    Found 3-bit comparator equal for signal <rdata2$cmp_eq0001> created at line 104.
+WARNING:Xst:1780 - Signal <T> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <SP> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <RA> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 3-bit comparator equal for signal <rdata1$cmp_eq0001> created at line 98.
+    Found 3-bit comparator equal for signal <rdata2$cmp_eq0001> created at line 113.
     Found 16-bit 8-to-1 multiplexer for signal <readDataTemp1>.
     Found 16-bit 8-to-1 multiplexer for signal <readDataTemp2>.
     Found 128-bit register for signal <regs>.
@@ -336,6 +340,7 @@ Unit <mem_wb> synthesized.
 Synthesizing Unit <openmips>.
     Related source file is "openmips.v".
 WARNING:Xst:1780 - Signal <is_in_delayslot_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <id_read_IH_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <openmips> synthesized.
 
 
@@ -372,23 +377,22 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <ex_aluop_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_0> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_1> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_2> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_3> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_5> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_6> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_8> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_9> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_10> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_11> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_12> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_13> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_14> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ex_link_address_15> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_14> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_13> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_12> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_11> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_10> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_9> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_8> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_6> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_5> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_3> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_2> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_1> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_0> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
@@ -450,8 +454,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regs_0_15> (without
 
 Optimizing unit <openmips_min_sopc> ...
 
-Optimizing unit <inst_rom> ...
-
 Optimizing unit <if_id> ...
 
 Optimizing unit <id> ...
@@ -467,7 +469,8 @@ Optimizing unit <ex_mem> ...
 Optimizing unit <mem_wb> ...
 
 Optimizing unit <openmips> ...
-WARNING:Xst:1710 - FF/Latch <openmips0/id_ex0/ex_link_address_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <openmips0/if_id0/id_inst_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
@@ -483,7 +486,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_aluop_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_aluop_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_is_in_delayslot> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/is_in_delayslot_o> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -508,13 +510,13 @@ WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_7> of sequential type is unconnect
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_4> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_10> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_11> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_13> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_2> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_3> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_13> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_14> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_4> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_9> <openmips0/if_id0/id_inst_10> 
+INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_1> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_alusel_1> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_2> <openmips0/if_id0/id_inst_3> 
 Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 3.
-FlipFlop openmips0/if_id0/id_inst_11 has been replicated 1 time(s)
-FlipFlop openmips0/if_id0/id_inst_14 has been replicated 1 time(s)
-FlipFlop openmips0/if_id0/id_inst_8 has been replicated 1 time(s)
+FlipFlop openmips0/if_id0/id_inst_4 has been replicated 1 time(s)
+FlipFlop openmips0/if_id0/id_inst_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -522,8 +524,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 228
- Flip-Flops                                            : 228
+# Registers                                            : 223
+ Flip-Flops                                            : 223
 
 =========================================================================
 
@@ -552,28 +554,26 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 718
+# BELS                             : 717
 #      GND                         : 1
 #      INV                         : 23
-#      LUT1                        : 2
-#      LUT2                        : 36
-#      LUT2_D                      : 1
-#      LUT2_L                      : 2
-#      LUT3                        : 92
+#      LUT1                        : 3
+#      LUT2                        : 30
+#      LUT3                        : 76
 #      LUT3_D                      : 11
-#      LUT3_L                      : 8
-#      LUT4                        : 274
-#      LUT4_D                      : 13
-#      LUT4_L                      : 48
+#      LUT3_L                      : 21
+#      LUT4                        : 311
+#      LUT4_D                      : 18
+#      LUT4_L                      : 32
 #      MUXCY                       : 48
-#      MUXF5                       : 73
-#      MUXF6                       : 32
+#      MUXF5                       : 70
+#      MUXF6                       : 19
 #      VCC                         : 1
 #      XORCY                       : 53
-# FlipFlops/Latches                : 228
-#      FDR                         : 74
+# FlipFlops/Latches                : 223
+#      FDR                         : 84
 #      FDRE                        : 98
-#      FDRS                        : 42
+#      FDRS                        : 27
 #      FDSE                        : 14
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -588,8 +588,8 @@ Device utilization summary:
 Selected Device : 3s1200efg320-4 
 
  Number of Slices:                      300  out of   8672     3%  
- Number of Slice Flip Flops:            228  out of  17344     1%  
- Number of 4 input LUTs:                510  out of  17344     2%  
+ Number of Slice Flip Flops:            223  out of  17344     1%  
+ Number of 4 input LUTs:                525  out of  17344     3%  
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    250     7%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -615,7 +615,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 228   |
+clk                                | BUFGP                  | 223   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -626,8 +626,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 10.311ns (Maximum Frequency: 96.984MHz)
-   Minimum input arrival time before clock: 11.312ns
+   Minimum period: 10.655ns (Maximum Frequency: 93.853MHz)
+   Minimum input arrival time before clock: 11.725ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
 
@@ -637,57 +637,56 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.311ns (frequency: 96.984MHz)
-  Total number of paths / destination ports: 14565 / 383
+  Clock period: 10.655ns (frequency: 93.853MHz)
+  Total number of paths / destination ports: 13855 / 364
 -------------------------------------------------------------------------
-Delay:               10.311ns (Levels of Logic = 7)
-  Source:            openmips0/if_id0/id_inst_15 (FF)
-  Destination:       openmips0/id_ex0/ex_reg1_13 (FF)
+Delay:               10.655ns (Levels of Logic = 6)
+  Source:            openmips0/if_id0/id_inst_12 (FF)
+  Destination:       openmips0/id_ex0/ex_reg1_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: openmips0/if_id0/id_inst_15 to openmips0/id_ex0/ex_reg1_13
+  Data Path: openmips0/if_id0/id_inst_12 to openmips0/id_ex0/ex_reg1_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             17   0.591   1.130  openmips0/if_id0/id_inst_15 (openmips0/if_id0/id_inst_15)
-     LUT4:I1->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW0 (N158)
-     LUT4:I2->O           17   0.704   1.055  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
-     LUT4:I3->O           17   0.704   1.130  openmips0/id0/reg1_o_and0000147 (openmips0/id0/reg1_o_and0000)
-     LUT2:I1->O            6   0.704   0.673  openmips0/id0/reg1_o<7>61 (openmips0/id0/N47)
-     LUT4:I3->O            1   0.704   0.000  openmips0/ex0/wdata_o<13>32_SW0_G (N182)
-     MUXF5:I1->O           1   0.321   0.424  openmips0/ex0/wdata_o<13>32_SW0 (N144)
-     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg1_o<13>221 (openmips0/id0/reg1_o<13>22)
-     FDRS:D                    0.308          openmips0/id_ex0/ex_reg1_13
+     FDR:C->Q             15   0.591   1.192  openmips0/if_id0/id_inst_12 (openmips0/if_id0/id_inst_12)
+     LUT4:I0->O            1   0.704   0.424  openmips0/id0/aluop_o_cmp_eq00071 (openmips0/id0/aluop_o_cmp_eq0007)
+     LUT4:I3->O           15   0.704   1.052  openmips0/id0/aluop_o<3>11 (openmips0/id0/aluop_o<6>)
+     LUT3:I2->O           16   0.704   1.069  openmips0/id0/reg1_read_o1 (openmips0/reg1_read)
+     LUT3_D:I2->LO         1   0.704   0.135  openmips0/id0/reg1_o_and000055 (N354)
+     LUT3:I2->O            5   0.704   0.637  openmips0/id0/reg1_o<0>21 (openmips0/id0/N33)
+     LUT4:I3->O            1   0.704   0.420  openmips0/id0/reg1_o<0>6 (openmips0/id0/reg1_o<0>6)
+     FDRS:S                    0.911          openmips0/id_ex0/ex_reg1_0
     ----------------------------------------
-    Total                     10.311ns (5.444ns logic, 4.867ns route)
-                                       (52.8% logic, 47.2% route)
+    Total                     10.655ns (5.726ns logic, 4.929ns route)
+                                       (53.7% logic, 46.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1948 / 346
+  Total number of paths / destination ports: 1779 / 326
 -------------------------------------------------------------------------
-Offset:              11.312ns (Levels of Logic = 8)
+Offset:              11.725ns (Levels of Logic = 8)
   Source:            rst (PAD)
-  Destination:       openmips0/id_ex0/ex_reg1_13 (FF)
+  Destination:       openmips0/id_ex0/ex_reg2_6 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to openmips0/id_ex0/ex_reg1_13
+  Data Path: rst to openmips0/id_ex0/ex_reg2_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           245   1.218   1.504  rst_IBUF (rst_IBUF)
-     LUT4:I0->O            1   0.704   0.455  openmips0/id0/wreg_o47_SW0 (N158)
-     LUT4:I2->O           17   0.704   1.055  openmips0/id0/wreg_o47 (openmips0/id_wreg_o)
-     LUT4:I3->O           17   0.704   1.130  openmips0/id0/reg1_o_and0000147 (openmips0/id0/reg1_o_and0000)
-     LUT2:I1->O            6   0.704   0.673  openmips0/id0/reg1_o<7>61 (openmips0/id0/N47)
-     LUT4:I3->O            1   0.704   0.000  openmips0/ex0/wdata_o<13>32_SW0_G (N182)
-     MUXF5:I1->O           1   0.321   0.424  openmips0/ex0/wdata_o<13>32_SW0 (N144)
-     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg1_o<13>221 (openmips0/id0/reg1_o<13>22)
-     FDRS:D                    0.308          openmips0/id_ex0/ex_reg1_13
+     IBUF:I->O           256   1.218   1.508  rst_IBUF (rst_IBUF)
+     LUT2:I0->O           24   0.704   1.287  openmips0/id0/reg2_addr_o<1>1 (openmips0/reg2_addr<1>)
+     LUT4:I2->O            1   0.704   0.455  openmips0/regfile1/rdata2_and000040 (openmips0/regfile1/rdata2_and000040)
+     LUT4:I2->O           16   0.704   1.034  openmips0/regfile1/rdata2_and000055 (openmips0/regfile1/rdata2_and0000)
+     MUXF5:S->O            1   0.739   0.424  openmips0/id0/reg2_o<6>6_SW2 (N283)
+     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<6>47_SW0 (N275)
+     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<6>47 (openmips0/id0/reg2_o<6>47)
+     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<6>74 (openmips0/id_reg2_o<6>)
+     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_6
     ----------------------------------------
-    Total                     11.312ns (6.071ns logic, 5.241ns route)
-                                       (53.7% logic, 46.3% route)
+    Total                     11.725ns (6.489ns logic, 5.236ns route)
+                                       (55.3% logic, 44.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -711,14 +710,14 @@ Offset:              4.394ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.91 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.36 secs
  
 --> 
 
-Total memory usage is 273104 kilobytes
+Total memory usage is 273552 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   98 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :  101 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

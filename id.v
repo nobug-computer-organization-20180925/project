@@ -47,6 +47,7 @@ module id(
 
 	input wire[`RegBus] reg1_data_i,
 	input wire[`RegBus] reg2_data_i,
+	input wire[`RegBus] IH_data_i,
 
 	input wire                    is_in_delayslot_i,
 	
@@ -70,7 +71,8 @@ module id(
 	output reg                    branch_flag_o,
 	output reg[`RegBus]           branch_target_address_o,       
 	output reg[`RegBus]           link_addr_o,
-	output reg                    is_in_delayslot_o
+	output reg                    is_in_delayslot_o,
+	output reg							read_IH_o
 	
 );
 
@@ -107,7 +109,8 @@ module id(
 			link_addr_o <= `ZeroWord;
 			branch_target_address_o <= `ZeroWord;
 			branch_flag_o <= `NotBranch;
-			next_inst_in_delayslot_o <= `NotInDelaySlot;					
+			next_inst_in_delayslot_o <= `NotInDelaySlot;	
+			read_IH_o <= 1'b0;
 			
 	  end else begin
 			aluop_o <= `EXE_NOP_OP;
@@ -123,7 +126,8 @@ module id(
 			link_addr_o <= `ZeroWord;
 			branch_target_address_o <= `ZeroWord;
 			branch_flag_o <= `NotBranch;	
-			next_inst_in_delayslot_o <= `NotInDelaySlot; 			
+			next_inst_in_delayslot_o <= `NotInDelaySlot;
+			read_IH_o <= 1'b0;
 			
 		 case (op)
 		  	`EXE_OR:			begin                        //ORָ��
@@ -159,7 +163,9 @@ module id(
 		  	end 	
 			`EXE_MOVE: begin
 				aluop_o <= `EXE_MOVE_OP;
-				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;
+				alusel_o <= `EXE_RES_MOVE;   
+				reg1_read_o <= 1'b1;	
+				reg2_read_o <= 1'b1;
 				instvalid <= `InstValid;
 				wreg_o <= `WriteEnable;
 			end
@@ -216,6 +222,28 @@ module id(
 				wd_o <= inst_i[7:5];
 				instvalid <= `InstValid;
 			end
+			`EXE_IH:			begin
+				case(op4)
+					`INST_MFIH:	begin
+						aluop_o <= `EXE_MFIH_OP;
+						alusel_o <= `EXE_RES_MOVE;   
+						reg1_read_o <= 1'b1;	
+						reg2_read_o <= 1'b1;
+						instvalid <= `InstValid;
+						wreg_o <= `WriteEnable;
+						wd_o <= inst_i[10:8];
+						read_IH_o <= 1'b1;
+					end
+					`INST_MTIH:	begin
+						aluop_o <= `EXE_MTIH_OP;
+						alusel_o <= `EXE_RES_MOVE;   
+						reg1_read_o <= 1'b1;	
+						reg2_read_o <= 1'b1;
+						instvalid <= `InstValid;
+						wreg_o <= `WriteDisable;
+					end
+				endcase
+			end
 		
 		   default:			begin
 		   end
@@ -248,6 +276,8 @@ module id(
 		end else if((reg2_read_o == 1'b1) && (ex_wreg_i == 1'b1) 
 				&& (ex_wd_i == reg2_addr_o)) begin
 			reg2_o <= ex_wdata_i; 
+		end else if (read_IH_o == 1'b1) begin
+			reg2_o <= IH_data_i;
 		end else if((reg2_read_o == 1'b1) && (mem_wreg_i == 1'b1) 
 				&& (mem_wd_i == reg2_addr_o)) begin
 			reg2_o <= mem_wdata_i;			

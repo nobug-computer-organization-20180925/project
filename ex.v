@@ -90,6 +90,12 @@ module ex(
 				`EXE_MOVE_OP:		begin
 					moveres <= reg2_i;
 				end
+				`EXE_MFIH_OP:		begin
+					moveres <= reg2_i;
+				end
+				`EXE_MTIH_OP:		begin
+					moveres <= reg1_i;
+				end
 				default : begin
 				end
 			endcase

@@ -52,6 +52,7 @@ module openmips(
 	wire[`AluSelBus] id_alusel_o;
 	wire[`RegBus] id_reg1_o;
 	wire[`RegBus] id_reg2_o;
+	wire	id_read_IH_o;
 	wire id_wreg_o;
 	wire[`RegAddrBus] id_wd_o;
 	wire id_is_in_delayslot_o;
@@ -92,6 +93,7 @@ module openmips(
   wire reg2_read;
   wire[`RegBus] reg1_data;
   wire[`RegBus] reg2_data;
+  wire[`RegBus] IH_data;
   wire[`RegAddrBus] reg1_addr;
   wire[`RegAddrBus] reg2_addr;
 	wire is_in_delayslot_i;
@@ -131,6 +133,8 @@ module openmips(
 
 		.reg1_data_i(reg1_data),
 		.reg2_data_i(reg2_data),
+		
+		.IH_data_i(IH_data),
 
 	  //处于执行阶段的指令要写入的目的寄存器信息
 		.ex_wreg_i(ex_wreg_o),
@@ -162,7 +166,9 @@ module openmips(
 		.branch_target_address_o(branch_target_address),       
 		.link_addr_o(id_link_address_o),
 		
-		.is_in_delayslot_o(id_is_in_delayslot_o)
+		.is_in_delayslot_o(id_is_in_delayslot_o),
+		
+		.read_IH_o(id_read_IH_o)
 	);
 
   //ͨ�üĴ���Regfile����
@@ -178,6 +184,7 @@ module openmips(
 		.re2 (reg2_read),
 		.raddr2 (reg2_addr),
 		.rdata2 (reg2_data),
+		.IHdata (IH_data),
 		
 		.register1(register1)
 	);
