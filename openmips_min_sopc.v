@@ -40,20 +40,36 @@ module openmips_min_sopc(
 	input	wire clk,
 	input wire rst,
 	
-	output wire[`RegBus] register1
+	output wire[`RegBus] register1,
+	
+	 output wire rdn,
+    output wire wrn,
+	 
+    output wire ram1_WE_L,
+    output wire ram2_WE_L,
+    output wire ram1_OE_L,
+    output wire ram2_OE_L,
+    output wire ram1_CE,
+    output wire ram2_CE,
+	 
+	 inout wire[15:0] ram1datainout,
+    inout wire[15:0] ram2datainout,
+	 
+	 output wire[`RegBus] ram1addr,
+	 output wire[`RegBus] ram2addr
 	
 );
-
   //Á¬½ÓÖ¸Áî´æ´¢Æ÷
   wire[`InstAddrBus] inst_addr;
   wire[`InstBus] inst;
   wire rom_ce;
   wire mem_we_i;
   wire[`RegBus] mem_addr_i;
-  wire[`RegBus] mem_data_i;
   wire[`RegBus] mem_data_o;
+  wire[`RegBus] mem_data_i;  
   wire mem_ce_i;   
 
+  
  openmips openmips0(
 		.clk(clk),
 		.rst(rst),
@@ -78,7 +94,7 @@ module openmips_min_sopc(
 		.ce(rom_ce),
 		.rst(rst)
 	);
-	data_ram data_ram0(
+/*	data_ram data_ram0(
 		.clk(clk),
 		.we(mem_we_i),
 		.addr(mem_addr_i),
@@ -86,7 +102,23 @@ module openmips_min_sopc(
 		.data_o(mem_data_o),
 		.ce(mem_ce_i)		
 	);
+*/
+
+	 assign wrn=1;
+	 assign rdn=1;
+
+    assign ram1_CE = 0;
+	 assign ram1_WE_L = 0;
+	 assign ram1_OE_L = 0;
+	 assign ram1datainout = 16'bz;
+	 assign ram1addr = 0;
+	 
+	 assign ram2_CE = ~mem_ce_i;
+	 assign ram2_WE_L = ~mem_we_i | clk;
+	 assign ram2_OE_L = mem_we_i;
+	 assign ram2datainout = (mem_we_i ? mem_data_i : 16'bz);
+    assign mem_data_o = ram2datainout;
+	 assign ram2addr = mem_addr_i;
 	
-
-
+	 
 endmodule

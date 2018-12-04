@@ -44,7 +44,9 @@ module data_ram(
 );
 
 	reg[`DataBus]  data_mem[0:`DataMemNum-1];
-
+	wire[`DataBus] mem_read;
+	assign mem_read = data_mem[addr];
+	
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
 			//data_o <= ZeroWord;
@@ -57,7 +59,7 @@ module data_ram(
 		if (ce == `ChipDisable) begin
 			data_o <= `ZeroWord;
 	  end else if(we == `WriteDisable) begin
-		    data_o <= data_mem[addr];
+		    data_o <= mem_read;
 		end else begin
 				data_o <= `ZeroWord;
 		end
