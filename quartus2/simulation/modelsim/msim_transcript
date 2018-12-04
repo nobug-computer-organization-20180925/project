@@ -16,7 +16,7 @@
 #          Updated modelsim.ini.
 # vlog -vlog01compat -work altera_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:30 on Dec 04,2018
+# Start time: 23:40:25 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work altera_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
@@ -92,7 +92,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:25 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -104,7 +104,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work lpm_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:30 on Dec 04,2018
+# Start time: 23:40:25 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -168,7 +168,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:26 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -180,7 +180,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work sgate_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:30 on Dec 04,2018
+# Start time: 23:40:26 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -222,7 +222,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:26 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -234,7 +234,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:31 on Dec 04,2018
+# Start time: 23:40:26 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -342,58 +342,160 @@
 # 	altparallel_flash_loader
 # 	altserial_flash_loader
 # 	altsource_probe
-# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:01
+# End time: 23:40:27 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vlib verilog_libs/maxii_ver
-# ** Warning: (vlib-34) Library already exists at "verilog_libs/maxii_ver".
+# vlib verilog_libs/stratixiii_ver
+# ** Warning: (vlib-34) Library already exists at "verilog_libs/stratixiii_ver".
 # 
-# vmap maxii_ver ./verilog_libs/maxii_ver
+# vmap stratixiii_ver ./verilog_libs/stratixiii_ver
 # Model Technology ModelSim PE vmap 10.4a Lib Mapping Utility 2015.03 Apr  7 2015
-# vmap -modelsim_quiet maxii_ver ./verilog_libs/maxii_ver 
+# vmap -modelsim_quiet stratixiii_ver ./verilog_libs/stratixiii_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work maxii_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v}
+# vlog -vlog01compat -work stratixiii_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/stratixiii_atoms.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:32 on Dec 04,2018
-# vlog -reportprogress 300 -vlog01compat -work maxii_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v 
-# -- Compiling UDP MAXII_PRIM_DFFE
-# -- Compiling module maxii_dffe
-# -- Compiling module maxii_latch
-# -- Compiling module maxii_mux21
-# -- Compiling module maxii_mux41
-# -- Compiling module maxii_and1
-# -- Compiling module maxii_and16
-# -- Compiling module maxii_bmux21
-# -- Compiling module maxii_b17mux21
-# -- Compiling module maxii_nmux21
-# -- Compiling module maxii_b5mux21
-# -- Compiling module maxii_jtag
-# -- Compiling module maxii_crcblock
-# -- Compiling module maxii_asynch_lcell
-# -- Compiling module maxii_lcell_register
-# -- Compiling module maxii_lcell
-# -- Compiling module maxii_ufm
-# -- Compiling module maxii_io
-# -- Compiling module maxii_routing_wire
+# Start time: 23:40:28 on Dec 04,2018
+# vlog -reportprogress 300 -vlog01compat -work stratixiii_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/stratixiii_atoms.v 
+# -- Compiling UDP STRATIXIII_PRIM_DFFE
+# -- Compiling module stratixiii_dffe
+# -- Compiling module stratixiii_latch
+# -- Compiling module stratixiii_mux21
+# -- Compiling module stratixiii_mux41
+# -- Compiling module stratixiii_and1
+# -- Compiling module stratixiii_and16
+# -- Compiling module stratixiii_bmux21
+# -- Compiling module stratixiii_b17mux21
+# -- Compiling module stratixiii_nmux21
+# -- Compiling module stratixiii_b5mux21
+# -- Compiling module stratixiii_jtag
+# -- Compiling module stratixiii_crcblock
+# -- Compiling module stratixiii_lcell_comb
+# -- Compiling module stratixiii_routing_wire
+# -- Compiling module stratixiii_lvds_tx_reg
+# -- Compiling module stratixiii_lvds_tx_parallel_register
+# -- Compiling module stratixiii_lvds_tx_out_block
+# -- Compiling module stratixiii_lvds_transmitter
+# -- Compiling module stratixiii_rublock
+# -- Compiling module stratixiii_ram_pulse_generator
+# -- Compiling module stratixiii_ram_register
+# -- Compiling module stratixiii_ram_block
+# -- Compiling module stratixiii_ff
+# -- Compiling module stratixiii_clkselect
+# -- Compiling module stratixiii_and2
+# -- Compiling module stratixiii_ena_reg
+# -- Compiling module stratixiii_clkena
+# -- Compiling module stratixiii_mlab_cell_pulse_generator
+# -- Compiling module stratixiii_mlab_cell
+# -- Compiling module stratixiii_io_ibuf
+# -- Compiling module stratixiii_io_obuf
+# -- Compiling module stratixiii_ddio_out
+# -- Compiling module stratixiii_ddio_oe
+# -- Compiling module stratixiii_ddio_in
+# -- Compiling module stratixiii_mac_register
+# -- Compiling module stratixiii_mac_multiplier
+# -- Compiling module stratixiii_mac_mult
+# -- Compiling module stratixiii_fsa_isse
+# -- Compiling module stratixiii_first_stage_add_sub
+# -- Compiling module stratixiii_second_stage_add_accum
+# -- Compiling module stratixiii_round_block
+# -- Compiling module stratixiii_saturate_block
+# -- Compiling module stratixiii_round_saturate_block
+# -- Compiling module stratixiii_rotate_shift_block
+# -- Compiling module stratixiii_carry_chain_adder
+# -- Compiling module stratixiii_mac_out
+# -- Compiling module stratixiii_ddr_gray_decoder
+# -- Compiling module stratixiii_ddr_delay_chain_s
+# -- Compiling module stratixiii_ddr_io_reg
+# -- Compiling module stratixiii_dll
+# -- Compiling module stratixiii_dll_offset_ctrl
+# -- Compiling module stratixiii_dqs_delay_chain
+# -- Compiling module stratixiii_dqs_enable
+# -- Compiling module stratixiii_dqs_enable_ctrl
+# -- Compiling module stratixiii_delay_chain
+# -- Compiling module stratixiii_io_clock_divider
+# -- Compiling module stratixiii_output_phase_alignment
+# -- Compiling module stratixiii_input_phase_alignment
+# -- Compiling module stratixiii_half_rate_input
+# -- Compiling module stratixiii_io_config
+# -- Compiling module stratixiii_dqs_config
+# -- Compiling module stratixiii_rt_sm
+# -- Compiling module stratixiii_termination_aux_clock_div
+# -- Compiling module stratixiii_termination
+# -- Compiling module stratixiii_termination_logic
+# -- Compiling module stratixiii_io_pad
+# -- Compiling module stratixiii_m_cntr
+# -- Compiling module stratixiii_n_cntr
+# -- Compiling module stratixiii_scale_cntr
+# -- Compiling module stratixiii_pll_reg
+# -- Compiling module stratixiii_pll
+# -- Compiling module stratixiii_asmiblock
+# -- Compiling module stratixiii_tsdblock
+# -- Compiling module stratixiii_lvds_rx_fifo_sync_ram
+# -- Compiling module stratixiii_lvds_rx_fifo
+# -- Compiling module stratixiii_lvds_rx_bitslip
+# -- Compiling module stratixiii_lvds_rx_deser
+# -- Compiling module stratixiii_lvds_rx_parallel_reg
+# -- Compiling module stratixiii_lvds_reg
+# -- Compiling module stratixiii_pclk_divider
+# -- Compiling module stratixiii_select_ini_phase_dpaclk
+# -- Compiling module stratixiii_dpa_retime_block
+# -- Compiling module stratixiii_dpa_block
+# -- Compiling module stratixiii_lvds_receiver
+# -- Compiling module stratixiii_pseudo_diff_out
+# -- Compiling module stratixiii_bias_logic
+# -- Compiling module stratixiii_bias_generator
+# -- Compiling module stratixiii_bias_block
 # 
 # Top level modules:
-# 	maxii_dffe
-# 	maxii_latch
-# 	maxii_mux21
-# 	maxii_mux41
-# 	maxii_and1
-# 	maxii_and16
-# 	maxii_bmux21
-# 	maxii_b17mux21
-# 	maxii_nmux21
-# 	maxii_b5mux21
-# 	maxii_jtag
-# 	maxii_crcblock
-# 	maxii_lcell
-# 	maxii_ufm
-# 	maxii_io
-# 	maxii_routing_wire
-# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# 	stratixiii_dffe
+# 	stratixiii_latch
+# 	stratixiii_and1
+# 	stratixiii_and16
+# 	stratixiii_bmux21
+# 	stratixiii_b17mux21
+# 	stratixiii_nmux21
+# 	stratixiii_b5mux21
+# 	stratixiii_jtag
+# 	stratixiii_crcblock
+# 	stratixiii_lcell_comb
+# 	stratixiii_routing_wire
+# 	stratixiii_lvds_transmitter
+# 	stratixiii_rublock
+# 	stratixiii_ram_block
+# 	stratixiii_ff
+# 	stratixiii_clkselect
+# 	stratixiii_clkena
+# 	stratixiii_mlab_cell
+# 	stratixiii_io_ibuf
+# 	stratixiii_io_obuf
+# 	stratixiii_ddio_out
+# 	stratixiii_ddio_oe
+# 	stratixiii_ddio_in
+# 	stratixiii_mac_mult
+# 	stratixiii_mac_out
+# 	stratixiii_dll
+# 	stratixiii_dll_offset_ctrl
+# 	stratixiii_dqs_delay_chain
+# 	stratixiii_dqs_enable
+# 	stratixiii_dqs_enable_ctrl
+# 	stratixiii_delay_chain
+# 	stratixiii_io_clock_divider
+# 	stratixiii_output_phase_alignment
+# 	stratixiii_input_phase_alignment
+# 	stratixiii_half_rate_input
+# 	stratixiii_io_config
+# 	stratixiii_dqs_config
+# 	stratixiii_termination
+# 	stratixiii_termination_logic
+# 	stratixiii_io_pad
+# 	stratixiii_pll_reg
+# 	stratixiii_pll
+# 	stratixiii_asmiblock
+# 	stratixiii_tsdblock
+# 	stratixiii_lvds_receiver
+# 	stratixiii_pseudo_diff_out
+# 	stratixiii_bias_block
+# End time: 23:40:28 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -407,163 +509,163 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/defines.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:32 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/defines.v 
-# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ctrl.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:32 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ctrl.v 
 # -- Compiling module ctrl
 # 
 # Top level modules:
 # 	ctrl
-# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/data_ram.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:32 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/data_ram.v 
 # -- Compiling module data_ram
 # 
 # Top level modules:
 # 	data_ram
-# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ex.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:32 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ex.v 
 # -- Compiling module ex
 # 
 # Top level modules:
 # 	ex
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:01
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ex_mem.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ex_mem.v 
 # -- Compiling module ex_mem
 # 
 # Top level modules:
 # 	ex_mem
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/id.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/id.v 
 # -- Compiling module id
 # 
 # Top level modules:
 # 	id
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/id_ex.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/id_ex.v 
 # -- Compiling module id_ex
 # 
 # Top level modules:
 # 	id_ex
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/if_id.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/if_id.v 
 # -- Compiling module if_id
 # 
 # Top level modules:
 # 	if_id
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/inst_rom.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:29 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:29 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/mem.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/mem.v 
 # -- Compiling module mem
 # 
 # Top level modules:
 # 	mem
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/mem_wb.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/mem_wb.v 
 # -- Compiling module mem_wb
 # 
 # Top level modules:
 # 	mem_wb
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/openmips.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/openmips.v 
 # -- Compiling module openmips
 # 
 # Top level modules:
 # 	openmips
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/openmips_min_sopc.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/openmips_min_sopc.v 
 # -- Compiling module openmips_min_sopc
 # 
 # Top level modules:
 # 	openmips_min_sopc
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/pc_reg.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/pc_reg.v 
 # -- Compiling module pc_reg
 # 
 # Top level modules:
 # 	pc_reg
-# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/regfile.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:33 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/regfile.v 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:08:34 on Dec 04,2018, Elapsed time: 0:00:01
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project/quartus2/.. {D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 16:08:34 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project/quartus2/.." D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v 
 # -- Compiling module openmips_min_sopc_tb
 # 
 # Top level modules:
 # 	openmips_min_sopc_tb
-# End time: 16:08:34 on Dec 04,2018, Elapsed time: 0:00:00
+# End time: 23:40:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc" openmips_min_sopc_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L stratixiii_ver -L rtl_work -L work -voptargs="+acc" openmips_min_sopc_tb
 # //  ModelSim PE Student Edition 10.4a Apr  7 2015 
 # //
 # //  Copyright 1991-2015 Mentor Graphics Corporation
@@ -583,7 +685,7 @@
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
 # vsim -gui  -l msim_transcript -do "openmips_min_sopc_tb_run_msim_rtl_verilog.do" 
-# Start time: 16:08:34 on Dec 04,2018
+# Start time: 23:40:30 on Dec 04,2018
 # Loading work.openmips_min_sopc_tb
 # Loading work.openmips_min_sopc
 # Loading work.openmips
@@ -610,5 +712,17 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 4000 ns
-# End time: 16:18:37 on Dec 04,2018, Elapsed time: 0:10:03
-# Errors: 0, Warnings: 2
+add wave -position insertpoint  \
+{sim:/openmips_min_sopc_tb/openmips_min_sopc0/data_ram0/data_mem[1]}
+restart
+# ** Warning: (vsim-3015) D:/prog10/Desktop/project/openmips_min_sopc.v(57): [PCDPC] - Port size (4) does not match connection size (1) for port 'ram_ce_o'. The port definition is at: D:/prog10/Desktop/project/openmips.v(50).
+#    Time: 0 ps  Iteration: 0  Instance: /openmips_min_sopc_tb/openmips_min_sopc0/openmips0 File: D:/prog10/Desktop/project/openmips.v
+# ** Warning: (vsim-3015) D:/prog10/Desktop/project/openmips.v(306): [PCDPC] - Port size (1) does not match connection size (4) for port 'mem_ce_o'. The port definition is at: D:/prog10/Desktop/project/mem.v(60).
+#    Time: 0 ps  Iteration: 0  Instance: /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0 File: D:/prog10/Desktop/project/mem.v
+run -all
+# ** Note: $stop    : D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v(49)
+#    Time: 4295 ns  Iteration: 0  Instance: /openmips_min_sopc_tb
+# Break in Module openmips_min_sopc_tb at D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v line 49
+# could not find interpreter "ScintillaTk"
+# End time: 23:42:49 on Dec 04,2018, Elapsed time: 0:02:19
+# Errors: 1, Warnings: 4

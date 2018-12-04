@@ -1,4 +1,4 @@
-//ȫ��
+//全局
 `define RstEnable 1'b0
 `define RstDisable 1'b1
 `define ZeroWord 16'h0000
@@ -26,7 +26,8 @@
 `define ChipDisable 1'b0
 
 
-//ָ��
+//指令
+
 `define EXE_OR  5'b11101
 `define EXE_ORI 5'b11111
 `define EXE_MOVE 5'b01111
@@ -48,21 +49,24 @@
 //AluSel
 `define EXE_RES_LOGIC 3'b001
 `define EXE_RES_MOVE 3'b011	
-`define EXE_RES_NOP 3'b000
+
 `define EXE_RES_JUMP_BRANCH 3'b110
 `define EXE_RES_LOAD_STORE 3'b111
 
-//ָ��洢��inst_rom
+`define EXE_RES_NOP 3'b000
+//指令存储器inst_rom
 `define InstAddrBus 15:0
 `define InstBus 15:0
 `define InstMemNum 127 // todo: change to 65535
 `define InstMemNumLog2 16
 
+//数据存储器data_ram
 `define DataAddrBus 15:0
 `define DataBus 15:0
 `define DataMemNum 127// todo: change to 65535
 
-//ͨ�üĴ���regfile
+
+//通用寄存器regfile
 `define RegAddrBus 3:0
 `define RegBus 15:0
 `define RegWidth 16

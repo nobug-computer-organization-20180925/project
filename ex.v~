@@ -44,6 +44,7 @@ module ex(
 	input wire[`RegBus]           inst_i,
 	
 
+	//是否转移、以及link address
 	input wire[`RegBus]           link_address_i,
 	input wire                    is_in_delayslot_i,	
 	
@@ -52,6 +53,7 @@ module ex(
 	output reg                    wreg_o,
 	output reg[`RegBus]		wdata_o,
 	
+	//下面新增的几个输出是为加载、存储指令准备的
 		output wire[`AluOpBus]        aluop_o,
 	output wire[`RegBus]          mem_addr_o,
 	output wire[`RegBus]          reg2_o,
@@ -64,7 +66,15 @@ module ex(
 	reg[`RegBus] moveres;
 
 	assign stallreq = 0;
+  //aluop_o传递到访存阶段，用于加载、存储指令
+  assign aluop_o = aluop_i;
+  
+  //mem_addr传递到访存阶段，是加载、存储指令对应的存储器地址
+  assign mem_addr_o = reg1_i + {{16{inst_i[15]}},inst_i[15:0]};
 
+  //将两个操作数也传递到访存阶段，也是为记载、存储指令准备的
+  assign reg2_o = reg2_i;
+			
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			logicout <= `ZeroWord;
@@ -93,15 +103,6 @@ module ex(
 			endcase
 		end
 	end
-
- //aluop_o send straight to mem for loading instructions
-  assign aluop_o = aluop_i;
-  
-  //mem_addr: load/save memory's address.
-  assign mem_addr_o = reg1_i + {{11{inst_i[4]}},inst_i[4:0]};
-
-  //send reg2 to mem(seemingly useless)
-  assign reg2_o = reg2_i;
 
  always @ (*) begin
 	 wd_o <= wd_i;	 	 	

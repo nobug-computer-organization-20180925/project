@@ -24,7 +24,9 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  inst_rom
 // File:    inst_rom.v
-// Description: Ö¸ï¿½ï¿½æ´¢ï¿½ï¿
+// Author:  Lei Silei
+// E-mail:  leishangwen@163.com
+// Description: Ö¸Áî´æ´¢Æ÷
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -48,11 +50,11 @@ module inst_rom(
 	inst_mem[1]<=16'b10011_000_001_00001;//10011 load reg1's value = 0 or 0404
 	inst_mem[2]<=16'b11111_001_010_01101;//11111 ori: reg1 = reg1 or imm 01001101 ans=0000_0011_0100_1111
 	inst_mem[3]<=16'b01111_001_011_00000;//01111 move: reg1 = reg2 tail 00000 ans=0404
-	inst_mem[4]<=16'b11011_000_001_00001;//10011 save reg1's value 0404 to mem[1] 
+	inst_mem[4]<=16'b11011_000_001_00001;//11011 save reg1's value 0404 to mem[1] 
 	inst_mem[5]<=16'b00010_111_111_11100;//00010 branch: branch immediate 10:0 jump to pc=1
 	inst_mem[6]<=16'b01111_001_100_00000;//01111 move reg4 = reg1 
 	
-	for(i=5;i<`InstMemNum;i=i+1) inst_mem[i]<=0;
+	for(i=7;i<`InstMemNum;i=i+1) inst_mem[i]<=0;
 
 	end
 	

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/prog10/Desktop/project/quartus2/simulation/modelsim
 va_graycounter
-Z1 !s110 1543910911
+Z1 !s110 1543938027
 !i10b 1
 !s100 O?00O`:H:;:4VUW[1DlW82
 IY2QNmjLV^^o8G97UJ<F562
@@ -23,7 +23,7 @@ Z6 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z7 !s108 1543910911.000000
+Z7 !s108 1543938026.000000
 Z8 !s107 c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v|
 !s101 -O0
@@ -51,7 +51,7 @@ R9
 !i113 1
 R10
 valt_cal
-Z11 !s110 1543910912
+R1
 !i10b 1
 !s100 1YD3@=W`1PfWNVkAEXaK:0
 IeMKZZcb9_b`7;78H010z[3
@@ -219,7 +219,7 @@ R9
 !i113 1
 R10
 valtdq_dqs
-R11
+R1
 !i10b 1
 !s100 3[01_m2jd_K8U9COZQl2L1
 IiK:LifOocfA_QNUi<;=zQ0
@@ -306,7 +306,7 @@ R9
 R10
 n@a@l@t@e@r@a_@m@f_@m@e@m@o@r@y_@i@n@i@t@i@a@l@i@z@a@t@i@o@n
 valtera_std_synchronizer
-R11
+R1
 !i10b 1
 !s100 7`aDz;Z>Z4C:c2:2zSXBA0
 IzYJ27FKO6LE:LdTVKIRKf2
@@ -327,7 +327,7 @@ R9
 !i113 1
 R10
 valtera_std_synchronizer_bundle
-R11
+R1
 !i10b 1
 !s100 `iV1F1eR8az@OYB]OMn9J1
 IEb5^zmzgfoBSA2Rd3TFVY2
@@ -453,7 +453,7 @@ R9
 !i113 1
 R10
 valtparallel_flash_loader
-R11
+R1
 !i10b 1
 !s100 BLDMSm1I;BZ:Qcb5hjA232
 Ig=gPW:7OKJLW;eWF3@kGQ0
@@ -516,7 +516,7 @@ R9
 !i113 1
 R10
 valtserial_flash_loader
-R11
+R1
 !i10b 1
 !s100 1^Yh><FF;IiS8NCG;z4641
 I6M:CdiEW;=WjUDe=BTAE51
@@ -558,7 +558,7 @@ R9
 !i113 1
 R10
 valtsource_probe
-R11
+R1
 !i10b 1
 !s100 _hTP]69?K[KzihTROd?QH2
 INK>oUJP>nY09d44:d4QD?2
@@ -621,7 +621,7 @@ R9
 !i113 1
 R10
 valtstratixii_oct
-R11
+R1
 !i10b 1
 !s100 i<_eoURAEJCFKD^:k:n:S3
 I6TW9kInljQIaeSmRa`3N13
@@ -957,7 +957,7 @@ R9
 !i113 1
 R10
 vdummy_hub
-R11
+R1
 !i10b 1
 !s100 ;g^cfDLXM39JffkjTU4K61
 Ijfd[E<o6IEg0j:L5GSZPb1
@@ -1020,7 +1020,7 @@ R9
 !i113 1
 R10
 vjtag_tap_controller
-R11
+R1
 !i10b 1
 !s100 ]2cFM>FYzPKb_HmoG^PFz3
 I9P@oO54jHGaidNKTVk`DO2
@@ -1235,7 +1235,7 @@ R9
 !i113 1
 R10
 vsignal_gen
-R11
+R1
 !i10b 1
 !s100 l:EG?:k>jFDXFWfcB7DJa1
 IDcACYWC@bW3>jj^J?HQPC0
@@ -1256,7 +1256,7 @@ R9
 !i113 1
 R10
 vsld_signaltap
-R11
+R1
 !i10b 1
 !s100 <MCbbF=IIf50_D;7JIGb03
 Ie3]2dgDON1T:3Zfak^5f50
@@ -1277,7 +1277,7 @@ R9
 !i113 1
 R10
 vsld_virtual_jtag
-R11
+R1
 !i10b 1
 !s100 T]B`E]];iM2VC:>_CMcP>2
 IZk<zcVKY5914]jiOO@IhY0

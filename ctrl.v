@@ -26,7 +26,7 @@
 // File:    ctrl.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ??????飬???????????????????
+// Description: 控制模块，控制流水线的刷新、暂停等
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -38,7 +38,7 @@ module ctrl(
 
 	input wire                   stallreq_from_id,
 
-  //??????н?ε????????
+  //来自执行阶段的暂停请求
 	input wire                   stallreq_from_ex,
 	output reg[5:0]              stall       
 	

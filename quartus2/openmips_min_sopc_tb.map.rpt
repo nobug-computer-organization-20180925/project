@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openmips_min_sopc_tb
-Tue Dec 04 16:11:52 2018
+Tue Dec 04 23:38:26 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -44,16 +44,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Tue Dec 04 16:11:52 2018        ;
+; Analysis & Synthesis Status   ; Successful - Tue Dec 04 23:38:26 2018        ;
 ; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name                 ; openmips_min_sopc_tb                         ;
 ; Top-level Entity Name         ; openmips_min_sopc                            ;
 ; Family                        ; Stratix III                                  ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,016                                        ;
+;     Combinational ALUTs       ; 1,066                                        ;
 ;     Memory ALUTs              ; 0                                            ;
-;     Dedicated logic registers ; 2,180                                        ;
-; Total registers               ; 2180                                         ;
+;     Dedicated logic registers ; 2,287                                        ;
+; Total registers               ; 2287                                         ;
 ; Total pins                    ; 18                                           ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 0                                            ;
@@ -170,44 +170,44 @@ applicable agreement for further details.
 +-----------------------------------------------+-----------+
 ; Resource                                      ; Usage     ;
 +-----------------------------------------------+-----------+
-; Estimated ALUTs Used                          ; 1016      ;
-;     -- Combinational ALUTs                    ; 1016      ;
+; Estimated ALUTs Used                          ; 1066      ;
+;     -- Combinational ALUTs                    ; 1066      ;
 ;     -- Memory ALUTs                           ; 0         ;
 ;     -- LUT_REGs                               ; 0         ;
-; Dedicated logic registers                     ; 2180      ;
+; Dedicated logic registers                     ; 2287      ;
 ;                                               ;           ;
-; Estimated ALUTs Unavailable                   ; 555       ;
-;     -- Due to unpartnered combinational logic ; 555       ;
+; Estimated ALUTs Unavailable                   ; 558       ;
+;     -- Due to unpartnered combinational logic ; 558       ;
 ;     -- Due to Memory ALUTs                    ; 0         ;
 ;                                               ;           ;
-; Total combinational functions                 ; 1016      ;
+; Total combinational functions                 ; 1066      ;
 ; Combinational ALUT usage by number of inputs  ;           ;
-;     -- 7 input functions                      ; 504       ;
-;     -- 6 input functions                      ; 192       ;
-;     -- 5 input functions                      ; 66        ;
-;     -- 4 input functions                      ; 58        ;
-;     -- <=3 input functions                    ; 196       ;
+;     -- 7 input functions                      ; 496       ;
+;     -- 6 input functions                      ; 204       ;
+;     -- 5 input functions                      ; 110       ;
+;     -- 4 input functions                      ; 38        ;
+;     -- <=3 input functions                    ; 218       ;
 ;                                               ;           ;
 ; Combinational ALUTs by mode                   ;           ;
-;     -- normal mode                            ; 491       ;
-;     -- extended LUT mode                      ; 504       ;
+;     -- normal mode                            ; 549       ;
+;     -- extended LUT mode                      ; 496       ;
 ;     -- arithmetic mode                        ; 21        ;
 ;     -- shared arithmetic mode                 ; 0         ;
 ;                                               ;           ;
-; Estimated ALUT/register pairs used            ; 3081      ;
+; Estimated ALUT/register pairs used            ; 3215      ;
 ;                                               ;           ;
-; Total registers                               ; 2180      ;
-;     -- Dedicated logic registers              ; 2180      ;
+; Total registers                               ; 2287      ;
+;     -- Dedicated logic registers              ; 2287      ;
 ;     -- I/O registers                          ; 0         ;
 ;     -- LUT_REGs                               ; 0         ;
 ;                                               ;           ;
-; Estimated ALMs:  partially or completely used ; 1,542     ;
+; Estimated ALMs:  partially or completely used ; 1,609     ;
 ;                                               ;           ;
 ; I/O pins                                      ; 18        ;
 ; Maximum fan-out node                          ; clk~input ;
-; Maximum fan-out                               ; 2180      ;
-; Total fan-out                                 ; 14419     ;
-; Average fan-out                               ; 4.46      ;
+; Maximum fan-out                               ; 2287      ;
+; Total fan-out                                 ; 14928     ;
+; Average fan-out                               ; 4.40      ;
 +-----------------------------------------------+-----------+
 
 
@@ -216,19 +216,18 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+--------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+--------------------------------------------------------+--------------+
-; |openmips_min_sopc         ; 1016 (0)          ; 2180 (0)     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 18   ; 0            ; |openmips_min_sopc                                     ; work         ;
-;    |data_ram:data_ram0|    ; 799 (799)         ; 2032 (2032)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|data_ram:data_ram0                  ; work         ;
-;    |openmips:openmips0|    ; 217 (0)           ; 148 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0                  ; work         ;
-;       |ctrl:ctrl0|         ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|ctrl:ctrl0       ; work         ;
+; |openmips_min_sopc         ; 1066 (0)          ; 2287 (0)     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 18   ; 0            ; |openmips_min_sopc                                     ; work         ;
+;    |data_ram:data_ram0|    ; 783 (783)         ; 2032 (2032)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|data_ram:data_ram0                  ; work         ;
+;    |openmips:openmips0|    ; 283 (0)           ; 255 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0                  ; work         ;
 ;       |ex:ex0|             ; 25 (25)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|ex:ex0           ; work         ;
-;       |ex_mem:ex_mem0|     ; 0 (0)             ; 48 (48)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|ex_mem:ex_mem0   ; work         ;
-;       |id:id0|             ; 30 (30)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|id:id0           ; work         ;
-;       |id_ex:id_ex0|       ; 100 (100)         ; 44 (44)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0     ; work         ;
-;       |if_id:if_id0|       ; 8 (8)             ; 14 (14)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0     ; work         ;
+;       |ex_mem:ex_mem0|     ; 0 (0)             ; 50 (50)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|ex_mem:ex_mem0   ; work         ;
+;       |id:id0|             ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|id:id0           ; work         ;
+;       |id_ex:id_ex0|       ; 132 (132)         ; 47 (47)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0     ; work         ;
+;       |if_id:if_id0|       ; 13 (13)           ; 18 (18)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0     ; work         ;
 ;       |mem:mem0|           ; 9 (9)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|mem:mem0         ; work         ;
-;       |mem_wb:mem_wb0|     ; 18 (18)           ; 18 (18)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|mem_wb:mem_wb0   ; work         ;
+;       |mem_wb:mem_wb0|     ; 20 (20)           ; 20 (20)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|mem_wb:mem_wb0   ; work         ;
 ;       |pc_reg:pc_reg0|     ; 8 (8)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|pc_reg:pc_reg0   ; work         ;
-;       |regfile:regfile1|   ; 18 (18)           ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1 ; work         ;
+;       |regfile:regfile1|   ; 40 (40)           ; 112 (112)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1 ; work         ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -338,147 +337,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; inst_rom:inst_rom0|inst_mem[120][1]      ; Stuck at GND due to stuck port data_in ;
 ; inst_rom:inst_rom0|inst_mem[120][2]      ; Stuck at GND due to stuck port data_in ;
 ; inst_rom:inst_rom0|inst_mem[120][3]      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2203 ;                                        ;
+; Total Number of Removed Registers = 2096 ;                                        ;
 +------------------------------------------+----------------------------------------+
 * Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
-+---------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; Register name                               ; Reason for Removal        ; Registers Removed due to This Register                                            ;
-+---------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; openmips:openmips0|id_ex:id_ex0|ex_wd[3]    ; Stuck at GND              ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[3],                                      ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[3],                                       ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[6][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[5][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[4][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[7][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[2][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[3][15],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][0],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][1],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][2],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][3],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][4],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][5],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][6],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][7],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][8],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][9],                                   ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][10],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][11],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][12],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][13],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][14],                                  ;
-;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][15]                                   ;
-; inst_rom:inst_rom0|inst_mem[123][10]        ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[10],                                      ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|if_id:if_id0|id_pc[10],                                        ;
-;                                             ;                           ; openmips:openmips0|pc_reg:pc_reg0|pc[10]                                          ;
-; inst_rom:inst_rom0|inst_mem[123][9]         ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[9],                                       ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|if_id:if_id0|id_pc[9], openmips:openmips0|pc_reg:pc_reg0|pc[9] ;
-; inst_rom:inst_rom0|inst_mem[123][7]         ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[7],                                       ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|if_id:if_id0|id_pc[7], openmips:openmips0|pc_reg:pc_reg0|pc[7] ;
-; inst_rom:inst_rom0|inst_mem[123][4]         ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[4],                                       ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|id_ex:id_ex0|ex_inst[4]                                        ;
-; inst_rom:inst_rom0|inst_mem[123][1]         ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[1],                                       ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|id_ex:id_ex0|ex_inst[1]                                        ;
-; openmips:openmips0|id_ex:id_ex0|ex_wd[2]    ; Stuck at GND              ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[2],                                      ;
-;                                             ; due to stuck port data_in ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[2]                                        ;
-; openmips:openmips0|id_ex:id_ex0|ex_aluop[4] ; Stuck at GND              ; openmips:openmips0|ex_mem:ex_mem0|mem_aluop[4]                                    ;
-;                                             ; due to stuck port data_in ;                                                                                   ;
-; openmips:openmips0|ex_mem:ex_mem0|mem_wd[1] ; Stuck at GND              ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[1]                                        ;
-;                                             ; due to stuck port data_in ;                                                                                   ;
-; openmips:openmips0|if_id:if_id0|id_pc[15]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[15]                                          ;
-; openmips:openmips0|if_id:if_id0|id_pc[14]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[14]                                          ;
-; openmips:openmips0|if_id:if_id0|id_pc[13]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[13]                                          ;
-; openmips:openmips0|if_id:if_id0|id_pc[12]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[12]                                          ;
-; openmips:openmips0|if_id:if_id0|id_pc[11]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[11]                                          ;
-; openmips:openmips0|if_id:if_id0|id_pc[8]    ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[8]                                           ;
-+---------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                ;
++---------------------------------------------+---------------------------+--------------------------------------------------+
+; Register name                               ; Reason for Removal        ; Registers Removed due to This Register           ;
++---------------------------------------------+---------------------------+--------------------------------------------------+
+; openmips:openmips0|id_ex:id_ex0|ex_wd[3]    ; Stuck at GND              ; openmips:openmips0|ex_mem:ex_mem0|mem_wd[3],     ;
+;                                             ; due to stuck port data_in ; openmips:openmips0|mem_wb:mem_wb0|wb_wd[3],      ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][0],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][2],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][1],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][3],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][4],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][5],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][6],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][7],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][8],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][9],  ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][10], ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][11], ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][12], ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][13], ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][14], ;
+;                                             ;                           ; openmips:openmips0|regfile:regfile1|regs[0][15]  ;
+; inst_rom:inst_rom0|inst_mem[123][1]         ; Stuck at GND              ; openmips:openmips0|if_id:if_id0|id_inst[1],      ;
+;                                             ; due to stuck port data_in ; openmips:openmips0|id_ex:id_ex0|ex_inst[1]       ;
+; openmips:openmips0|id_ex:id_ex0|ex_aluop[4] ; Stuck at GND              ; openmips:openmips0|ex_mem:ex_mem0|mem_aluop[4]   ;
+;                                             ; due to stuck port data_in ;                                                  ;
+; openmips:openmips0|if_id:if_id0|id_pc[10]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[10]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[11]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[11]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[12]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[12]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[13]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[13]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[14]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[14]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[15]   ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[15]         ;
+; openmips:openmips0|if_id:if_id0|id_pc[9]    ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[9]          ;
+; openmips:openmips0|if_id:if_id0|id_pc[8]    ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[8]          ;
+; openmips:openmips0|if_id:if_id0|id_pc[7]    ; Lost Fanouts              ; openmips:openmips0|pc_reg:pc_reg0|pc[7]          ;
++---------------------------------------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -486,12 +386,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2180  ;
-; Number of registers using Synchronous Clear  ; 2132  ;
-; Number of registers using Synchronous Load   ; 11    ;
+; Total registers                              ; 2287  ;
+; Number of registers using Synchronous Clear  ; 2133  ;
+; Number of registers using Synchronous Load   ; 9     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2069  ;
+; Number of registers using Clock Enable       ; 2169  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -501,24 +401,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_inst[0]      ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 0 ALUTs              ; 32 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0|id_pc[10]       ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_inst[2]      ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 0 ALUTs              ; 32 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0|id_pc[11]       ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[7][5]  ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[6][6]  ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[5][9]  ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[4][5]  ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[3][14] ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[2][5]  ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[1][2]  ;
 ; 4:1                ; 16 bits   ; 32 ALUTs      ; 0 ALUTs              ; 32 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[0][8]  ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[1][1]  ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[2][10] ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|regfile:regfile1|regs[3][5]  ;
-; 4:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_aluop[5]     ;
-; 6:1                ; 16 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|pc_reg:pc_reg0|pc[14]        ;
-; 130:1              ; 7 bits    ; 602 ALUTs     ; 84 ALUTs             ; 518 ALUTs              ; Yes        ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0|id_inst[2]      ;
-; 13:1               ; 11 bits   ; 88 ALUTs      ; 22 ALUTs             ; 66 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg1[7]      ;
-; 13:1               ; 5 bits    ; 40 ALUTs      ; 40 ALUTs             ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg1[5]      ;
-; 15:1               ; 11 bits   ; 110 ALUTs     ; 44 ALUTs             ; 66 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg2[8]      ;
-; 15:1               ; 5 bits    ; 50 ALUTs      ; 50 ALUTs             ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg2[3]      ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|mem:mem0|mem_data_o[2]       ;
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|id:id0|imm[0]                ;
-; 3:1                ; 7 bits    ; 14 ALUTs      ; 14 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|mem:mem0|mem_addr_o[1]       ;
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_wreg         ;
+; 5:1                ; 3 bits    ; 9 ALUTs       ; 9 ALUTs              ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_wd[2]        ;
+; 6:1                ; 16 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|pc_reg:pc_reg0|pc[2]         ;
+; 130:1              ; 11 bits   ; 946 ALUTs     ; 55 ALUTs             ; 891 ALUTs              ; Yes        ; |openmips_min_sopc|openmips:openmips0|if_id:if_id0|id_inst[14]     ;
+; 15:1               ; 9 bits    ; 90 ALUTs      ; 36 ALUTs             ; 54 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg1[8]      ;
+; 15:1               ; 7 bits    ; 70 ALUTs      ; 70 ALUTs             ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg1[5]      ;
+; 19:1               ; 9 bits    ; 108 ALUTs     ; 54 ALUTs             ; 54 ALUTs               ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg2[12]     ;
+; 19:1               ; 7 bits    ; 84 ALUTs      ; 84 ALUTs             ; 0 ALUTs                ; Yes        ; |openmips_min_sopc|openmips:openmips0|id_ex:id_ex0|ex_reg2[6]      ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|mem:mem0|mem_data_o[8]       ;
+; 3:1                ; 6 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|id:id0|imm[0]                ;
+; 3:1                ; 7 bits    ; 14 ALUTs      ; 14 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|mem:mem0|mem_addr_o[6]       ;
 ; 5:1                ; 16 bits   ; 48 ALUTs      ; 48 ALUTs             ; 0 ALUTs                ; No         ; |openmips_min_sopc|openmips:openmips0|mem_wb:mem_wb0|wb_wdata~46   ;
-; 12:1               ; 16 bits   ; 128 ALUTs     ; 80 ALUTs             ; 48 ALUTs               ; No         ; |openmips_min_sopc|openmips:openmips0|ex:ex0|Mux5                  ;
+; 12:1               ; 16 bits   ; 128 ALUTs     ; 80 ALUTs             ; 48 ALUTs               ; No         ; |openmips_min_sopc|openmips:openmips0|ex:ex0|Mux0                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
@@ -546,7 +451,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Dec 04 16:11:20 2018
+    Info: Processing started: Tue Dec 04 23:38:20 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openmips_min_sopc_tb -c openmips_min_sopc_tb
 Info: Found 1 design units, including 1 entities, in source file ../ctrl.v
     Info: Found entity 1: ctrl
@@ -584,12 +489,12 @@ Info: Elaborating entity "openmips" for hierarchy "openmips:openmips0"
 Info: Elaborating entity "pc_reg" for hierarchy "openmips:openmips0|pc_reg:pc_reg0"
 Info: Elaborating entity "if_id" for hierarchy "openmips:openmips0|if_id:if_id0"
 Info: Elaborating entity "id" for hierarchy "openmips:openmips0|id:id0"
-Warning (10036): Verilog HDL or VHDL warning at id.v(85): object "op2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at id.v(86): object "op3" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at id.v(87): object "op4" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at id.v(89): object "instvalid" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at id.v(91): object "pc_plus_2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at id.v(92): object "pc_plus_1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(86): object "op2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(87): object "op3" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(88): object "op4" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(90): object "instvalid" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(92): object "pc_plus_2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at id.v(93): object "pc_plus_1" assigned a value but never read
 Info: Elaborating entity "regfile" for hierarchy "openmips:openmips0|regfile:regfile1"
 Info: Elaborating entity "id_ex" for hierarchy "openmips:openmips0|id_ex:id_ex0"
 Info: Elaborating entity "ex" for hierarchy "openmips:openmips0|ex:ex0"
@@ -603,15 +508,15 @@ Info: Found 1 instances of uninferred RAM logic
     Info: RAM logic "data_ram:data_ram0|data_mem" is uninferred due to asynchronous read logic
 Warning: 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info: 18 registers lost all their fanouts during netlist optimizations. The first 18 are displayed below.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[11]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|if_id:if_id0|id_pc[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[15]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|if_id:if_id0|id_pc[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[7]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|if_id:if_id0|id_pc[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "openmips:openmips0|if_id:if_id0|id_pc[7]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[7]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[8]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[9]" lost all its fanouts during netlist optimizations.
@@ -621,14 +526,14 @@ Info: 18 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[13]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[14]" lost all its fanouts during netlist optimizations.
     Info: Register "openmips:openmips0|pc_reg:pc_reg0|pc[15]" lost all its fanouts during netlist optimizations.
-Info: Implemented 3130 device resources after synthesis - the final resource count might be different
+Info: Implemented 3287 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 16 output pins
-    Info: Implemented 3112 logic cells
+    Info: Implemented 3269 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 280 megabytes
-    Info: Processing ended: Tue Dec 04 16:11:52 2018
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 267 megabytes
+    Info: Processing ended: Tue Dec 04 23:38:26 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

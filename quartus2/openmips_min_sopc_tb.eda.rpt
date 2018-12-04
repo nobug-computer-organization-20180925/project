@@ -1,5 +1,5 @@
 EDA Netlist Writer report for openmips_min_sopc_tb
-Tue Dec 04 16:12:29 2018
+Tue Dec 04 23:39:02 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Dec 04 16:12:29 2018 ;
+; EDA Netlist Writer Status ; Successful - Tue Dec 04 23:39:02 2018 ;
 ; Revision Name             ; openmips_min_sopc_tb                  ;
 ; Top-level Entity Name     ; openmips_min_sopc                     ;
 ; Family                    ; Stratix III                           ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II EDA Netlist Writer
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Dec 04 16:12:24 2018
+    Info: Processing started: Tue Dec 04 23:38:57 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off openmips_min_sopc_tb -c openmips_min_sopc_tb
 Info: Generated file openmips_min_sopc_tb_2_1100mv_85c_slow.vo in folder "D:/prog10/Desktop/project/quartus2/simulation/modelsim/" for EDA simulation tool
 Info: Generated file openmips_min_sopc_tb_2_1100mv_0c_slow.vo in folder "D:/prog10/Desktop/project/quartus2/simulation/modelsim/" for EDA simulation tool
@@ -100,8 +100,8 @@ Info: Generated file openmips_min_sopc_tb_min_1100mv_0c_v_fast.sdo in folder "D:
 Info: Generated file openmips_min_sopc_tb_v.sdo in folder "D:/prog10/Desktop/project/quartus2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 230 megabytes
-    Info: Processing ended: Tue Dec 04 16:12:30 2018
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Tue Dec 04 23:39:02 2018
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
 

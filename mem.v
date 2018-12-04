@@ -82,7 +82,6 @@ module mem(
 			mem_ce_o <= `ChipDisable;
 			case (aluop_i)
 			   `EXE_LW_OP:		begin
-				
 					mem_addr_o <= mem_addr_i;
 					mem_we <= `WriteDisable;
 					wdata_o <= mem_data_i;

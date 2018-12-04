@@ -24,7 +24,9 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  id
 // File:    id.v
-// Description: 锟斤拷锟斤拷锥锟
+// Author:  Lei Silei
+// E-mail:  leishangwen@163.com
+// Description: 译码阶段
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -32,43 +34,43 @@
 
 module id(
 
-	input wire rst,
-	input wire[`InstAddrBus] pc_i,
-	input wire[`InstBus] inst_i,
+	input wire										rst,
+	input wire[`InstAddrBus]			pc_i,
+	input wire[`InstBus]          inst_i,
 
-	input wire[`AluOpBus]					ex_aluop_i,
-	
-	//澶勪簬鎵ц闃舵鐨勬寚浠よ鍐欏叆鐨勭洰鐨勫瘎瀛樺櫒淇℃伅
+  //处于执行阶段的指令的一些信息，用于解决load相关
+  input wire[`AluOpBus]					ex_aluop_i,
+
+	//处于执行阶段的指令要写入的目的寄存器信息
 	input wire										ex_wreg_i,
 	input wire[`RegBus]						ex_wdata_i,
 	input wire[`RegAddrBus]       ex_wd_i,
 	
-	//澶勪簬璁垮瓨闃舵鐨勬寚浠よ鍐欏叆鐨勭洰鐨勫瘎瀛樺櫒淇℃伅
+	//处于访存阶段的指令要写入的目的寄存器信息
 	input wire										mem_wreg_i,
 	input wire[`RegBus]						mem_wdata_i,
 	input wire[`RegAddrBus]       mem_wd_i,
-
-	input wire[`RegBus] reg1_data_i,
-	input wire[`RegBus] reg2_data_i,
-
-	input wire                    is_in_delayslot_i,
 	
+	input wire[`RegBus]           reg1_data_i,
+	input wire[`RegBus]           reg2_data_i,
 
-	//锟酵碉拷regfile锟斤拷锟斤拷息
+	//如果上一条指令是转移指令，那么下一条指令在译码的时候is_in_delayslot为true
+	input wire                    is_in_delayslot_i,
+
+	//送到regfile的信息
 	output reg                    reg1_read_o,
 	output reg                    reg2_read_o,     
 	output reg[`RegAddrBus]       reg1_addr_o,
 	output reg[`RegAddrBus]       reg2_addr_o, 	      
 	
-	//锟酵碉拷执锟叫阶段碉拷锟斤拷息
+	//送到执行阶段的信息
 	output reg[`AluOpBus]         aluop_o,
 	output reg[`AluSelBus]        alusel_o,
 	output reg[`RegBus]           reg1_o,
 	output reg[`RegBus]           reg2_o,
 	output reg[`RegAddrBus]       wd_o,
-	output reg                    wreg_o,
+	output reg                    wreg_o, //写register的使能，和内存无关
 	output wire[`RegBus]          inst_o,
-	
 
 	output reg                    next_inst_in_delayslot_o,
 	
@@ -76,9 +78,8 @@ module id(
 	output reg[`RegBus]           branch_target_address_o,       
 	output reg[`RegBus]           link_addr_o,
 	output reg                    is_in_delayslot_o,
-
-	output wire                   stallreq	
 	
+	output wire                   stallreq	
 );
 
   wire[4:0] op = inst_i[15:11];
@@ -142,13 +143,13 @@ module id(
 			next_inst_in_delayslot_o <= `NotInDelaySlot; 			
 			
 		  case (op)
-		  	`EXE_OR:			begin                        //OR指锟斤拷
+		  	`EXE_OR:			begin                        //OR????????
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;	  	
 					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 	
-		  	`EXE_ORI:			begin                        //OR指锟斤拷
+		  	`EXE_ORI:			begin                        //OR????????
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
 					imm <= {8'h0, inst_i[7:0]};		

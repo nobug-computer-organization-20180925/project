@@ -19,9 +19,9 @@ vlib verilog_libs/altera_mf_ver
 vmap altera_mf_ver ./verilog_libs/altera_mf_ver
 vlog -vlog01compat -work altera_mf_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v}
 
-vlib verilog_libs/maxii_ver
-vmap maxii_ver ./verilog_libs/maxii_ver
-vlog -vlog01compat -work maxii_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v}
+vlib verilog_libs/stratixiii_ver
+vmap stratixiii_ver ./verilog_libs/stratixiii_ver
+vlog -vlog01compat -work stratixiii_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/stratixiii_atoms.v}
 
 if {[file exists rtl_work]} {
 	vdel -lib rtl_work -all
@@ -47,7 +47,7 @@ vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Deskt
 
 vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project/quartus2/.. {D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc" openmips_min_sopc_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L stratixiii_ver -L rtl_work -L work -voptargs="+acc" openmips_min_sopc_tb
 
 add wave *
 view structure
