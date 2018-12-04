@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openmips_min_sopc_tb
-Tue Dec 04 23:38:26 2018
+Wed Dec 05 00:28:44 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -44,7 +44,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Tue Dec 04 23:38:26 2018        ;
+; Analysis & Synthesis Status   ; Successful - Wed Dec 05 00:28:44 2018        ;
 ; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name                 ; openmips_min_sopc_tb                         ;
 ; Top-level Entity Name         ; openmips_min_sopc                            ;
@@ -451,7 +451,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Dec 04 23:38:20 2018
+    Info: Processing started: Wed Dec 05 00:28:38 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openmips_min_sopc_tb -c openmips_min_sopc_tb
 Info: Found 1 design units, including 1 entities, in source file ../ctrl.v
     Info: Found entity 1: ctrl
@@ -532,8 +532,8 @@ Info: Implemented 3287 device resources after synthesis - the final resource cou
     Info: Implemented 3269 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 267 megabytes
-    Info: Processing ended: Tue Dec 04 23:38:26 2018
+    Info: Processing ended: Wed Dec 05 00:28:44 2018
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
 
 

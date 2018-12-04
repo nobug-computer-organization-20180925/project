@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/prog10/Desktop/project/quartus2/simulation/modelsim
 vctrl
-Z1 !s110 1543938029
+Z1 !s110 1543941046
 !i10b 1
 !s100 LkggheYVT7Y9LUV0XWoj[2
 INAQS`L@bJAid?J[2KPfbo1
@@ -23,7 +23,7 @@ Z4 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z5 !s108 1543938029.000000
+Z5 !s108 1543941046.000000
 !s107 D:/prog10/Desktop/project/defines.v|D:/prog10/Desktop/project/ctrl.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/prog10/Desktop/project|D:/prog10/Desktop/project/ctrl.v|
 !s101 -O0
@@ -119,7 +119,7 @@ R5
 R6
 R7
 vid_ex
-R1
+Z9 !s110 1543941047
 !i10b 1
 !s100 KLZ34Vkgh5m82U5=fmOl:1
 IVCEInh:mT=EeHj7EmKW=A1
@@ -141,7 +141,7 @@ R5
 R6
 R7
 vif_id
-R1
+R9
 !i10b 1
 !s100 ;Q5MbZ:Uk_MOJmh^fWL^@2
 I>nd9]g<]2adGAQAF5hOJR0
@@ -155,7 +155,7 @@ R4
 r1
 !s85 0
 31
-R5
+Z10 !s108 1543941047.000000
 !s107 D:/prog10/Desktop/project/defines.v|D:/prog10/Desktop/project/if_id.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/prog10/Desktop/project|D:/prog10/Desktop/project/if_id.v|
 !s101 -O0
@@ -163,7 +163,7 @@ R5
 R6
 R7
 vinst_rom
-R1
+R9
 !i10b 1
 !s100 Ve`<Y7X59R:AaK>b=[8fG2
 I5`l65DWICdj@kZHT;?l9`1
@@ -177,7 +177,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 D:/prog10/Desktop/project/defines.v|D:/prog10/Desktop/project/inst_rom.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/prog10/Desktop/project|D:/prog10/Desktop/project/inst_rom.v|
 !s101 -O0
@@ -185,7 +185,7 @@ R5
 R6
 R7
 vmem
-Z9 !s110 1543938030
+R9
 !i10b 1
 !s100 G?@UAlLAZZ=T37lU;bOZ02
 IIh26z_fbkd]7DIh[OcXSO1
@@ -199,7 +199,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1543938030.000000
+R10
 !s107 D:/prog10/Desktop/project/defines.v|D:/prog10/Desktop/project/mem.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/prog10/Desktop/project|D:/prog10/Desktop/project/mem.v|
 !s101 -O0

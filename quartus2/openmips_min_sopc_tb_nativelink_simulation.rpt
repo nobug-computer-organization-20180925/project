@@ -18,5 +18,5 @@ Sim dir               :  simulation\modelsim
 
 Info: Starting NativeLink simulation with ModelSim software
 Sourced NativeLink script c:/program files/altera/90sp2/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File openmips_min_sopc_tb_run_msim_rtl_verilog.do already exists - backing up current file as openmips_min_sopc_tb_run_msim_rtl_verilog.do.bak10
+Warning: File openmips_min_sopc_tb_run_msim_rtl_verilog.do already exists - backing up current file as openmips_min_sopc_tb_run_msim_rtl_verilog.do.bak11
 Info: Spawning ModelSim Simulation software 

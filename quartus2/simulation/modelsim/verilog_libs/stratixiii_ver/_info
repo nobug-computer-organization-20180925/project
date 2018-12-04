@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/prog10/Desktop/project/quartus2/simulation/modelsim
 vstratixiii_and1
-Z1 !s110 1543938028
+Z1 !s110 1543941045
 !i10b 1
 !s100 J6L^SE3WQ5Gjf:mgnj8Kj1
 IL<eG?blTZTZaFYNW94AcR3
@@ -23,7 +23,7 @@ Z6 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z7 !s108 1543938028.000000
+Z7 !s108 1543941045.000000
 Z8 !s107 c:/program files/altera/90sp2/quartus/eda/sim_lib/stratixiii_atoms.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|stratixiii_ver|c:/program files/altera/90sp2/quartus/eda/sim_lib/stratixiii_atoms.v|
 !s101 -O0
@@ -72,7 +72,7 @@ R9
 !i113 1
 R10
 vstratixiii_asmiblock
-R1
+Z11 !s110 1543941046
 !i10b 1
 !s100 F61OLo4F:DcR4bMLRRWh;1
 IG9V>YhU;jWdT_OCXjB>C`3
@@ -135,7 +135,7 @@ R9
 !i113 1
 R10
 vstratixiii_bias_block
-R1
+R11
 !i10b 1
 !s100 PzoLfSkSE9X<1[1=7Y;Z@2
 IiP9DoZ5ULlCZRnEfBl]141
@@ -156,7 +156,7 @@ R9
 !i113 1
 R10
 vstratixiii_bias_generator
-R1
+R11
 !i10b 1
 !s100 ^?5dcm@9i]:E`7Q@73;=B3
 Iz6LlOKac3SNXOdQ_<a=b^2
@@ -177,7 +177,7 @@ R9
 !i113 1
 R10
 vstratixiii_bias_logic
-R1
+R11
 !i10b 1
 !s100 >`OOVZh1ZRB8CXFKoUSz;3
 IAEG`chmIoA?X=L]H3Uo;G0
@@ -513,7 +513,7 @@ R9
 !i113 1
 R10
 vstratixiii_dpa_block
-R1
+R11
 !i10b 1
 !s100 3Idi2k9C<o`UWRJzKEoMl3
 I3WZlJO=:HKn9L@f]DEj]T1
@@ -534,7 +534,7 @@ R9
 !i113 1
 R10
 vstratixiii_dpa_retime_block
-R1
+R11
 !i10b 1
 !s100 0?35goz=Cdeg5B6RDQJ_71
 IA5bldf1CTm>ToBkHV2<PX1
@@ -849,7 +849,7 @@ R9
 !i113 1
 R10
 vstratixiii_io_pad
-R1
+R11
 !i10b 1
 !s100 f?OD5f@0<1d8n46@EF^P33
 IO`E1;80A3;om[Kc1Qm<Ui0
@@ -933,7 +933,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_receiver
-R1
+R11
 !i10b 1
 !s100 nDg4nYoH=m@6@oEUT_fgd0
 IC5Q?FSm_HdA^nFlanD3_=3
@@ -954,7 +954,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_reg
-R1
+R11
 !i10b 1
 !s100 gCGH4^i@4N]:6lZ4kS5=P1
 I1DS?JIOz@1BRgn:cLPUNN2
@@ -975,7 +975,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_rx_bitslip
-R1
+R11
 !i10b 1
 !s100 e9E3md5@OV__ko3T1>Kbc3
 I>?EEJG4Ujioe7;;Bi:1822
@@ -996,7 +996,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_rx_deser
-R1
+R11
 !i10b 1
 !s100 A`H0d>;;bcTeY3dWDfR]62
 IePMc0==dGMIN4h3i4C3zb2
@@ -1017,7 +1017,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_rx_fifo
-R1
+R11
 !i10b 1
 !s100 3nCle??c>`m8fT7oFannE1
 I7E@NROh<Gf49kbF@N^b=h2
@@ -1038,7 +1038,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_rx_fifo_sync_ram
-R1
+R11
 !i10b 1
 !s100 F5HO<>TBaE7M0^A8d<MhT2
 IhN3ca_<XdOBdQ=bg>UTH30
@@ -1059,7 +1059,7 @@ R9
 !i113 1
 R10
 vstratixiii_lvds_rx_parallel_reg
-R1
+R11
 !i10b 1
 !s100 <hB8nSPIeo=@48B0RE5V42
 ICVTbSdnC<o>[2OmBe;@n]1
@@ -1164,7 +1164,7 @@ R9
 !i113 1
 R10
 vstratixiii_m_cntr
-R1
+R11
 !i10b 1
 !s100 fV[4Id<z>e75W=mdVWjFD2
 IR`k>mLCc@?jSFB[@]1^U82
@@ -1353,7 +1353,7 @@ R9
 !i113 1
 R10
 vstratixiii_n_cntr
-R1
+R11
 !i10b 1
 !s100 W9klU>GhFS8326l1l>3DT1
 Id@ziOof8GT39WJc<833e^2
@@ -1416,7 +1416,7 @@ R9
 !i113 1
 R10
 vstratixiii_pclk_divider
-R1
+R11
 !i10b 1
 !s100 o3Kj_`@aZ7c1_MKdaldkT2
 IB]nOzg1eeGGhLI48SP[R13
@@ -1437,7 +1437,7 @@ R9
 !i113 1
 R10
 vstratixiii_pll
-R1
+R11
 !i10b 1
 !s100 =oi8nl;MhNYf^SODZF_:50
 IP9fY?9BgO2gRYo3gGm[B]1
@@ -1458,7 +1458,7 @@ R9
 !i113 1
 R10
 vstratixiii_pll_reg
-R1
+R11
 !i10b 1
 !s100 dPnlk4Ff<CdGaV68PC8MH1
 I^W0gT^SLY_z[;5bM:V0:d3
@@ -1501,7 +1501,7 @@ R9
 R10
 n@s@t@r@a@t@i@x@i@i@i_@p@r@i@m_@d@f@f@e
 vstratixiii_pseudo_diff_out
-R1
+R11
 !i10b 1
 !s100 kDVWgb^GgbMQOHV<>gF5A3
 I9C7G_lkEYCUa>GW9m1Ec_0
@@ -1732,7 +1732,7 @@ R9
 !i113 1
 R10
 vstratixiii_scale_cntr
-R1
+R11
 !i10b 1
 !s100 T0ZOLOQh_o^:kH4FQ>ko00
 IiIB4DL2PUT]PWef42OiXR0
@@ -1774,7 +1774,7 @@ R9
 !i113 1
 R10
 vstratixiii_select_ini_phase_dpaclk
-R1
+R11
 !i10b 1
 !s100 6]W6SeScUXR[b6@eZ3>zz2
 IW@YHo62MA?jh<6fIFLfdb2
@@ -1795,7 +1795,7 @@ R9
 !i113 1
 R10
 vstratixiii_termination
-R1
+R11
 !i10b 1
 !s100 ^OozVd@GF1lPY5k<^mE;52
 Ie=i67ElPz7^H[oBVlQbSM2
@@ -1837,7 +1837,7 @@ R9
 !i113 1
 R10
 vstratixiii_termination_logic
-R1
+R11
 !i10b 1
 !s100 b;RKgmeJj2=QC58DXCEoS1
 I6Z`LThPLWoeAGa>_aA<4G1
@@ -1858,7 +1858,7 @@ R9
 !i113 1
 R10
 vstratixiii_tsdblock
-R1
+R11
 !i10b 1
 !s100 =VLhKfnP?5Rgd^aMjDlKD1
 IeJVSo>KP0jJAc^P?dL?N?2

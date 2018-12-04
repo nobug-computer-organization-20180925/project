@@ -102,7 +102,9 @@ module id(
   assign pc_plus_1 = pc_i +16'b1;
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};
   wire[`RegBus] inst_b_address;
+  wire[`RegBus] inst_b2_address;
   assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 16'b1;
+  assign inst_b2_address = pc_i + {{8{inst_i[7]}}, inst_i[7:0]} - 16'b1;
   
  assign stallreq = stallreq_for_reg1_loadrelate | stallreq_for_reg2_loadrelate;
   assign pre_inst_is_load = (ex_aluop_i == `EXE_LW_OP) ? 1'b1 : 1'b0;
@@ -164,13 +166,33 @@ module id(
 					wd_o <= inst_i[10:8]; // result will be put in this register.
 				end
 				`EXE_J:			begin
-		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP;
+		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
 		  		alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b0;	reg2_read_o <= 1'b0;
 		  		link_addr_o <= `ZeroWord;
 			    branch_target_address_o <= inst_b_address;
 			    branch_flag_o <= `Branch;
 			    next_inst_in_delayslot_o <= `InDelaySlot;		  	
 			    instvalid <= `InstValid;	
+				end
+				`EXE_BEQ:			begin
+		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
+		  		alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
+		  		instvalid <= `InstValid;	
+					if(reg1_o == 0) begin
+					branch_target_address_o <= inst_b2_address;
+					branch_flag_o <= `Branch;
+					next_inst_in_delayslot_o <= `InDelaySlot;		  	
+				        end
+				end
+				`EXE_BNE:			begin
+		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
+		  		alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
+		  		instvalid <= `InstValid;	
+		  			if(reg1_o != 0) begin
+			    		branch_target_address_o <= inst_b2_address;
+			 	   	branch_flag_o <= `Branch;
+			    		next_inst_in_delayslot_o <= `InDelaySlot;		  	
+				        end
 				end
 					`EXE_LW:			begin
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_LW_OP;
