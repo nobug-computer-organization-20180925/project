@@ -27,7 +27,7 @@ static unsigned int ng2[] = {0U, 0U};
 
 
 
-static void NetDecl_20147_0(char *t0)
+static void NetDecl_19860_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -53,7 +53,7 @@ LAB0:    t1 = (t0 + 6960U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20147, ng0);
+LAB2:    xsi_set_current_line(19860, ng0);
     t2 = (t0 + 1960U);
     t3 = *((char **)t2);
     t2 = (t0 + 8648);
@@ -81,7 +81,7 @@ LAB2:    xsi_set_current_line(20147, ng0);
 LAB1:    return;
 }
 
-static void Cont_20179_1(char *t0)
+static void Cont_19892_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -109,7 +109,7 @@ LAB0:    t1 = (t0 + 7208U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20179, ng0);
+LAB2:    xsi_set_current_line(19892, ng0);
     t2 = (t0 + 3640);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -138,7 +138,7 @@ LAB2:    xsi_set_current_line(20179, ng0);
 LAB1:    return;
 }
 
-static void Cont_20180_2(char *t0)
+static void Cont_19893_2(char *t0)
 {
     char *t1;
     char *t2;
@@ -166,7 +166,7 @@ LAB0:    t1 = (t0 + 7456U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20180, ng0);
+LAB2:    xsi_set_current_line(19893, ng0);
     t2 = (t0 + 3800);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -195,7 +195,7 @@ LAB2:    xsi_set_current_line(20180, ng0);
 LAB1:    return;
 }
 
-static void Cont_20181_3(char *t0)
+static void Cont_19894_3(char *t0)
 {
     char *t1;
     char *t2;
@@ -223,7 +223,7 @@ LAB0:    t1 = (t0 + 7704U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20181, ng0);
+LAB2:    xsi_set_current_line(19894, ng0);
     t2 = (t0 + 3960);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
@@ -252,7 +252,7 @@ LAB2:    xsi_set_current_line(20181, ng0);
 LAB1:    return;
 }
 
-static void Initial_20183_4(char *t0)
+static void Initial_19896_4(char *t0)
 {
     char *t1;
     char *t2;
@@ -266,27 +266,27 @@ LAB0:    t1 = (t0 + 7952U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20183, ng0);
+LAB2:    xsi_set_current_line(19896, ng0);
 
-LAB4:    xsi_set_current_line(20184, ng0);
+LAB4:    xsi_set_current_line(19897, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3640);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(20185, ng0);
+    xsi_set_current_line(19898, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3960);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(20186, ng0);
+    xsi_set_current_line(19899, ng0);
     t2 = (t0 + 7760);
     xsi_process_wait(t2, 100000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(20187, ng0);
+LAB5:    xsi_set_current_line(19900, ng0);
     t3 = ((char*)((ng2)));
     t4 = (t0 + 3640);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
-    xsi_set_current_line(20188, ng0);
+    xsi_set_current_line(19901, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 3960);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
@@ -294,7 +294,7 @@ LAB5:    xsi_set_current_line(20187, ng0);
 
 }
 
-static void Initial_20191_5(char *t0)
+static void Initial_19904_5(char *t0)
 {
     char *t1;
     char *t2;
@@ -308,19 +308,19 @@ LAB0:    t1 = (t0 + 8200U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20191, ng0);
+LAB2:    xsi_set_current_line(19904, ng0);
 
-LAB4:    xsi_set_current_line(20192, ng0);
+LAB4:    xsi_set_current_line(19905, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 3800);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(20193, ng0);
+    xsi_set_current_line(19906, ng0);
     t2 = (t0 + 8008);
     xsi_process_wait(t2, 0LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(20194, ng0);
+LAB5:    xsi_set_current_line(19907, ng0);
     t3 = ((char*)((ng2)));
     t4 = (t0 + 3800);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
@@ -331,7 +331,7 @@ LAB5:    xsi_set_current_line(20194, ng0);
 
 extern void work_m_00000000004134447467_2073120511_init()
 {
-	static char *pe[] = {(void *)NetDecl_20147_0,(void *)Cont_20179_1,(void *)Cont_20180_2,(void *)Cont_20181_3,(void *)Initial_20183_4,(void *)Initial_20191_5};
+	static char *pe[] = {(void *)NetDecl_19860_0,(void *)Cont_19892_1,(void *)Cont_19893_2,(void *)Cont_19894_3,(void *)Initial_19896_4,(void *)Initial_19904_5};
 	xsi_register_didat("work_m_00000000004134447467_2073120511", "isim/openmips_min_sopc_tb_isim_par.exe.sim/work/m_00000000004134447467_2073120511.didat");
 	xsi_register_executes(pe);
 }

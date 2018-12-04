@@ -76,11 +76,11 @@
 
 
 //ͨ�üĴ���regfile
-`define RegAddrBus 2:0
+`define RegAddrBus 3:0
 `define RegBus 15:0
 `define RegWidth 16
 `define DoubleRegWidth 32
 `define DoubleRegBus 31:0
-`define RegNum 8
-`define RegNumLog2 3
-`define NOPRegAddr 3'b000
+`define RegNum 16
+`define RegNumLog2 4
+`define NOPRegAddr 4'b0000

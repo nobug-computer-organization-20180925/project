@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="26">
-<DesignStatistics TimeStamp="Wed Dec 05 04:13:22 2018"><group name="NetStatistics">
+<DeviceUsageSummary rev="28">
+<DesignStatistics TimeStamp="Wed Dec 05 04:59:57 2018"><group name="NetStatistics">
 <item name="NumNets_Active" rev="15">
 <attrib name="value" value="460"/></item>
 <item name="NumNets_Gnd" rev="15">
@@ -76,29 +76,29 @@
 <attrib name="value" value="92"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="26">
+<item name="AGG_BONDED_IO" rev="28">
 <attrib name="value" value="18"/></item>
-<item name="AGG_IO" rev="26">
+<item name="AGG_IO" rev="28">
 <attrib name="value" value="18"/></item>
-<item name="AGG_SLICE" rev="26">
-<attrib name="value" value="340"/></item>
-<item name="NUM_4_INPUT_LUT" rev="26">
-<attrib name="value" value="525"/></item>
-<item name="NUM_BONDED_IBUF" rev="26">
+<item name="AGG_SLICE" rev="28">
+<attrib name="value" value="333"/></item>
+<item name="NUM_4_INPUT_LUT" rev="28">
+<attrib name="value" value="515"/></item>
+<item name="NUM_BONDED_IBUF" rev="28">
 <attrib name="value" value="2"/></item>
-<item name="NUM_BONDED_IOB" rev="26">
+<item name="NUM_BONDED_IOB" rev="28">
 <attrib name="value" value="16"/></item>
-<item name="NUM_BUFGMUX" rev="26">
+<item name="NUM_BUFGMUX" rev="28">
 <attrib name="value" value="1"/></item>
-<item name="NUM_CYMUX" rev="26">
+<item name="NUM_CYMUX" rev="28">
 <attrib name="value" value="48"/></item>
-<item name="NUM_LUT_RT" rev="26">
+<item name="NUM_LUT_RT" rev="28">
 <attrib name="value" value="3"/></item>
-<item name="NUM_SLICEL" rev="26">
-<attrib name="value" value="340"/></item>
-<item name="NUM_SLICE_FF" rev="26">
+<item name="NUM_SLICEL" rev="28">
+<attrib name="value" value="333"/></item>
+<item name="NUM_SLICE_FF" rev="28">
 <attrib name="value" value="223"/></item>
-<item name="NUM_XOR" rev="26">
+<item name="NUM_XOR" rev="28">
 <attrib name="value" value="53"/></item>
 </group>
 </DesignStatistics>

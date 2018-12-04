@@ -133,8 +133,6 @@ module openmips(
 
 		.reg1_data_i(reg1_data),
 		.reg2_data_i(reg2_data),
-		
-		.IH_data_i(IH_data),
 
 	  //处于执行阶段的指令要写入的目的寄存器信息
 		.ex_wreg_i(ex_wreg_o),
@@ -166,9 +164,7 @@ module openmips(
 		.branch_target_address_o(branch_target_address),       
 		.link_addr_o(id_link_address_o),
 		
-		.is_in_delayslot_o(id_is_in_delayslot_o),
-		
-		.read_IH_o(id_read_IH_o)
+		.is_in_delayslot_o(id_is_in_delayslot_o)
 	);
 
   //ͨ�üĴ���Regfile����
@@ -184,7 +180,6 @@ module openmips(
 		.re2 (reg2_read),
 		.raddr2 (reg2_addr),
 		.rdata2 (reg2_data),
-		.IHdata (IH_data),
 		
 		.register1(register1)
 	);

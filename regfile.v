@@ -50,17 +50,11 @@ module regfile(
 	input wire[`RegAddrBus] raddr2,
 	output reg[`RegBus] rdata2,
 	
-	output reg[`RegBus] IHdata,
-	
 	output wire[`RegBus] register1
 	
 );
 
 	reg[`RegBus]	regs[0:`RegNum-1];
-	reg[`RegBus]	SP;
-	reg[`RegBus]	T;
-	reg[`RegBus]	RA;
-	reg[`RegBus]	IH;
 	wire[`RegBus]	readDataTemp1;
 	wire[`RegBus]	readDataTemp2;
 	wire[`RegBus]	IHDataTemp;
@@ -68,7 +62,6 @@ module regfile(
 	
 	assign readDataTemp1 = regs[raddr1];
 	assign readDataTemp2 = regs[raddr2];
-	assign IHDataTemp = IH;
 	assign register1 = regs[1];
 
 	always @ (posedge clk) begin
@@ -86,7 +79,15 @@ module regfile(
 			regs[5]<=16'h1010;
 			regs[6]<=16'h2020;
 			regs[7]<=16'h4040;
-			IH<=16'h1010;
+			regs[8]<=16'h0; //0
+			regs[9]<=16'h0; //SP
+			regs[10]<=16'h0; //T
+			regs[11]<=16'h0; //RA
+			regs[12]<=16'h0; //IH
+			regs[13]<=16'h0;
+			regs[14]<=16'h0;
+			regs[15]<=16'h0;
+
 		end
 	end
 	
@@ -118,14 +119,6 @@ module regfile(
 	  end else begin
 	      rdata2 = `ZeroWord;
 	  end
-	end
-	
-	always @ (*) begin
-		if(rst == `RstEnable) begin
-			IHdata = `ZeroWord;
-		end else begin
-	  		IHdata = IHDataTemp;
-		end
 	end
 
 endmodule

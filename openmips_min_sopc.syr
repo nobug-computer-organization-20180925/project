@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -218,7 +218,6 @@ Module <inst_rom> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
-INFO:Xst:2679 - Register <IH> in unit <regfile> has a constant value of 0001000000010000 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <inst_rom>.
     Related source file is "inst_rom.v".
@@ -257,11 +256,11 @@ WARNING:Xst:646 - Signal <op3> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <op2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instvalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 16-bit subtractor for signal <inst_b_address>.
-    Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 94.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 258.
-    Found 3-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 261.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 276.
-    Found 3-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 281.
+    Found 16-bit adder carry out for signal <inst_b_address$addsub0000> created at line 92.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0000> created at line 248.
+    Found 4-bit comparator equal for signal <reg1_o$cmp_eq0001> created at line 251.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0000> created at line 266.
+    Found 4-bit comparator equal for signal <reg2_o$cmp_eq0001> created at line 269.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
@@ -270,16 +269,15 @@ Unit <id> synthesized.
 
 Synthesizing Unit <regfile>.
     Related source file is "regfile.v".
-WARNING:Xst:1780 - Signal <T> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <SP> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <RA> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Found 3-bit comparator equal for signal <rdata1$cmp_eq0001> created at line 98.
-    Found 3-bit comparator equal for signal <rdata2$cmp_eq0001> created at line 113.
-    Found 16-bit 8-to-1 multiplexer for signal <readDataTemp1>.
-    Found 16-bit 8-to-1 multiplexer for signal <readDataTemp2>.
-    Found 128-bit register for signal <regs>.
+WARNING:Xst:1780 - Signal <IHDataTemp> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 4-bit comparator equal for signal <rdata1$cmp_eq0001> created at line 99.
+    Found 4-bit comparator equal for signal <rdata2$cmp_eq0001> created at line 114.
+    Found 16-bit 16-to-1 multiplexer for signal <readDataTemp1>.
+    Found 16-bit 16-to-1 multiplexer for signal <readDataTemp2>.
+    Found 256-bit register for signal <regs>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <regs>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
     Summary:
-	inferred 128 D-type flip-flop(s).
+	inferred 256 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred  32 Multiplexer(s).
 Unit <regfile> synthesized.
@@ -290,14 +288,14 @@ Synthesizing Unit <id_ex>.
     Found 16-bit register for signal <ex_link_address>.
     Found 1-bit register for signal <ex_is_in_delayslot>.
     Found 1-bit register for signal <is_in_delayslot_o>.
-    Found 3-bit register for signal <ex_wd>.
+    Found 4-bit register for signal <ex_wd>.
     Found 8-bit register for signal <ex_aluop>.
     Found 1-bit register for signal <ex_wreg>.
     Found 16-bit register for signal <ex_reg1>.
     Found 16-bit register for signal <ex_reg2>.
     Found 3-bit register for signal <ex_alusel>.
     Summary:
-	inferred  65 D-type flip-flop(s).
+	inferred  66 D-type flip-flop(s).
 Unit <id_ex> synthesized.
 
 
@@ -316,9 +314,9 @@ Synthesizing Unit <ex_mem>.
     Related source file is "ex_mem.v".
     Found 16-bit register for signal <mem_wdata>.
     Found 1-bit register for signal <mem_wreg>.
-    Found 3-bit register for signal <mem_wd>.
+    Found 4-bit register for signal <mem_wd>.
     Summary:
-	inferred  20 D-type flip-flop(s).
+	inferred  21 D-type flip-flop(s).
 Unit <ex_mem> synthesized.
 
 
@@ -330,17 +328,18 @@ Unit <mem> synthesized.
 Synthesizing Unit <mem_wb>.
     Related source file is "mem_wb.v".
     Found 16-bit register for signal <wb_wdata>.
-    Found 3-bit register for signal <wb_wd>.
+    Found 4-bit register for signal <wb_wd>.
     Found 1-bit register for signal <wb_wreg>.
     Summary:
-	inferred  20 D-type flip-flop(s).
+	inferred  21 D-type flip-flop(s).
 Unit <mem_wb> synthesized.
 
 
 Synthesizing Unit <openmips>.
     Related source file is "openmips.v".
 WARNING:Xst:1780 - Signal <is_in_delayslot_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <id_read_IH_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <id_read_IH_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <IH_data> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 Unit <openmips> synthesized.
 
 
@@ -361,15 +360,16 @@ Macro Statistics
  16-bit subtractor                                     : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
-# Registers                                            : 26
+# Registers                                            : 34
  1-bit register                                        : 6
- 16-bit register                                       : 15
- 3-bit register                                        : 4
+ 16-bit register                                       : 23
+ 3-bit register                                        : 1
+ 4-bit register                                        : 3
  8-bit register                                        : 1
 # Comparators                                          : 6
- 3-bit comparator equal                                : 6
+ 4-bit comparator equal                                : 6
 # Multiplexers                                         : 2
- 16-bit 8-to-1 multiplexer                             : 2
+ 16-bit 16-to-1 multiplexer                            : 2
 
 =========================================================================
 
@@ -377,22 +377,108 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <ex_link_address_15> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_14> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_13> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_12> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_11> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_10> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_9> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_8> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_6> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_5> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_3> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_2> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_link_address_1> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_13_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_aluop_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ex_link_address_0> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_1> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_2> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_3> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_5> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_6> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_7> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_8> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_9> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_10> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_11> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_12> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_13> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_14> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_link_address_15> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_wd_3> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mem_wd_3> (without init value) has a constant value of 0 in block <ex_mem0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wb_wd_3> (without init value) has a constant value of 0 in block <mem_wb0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_14_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_15_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ex_aluop_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
@@ -409,7 +495,53 @@ WARNING:Xst:1710 - FF/Latch <regs_0_12> (without init value) has a constant valu
 WARNING:Xst:1710 - FF/Latch <regs_0_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <regs_0_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ex_aluop_4> (without init value) has a constant value of 0 in block <id_ex0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_8_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_10_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_11_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_14> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_9_15> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_0> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_1> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_2> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_3> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_4> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_5> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_6> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_7> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_8> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_9> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_10> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_11> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_12> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <regs_12_13> (without init value) has a constant value of 0 in block <regfile1>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -423,12 +555,12 @@ Macro Statistics
  16-bit subtractor                                     : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
-# Registers                                            : 266
- Flip-Flops                                            : 266
+# Registers                                            : 397
+ Flip-Flops                                            : 397
 # Comparators                                          : 6
- 3-bit comparator equal                                : 6
+ 4-bit comparator equal                                : 6
 # Multiplexers                                         : 32
- 1-bit 8-to-1 multiplexer                              : 32
+ 1-bit 16-to-1 multiplexer                             : 32
 
 =========================================================================
 
@@ -469,24 +601,156 @@ Optimizing unit <ex_mem> ...
 Optimizing unit <mem_wb> ...
 
 Optimizing unit <openmips> ...
-WARNING:Xst:1710 - FF/Latch <openmips0/if_id0/id_inst_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <openmips0/regfile1/regs_11_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_11_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_15_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/if_id0/id_inst_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_13_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_14_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_8_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/mem_wb0/wb_wd_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_aluop_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_aluop_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_wd_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/id_ex0/ex_link_address_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_10_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_4> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_5> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_6> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_7> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_8> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_9> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_10> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_11> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_12> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_13> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_14> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_9_15> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_2> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/regfile1/regs_12_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips0/ex_mem0/mem_wd_3> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/ex_is_in_delayslot> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/id_ex0/is_in_delayslot_o> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips0/if_id0/id_pc_7> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -511,12 +775,10 @@ WARNING:Xst:2677 - Node <openmips0/pc_reg0/pc_7> of sequential type is unconnect
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_13> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_14> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_4> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_9> <openmips0/if_id0/id_inst_10> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_4> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_10> 
 INFO:Xst:2261 - The FF/Latch <openmips0/id_ex0/ex_aluop_1> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/id_ex0/ex_alusel_1> 
-INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following 2 FFs/Latches, which will be removed : <openmips0/if_id0/id_inst_2> <openmips0/if_id0/id_inst_3> 
+INFO:Xst:2261 - The FF/Latch <openmips0/if_id0/id_inst_0> in Unit <openmips_min_sopc> is equivalent to the following FF/Latch, which will be removed : <openmips0/if_id0/id_inst_2> 
 Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 3.
-FlipFlop openmips0/if_id0/id_inst_4 has been replicated 1 time(s)
-FlipFlop openmips0/if_id0/id_inst_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -554,26 +816,26 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 717
+# BELS                             : 718
 #      GND                         : 1
 #      INV                         : 23
 #      LUT1                        : 3
-#      LUT2                        : 30
-#      LUT3                        : 76
-#      LUT3_D                      : 11
-#      LUT3_L                      : 21
-#      LUT4                        : 311
-#      LUT4_D                      : 18
-#      LUT4_L                      : 32
+#      LUT2                        : 34
+#      LUT3                        : 93
+#      LUT3_D                      : 7
+#      LUT3_L                      : 3
+#      LUT4                        : 276
+#      LUT4_D                      : 28
+#      LUT4_L                      : 47
 #      MUXCY                       : 48
-#      MUXF5                       : 70
-#      MUXF6                       : 19
+#      MUXF5                       : 69
+#      MUXF6                       : 32
 #      VCC                         : 1
 #      XORCY                       : 53
 # FlipFlops/Latches                : 223
-#      FDR                         : 84
+#      FDR                         : 90
 #      FDRE                        : 98
-#      FDRS                        : 27
+#      FDRS                        : 21
 #      FDSE                        : 14
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -587,9 +849,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      300  out of   8672     3%  
+ Number of Slices:                      305  out of   8672     3%  
  Number of Slice Flip Flops:            223  out of  17344     1%  
- Number of 4 input LUTs:                525  out of  17344     3%  
+ Number of 4 input LUTs:                514  out of  17344     2%  
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    250     7%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -626,8 +888,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 10.655ns (Maximum Frequency: 93.853MHz)
-   Minimum input arrival time before clock: 11.725ns
+   Minimum period: 11.391ns (Maximum Frequency: 87.789MHz)
+   Minimum input arrival time before clock: 12.451ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
 
@@ -637,56 +899,55 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.655ns (frequency: 93.853MHz)
-  Total number of paths / destination ports: 13855 / 364
+  Clock period: 11.391ns (frequency: 87.789MHz)
+  Total number of paths / destination ports: 15760 / 361
 -------------------------------------------------------------------------
-Delay:               10.655ns (Levels of Logic = 6)
+Delay:               11.391ns (Levels of Logic = 6)
   Source:            openmips0/if_id0/id_inst_12 (FF)
-  Destination:       openmips0/id_ex0/ex_reg1_0 (FF)
+  Destination:       openmips0/id_ex0/ex_reg1_8 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: openmips0/if_id0/id_inst_12 to openmips0/id_ex0/ex_reg1_0
+  Data Path: openmips0/if_id0/id_inst_12 to openmips0/id_ex0/ex_reg1_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             15   0.591   1.192  openmips0/if_id0/id_inst_12 (openmips0/if_id0/id_inst_12)
-     LUT4:I0->O            1   0.704   0.424  openmips0/id0/aluop_o_cmp_eq00071 (openmips0/id0/aluop_o_cmp_eq0007)
-     LUT4:I3->O           15   0.704   1.052  openmips0/id0/aluop_o<3>11 (openmips0/id0/aluop_o<6>)
-     LUT3:I2->O           16   0.704   1.069  openmips0/id0/reg1_read_o1 (openmips0/reg1_read)
-     LUT3_D:I2->LO         1   0.704   0.135  openmips0/id0/reg1_o_and000055 (N354)
-     LUT3:I2->O            5   0.704   0.637  openmips0/id0/reg1_o<0>21 (openmips0/id0/N33)
-     LUT4:I3->O            1   0.704   0.420  openmips0/id0/reg1_o<0>6 (openmips0/id0/reg1_o<0>6)
-     FDRS:S                    0.911          openmips0/id_ex0/ex_reg1_0
+     FDR:C->Q             14   0.591   1.035  openmips0/if_id0/id_inst_12 (openmips0/if_id0/id_inst_12)
+     LUT3:I2->O            1   0.704   0.455  openmips0/id0/aluop_o<3>1241 (openmips0/id0/aluop_o<3>124)
+     LUT4:I2->O            7   0.704   0.743  openmips0/id0/aluop_o<3>126 (openmips0/id0/N7)
+     LUT3:I2->O           22   0.704   1.199  openmips0/id0/wreg_o24 (openmips0/id_wreg_o)
+     LUT3_D:I2->O         15   0.704   1.052  openmips0/id0/reg1_o_and000155 (openmips0/id0/reg1_o_and0001)
+     LUT4:I2->O            8   0.704   0.761  openmips0/id0/reg1_o<0>11 (openmips0/id0/N5)
+     LUT4:I3->O            1   0.704   0.420  openmips0/id0/reg1_o<8>14 (openmips0/id0/reg1_o<8>14)
+     FDRS:S                    0.911          openmips0/id_ex0/ex_reg1_8
     ----------------------------------------
-    Total                     10.655ns (5.726ns logic, 4.929ns route)
-                                       (53.7% logic, 46.3% route)
+    Total                     11.391ns (5.726ns logic, 5.665ns route)
+                                       (50.3% logic, 49.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1779 / 326
+  Total number of paths / destination ports: 2114 / 323
 -------------------------------------------------------------------------
-Offset:              11.725ns (Levels of Logic = 8)
+Offset:              12.451ns (Levels of Logic = 7)
   Source:            rst (PAD)
-  Destination:       openmips0/id_ex0/ex_reg2_6 (FF)
+  Destination:       openmips0/id_ex0/ex_reg1_8 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to openmips0/id_ex0/ex_reg2_6
+  Data Path: rst to openmips0/id_ex0/ex_reg1_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           256   1.218   1.508  rst_IBUF (rst_IBUF)
-     LUT2:I0->O           24   0.704   1.287  openmips0/id0/reg2_addr_o<1>1 (openmips0/reg2_addr<1>)
-     LUT4:I2->O            1   0.704   0.455  openmips0/regfile1/rdata2_and000040 (openmips0/regfile1/rdata2_and000040)
-     LUT4:I2->O           16   0.704   1.034  openmips0/regfile1/rdata2_and000055 (openmips0/regfile1/rdata2_and0000)
-     MUXF5:S->O            1   0.739   0.424  openmips0/id0/reg2_o<6>6_SW2 (N283)
-     LUT4:I3->O            1   0.704   0.424  openmips0/id0/reg2_o<6>47_SW0 (N275)
-     LUT4_L:I3->LO         1   0.704   0.104  openmips0/id0/reg2_o<6>47 (openmips0/id0/reg2_o<6>47)
-     LUT4:I3->O            1   0.704   0.000  openmips0/id0/reg2_o<6>74 (openmips0/id_reg2_o<6>)
-     FDR:D                     0.308          openmips0/id_ex0/ex_reg2_6
+     IBUF:I->O           228   1.218   1.499  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            1   0.704   0.424  openmips0/id0/aluop_o<3>17 (openmips0/id0/aluop_o<3>17)
+     LUT4:I3->O            7   0.704   0.743  openmips0/id0/aluop_o<3>126 (openmips0/id0/N7)
+     LUT3:I2->O           22   0.704   1.199  openmips0/id0/wreg_o24 (openmips0/id_wreg_o)
+     LUT3_D:I2->O         15   0.704   1.052  openmips0/id0/reg1_o_and000155 (openmips0/id0/reg1_o_and0001)
+     LUT4:I2->O            8   0.704   0.761  openmips0/id0/reg1_o<0>11 (openmips0/id0/N5)
+     LUT4:I3->O            1   0.704   0.420  openmips0/id0/reg1_o<8>14 (openmips0/id0/reg1_o<8>14)
+     FDRS:S                    0.911          openmips0/id_ex0/ex_reg1_8
     ----------------------------------------
-    Total                     11.725ns (6.489ns logic, 5.236ns route)
-                                       (55.3% logic, 44.7% route)
+    Total                     12.451ns (6.353ns logic, 6.098ns route)
+                                       (51.0% logic, 49.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -710,14 +971,14 @@ Offset:              4.394ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.36 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.37 secs
  
 --> 
 
-Total memory usage is 273552 kilobytes
+Total memory usage is 276304 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  101 (   0 filtered)
+Number of warnings :  364 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 
