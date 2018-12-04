@@ -33,6 +33,7 @@
 `define EXE_NOP 5'b00001
 `define EXE_J 5'b00010
 `define EXE_LW 5'b10011
+`define EXE_SW 5'b11011
 
 
 //AluOp
@@ -42,6 +43,7 @@
 `define EXE_NOP_OP    8'b00000000
 `define EXE_J_OP  8'b01001111
 `define EXE_LW_OP  8'b11100011
+`define EXE_SW_OP  8'b11101011
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001
@@ -58,7 +60,7 @@
 
 `define DataAddrBus 15:0
 `define DataBus 15:0
-`define DataMemNum 65536
+`define DataMemNum 127// todo: change to 65535
 
 //ͨ�üĴ���regfile
 `define RegAddrBus 3:0

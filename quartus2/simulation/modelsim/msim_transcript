@@ -16,7 +16,7 @@
 #          Updated modelsim.ini.
 # vlog -vlog01compat -work altera_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:24 on Dec 01,2018
+# Start time: 16:08:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work altera_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
@@ -92,7 +92,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 01:44:24 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -104,7 +104,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work lpm_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:24 on Dec 01,2018
+# Start time: 16:08:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -168,7 +168,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 01:44:24 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -180,7 +180,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work sgate_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:25 on Dec 01,2018
+# Start time: 16:08:30 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -222,7 +222,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 01:44:25 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:30 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -234,7 +234,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:25 on Dec 01,2018
+# Start time: 16:08:31 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -342,7 +342,7 @@
 # 	altparallel_flash_loader
 # 	altserial_flash_loader
 # 	altsource_probe
-# End time: 01:44:26 on Dec 01,2018, Elapsed time: 0:00:01
+# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/maxii_ver
@@ -354,7 +354,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work maxii_ver {c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:26 on Dec 01,2018
+# Start time: 16:08:32 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work maxii_ver c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v 
 # -- Compiling UDP MAXII_PRIM_DFFE
 # -- Compiling module maxii_dffe
@@ -393,7 +393,7 @@
 # 	maxii_ufm
 # 	maxii_io
 # 	maxii_routing_wire
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:01
+# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -407,140 +407,160 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/defines.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:32 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/defines.v 
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ctrl.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 16:08:32 on Dec 04,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ctrl.v 
+# -- Compiling module ctrl
+# 
+# Top level modules:
+# 	ctrl
+# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/data_ram.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 16:08:32 on Dec 04,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/data_ram.v 
+# -- Compiling module data_ram
+# 
+# Top level modules:
+# 	data_ram
+# End time: 16:08:32 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ex.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:32 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ex.v 
 # -- Compiling module ex
 # 
 # Top level modules:
 # 	ex
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/ex_mem.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/ex_mem.v 
 # -- Compiling module ex_mem
 # 
 # Top level modules:
 # 	ex_mem
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/id.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/id.v 
 # -- Compiling module id
 # 
 # Top level modules:
 # 	id
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/id_ex.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/id_ex.v 
 # -- Compiling module id_ex
 # 
 # Top level modules:
 # 	id_ex
-# End time: 01:44:27 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/if_id.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:27 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/if_id.v 
 # -- Compiling module if_id
 # 
 # Top level modules:
 # 	if_id
-# End time: 01:44:28 on Dec 01,2018, Elapsed time: 0:00:01
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/inst_rom.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:28 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/inst_rom.v 
 # -- Compiling module inst_rom
 # 
 # Top level modules:
 # 	inst_rom
-# End time: 01:44:28 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/mem.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:28 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/mem.v 
 # -- Compiling module mem
 # 
 # Top level modules:
 # 	mem
-# End time: 01:44:28 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/mem_wb.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:28 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/mem_wb.v 
 # -- Compiling module mem_wb
 # 
 # Top level modules:
 # 	mem_wb
-# End time: 01:44:28 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/openmips.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:28 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/openmips.v 
 # -- Compiling module openmips
 # 
 # Top level modules:
 # 	openmips
-# End time: 01:44:28 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/openmips_min_sopc.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:28 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/openmips_min_sopc.v 
 # -- Compiling module openmips_min_sopc
 # 
 # Top level modules:
 # 	openmips_min_sopc
-# End time: 01:44:29 on Dec 01,2018, Elapsed time: 0:00:01
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/pc_reg.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:29 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/pc_reg.v 
 # -- Compiling module pc_reg
 # 
 # Top level modules:
 # 	pc_reg
-# End time: 01:44:29 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:33 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project {D:/prog10/Desktop/project/regfile.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:29 on Dec 01,2018
+# Start time: 16:08:33 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project" D:/prog10/Desktop/project/regfile.v 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 01:44:29 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:34 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+D:/prog10/Desktop/project/quartus2/.. {D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v}
 # Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-# Start time: 01:44:29 on Dec 01,2018
+# Start time: 16:08:34 on Dec 04,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/prog10/Desktop/project/quartus2/.." D:/prog10/Desktop/project/quartus2/../openmips_min_sopc_tb.v 
 # -- Compiling module openmips_min_sopc_tb
 # 
 # Top level modules:
 # 	openmips_min_sopc_tb
-# End time: 01:44:29 on Dec 01,2018, Elapsed time: 0:00:00
+# End time: 16:08:34 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc" openmips_min_sopc_tb
@@ -563,7 +583,7 @@
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
 # vsim -gui  -l msim_transcript -do "openmips_min_sopc_tb_run_msim_rtl_verilog.do" 
-# Start time: 01:44:29 on Dec 01,2018
+# Start time: 16:08:34 on Dec 04,2018
 # Loading work.openmips_min_sopc_tb
 # Loading work.openmips_min_sopc
 # Loading work.openmips
@@ -576,7 +596,13 @@
 # Loading work.ex_mem
 # Loading work.mem
 # Loading work.mem_wb
+# Loading work.ctrl
 # Loading work.inst_rom
+# Loading work.data_ram
+# ** Warning: (vsim-3015) D:/prog10/Desktop/project/openmips_min_sopc.v(57): [PCDPC] - Port size (4) does not match connection size (1) for port 'ram_ce_o'. The port definition is at: D:/prog10/Desktop/project/openmips.v(50).
+#    Time: 0 ps  Iteration: 0  Instance: /openmips_min_sopc_tb/openmips_min_sopc0/openmips0 File: D:/prog10/Desktop/project/openmips.v
+# ** Warning: (vsim-3015) D:/prog10/Desktop/project/openmips.v(306): [PCDPC] - Port size (1) does not match connection size (4) for port 'mem_ce_o'. The port definition is at: D:/prog10/Desktop/project/mem.v(60).
+#    Time: 0 ps  Iteration: 0  Instance: /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0 File: D:/prog10/Desktop/project/mem.v
 # 
 # add wave *
 # view structure
@@ -584,5 +610,5 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 4000 ns
-# End time: 01:48:47 on Dec 01,2018, Elapsed time: 0:04:18
-# Errors: 0, Warnings: 0
+# End time: 16:18:37 on Dec 04,2018, Elapsed time: 0:10:03
+# Errors: 0, Warnings: 2

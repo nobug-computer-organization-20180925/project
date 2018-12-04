@@ -36,7 +36,7 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name FAMILY "Stratix III"
 set_global_assignment -name DEVICE AUTO
 set_global_assignment -name TOP_LEVEL_ENTITY openmips_min_sopc
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
@@ -46,6 +46,17 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH openmips_min_sopc_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME openmips_min_sopc_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME openmips_min_sopc0 -section_id openmips_min_sopc_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "4000 ns" -section_id openmips_min_sopc_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME openmips_min_sopc_tb -section_id openmips_min_sopc_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE ../openmips_min_sopc_tb.v -section_id openmips_min_sopc_tb
+set_global_assignment -name VERILOG_FILE ../ctrl.v
+set_global_assignment -name VERILOG_FILE ../data_ram.v
 set_global_assignment -name VERILOG_FILE ../defines.v
 set_global_assignment -name VERILOG_FILE ../ex.v
 set_global_assignment -name VERILOG_FILE ../ex_mem.v
@@ -60,12 +71,5 @@ set_global_assignment -name VERILOG_FILE ../openmips_min_sopc.v
 set_global_assignment -name VERILOG_FILE ../openmips_min_sopc_tb.v
 set_global_assignment -name VERILOG_FILE ../pc_reg.v
 set_global_assignment -name VERILOG_FILE ../regfile.v
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH openmips_min_sopc_tb -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME openmips_min_sopc_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME openmips_min_sopc0 -section_id openmips_min_sopc_tb
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "4000 ns" -section_id openmips_min_sopc_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME openmips_min_sopc_tb -section_id openmips_min_sopc_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE ../openmips_min_sopc_tb.v -section_id openmips_min_sopc_tb
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name INCREMENTAL_COMPILATION OFF

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/prog10/Desktop/project/quartus2/simulation/modelsim
 vlpm_abs
-Z1 !s110 1543599864
+Z1 !s110 1543910910
 !i10b 1
 !s100 fZZ0^B<QQN:LgFH_1^URd0
 IG@M:43CmVB^d]4>c8D@B<1
@@ -23,7 +23,7 @@ Z6 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z7 !s108 1543599864.000000
+Z7 !s108 1543910910.000000
 Z8 !s107 c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|lpm_ver|c:/program files/altera/90sp2/quartus/eda/sim_lib/220model.v|
 !s101 -O0

@@ -43,14 +43,13 @@ module data_ram(
 	
 );
 
-	reg[`ByteWidth]  data_mem[0:`DataMemNum-1];
+	reg[`DataBus]  data_mem[0:`DataMemNum-1];
 
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
 			//data_o <= ZeroWord;
 		end else if(we == `WriteEnable) begin
 		      data_mem[addr] <= data_i;
-		    end
 		end
 	end
 	

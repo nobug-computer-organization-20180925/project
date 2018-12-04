@@ -39,7 +39,15 @@ module openmips(
 	input wire[`RegBus] rom_data_i,
 	output wire[`RegBus] rom_addr_o,
 	output wire rom_ce_o,
-	output wire[`RegBus] register1
+	output wire[`RegBus] register1,
+
+		
+  //连接数据存储器data_ram
+	input wire[`RegBus]           ram_data_i,
+	output wire[`RegBus]           ram_addr_o,
+	output wire[`RegBus]           ram_data_o,
+	output wire                    ram_we_o,
+	output wire[3:0]               ram_ce_o
 	
 );
 
@@ -56,6 +64,7 @@ module openmips(
 	wire[`RegAddrBus] id_wd_o;
 	wire id_is_in_delayslot_o;
   wire[`RegBus] id_link_address_o;	
+    wire[`RegBus] id_inst_o;
 	
 	//????ID/EX???????????н??EX????????
 	wire[`AluOpBus] ex_aluop_i;
@@ -66,16 +75,25 @@ module openmips(
 	wire[`RegAddrBus] ex_wd_i;
 	wire ex_is_in_delayslot_i;	
   wire[`RegBus] ex_link_address_i;	
-	
+	  wire[`RegBus] ex_inst_i;
+
 	//??????н??EX?????????EX/MEM????????
 	wire ex_wreg_o;
 	wire[`RegAddrBus] ex_wd_o;
 	wire[`RegBus] ex_wdata_o;
+	wire[`AluOpBus] ex_aluop_o;
+	wire[`RegBus] ex_mem_addr_o;
+	wire[`RegBus] ex_reg1_o;
+	wire[`RegBus] ex_reg2_o;	
 
 	//????EX/MEM?????????????MEM????????
 	wire mem_wreg_i;
 	wire[`RegAddrBus] mem_wd_i;
 	wire[`RegBus] mem_wdata_i;
+	wire[`AluOpBus] mem_aluop_i;
+	wire[`RegBus] mem_mem_addr_i;
+	wire[`RegBus] mem_reg1_i;
+	wire[`RegBus] mem_reg2_i;
 
 	//????????MEM?????????MEM/WB????????
 	wire mem_wreg_o;
@@ -137,6 +155,7 @@ module openmips(
 		.rst(rst),
 		.pc_i(id_pc_i),
 		.inst_i(id_inst_i),
+		.ex_aluop_i(ex_aluop_o),
 
 		.reg1_data_i(reg1_data),
 		.reg2_data_i(reg2_data),
@@ -166,14 +185,16 @@ module openmips(
 		.reg2_o(id_reg2_o),
 		.wd_o(id_wd_o),
 		.wreg_o(id_wreg_o),
-		.stallreq(stallreq_from_id),		
+		.inst_o(id_inst_o),
 		
 	 	.next_inst_in_delayslot_o(next_inst_in_delayslot_o),	
 		.branch_flag_o(id_branch_flag_o),
 		.branch_target_address_o(branch_target_address),       
 		.link_addr_o(id_link_address_o),
 		
-		.is_in_delayslot_o(id_is_in_delayslot_o)
+		.is_in_delayslot_o(id_is_in_delayslot_o),
+
+		.stallreq(stallreq_from_id)
 	);
 
   //??ü????Regfile????
@@ -210,7 +231,8 @@ module openmips(
 		.id_link_address(id_link_address_o),
 		.id_is_in_delayslot(id_is_in_delayslot_o),
 		.next_inst_in_delayslot_i(next_inst_in_delayslot_o),		
-	
+		.id_inst(id_inst_o),
+
 		//???????н??EX???????
 		.ex_aluop(ex_aluop_i),
 		.ex_alusel(ex_alusel_i),
@@ -219,8 +241,9 @@ module openmips(
 		.ex_wd(ex_wd_i),
 		.ex_wreg(ex_wreg_i),
 		.ex_link_address(ex_link_address_i),
-  	.ex_is_in_delayslot(ex_is_in_delayslot_i),
-		.is_in_delayslot_o(is_in_delayslot_i)			
+		.ex_is_in_delayslot(ex_is_in_delayslot_i),
+		.is_in_delayslot_o(is_in_delayslot_i),
+		.ex_inst(ex_inst_i)
 	);		
 	
 	//EX???
@@ -234,6 +257,8 @@ module openmips(
 		.reg2_i(ex_reg2_i),
 		.wd_i(ex_wd_i),
 		.wreg_i(ex_wreg_i),
+		.inst_i(ex_inst_i),
+
 	  .link_address_i(ex_link_address_i),
 		.is_in_delayslot_i(ex_is_in_delayslot_i),	  
 	  
@@ -241,6 +266,11 @@ module openmips(
 		.wd_o(ex_wd_o),
 		.wreg_o(ex_wreg_o),
 		.wdata_o(ex_wdata_o),
+
+		.aluop_o(ex_aluop_o),
+		.mem_addr_o(ex_mem_addr_o),
+		.reg2_o(ex_reg2_o),
+
 		.stallreq(stallreq_from_ex)     				
 		
 	);
@@ -251,6 +281,9 @@ module openmips(
 		.rst(rst),
 	  .stall(stall),
 	  
+		.ex_aluop(ex_aluop_o),
+		.ex_mem_addr(ex_mem_addr_o),
+		.ex_reg2(ex_reg2_o),
 		//??????н??EX???????
 		.ex_wd(ex_wd_o),
 		.ex_wreg(ex_wreg_o),
@@ -260,7 +293,11 @@ module openmips(
 		//????????MEM???????
 		.mem_wd(mem_wd_i),
 		.mem_wreg(mem_wreg_i),
-		.mem_wdata(mem_wdata_i)
+		.mem_wdata(mem_wdata_i),
+
+			.mem_aluop(mem_aluop_i),
+		.mem_mem_addr(mem_mem_addr_i),
+		.mem_reg2(mem_reg2_i)
 
 						       	
 	);
@@ -273,11 +310,22 @@ module openmips(
 		.wd_i(mem_wd_i),
 		.wreg_i(mem_wreg_i),
 		.wdata_i(mem_wdata_i),
-	  
+
+	  	.aluop_i(mem_aluop_i),
+		.mem_addr_i(mem_mem_addr_i),
+		.reg2_i(mem_reg2_i),
+	
+		//来自memory的信息
+		.mem_data_i(ram_data_i),
 		//???MEM/WB???????
 		.wd_o(mem_wd_o),
 		.wreg_o(mem_wreg_o),
-		.wdata_o(mem_wdata_o)
+		.wdata_o(mem_wdata_o),
+			//送到memory的信息
+		.mem_addr_o(ram_addr_o),
+		.mem_we_o(ram_we_o),
+		.mem_data_o(ram_data_o),
+		.mem_ce_o(ram_ce_o)		
 	);
 
   //MEM/WB???

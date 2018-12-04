@@ -24,7 +24,7 @@
 //////////////////////////////////////////////////////////////////////
 // Module:  openmips
 // File:    openmips.v
-// Description: OpenMIPSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+// Description: OpenMIPS??????????????
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -39,7 +39,15 @@ module openmips(
 	input wire[`RegBus] rom_data_i,
 	output wire[`RegBus] rom_addr_o,
 	output wire rom_ce_o,
-	output wire[`RegBus] register1
+	output wire[`RegBus] register1,
+
+		
+  //Á¬½ÓÊı¾İ´æ´¢Æ÷data_ram
+	input wire[`RegBus]           ram_data_i,
+	output wire[`RegBus]           ram_addr_o,
+	output wire[`RegBus]           ram_data_o,
+	output wire                    ram_we_o,
+	output wire[3:0]               ram_ce_o
 	
 );
 
@@ -47,7 +55,7 @@ module openmips(
 	wire[`InstAddrBus] id_pc_i;
 	wire[`InstBus] id_inst_i;
 	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶ï¿½IDÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID/EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
+	//??????????ID?????????ID/EX????????
 	wire[`AluOpBus] id_aluop_o;
 	wire[`AluSelBus] id_alusel_o;
 	wire[`RegBus] id_reg1_o;
@@ -56,8 +64,9 @@ module openmips(
 	wire[`RegAddrBus] id_wd_o;
 	wire id_is_in_delayslot_o;
   wire[`RegBus] id_link_address_o;	
+    wire[`RegBus] id_inst_o;
 	
-	//ï¿½ï¿½ï¿½ï¿½ID/EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ğ½×¶ï¿½EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
+	//????ID/EX???????????§ß??EX????????
 	wire[`AluOpBus] ex_aluop_i;
 	wire[`AluSelBus] ex_alusel_i;
 	wire[`RegBus] ex_reg1_i;
@@ -66,44 +75,60 @@ module openmips(
 	wire[`RegAddrBus] ex_wd_i;
 	wire ex_is_in_delayslot_i;	
   wire[`RegBus] ex_link_address_i;	
-	
-	//ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ğ½×¶ï¿½EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½EX/MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
+	  wire[`RegBus] ex_inst_i;
+
+	//??????§ß??EX?????????EX/MEM????????
 	wire ex_wreg_o;
 	wire[`RegAddrBus] ex_wd_o;
 	wire[`RegBus] ex_wdata_o;
+	wire[`AluOpBus] ex_aluop_o;
+	wire[`RegBus] ex_mem_addr_o;
+	wire[`RegBus] ex_reg1_o;
+	wire[`RegBus] ex_reg2_o;	
 
-	//ï¿½ï¿½ï¿½ï¿½EX/MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½×¶ï¿½MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
+	//????EX/MEM?????????????MEM????????
 	wire mem_wreg_i;
 	wire[`RegAddrBus] mem_wd_i;
 	wire[`RegBus] mem_wdata_i;
+	wire[`AluOpBus] mem_aluop_i;
+	wire[`RegBus] mem_mem_addr_i;
+	wire[`RegBus] mem_reg1_i;
+	wire[`RegBus] mem_reg2_i;
 
-	//ï¿½ï¿½ï¿½Ó·Ã´ï¿½×¶ï¿½MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MEM/WBÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
+	//????????MEM?????????MEM/WB????????
 	wire mem_wreg_o;
 	wire[`RegAddrBus] mem_wd_o;
 	wire[`RegBus] mem_wdata_o;
 	
-	//ï¿½ï¿½ï¿½ï¿½MEM/WBÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½×¶Îµï¿½ï¿½ï¿½ï¿½ï¿
+	//????MEM/WB??????????§Õ??¦Å?????
 	wire wb_wreg_i;
 	wire[`RegAddrBus] wb_wd_i;
 	wire[`RegBus] wb_wdata_i;
 	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶ï¿½IDÄ£ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ã¼Ä´ï¿½ï¿½ï¿½RegfileÄ£ï¿½ï¿½
+	//??????????ID???????¨¹????Regfile???
   wire reg1_read;
   wire reg2_read;
   wire[`RegBus] reg1_data;
   wire[`RegBus] reg2_data;
   wire[`RegAddrBus] reg1_addr;
   wire[`RegAddrBus] reg2_addr;
+
+	wire[5:0] stall;
+	wire stallreq_from_id;	
+	wire stallreq_from_ex;
+
+
 	wire is_in_delayslot_i;
 	wire is_in_delayslot_o;
 	wire next_inst_in_delayslot_o;
 	wire id_branch_flag_o;
 	wire[`RegBus] branch_target_address;
   
-  //pc_regï¿½ï¿½ï¿½ï¿½
+  //pc_reg????
 	pc_reg pc_reg0(
 		.clk(clk),
 		.rst(rst),
+		.stall(stall),		
 		.branch_flag_i(id_branch_flag_o),
 		.branch_target_address_i(branch_target_address),		
 		.pc(pc),
@@ -113,59 +138,66 @@ module openmips(
 	
   assign rom_addr_o = pc;
 
-  //IF/IDÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  //IF/ID???????
 	if_id if_id0(
 		.clk(clk),
 		.rst(rst),
+		.stall(stall),
+		
 		.if_pc(pc),
 		.if_inst(rom_data_i),
 		.id_pc(id_pc_i),
 		.id_inst(id_inst_i)      	
 	);
 	
-	//ï¿½ï¿½ï¿½ï¿½×¶ï¿½IDÄ£ï¿½ï¿½
+	//??????ID???
 	id id0(
 		.rst(rst),
 		.pc_i(id_pc_i),
 		.inst_i(id_inst_i),
+		.ex_aluop_i(ex_aluop_o),
 
 		.reg1_data_i(reg1_data),
 		.reg2_data_i(reg2_data),
 
-	  //å¤„äºæ‰§è¡Œé˜¶æ®µçš„æŒ‡ä»¤è¦å†™å…¥çš„ç›®çš„å¯„å­˜å™¨ä¿¡æ¯
+	  //´¦ÓÚÖ´ĞĞ½×¶ÎµÄÖ¸ÁîÒªĞ´ÈëµÄÄ¿µÄ¼Ä´æÆ÷ĞÅÏ¢
 		.ex_wreg_i(ex_wreg_o),
 		.ex_wdata_i(ex_wdata_o),
 		.ex_wd_i(ex_wd_o),
 
-	  //å¤„äºè®¿å­˜é˜¶æ®µçš„æŒ‡ä»¤è¦å†™å…¥çš„ç›®çš„å¯„å­˜å™¨ä¿¡æ¯
+	  //´¦ÓÚ·Ã´æ½×¶ÎµÄÖ¸ÁîÒªĞ´ÈëµÄÄ¿µÄ¼Ä´æÆ÷ĞÅÏ¢
 		.mem_wreg_i(mem_wreg_o),
 		.mem_wdata_i(mem_wdata_o),
 		.mem_wd_i(mem_wd_o),
 
 	  .is_in_delayslot_i(is_in_delayslot_i),
-		//ï¿½Íµï¿½regfileï¿½ï¿½ï¿½ï¿½Ï¢
+		//???regfile?????
 		.reg1_read_o(reg1_read),
 		.reg2_read_o(reg2_read), 	  
 
 		.reg1_addr_o(reg1_addr),
 		.reg2_addr_o(reg2_addr), 
 	  
-		//ï¿½Íµï¿½ID/EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		//???ID/EX???????
 		.aluop_o(id_aluop_o),
 		.alusel_o(id_alusel_o),
 		.reg1_o(id_reg1_o),
 		.reg2_o(id_reg2_o),
 		.wd_o(id_wd_o),
 		.wreg_o(id_wreg_o),
+		.inst_o(id_inst_o),
+		
 	 	.next_inst_in_delayslot_o(next_inst_in_delayslot_o),	
 		.branch_flag_o(id_branch_flag_o),
 		.branch_target_address_o(branch_target_address),       
 		.link_addr_o(id_link_address_o),
 		
-		.is_in_delayslot_o(id_is_in_delayslot_o)
+		.is_in_delayslot_o(id_is_in_delayslot_o),
+
+		.stallreq(stallreq_from_id)
 	);
 
-  //Í¨ï¿½Ã¼Ä´ï¿½ï¿½ï¿½Regfileï¿½ï¿½ï¿½ï¿½
+  //??¨¹????Regfile????
 	regfile regfile1(
 		.clk (clk),
 		.rst (rst),
@@ -182,12 +214,14 @@ module openmips(
 		.register1(register1)
 	);
 
-	//ID/EXÄ£ï¿½ï¿½
+	//ID/EX???
 	id_ex id_ex0(
 		.clk(clk),
 		.rst(rst),
+		.stall(stall),
 		
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶ï¿½IDÄ£ï¿½é´«ï¿½İµï¿½ï¿½ï¿½Ï¢
+		
+		//????????ID??ø‰??????
 		.id_aluop(id_aluop_o),
 		.id_alusel(id_alusel_o),
 		.id_reg1(id_reg1_o),
@@ -197,8 +231,9 @@ module openmips(
 		.id_link_address(id_link_address_o),
 		.id_is_in_delayslot(id_is_in_delayslot_o),
 		.next_inst_in_delayslot_i(next_inst_in_delayslot_o),		
-	
-		//ï¿½ï¿½ï¿½İµï¿½Ö´ï¿½Ğ½×¶ï¿½EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		.id_inst(id_inst_o),
+
+		//???????§ß??EX???????
 		.ex_aluop(ex_aluop_i),
 		.ex_alusel(ex_alusel_i),
 		.ex_reg1(ex_reg1_i),
@@ -206,80 +241,115 @@ module openmips(
 		.ex_wd(ex_wd_i),
 		.ex_wreg(ex_wreg_i),
 		.ex_link_address(ex_link_address_i),
-  	.ex_is_in_delayslot(ex_is_in_delayslot_i),
-		.is_in_delayslot_o(is_in_delayslot_i)			
+		.ex_is_in_delayslot(ex_is_in_delayslot_i),
+		.is_in_delayslot_o(is_in_delayslot_i),
+		.ex_inst(ex_inst_i)
 	);		
 	
-	//EXÄ£ï¿½ï¿½
+	//EX???
 	ex ex0(
 		.rst(rst),
 	
-		//ï¿½Íµï¿½Ö´ï¿½Ğ½×¶ï¿½EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		//?????§ß??EX???????
 		.aluop_i(ex_aluop_i),
 		.alusel_i(ex_alusel_i),
 		.reg1_i(ex_reg1_i),
 		.reg2_i(ex_reg2_i),
 		.wd_i(ex_wd_i),
 		.wreg_i(ex_wreg_i),
+		.inst_i(ex_inst_i),
+
 	  .link_address_i(ex_link_address_i),
 		.is_in_delayslot_i(ex_is_in_delayslot_i),	  
 	  
-	  //EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½EX/MEMÄ£ï¿½ï¿½ï¿½ï¿½Ï¢
+	  //EX?????????EX/MEM??????
 		.wd_o(ex_wd_o),
 		.wreg_o(ex_wreg_o),
-		.wdata_o(ex_wdata_o)
+		.wdata_o(ex_wdata_o),
+
+		.aluop_o(ex_aluop_o),
+		.mem_addr_o(ex_mem_addr_o),
+		.reg2_o(ex_reg2_o),
+
+		.stallreq(stallreq_from_ex)     				
 		
 	);
 
-  //EX/MEMÄ£ï¿½ï¿½
+  //EX/MEM???
   ex_mem ex_mem0(
 		.clk(clk),
 		.rst(rst),
+	  .stall(stall),
 	  
-		//ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ğ½×¶ï¿½EXÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		.ex_aluop(ex_aluop_o),
+		.ex_mem_addr(ex_mem_addr_o),
+		.ex_reg2(ex_reg2_o),
+		//??????§ß??EX???????
 		.ex_wd(ex_wd_o),
 		.ex_wreg(ex_wreg_o),
 		.ex_wdata(ex_wdata_o),
 	
 
-		//ï¿½Íµï¿½ï¿½Ã´ï¿½×¶ï¿½MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		//????????MEM???????
 		.mem_wd(mem_wd_i),
 		.mem_wreg(mem_wreg_i),
-		.mem_wdata(mem_wdata_i)
+		.mem_wdata(mem_wdata_i),
+
+			.mem_aluop(mem_aluop_i),
+		.mem_mem_addr(mem_mem_addr_i),
+		.mem_reg2(mem_reg2_i)
 
 						       	
 	);
 	
-  //MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  //MEM???????
 	mem mem0(
 		.rst(rst),
 	
-		//ï¿½ï¿½ï¿½ï¿½EX/MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		//????EX/MEM???????
 		.wd_i(mem_wd_i),
 		.wreg_i(mem_wreg_i),
 		.wdata_i(mem_wdata_i),
-	  
-		//ï¿½Íµï¿½MEM/WBÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+
+	  	.aluop_i(mem_aluop_i),
+		.mem_addr_i(mem_mem_addr_i),
+		.reg2_i(mem_reg2_i),
+	
+		//À´×ÔmemoryµÄĞÅÏ¢
+		.mem_data_i(ram_data_i),
+		//???MEM/WB???????
 		.wd_o(mem_wd_o),
 		.wreg_o(mem_wreg_o),
 		.wdata_o(mem_wdata_o)
 	);
 
-  //MEM/WBÄ£ï¿½ï¿½
+  //MEM/WB???
 	mem_wb mem_wb0(
 		.clk(clk),
 		.rst(rst),
+    .stall(stall),
 
-		//ï¿½ï¿½ï¿½Ô·Ã´ï¿½×¶ï¿½MEMÄ£ï¿½ï¿½ï¿½ï¿½ï¿½Ï
+		//????????MEM???????
 		.mem_wd(mem_wd_o),
 		.mem_wreg(mem_wreg_o),
 		.mem_wdata(mem_wdata_o),
 	
-		//ï¿½Íµï¿½ï¿½ï¿½Ğ´ï¿½×¶Îµï¿½ï¿½ï¿½Ï¢
+		//?????§Õ??¦Å????
 		.wb_wd(wb_wd_i),
 		.wb_wreg(wb_wreg_i),
 		.wb_wdata(wb_wdata_i)
 									       	
 	);
+	ctrl ctrl0(
+		.rst(rst),
+	
+		.stallreq_from_id(stallreq_from_id),
+	
+  	//??????§ß?¦Å????????
+		.stallreq_from_ex(stallreq_from_ex),
+
+		.stall(stall)       	
+	);
 
 endmodule
+

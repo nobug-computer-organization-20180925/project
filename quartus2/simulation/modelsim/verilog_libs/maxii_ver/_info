@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/prog10/Desktop/project/quartus2/simulation/modelsim
 vmaxii_and1
-Z1 !s110 1543599866
+Z1 !s110 1543910912
 !i10b 1
 !s100 kg61g_@V3gWAmbz74KMSL2
 I6Jnc85]55kj;>YHV=k^4W1
@@ -23,7 +23,7 @@ Z6 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z7 !s108 1543599866.000000
+Z7 !s108 1543910912.000000
 Z8 !s107 c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|maxii_ver|c:/program files/altera/90sp2/quartus/eda/sim_lib/maxii_atoms.v|
 !s101 -O0
@@ -177,7 +177,7 @@ R9
 !i113 1
 R10
 vmaxii_io
-Z11 !s110 1543599867
+R1
 !i10b 1
 !s100 ALC<WDn1dZ=5dhek^V;5O1
 I724=I2kmeXiGggNBzbZ=B3
@@ -367,7 +367,7 @@ R9
 R10
 n@m@a@x@i@i_@p@r@i@m_@d@f@f@e
 vmaxii_routing_wire
-R11
+R1
 !i10b 1
 !s100 FAPk_7eizBYOoFh27X3EL3
 IG=N1_lFNWl<0fC=lBo5]Y1

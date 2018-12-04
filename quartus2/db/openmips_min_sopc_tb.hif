@@ -1,5 +1,5 @@
 Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-42
+40
 3331
 OFF
 OFF
@@ -19,18 +19,18 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-openmips
+openmips_min_sopc
 # storage
-db|openmips_min_sopc_tb.(1).cnf
-db|openmips_min_sopc_tb.(1).cnf
+db|openmips_min_sopc_tb.(0).cnf
+db|openmips_min_sopc_tb.(0).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_sensitive
 # source_file
-..|openmips.v
-47c48327f5639a2199d611c8d4bf7f
+..|openmips_min_sopc.v
+fdf4ba6641781a0f17a8e1997b1430
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -50,13 +50,53 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+|
+}
+# macro_sequence
+RegBus15:0InstAddrBus15:0InstBus15:0RegBus15:0RegBus15:0RegBus15:0
+# end
+# entity
+openmips
+# storage
+db|openmips_min_sopc_tb.(1).cnf
+db|openmips_min_sopc_tb.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|openmips.v
+ba7dd2fcfecf21e2a853e8b38f2187
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 openmips:openmips0
 }
 # macro_sequence
-RegBus15:0RegBus15:0RegBus15:0InstAddrBus15:0InstAddrBus15:0InstBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegAddrBus3:0RegAddrBus3:0RegBus15:0
+RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0InstAddrBus15:0InstAddrBus15:0InstBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegAddrBus3:0RegAddrBus3:0RegBus15:0
 # end
 # entity
 pc_reg
@@ -70,7 +110,7 @@ ON
 # case_sensitive
 # source_file
 ..|pc_reg.v
-8ee469c711f3785b9585c33354b3af5
+b4a683b2b4f26deee9d4a2f47c4e2d84
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -90,13 +130,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 openmips:openmips0|pc_reg:pc_reg0
 }
 # macro_sequence
-RegBus15:0InstAddrBus15:0ChipDisable1'b0Branch1'b1RstEnable1'b1ChipDisable1'b0ChipEnable1'b1
+RegBus15:0InstAddrBus15:0ChipDisable1'b0NoStop1'b0Branch1'b1RstEnable1'b0ChipDisable1'b0ChipEnable1'b1
 # end
 # entity
 if_id
@@ -110,7 +150,7 @@ ON
 # case_sensitive
 # source_file
 ..|if_id.v
-eeb3bf82d0b61e168e29091a13ebf37
+d47e234f3e11b42d565a7aea059137a
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -130,13 +170,53 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 openmips:openmips0|if_id:if_id0
 }
 # macro_sequence
-InstAddrBus15:0InstBus15:0InstAddrBus15:0InstBus15:0RstEnable1'b1ZeroWord16'h0000ZeroWord16'h0000
+InstAddrBus15:0InstBus15:0InstAddrBus15:0InstBus15:0RstEnable1'b0ZeroWord16'h0000ZeroWord16'h0000Stop1'b1NoStop1'b0ZeroWord16'h0000ZeroWord16'h0000NoStop1'b0
+# end
+# entity
+id
+# storage
+db|openmips_min_sopc_tb.(4).cnf
+db|openmips_min_sopc_tb.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|id.v
+974dca520e82669d6a5afcda4511bad
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+openmips:openmips0|id:id0
+}
+# macro_sequence
+InstAddrBus15:0InstBus15:0AluOpBus7:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegAddrBus3:0RegAddrBus3:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0EXE_LW_OP8'b11100011RstEnable1'b0EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000NOPRegAddr3'b000WriteDisable1'b0InstValid1'b0NOPRegAddr3'b000NOPRegAddr3'b000ZeroWord16'h0000ZeroWord16'h0000NotBranch1'b0NotInDelaySlot1'b0EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000WriteDisable1'b0InstInvalid1'b1ZeroWord16'h0000ZeroWord16'h0000ZeroWord16'h0000NotBranch1'b0NotInDelaySlot1'b0EXE_OR5'b11101WriteEnable1'b1EXE_OR_OP8'b00100101EXE_RES_LOGIC3'b001InstValid1'b0EXE_ORI5'b11111WriteEnable1'b1EXE_OR_OP8'b00100101EXE_RES_LOGIC3'b001InstValid1'b0EXE_MOVE5'b01111EXE_MOVE_OP8'b00001010EXE_RES_MOVE3'b011	InstValid1'b0WriteEnable1'b1EXE_J5'b00010WriteDisable1'b0EXE_J_OP8'b01001111EXE_RES_JUMP_BRANCH3'b110ZeroWord16'h0000Branch1'b1InDelaySlot1'b1InstValid1'b0EXE_LW5'b10011WriteEnable1'b1EXE_LW_OP8'b11100011EXE_RES_LOAD_STORE3'b111InstValid1'b0EXE_SW5'b11011WriteDisable1'b0EXE_SW_OP8'b11101011InstValid1'b0EXE_RES_LOAD_STORE3'b111ZeroWord16'h0000NoStop1'b0RstEnable1'b0ZeroWord16'h0000Stop1'b1ZeroWord16'h0000ZeroWord16'h0000NoStop1'b0RstEnable1'b0ZeroWord16'h0000Stop1'b1ZeroWord16'h0000RstEnable1'b0NotInDelaySlot1'b0
 # end
 # entity
 regfile
@@ -170,213 +250,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 openmips:openmips0|regfile:regfile1
 }
 # macro_sequence
-RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegNum8RegBus15:0RegBus15:0RstDisable1'b0WriteEnable1'b1RegNumLog23RstEnable1'b1ZeroWord16'h0000RegNumLog23ZeroWord16'h0000WriteEnable1'b1ReadEnable1'b1ReadEnable1'b1ZeroWord16'h0000RstEnable1'b1ZeroWord16'h0000RegNumLog23ZeroWord16'h0000WriteEnable1'b1ReadEnable1'b1ReadEnable1'b1ZeroWord16'h0000
-# end
-# entity
-ex
-# storage
-db|openmips_min_sopc_tb.(7).cnf
-db|openmips_min_sopc_tb.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-..|ex.v
-4b5b5e342fce782cf769cd7320b5e38d
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-..|defines.v
-debc95a847f837a1f758e42981258b8c
-}
-# hierarchies {
-openmips:openmips0|ex:ex0
-}
-# macro_sequence
-AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RstEnable1'b1ZeroWord16'h0000EXE_OR_OP8'b00100101ZeroWord16'h0000RstEnable1'b1ZeroWord16'h0000ZeroWord16'h0000EXE_MOVE_OP8'b00001010EXE_RES_LOGIC3'b001EXE_RES_MOVE3'b011	EXE_RES_JUMP_BRANCH3'b110ZeroWord16'h0000
-# end
-# entity
-ex_mem
-# storage
-db|openmips_min_sopc_tb.(8).cnf
-db|openmips_min_sopc_tb.(8).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-..|ex_mem.v
-195d858f3f8932f74db5ba936c3d963c
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-..|defines.v
-debc95a847f837a1f758e42981258b8c
-}
-# hierarchies {
-openmips:openmips0|ex_mem:ex_mem0
-}
-# macro_sequence
-RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RstEnable1'b1NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000
-# end
-# entity
-mem
-# storage
-db|openmips_min_sopc_tb.(9).cnf
-db|openmips_min_sopc_tb.(9).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-..|mem.v
-9489edf6e8a85a2e8f5a4662eabfd972
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-..|defines.v
-debc95a847f837a1f758e42981258b8c
-}
-# hierarchies {
-openmips:openmips0|mem:mem0
-}
-# macro_sequence
-RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RstEnable1'b1NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000
-# end
-# entity
-mem_wb
-# storage
-db|openmips_min_sopc_tb.(10).cnf
-db|openmips_min_sopc_tb.(10).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-..|mem_wb.v
-5e6ebf39f08c7f933356b3c6868c326a
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-..|defines.v
-debc95a847f837a1f758e42981258b8c
-}
-# hierarchies {
-openmips:openmips0|mem_wb:mem_wb0
-}
-# macro_sequence
-RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RstEnable1'b1NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000
-# end
-# entity
-openmips_min_sopc
-# storage
-db|openmips_min_sopc_tb.(0).cnf
-db|openmips_min_sopc_tb.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-..|openmips_min_sopc.v
-2bf77b496b7e3e35c95b3e9b71c42eb5
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-..|defines.v
-debc95a847f837a1f758e42981258b8c
-}
-# hierarchies {
-|
-}
-# macro_sequence
-RegBus15:0InstAddrBus15:0InstBus15:0
+RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegNum8RegBus15:0RegBus15:0RstDisable1'b1WriteEnable1'b1RegNumLog23RstEnable1'b0ZeroWord16'h0000RegNumLog23ZeroWord16'h0000WriteEnable1'b1ReadEnable1'b1ReadEnable1'b1ZeroWord16'h0000RstEnable1'b0ZeroWord16'h0000RegNumLog23ZeroWord16'h0000WriteEnable1'b1ReadEnable1'b1ReadEnable1'b1ZeroWord16'h0000
 # end
 # entity
 id_ex
@@ -390,7 +270,7 @@ ON
 # case_sensitive
 # source_file
 ..|id_ex.v
-9e27f4643a9595f9b0bff2fb384bc224
+18b9596bfe1af646f5cbd7ec5698a53
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -410,27 +290,27 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 openmips:openmips0|id_ex:id_ex0
 }
 # macro_sequence
-AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RstEnable1'b1EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000ZeroWord16'h0000ZeroWord16'h0000NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000NotInDelaySlot1'b0NotInDelaySlot1'b0
+AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RstEnable1'b0EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000ZeroWord16'h0000ZeroWord16'h0000NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000NotInDelaySlot1'b0NotInDelaySlot1'b0ZeroWord16'h0000Stop1'b1NoStop1'b0EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000ZeroWord16'h0000ZeroWord16'h0000NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000NotInDelaySlot1'b0ZeroWord16'h0000NoStop1'b0
 # end
 # entity
-id
+ex
 # storage
-db|openmips_min_sopc_tb.(4).cnf
-db|openmips_min_sopc_tb.(4).cnf
+db|openmips_min_sopc_tb.(7).cnf
+db|openmips_min_sopc_tb.(7).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_sensitive
 # source_file
-..|id.v
-83b23359cb6e5509c9ad662b58c7aea
+..|ex.v
+80fa304bbb6d111099db6e7e70682bb
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -450,19 +330,179 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
-openmips:openmips0|id:id0
+openmips:openmips0|ex:ex0
 }
 # macro_sequence
-InstAddrBus15:0InstBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegAddrBus3:0RegAddrBus3:0AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RstEnable1'b1EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000NOPRegAddr3'b000WriteDisable1'b0InstValid1'b0NOPRegAddr3'b000NOPRegAddr3'b000ZeroWord16'h0000ZeroWord16'h0000NotBranch1'b0NotInDelaySlot1'b0EXE_NOP_OP8'b00000000EXE_RES_NOP3'b000WriteDisable1'b0InstInvalid1'b1ZeroWord16'h0000ZeroWord16'h0000ZeroWord16'h0000NotBranch1'b0NotInDelaySlot1'b0EXE_OR5'b11101WriteEnable1'b1EXE_OR_OP8'b00100101EXE_RES_LOGIC3'b001InstValid1'b0EXE_ORI5'b11111WriteEnable1'b1EXE_OR_OP8'b00100101EXE_RES_LOGIC3'b001InstValid1'b0EXE_MOVE5'b01111EXE_MOVE_OP8'b00001010EXE_RES_MOVE3'b011	InstValid1'b0WriteEnable1'b1EXE_J5'b00010WriteDisable1'b0EXE_J_OP8'b01001111EXE_RES_JUMP_BRANCH3'b110ZeroWord16'h0000Branch1'b1InDelaySlot1'b1InstValid1'b0RstEnable1'b1ZeroWord16'h0000ZeroWord16'h0000RstEnable1'b1ZeroWord16'h0000ZeroWord16'h0000RstEnable1'b1NotInDelaySlot1'b0
+AluOpBus7:0AluSelBus2:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RegBus15:0RstEnable1'b0ZeroWord16'h0000EXE_OR_OP8'b00100101ZeroWord16'h0000RstEnable1'b0ZeroWord16'h0000ZeroWord16'h0000EXE_MOVE_OP8'b00001010EXE_RES_LOGIC3'b001EXE_RES_MOVE3'b011	EXE_RES_JUMP_BRANCH3'b110ZeroWord16'h0000
+# end
+# entity
+ex_mem
+# storage
+db|openmips_min_sopc_tb.(8).cnf
+db|openmips_min_sopc_tb.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|ex_mem.v
+123432dd87b15bfb5e3fd5c42055327e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+openmips:openmips0|ex_mem:ex_mem0
+}
+# macro_sequence
+RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RstEnable1'b0NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000EXE_NOP_OP8'b00000000ZeroWord16'h0000ZeroWord16'h0000Stop1'b1NoStop1'b0NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000EXE_NOP_OP8'b00000000ZeroWord16'h0000ZeroWord16'h0000NoStop1'b0
+# end
+# entity
+mem
+# storage
+db|openmips_min_sopc_tb.(9).cnf
+db|openmips_min_sopc_tb.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|mem.v
+3f68325c6734fab1904c4ed2a567
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+openmips:openmips0|mem:mem0
+}
+# macro_sequence
+RegAddrBus3:0RegBus15:0AluOpBus7:0RegBus15:0RegBus15:0RegBus15:0RegAddrBus3:0RegBus15:0RegBus15:0RegBus15:0RstEnable1'b0NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000ZeroWord16'h0000WriteDisable1'b0ZeroWord16'h0000ChipDisable1'b0ZeroWord16'h0000WriteDisable1'b0ZeroWord16'h0000ChipDisable1'b0EXE_LW_OP8'b11100011WriteDisable1'b0ChipEnable1'b1EXE_SW_OP8'b11101011WriteEnable1'b1ChipEnable1'b1
+# end
+# entity
+mem_wb
+# storage
+db|openmips_min_sopc_tb.(10).cnf
+db|openmips_min_sopc_tb.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|mem_wb.v
+f47930bd82e565912d160956f213f1
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+openmips:openmips0|mem_wb:mem_wb0
+}
+# macro_sequence
+RegAddrBus3:0RegBus15:0RegAddrBus3:0RegBus15:0RstEnable1'b0NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000Stop1'b1NoStop1'b0NOPRegAddr3'b000WriteDisable1'b0ZeroWord16'h0000NoStop1'b0
+# end
+# entity
+ctrl
+# storage
+db|openmips_min_sopc_tb.(11).cnf
+db|openmips_min_sopc_tb.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|ctrl.v
+a7ff838af819953e1fb6a4d448045a4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+openmips:openmips0|ctrl:ctrl0
+}
+# macro_sequence
+RstEnable1'b0Stop1'b1Stop1'b1
 # end
 # entity
 inst_rom
 # storage
-db|openmips_min_sopc_tb.(11).cnf
-db|openmips_min_sopc_tb.(11).cnf
+db|openmips_min_sopc_tb.(12).cnf
+db|openmips_min_sopc_tb.(12).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -470,7 +510,7 @@ ON
 # case_sensitive
 # source_file
 ..|inst_rom.v
-d91ee2105f5a6304c416af8bffa5f
+87e7a0416d245a745d26fb8b2f0be2c
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -490,13 +530,53 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # include_file {
 ..|defines.v
-debc95a847f837a1f758e42981258b8c
+b9ffef1844609d52b0dfd825c963f735
 }
 # hierarchies {
 inst_rom:inst_rom0
 }
 # macro_sequence
 InstAddrBus15:0InstBus15:0InstBus15:0InstMemNum127 InstBus15:0InstMemNum127 ChipDisable1'b0ZeroWord16'h0000
+# end
+# entity
+data_ram
+# storage
+db|openmips_min_sopc_tb.(13).cnf
+db|openmips_min_sopc_tb.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|data_ram.v
+9e75de50df5526fc12a59ce1badd989
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+..|defines.v
+b9ffef1844609d52b0dfd825c963f735
+}
+# hierarchies {
+data_ram:data_ram0
+}
+# macro_sequence
+DataAddrBus15:0DataBus15:0DataBus15:0DataBus15:0DataMemNum127ChipDisable1'b0WriteEnable1'b1ChipDisable1'b0ZeroWord16'h0000WriteDisable1'b0ZeroWord16'h0000
 # end
 # complete
 

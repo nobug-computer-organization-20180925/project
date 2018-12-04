@@ -101,10 +101,10 @@ module id(
   assign pc_plus_1 = pc_i +16'b1;
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};
   wire[`RegBus] inst_b_address;
-  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 1;
+  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 16'b1;
   
  assign stallreq = stallreq_for_reg1_loadrelate | stallreq_for_reg2_loadrelate;
-  assign pre_inst_is_load = (ex_aluop_i == `EXE_LB_OP) ? 1'b1 : 1'b0;
+  assign pre_inst_is_load = (ex_aluop_i == `EXE_LW_OP) ? 1'b1 : 1'b0;
   
   assign inst_o = inst_i;
 
@@ -176,7 +176,11 @@ module id(
 		  		alusel_o <= `EXE_RES_LOAD_STORE; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
 					wd_o <= inst_i[7:5]; instvalid <= `InstValid;	//reg[y] = mem{reg[x]+imm}
 				end
-		
+				`EXE_SW:			begin
+		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_SW_OP;
+		  		reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1; instvalid <= `InstValid;	
+		  		alusel_o <= `EXE_RES_LOAD_STORE; 
+				end
 		
 		    default:			begin
 		    end
@@ -186,12 +190,12 @@ module id(
 	
 
 	always @ (*) begin
-		
+		reg1_o <= `ZeroWord;	
 		stallreq_for_reg1_loadrelate <= `NoStop;	
 		if(rst == `RstEnable) begin
 			reg1_o <= `ZeroWord;	
 		end else if(pre_inst_is_load == 1'b1 && ex_wd_i == reg1_addr_o 
-								&& reg1_read_o == 1'b1 ) begin
+						&& reg1_read_o == 1'b1 ) begin
 		  stallreq_for_reg1_loadrelate <= `Stop;	
 		end else if((reg1_read_o == 1'b1) && (ex_wreg_i == 1'b1) 
 				&& (ex_wd_i == reg1_addr_o)) begin
@@ -209,6 +213,7 @@ module id(
 	end
 	
 	always @ (*) begin
+	reg2_o <= `ZeroWord;
 				stallreq_for_reg2_loadrelate <= `NoStop;
 		if(rst == `RstEnable) begin
 			reg2_o <= `ZeroWord;
