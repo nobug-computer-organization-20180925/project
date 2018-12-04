@@ -36,7 +36,8 @@
 `define EXE_LW 5'b10011
 `define EXE_SW 5'b11011
 `define EXE_BEQ 5'b00100
-`define EXE_BNE  6'b000101
+`define EXE_BNE 5'b00101
+`define EXE_LI 5'b01101
 
 //AluOp
 `define EXE_OR_OP    8'b00100101
@@ -48,6 +49,7 @@
 `define EXE_SW_OP  8'b11101011
 `define EXE_BEQ_OP  8'b01010001
 `define EXE_BNE_OP  8'b01010010
+`define EXE_LI_OP  8'b11100000 //used to be LB
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001

@@ -151,6 +151,15 @@ module id(
 					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 	
+			`EXE_LI:			begin
+		  		aluop_o <= `EXE_MOVE_OP;
+				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
+				instvalid <= `InstValid;
+				wreg_o <= `WriteEnable;
+					imm <= {8'h0, inst_i[7:0]};		
+					wd_o <= inst_i[10:8]; // result will be put in this register.
+		  	end 	
+
 		  	`EXE_ORI:			begin                        //OR????????
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	

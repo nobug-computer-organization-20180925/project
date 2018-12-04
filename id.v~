@@ -104,7 +104,7 @@ module id(
   wire[`RegBus] inst_b_address;
   wire[`RegBus] inst_b2_address;
   assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 16'b1;
-  assign inst_b2_address = pc_i + {{8{inst_i[10]}}, inst_i[7:0]} - 16'b1;
+  assign inst_b2_address = pc_i + {{8{inst_i[7]}}, inst_i[7:0]} - 16'b1;
   
  assign stallreq = stallreq_for_reg1_loadrelate | stallreq_for_reg2_loadrelate;
   assign pre_inst_is_load = (ex_aluop_i == `EXE_LW_OP) ? 1'b1 : 1'b0;
@@ -151,6 +151,14 @@ module id(
 					wd_o <= inst_i[10:8];
 					instvalid <= `InstValid;	
 		  	end 	
+			`EXE_LB:			begin
+		  		aluop_o <= `EXE_MOVE_OP;
+				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
+				instvalid <= `InstValid;
+				wreg_o <= `WriteEnable;
+					wd_o <= inst_i[10:8]; // result will be put in this register.
+		  	end 	
+
 		  	`EXE_ORI:			begin                        //OR????????
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
@@ -163,6 +171,7 @@ module id(
 				alusel_o <= `EXE_RES_MOVE;   reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1;
 				instvalid <= `InstValid;
 				wreg_o <= `WriteEnable;
+					imm <= {8'h0, inst_i[7:0]};		
 					wd_o <= inst_i[10:8]; // result will be put in this register.
 				end
 				`EXE_J:			begin
