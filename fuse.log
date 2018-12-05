@@ -1,59 +1,36 @@
-<<<<<<< HEAD
-Running: D:\xilinx146\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib simprims_ver -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb_isim_par.exe -prj C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb_par.prj work.openmips_min_sopc_tb work.glbl 
-ISim P.68d (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
-=======
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib simprims_ver -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_isim_par.exe -prj C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_par.prj openmips_min_sopc_tb work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib simprims_ver -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_isim_par.exe -prj C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_par.prj work.openmips_min_sopc_tb work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
->>>>>>> operation
 Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/yangzehai/Desktop/computer_organization/openmips/netgen/par/openmips_min_sopc_timesim.v" into library work
 Analyzing Verilog file "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb.v" Line 63: Port rdn is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb.v" Line 63: Port rdn is not connected to this instance
 Completed static elaboration
 Compiling module X_BUF
 Compiling module X_XOR2
 Compiling module mux
 Compiling module X_MUX2
 Compiling module X_AND2
-<<<<<<< HEAD
-Compiling module X_INV(LOC="SLICE_X89Y10")
-Compiling module X_ONE
+Compiling module X_LUT4(INIT=16'b011110001100110)
 Compiling module X_ZERO
-Compiling module X_LUT4(INIT=16'b1110010011001100...
-Compiling module X_OPAD
-Compiling module X_OBUF
-Compiling module X_IPAD
-Compiling module X_BPAD
-Compiling module X_OBUFT
-=======
-Compiling module X_LUT4(INIT=16'b0101010110101010...
 Compiling module X_ONE
-Compiling module X_INV(LOC="SLICE_X65Y38")
-Compiling module X_IPAD
-Compiling module X_OPAD
-Compiling module X_OBUF
->>>>>>> operation
-Compiling module X_BUFGMUX(LOC="BUFGMUX_X1Y1")
+Compiling module X_INV(LOC="SLICE_X77Y11")
 Compiling module sffsrce
 Compiling module X_SFF
+Compiling module X_IPAD
+Compiling module X_OPAD
+Compiling module X_OBUF
+Compiling module X_BPAD
+Compiling module X_OBUFT
+Compiling module X_BUFGMUX(LOC="BUFGMUX_X1Y1")
 Compiling module X_SFF(INIT=1'b1)
 Compiling module openmips_min_sopc
 Compiling module openmips_min_sopc_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-<<<<<<< HEAD
-Compiled 1652 Verilog Units
-Built simulation executable C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb_isim_par.exe
-Fuse Memory Usage: 46392 KB
-Fuse CPU Usage: 12061 ms
-=======
-Compiled 1339 Verilog Units
+Compiled 1799 Verilog Units
 Built simulation executable C:/Users/yangzehai/Desktop/computer_organization/openmips/openmips_min_sopc_tb_isim_par.exe
-Fuse Memory Usage: 40584 KB
-Fuse CPU Usage: 2464 ms
->>>>>>> operation
+Fuse Memory Usage: 44756 KB
+Fuse CPU Usage: 3432 ms

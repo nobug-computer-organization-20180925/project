@@ -5,11 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-<<<<<<< HEAD
-  <application stringID="par" timeStamp="Wed Dec 05 12:56:54 2018">
-=======
-  <application stringID="par" timeStamp="Wed Dec 05 05:00:00 2018">
->>>>>>> operation
+  <application stringID="par" timeStamp="Wed Dec 05 16:40:54 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -63,30 +59,17 @@
     </task>
     <task stringID="PAR_DEVICE_UTILIZATION">
       <section stringID="PAR_DESIGN_SUMMARY">
-<<<<<<< HEAD
-        <item AVAILABLE="8672" dataType="int" stringID="PAR_SLICES" value="392"></item>
-=======
-        <item AVAILABLE="8672" dataType="int" stringID="PAR_SLICES" value="333"></item>
->>>>>>> operation
+        <item AVAILABLE="8672" dataType="int" stringID="PAR_SLICES" value="424"></item>
       </section>
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-<<<<<<< HEAD
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="21 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="21 secs "/>
-        <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
-        <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="22 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="22 secs "/>
-=======
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="23 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="24 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="23 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
         <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="24 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="23 secs "/>
->>>>>>> operation
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="24 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -105,15 +88,9 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X1Y1"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-<<<<<<< HEAD
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="183.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.195000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.374000"/>
-=======
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="143.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.100000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.269000"/>
->>>>>>> operation
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="186.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.155000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.324000"/>
           </row>
         </table>
       </section>

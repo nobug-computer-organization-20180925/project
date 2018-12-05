@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-12-05T11:34:15</DateModified>
+  <DateModified>2018-12-05T05:52:29</DateModified>
   <ModuleName>openmips_min_sopc</ModuleName>
   <SummaryTimeStamp>2018-12-05T00:43:34</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/lenovo/Desktop/project/iseconfig/openmips_min_sopc.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/lenovo/Desktop/project\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/yangzehai/Desktop/computer_organization/openmips/iseconfig/openmips_min_sopc.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/yangzehai/Desktop/computer_organization/openmips\</ImplementationReportsDirectory>
   <DateInitialized>2018-11-20T01:12:53</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
