@@ -35,8 +35,19 @@ module openmips_min_sopc_tb();
 
   reg     CLOCK_50;
   reg     rst;
-  wire[`RegBus] register1;
-  
+
+	wire[`RegBus] register1;
+   wire ram1_WE_L;
+   wire ram2_WE_L;
+   wire ram1_OE_L;
+   wire ram2_OE_L;	 
+	wire ram1_CE;
+	wire ram2_CE;
+	wire[15:0] ram1datainout;
+   wire[15:0] ram2datainout;
+	 
+	wire[`RegBus] ram1addr;
+	wire[`RegBus] ram2addr;
        
   initial begin
     CLOCK_50 = 1'b0;
@@ -52,7 +63,41 @@ module openmips_min_sopc_tb();
   openmips_min_sopc openmips_min_sopc0(
 		.clk(CLOCK_50),
 		.rst(rst),
-		.register1(register1)
+		.register1(register1),
+	.ram1_WE_L(ram1_WE_L),
+   .ram2_WE_L(ram2_WE_L),
+   .ram1_OE_L(ram1_OE_L),
+   .ram2_OE_L(ram2_OE_L),
+	.ram1_CE(ram1_CE),
+   .ram2_CE(ram2_CE), 
+	.ram1datainout(ram1datainout),
+   .ram2datainout(ram2datainout),
+	 
+	.ram1addr(ram1addr),
+	.ram2addr(ram2addr)
 	);
+	
+	reg[`DataBus]  data_mem[0:`DataMemNum-1];
+	wire[`DataBus] mem_read;
+	reg[`DataBus] data_o;
+	assign mem_read = data_mem[ram2addr];
+	assign ram2datainout = ram2_OE_L ? 16'bz : data_o;
+	always @ (posedge ram2_WE_L) begin
+		if (ram2_CE == `ChipDisable) begin
+			//data_o <= ZeroWord;
+		end else if(ram2_OE_L == `WriteEnable) begin
+		      data_mem[ram2addr] <= ram2datainout;
+		end
+	end
+	
+	always @ (*) begin
+		if (ram2_CE == `ChipDisable) begin
+			data_o <= `ZeroWord;
+	  end else if(ram2_OE_L == `WriteDisable) begin
+		    data_o <= mem_read;
+		end else begin
+				data_o <= `ZeroWord;
+		end
+	end		
 
 endmodule

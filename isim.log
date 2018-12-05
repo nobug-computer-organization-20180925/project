@@ -9,3 +9,6 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 INFO: SDF backannotation was successful with SDF file netgen/par/openmips_min_sopc_timesim.sdf, for root module /openmips_min_sopc_tb/openmips_min_sopc0/.
 Finished circuit initialization process.
+# run 1.00us
+# run all
+Stopped at time : 4295 ns :  in File "C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb.v" Line 60 

@@ -6,20 +6,22 @@ Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/lenovo/Desktop/project/netgen/par/openmips_min_sopc_timesim.v" into library work
 Analyzing Verilog file "C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb.v" Line 63: Port rdn is not connected to this instance
 Completed static elaboration
 Compiling module X_BUF
+Compiling module X_XOR2
 Compiling module mux
 Compiling module X_MUX2
-Compiling module X_RAMD16
-Compiling module X_ZERO
-Compiling module X_XOR2
 Compiling module X_AND2
-Compiling module X_INV(LOC="SLICE_X57Y61")
+Compiling module X_INV(LOC="SLICE_X89Y10")
 Compiling module X_ONE
-Compiling module X_LUT4(INIT=16'b011111111)
+Compiling module X_ZERO
+Compiling module X_LUT4(INIT=16'b1110010011001100...
 Compiling module X_OPAD
 Compiling module X_OBUF
 Compiling module X_IPAD
+Compiling module X_BPAD
+Compiling module X_OBUFT
 Compiling module X_BUFGMUX(LOC="BUFGMUX_X1Y1")
 Compiling module sffsrce
 Compiling module X_SFF
@@ -28,7 +30,7 @@ Compiling module openmips_min_sopc
 Compiling module openmips_min_sopc_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 1743 Verilog Units
+Compiled 1652 Verilog Units
 Built simulation executable C:/Users/lenovo/Desktop/project/openmips_min_sopc_tb_isim_par.exe
-Fuse Memory Usage: 47848 KB
-Fuse CPU Usage: 12578 ms
+Fuse Memory Usage: 46392 KB
+Fuse CPU Usage: 12061 ms

@@ -103,8 +103,8 @@ module id(
 //  assign imm_sll2_signedext = {{5{inst_i[10]}}, inst_i[10:0]};
   wire[`RegBus] inst_b_address;
   wire[`RegBus] inst_b2_address;
-  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} - 16'b1;
-  assign inst_b2_address = pc_i + {{8{inst_i[7]}}, inst_i[7:0]} - 16'b1;
+  assign inst_b_address = pc_i + {{5{inst_i[10]}}, inst_i[10:0]} + 16'b1;
+  assign inst_b2_address = pc_i + {{8{inst_i[7]}}, inst_i[7:0]} + 16'b1;
   
  assign stallreq = stallreq_for_reg1_loadrelate | stallreq_for_reg2_loadrelate;
   assign pre_inst_is_load = (ex_aluop_i == `EXE_LW_OP) ? 1'b1 : 1'b0;

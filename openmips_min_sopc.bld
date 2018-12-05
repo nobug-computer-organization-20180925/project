@@ -43,7 +43,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  16
 
-Total memory usage is 178652 kilobytes
+Total memory usage is 178552 kilobytes
 
 Writing NGD file "openmips_min_sopc.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec
