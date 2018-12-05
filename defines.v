@@ -101,7 +101,7 @@
 `define RegNumLog2 4
 
 //special regs
-`define NOPRegAddr	4'b0000
+`define NOPRegAddr	4'b1000
 `define SPRegAddr		4'b1001
 `define TRegAddr		4'b1010
 `define RARegAddr		4'b1011
