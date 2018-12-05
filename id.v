@@ -26,7 +26,7 @@
 // File:    id.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ����׶�
+// Description: ����׶�
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -38,10 +38,10 @@ module id(
 	input wire[`InstAddrBus]			pc_i,
 	input wire[`InstBus]          inst_i,
 
-  //����ִ�н׶ε�ָ���һЩ��Ϣ�����ڽ��load���
+  //����ִ�н׶ε�ָ���һЩ��Ϣ�����ڽ��load���
   input wire[`AluOpBus]					ex_aluop_i,
 
-	//����ִ�н׶ε�ָ��Ҫд���Ŀ�ļĴ�����Ϣ
+	//����ִ�н׶ε�ָ��Ҫд���Ŀ�ļĴ������
 	input wire										ex_wreg_i,
 	input wire[`RegBus]						ex_wdata_i,
 	input wire[`RegAddrBus]       ex_wd_i,
@@ -201,36 +201,36 @@ module id(
 				next_inst_in_delayslot_o <= `InDelaySlot;		  	
 				instvalid <= `InstValid;	
 			end				
-				`EXE_BEQ:			begin
-		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
-		  		alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
-		  		instvalid <= `InstValid;	
-					if(reg1_o == 0) begin
+			`EXE_BEQ:			begin
+				wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
+				alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
+				instvalid <= `InstValid;	
+				if(reg1_o == 0) begin
 					branch_target_address_o <= inst_b2_address;
 					branch_flag_o <= `Branch;
 					next_inst_in_delayslot_o <= `InDelaySlot;		  	
-				        end
 				end
-				`EXE_BNE:			begin
+			end
+			`EXE_BNE:			begin
 		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_J_OP; //useless!
 		  		alusel_o <= `EXE_RES_JUMP_BRANCH; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;
 		  		instvalid <= `InstValid;	
-		  			if(reg1_o != 0) begin
-			    		branch_target_address_o <= inst_b2_address;
-			 	   	branch_flag_o <= `Branch;
-			    		next_inst_in_delayslot_o <= `InDelaySlot;		  	
-				        end
-				end
-					`EXE_LW:			begin
+		  		if(reg1_o != 0) begin
+			  		branch_target_address_o <= inst_b2_address;
+			   	branch_flag_o <= `Branch;
+		    		next_inst_in_delayslot_o <= `InDelaySlot;		  	
+			   end
+			end
+			`EXE_LW:			begin
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_LW_OP;
 		  		alusel_o <= `EXE_RES_LOAD_STORE; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
-					wd_o <= {1'b0,inst_i[7:5]}; instvalid <= `InstValid;	//reg[y] = mem{reg[x]+imm}
-				end
-				`EXE_SW:			begin
+				wd_o <= {1'b0,inst_i[7:5]}; instvalid <= `InstValid;	//reg[y] = mem{reg[x]+imm}
+			end
+			`EXE_SW:			begin
 		  		wreg_o <= `WriteDisable;		aluop_o <= `EXE_SW_OP;
 		  		reg1_read_o <= 1'b1;	reg2_read_o <= 1'b1; instvalid <= `InstValid;	
 		  		alusel_o <= `EXE_RES_LOAD_STORE; 
-				end
+			end
 			`EXE_ADDU:	begin
 				case (op4[1])
 					1'b0:	begin
@@ -278,16 +278,24 @@ module id(
 			`EXE_IH:			begin
 				case(op4)
 					`INST_MFIH:	begin
-						aluop_o <= `EXE_MFIH_OP;
+						aluop_o <= `EXE_MOVE_OP;
 						alusel_o <= `EXE_RES_MOVE;   
 						reg1_read_o <= 1'b1;	
 						reg2_read_o <= 1'b1;
+						reg2_addr_o <= `IHRegAddr;
 						instvalid <= `InstValid;
 						wreg_o <= `WriteEnable;
 						wd_o <= {1'b0, inst_i[10:8]};
 					end
 					`INST_MTIH:	begin
-
+						aluop_o <= `EXE_MOVE_OP;
+						alusel_o <= `EXE_RES_MOVE;   
+						reg1_read_o <= 1'b1;	
+						reg2_read_o <= 1'b1;
+						reg2_addr_o <= {1'b0, inst_i[10:8]};
+						instvalid <= `InstValid;
+						wreg_o <= `WriteEnable;
+						wd_o <= `IHRegAddr;
 					end
 				endcase
 			end

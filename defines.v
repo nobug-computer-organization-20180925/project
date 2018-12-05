@@ -66,8 +66,8 @@
 `define EXE_SUBU_OP	8'b00100011
 `define EXE_ADDIU_OP 8'b00001001
 `define EXE_ADDIU3_OP	8'b01001001
-`define EXE_MFIH_OP	8'b01001010
-`define EXE_MTIH_OP	8'b10001010
+//`define EXE_MFIH_OP	8'b01001010
+//`define EXE_MTIH_OP	8'b10001010
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001
@@ -99,4 +99,11 @@
 `define DoubleRegBus 31:0
 `define RegNum 16
 `define RegNumLog2 4
-`define NOPRegAddr 4'b0000
+
+//special regs
+`define NOPRegAddr	4'b0000
+`define SPRegAddr		4'b1001
+`define TRegAddr		4'b1010
+`define RARegAddr		4'b1011
+`define IHRegAddr		4'b1100
+ 

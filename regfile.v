@@ -83,7 +83,7 @@ module regfile(
 			regs[9]<=16'h0; //SP
 			regs[10]<=16'h0; //T
 			regs[11]<=16'h0; //RA
-			regs[12]<=16'h0; //IH
+			regs[12]<=16'h0707; //IH
 			regs[13]<=16'h0;
 			regs[14]<=16'h0;
 			regs[15]<=16'h0;
