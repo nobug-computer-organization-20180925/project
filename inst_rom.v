@@ -26,7 +26,7 @@
 // File:    inst_rom.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ָ��洢��
+// Description: ָ��洢��
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -53,15 +53,16 @@ module inst_rom(
 	inst_mem[4]<=16'b11011_000_001_00001;//11011 save reg1's value 0404 to mem[1] 
 	inst_mem[5]<=16'b00100_001_111_11100;//00100 branch: branch if=0 7:0 jump to pc=1
 	inst_mem[6]<=16'b01101_001_000_00000;//01101 li reg1=0
-	inst_mem[7]<=16'b01101_001_000_00001;//01101 li reg1=1
-	inst_mem[8]<=16'b00100_001_111_11010;//00100 branch: branch if=0 7:0 jump to pc=1
-	inst_mem[9]<=16'b01101_001_100_00001;//01101 li reg1=00000000_10000001 
-	inst_mem[10]<=16'b01101_001_100_00010;//01101 li reg1=00000000_10000010 
-	inst_mem[11]<=16'b00101_001_111_10111;//00101 branch: branch if!=0 7:0 jump to pc=1
-	inst_mem[12]<=16'b01101_001_100_00101;//01101 li reg1=00000000_10000101 
-	inst_mem[13]<=16'b01101_001_100_01010;//01101 li reg1=00000000_10001010 
+	inst_mem[7]<=16'b01101_001_000_00010;//01101 li reg1=2
+	inst_mem[8]<=16'b01001_001_111_11111;//01001 addiu: reg1=reg1-1 ans=0001
+	inst_mem[9]<=16'b00100_001_111_11001;//00100 branch: branch if=0 7:0 jump to pc=3
+	inst_mem[10]<=16'b01101_001_100_00001;//01101 li reg1=00000000_10000001 
+	inst_mem[11]<=16'b01101_001_100_00010;//01101 li reg1=00000000_10000010 
+	inst_mem[12]<=16'b00101_001_111_10110;//00101 branch: branch if!=0 7:0 jump to pc=3
+	inst_mem[13]<=16'b01101_001_100_00101;//01101 li reg1=00000000_10000101 
+	inst_mem[14]<=16'b01101_001_100_01010;//01101 li reg1=00000000_10001010 
 	
-	for(i=13;i<`InstMemNum;i=i+1) inst_mem[i]<=0;
+	for(i=14;i<`InstMemNum;i=i+1) inst_mem[i]<=0;
 
 	end
 	
