@@ -1,8 +1,0 @@
-[Inputs]
-clk
-rst
-[Outputs]
-[BiDir]
-[ATTRIBUTES]
-VeriModel openmips_min_sopc
-
