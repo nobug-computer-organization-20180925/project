@@ -4,11 +4,19 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
+<<<<<<< HEAD
 <DeviceUsageSummary rev="29">
 <DesignStatistics TimeStamp="Wed Dec 05 12:57:28 2018"><group name="NetStatistics">
 <item name="NumNets_Active" rev="29">
 <attrib name="value" value="874"/></item>
 <item name="NumNets_Gnd" rev="29">
+=======
+<DeviceUsageSummary rev="28">
+<DesignStatistics TimeStamp="Wed Dec 05 04:59:57 2018"><group name="NetStatistics">
+<item name="NumNets_Active" rev="15">
+<attrib name="value" value="460"/></item>
+<item name="NumNets_Gnd" rev="15">
+>>>>>>> operation
 <attrib name="value" value="1"/></item>
 <item name="NumNets_Vcc" rev="29">
 <attrib name="value" value="1"/></item>
@@ -79,6 +87,7 @@
 </group>
 <group name="MiscellaneousStatistics">
 <item name="AGG_BONDED_IO" rev="28">
+<<<<<<< HEAD
 <attrib name="value" value="90"/></item>
 <item name="AGG_IO" rev="28">
 <attrib name="value" value="90"/></item>
@@ -160,6 +169,38 @@
 <attrib name="0" value="17"/><attrib name="0_INV" value="0"/></item>
 <item name="1" rev="29">
 <attrib name="1_INV" value="0"/><attrib name="1" value="17"/></item>
+=======
+<attrib name="value" value="18"/></item>
+<item name="AGG_IO" rev="28">
+<attrib name="value" value="18"/></item>
+<item name="AGG_SLICE" rev="28">
+<attrib name="value" value="333"/></item>
+<item name="NUM_4_INPUT_LUT" rev="28">
+<attrib name="value" value="515"/></item>
+<item name="NUM_BONDED_IBUF" rev="28">
+<attrib name="value" value="2"/></item>
+<item name="NUM_BONDED_IOB" rev="28">
+<attrib name="value" value="16"/></item>
+<item name="NUM_BUFGMUX" rev="28">
+<attrib name="value" value="1"/></item>
+<item name="NUM_CYMUX" rev="28">
+<attrib name="value" value="48"/></item>
+<item name="NUM_LUT_RT" rev="28">
+<attrib name="value" value="3"/></item>
+<item name="NUM_SLICEL" rev="28">
+<attrib name="value" value="333"/></item>
+<item name="NUM_SLICE_FF" rev="28">
+<attrib name="value" value="223"/></item>
+<item name="NUM_XOR" rev="28">
+<attrib name="value" value="53"/></item>
+</group>
+</DesignStatistics>
+<ReportConfigData TimeStamp="Tue Dec 04 01:12:08 2018"><group name="SLICEL_CYMUXF">
+<item name="0" rev="15">
+<attrib name="0" value="9"/><attrib name="0_INV" value="0"/></item>
+<item name="1" rev="15">
+<attrib name="1_INV" value="0"/><attrib name="1" value="9"/></item>
+>>>>>>> operation
 </group>
 <group name="SLICEL_CYMUXG">
 <item name="0" rev="29">
@@ -484,6 +525,7 @@
 <item name="OUT" rev="29">
 <attrib name="value" value="16"/></item>
 </group>
+<<<<<<< HEAD
 <group name="SLICEM_F5MUX">
 <item name="F" rev="17">
 <attrib name="value" value="64"/></item>
@@ -494,6 +536,8 @@
 <item name="S0" rev="17">
 <attrib name="value" value="64"/></item>
 </group>
+=======
+>>>>>>> operation
 <group name="SLICEL_FFX">
 <item name="CE" rev="29">
 <attrib name="value" value="113"/></item>
@@ -517,6 +561,14 @@
 <attrib name="value" value="20"/></item>
 <item name="O" rev="29">
 <attrib name="value" value="20"/></item>
+</group>
+<group name="SLICEL_XORF">
+<item name="0" rev="15">
+<attrib name="value" value="12"/></item>
+<item name="1" rev="15">
+<attrib name="value" value="12"/></item>
+<item name="O" rev="15">
+<attrib name="value" value="12"/></item>
 </group>
 <group name="SLICEL_FFY">
 <item name="CE" rev="29">

@@ -60,6 +60,7 @@ module openmips(
 	wire[`AluSelBus] id_alusel_o;
 	wire[`RegBus] id_reg1_o;
 	wire[`RegBus] id_reg2_o;
+	wire	id_read_IH_o;
 	wire id_wreg_o;
 	wire[`RegAddrBus] id_wd_o;
 	wire id_is_in_delayslot_o;
@@ -110,6 +111,7 @@ module openmips(
   wire reg2_read;
   wire[`RegBus] reg1_data;
   wire[`RegBus] reg2_data;
+  wire[`RegBus] IH_data;
   wire[`RegAddrBus] reg1_addr;
   wire[`RegAddrBus] reg2_addr;
 

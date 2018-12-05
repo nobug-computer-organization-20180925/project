@@ -75,6 +75,7 @@ LAB1:    return;
 }
 
 
+<<<<<<< HEAD
 extern void simprims_ver_m_00000000000126354981_0818475687_4132382431_init()
 {
 	static char *pe[] = {(void *)Cont_28_0};
@@ -107,6 +108,96 @@ extern void simprims_ver_m_00000000000126354981_0818475687_3423617273_init()
 {
 	static char *pe[] = {(void *)Cont_28_0};
 	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_3423617273", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_3423617273.didat");
+=======
+extern void simprims_ver_m_00000000000126354981_0818475687_1641904241_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_1641904241", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_1641904241.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_3047181859_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_3047181859", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_3047181859.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_3369289851_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_3369289851", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_3369289851.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_0356880894_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_0356880894", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_0356880894.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_2828008752_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_2828008752", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_2828008752.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_1964582069_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_1964582069", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_1964582069.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_1382674816_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_1382674816", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_1382674816.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_2415863813_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_2415863813", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_2415863813.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_2479844994_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_2479844994", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_2479844994.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_0737110088_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_0737110088", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_0737110088.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_4135170509_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_4135170509", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_4135170509.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_0091509418_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_0091509418", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_0091509418.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprims_ver_m_00000000000126354981_0818475687_4217880970_init()
+{
+	static char *pe[] = {(void *)Cont_28_0};
+	xsi_register_didat("simprims_ver_m_00000000000126354981_0818475687_4217880970", "isim/openmips_min_sopc_tb_isim_par.exe.sim/simprims_ver/m_00000000000126354981_0818475687_4217880970.didat");
+>>>>>>> operation
 	xsi_register_executes(pe);
 }
 

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/yangzehai/Desktop/computer_organization/openmips/uart_all/uart_all/memory.xst" -ofn "C:/Users/yangzehai/Desktop/computer_organization/openmips/uart_all/uart_all/memory.syr" 

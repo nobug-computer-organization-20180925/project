@@ -64,6 +64,13 @@ module ex(
 	reg[`RegBus] logicout;
 	reg[`RegBus] shiftres;//?
 	reg[`RegBus] moveres;
+	reg[`RegBus] arithmeticres;
+	
+	wire[`RegBus] reg2_i_mux;
+	wire[`RegBus] result_sum;
+	
+	assign reg2_i_mux = (aluop_i == `EXE_SUBU_OP) ? (~reg2_i)+1 : reg2_i;
+	assign result_sum = reg1_i + reg2_i_mux;
 
 	assign stallreq = 0;
   //aluop_o传递到访存阶段，用于加载、存储指令
@@ -83,6 +90,9 @@ module ex(
 				`EXE_OR_OP:			begin
 					logicout <= reg1_i | reg2_i;
 				end
+				`EXE_AND_OP:			begin
+					logicout <= reg1_i & reg2_i;
+				end
 				default:				begin
 					logicout <= `ZeroWord;
 				end
@@ -98,11 +108,40 @@ module ex(
 				`EXE_MOVE_OP:		begin
 					moveres <= reg2_i;
 				end
+				`EXE_MFIH_OP:		begin
+					moveres <= reg2_i;
+				end
+				`EXE_MTIH_OP:		begin
+					moveres <= reg1_i;
+				end
 				default : begin
 				end
 			endcase
-		end
-	end
+		end	//if
+	end	//always
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			arithmeticres <= `ZeroWord;
+		end else begin
+			arithmeticres <= `ZeroWord;
+			case (aluop_i)
+				`EXE_ADDU_OP:		begin
+					arithmeticres <= result_sum;
+				end
+				`EXE_SUBU_OP:		begin
+					arithmeticres <= result_sum;
+				end
+				`EXE_ADDIU_OP:		begin
+					arithmeticres <= result_sum;
+				end
+				`EXE_ADDIU3_OP:		begin
+					arithmeticres <= result_sum;
+				end
+				default : begin
+				end
+			endcase
+		end	//if
+	end	//always
 
  always @ (*) begin
 	 wd_o <= wd_i;	 	 	
@@ -116,7 +155,10 @@ module ex(
 	 	end	 	
 	 	`EXE_RES_JUMP_BRANCH:	begin
 	 		wdata_o <= link_address_i;
-	 	end	 		
+	 	end
+		`EXE_RES_ARITHMETIC:	begin
+	 		wdata_o <= arithmeticres;
+	 	end
 	 	default:					begin
 	 		wdata_o <= `ZeroWord;
 	 	end

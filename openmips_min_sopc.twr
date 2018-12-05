@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Release 14.6 Trace  (nt64)
+Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\xilinx146\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s
-4 -n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o
 openmips_min_sopc.twr openmips_min_sopc.pcf -ucf openmips_min_sopc.ucf
 
 Design file:              openmips_min_sopc.ncd
 Physical constraint file: openmips_min_sopc.pcf
-Device,package,speed:     xc3s1200e,fg320,-4 (PRODUCTION 1.27 2013-06-08)
+Device,package,speed:     xc3s1200e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -41,6 +41,7 @@ Data Sheet report:
 All values displayed in nanoseconds (ns)
 
 Setup/Hold to clock clk
+<<<<<<< HEAD
 -----------------+------------+------------+------------------+--------+
                  |Max Setup to|Max Hold to |                  | Clock  |
 Source           | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
@@ -121,12 +122,44 @@ register1<13>    |   11.161(R)|clk_IBUF          |   0.000|
 register1<14>    |   10.069(R)|clk_IBUF          |   0.000|
 register1<15>    |    9.534(R)|clk_IBUF          |   0.000|
 -----------------+------------+------------------+--------+
+=======
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+rst         |   10.750(R)|   -0.222(R)|clk_BUFGP         |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+-------------+------------+------------------+--------+
+             | clk (edge) |                  | Clock  |
+Destination  |   to PAD   |Internal Clock(s) | Phase  |
+-------------+------------+------------------+--------+
+register1<0> |    8.924(R)|clk_BUFGP         |   0.000|
+register1<1> |    9.838(R)|clk_BUFGP         |   0.000|
+register1<2> |    8.977(R)|clk_BUFGP         |   0.000|
+register1<3> |   12.453(R)|clk_BUFGP         |   0.000|
+register1<4> |    9.552(R)|clk_BUFGP         |   0.000|
+register1<5> |    9.554(R)|clk_BUFGP         |   0.000|
+register1<6> |    9.784(R)|clk_BUFGP         |   0.000|
+register1<7> |    9.097(R)|clk_BUFGP         |   0.000|
+register1<8> |    8.887(R)|clk_BUFGP         |   0.000|
+register1<9> |    9.488(R)|clk_BUFGP         |   0.000|
+register1<10>|   10.386(R)|clk_BUFGP         |   0.000|
+register1<11>|    8.500(R)|clk_BUFGP         |   0.000|
+register1<12>|   10.994(R)|clk_BUFGP         |   0.000|
+register1<13>|   10.674(R)|clk_BUFGP         |   0.000|
+register1<14>|    9.601(R)|clk_BUFGP         |   0.000|
+register1<15>|    8.568(R)|clk_BUFGP         |   0.000|
+-------------+------------+------------------+--------+
+>>>>>>> operation
 
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
+<<<<<<< HEAD
 clk            |   11.562|         |         |         |
 ---------------+---------+---------+---------+---------+
 
@@ -174,13 +207,20 @@ rst            |ram2datainout<15>|   10.748|
 
 
 Analysis completed Wed Dec 05 12:57:19 2018 
+=======
+clk            |    9.601|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Wed Dec 05 05:00:25 2018 
+>>>>>>> operation
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 195 MB
+Peak Memory Usage: 184 MB
 
 
 

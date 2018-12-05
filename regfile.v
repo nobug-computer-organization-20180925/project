@@ -54,9 +54,10 @@ module regfile(
 	
 );
 
-	reg[`RegBus]  regs[0:`RegNum-1];
-	wire[`RegBus] readDataTemp1;
-	wire[`RegBus] readDataTemp2;
+	reg[`RegBus]	regs[0:`RegNum-1];
+	wire[`RegBus]	readDataTemp1;
+	wire[`RegBus]	readDataTemp2;
+	wire[`RegBus]	IHDataTemp;
 	
 	
 	assign readDataTemp1 = regs[raddr1];
@@ -78,6 +79,15 @@ module regfile(
 			regs[5]<=16'h1010;
 			regs[6]<=16'h2020;
 			regs[7]<=16'h4040;
+			regs[8]<=16'h0; //0
+			regs[9]<=16'h0; //SP
+			regs[10]<=16'h0; //T
+			regs[11]<=16'h0; //RA
+			regs[12]<=16'h0; //IH
+			regs[13]<=16'h0;
+			regs[14]<=16'h0;
+			regs[15]<=16'h0;
+
 		end
 	end
 	
